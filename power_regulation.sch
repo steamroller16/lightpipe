@@ -29,14 +29,15 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:bike_light
 LIBS:bike_light-cache
 EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 11
+Sheet 3 12
 Title ""
-Date "3 sep 2013"
+Date "7 nov 2013"
 Rev ""
 Comp ""
 Comment1 ""

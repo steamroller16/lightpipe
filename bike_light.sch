@@ -29,14 +29,15 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:bike_light
 LIBS:bike_light-cache
 EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 11
+Sheet 1 12
 Title "Bike Light"
-Date "3 sep 2013"
+Date "7 nov 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -84,14 +85,6 @@ F2 "USB" I L 6850 1200 60
 F3 "DEBUG" I L 6850 1350 60 
 $EndSheet
 $Sheet
-S 4350 1650 700  350 
-U 5224C5B3
-F0 "sensors" 50
-F1 "sensors.sch" 50
-F2 "LIGHT_LEVEL" O R 5050 1750 60 
-F3 "ACCEL" O R 5050 1900 60 
-$EndSheet
-$Sheet
 S 6850 2500 700  200 
 U 5224C62E
 F0 "rear_brake" 50
@@ -119,5 +112,18 @@ U 5224C605
 F0 "front_signal" 50
 F1 "front_signal.sch" 50
 F2 "CTRL" I L 6850 1750 60 
+$EndSheet
+$Sheet
+S 4400 1800 550  200 
+U 527B19B4
+F0 "sensors_temperature" 50
+F1 "sensors_temperature.sch" 50
+F2 "V_Temp" O R 4950 1900 60 
+$EndSheet
+$Sheet
+S 4500 2350 650  500 
+U 527B1CA6
+F0 "sensors_light" 50
+F1 "sensors_light.sch" 50
 $EndSheet
 $EndSCHEMATC
