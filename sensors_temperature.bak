@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 11 12
+Sheet 11 13
 Title ""
-Date "7 nov 2013"
+Date "8 nov 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -99,28 +99,6 @@ Wire Wire Line
 	2900 1550 2900 1450
 $Comp
 L C C?
-U 1 1 527B1E85
-P 2450 2200
-F 0 "C?" H 2450 2300 40  0000 L CNN
-F 1 "Cap Nominal" H 2050 2100 40  0000 L CNN
-F 2 "~" H 2488 2050 30  0000 C CNN
-F 3 "~" H 2450 2200 60  0000 C CNN
-	1    2450 2200
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C?
-U 1 1 527B1E90
-P 1450 2200
-F 0 "C?" H 1450 2300 40  0000 L CNN
-F 1 "Cap Nominal" H 1050 2100 40  0000 L CNN
-F 2 "~" H 1488 2050 30  0000 C CNN
-F 3 "~" H 1450 2200 60  0000 C CNN
-	1    1450 2200
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C?
 U 1 1 527B2035
 P 2900 1250
 F 0 "C?" H 2900 1350 40  0000 L CNN
@@ -128,17 +106,6 @@ F 1 "Cap Steadystate" H 2906 1165 40  0000 L CNN
 F 2 "~" H 2938 1100 30  0000 C CNN
 F 3 "~" H 2900 1250 60  0000 C CNN
 	1    2900 1250
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C?
-U 1 1 527B2045
-P 3300 1800
-F 0 "C?" H 3300 1900 40  0000 L CNN
-F 1 "Cap Steadystate" H 3306 1715 40  0000 L CNN
-F 2 "~" H 3338 1650 30  0000 C CNN
-F 3 "~" H 3300 1800 60  0000 C CNN
-	1    3300 1800
 	1    0    0    -1  
 $EndComp
 $Comp

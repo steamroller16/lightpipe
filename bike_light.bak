@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 12
+Sheet 1 13
 Title "Bike Light"
-Date "7 nov 2013"
+Date "8 nov 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -114,16 +114,28 @@ F1 "front_signal.sch" 50
 F2 "CTRL" I L 6850 1750 60 
 $EndSheet
 $Sheet
-S 4400 1800 550  200 
+S 4500 3550 900  350 
 U 527B19B4
 F0 "sensors_temperature" 50
 F1 "sensors_temperature.sch" 50
-F2 "V_Temp" O R 4950 1900 60 
+F2 "V_Temp" O R 5400 3650 60 
 $EndSheet
 $Sheet
-S 4500 2350 650  500 
+S 4500 2450 900  350 
 U 527B1CA6
 F0 "sensors_light" 50
 F1 "sensors_light.sch" 50
+F2 "V_Light" O R 5400 2550 60 
+F3 "CTRL_1" I L 4500 2550 60 
+F4 "CTRL_2" I L 4500 2700 60 
+$EndSheet
+$Sheet
+S 4500 3000 900  350 
+U 527C7E4B
+F0 "sensors_acceleration" 50
+F1 "sensors_acceleration.sch" 50
+F2 "SCL" I L 4500 3100 60 
+F3 "SDA" B L 4500 3250 60 
+F4 "~INT" O R 5400 3100 60 
 $EndSheet
 $EndSCHEMATC
