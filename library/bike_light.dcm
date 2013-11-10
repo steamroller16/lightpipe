@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 11/7/2013 11:33:02 PM
+EESchema-DOCLIB  Version 2.0  Date: 11/9/2013 11:46:01 PM
 #
 $CMP BH1620FVC
 D IC AMBIENT LIGHT SENSOR
@@ -10,6 +10,10 @@ $ENDCMP
 #
 $CMP MMA7660FC
 D 3-Axis Accelerometer I2C
+$ENDCMP
+#
+$CMP TLC5917IDR
+D 8-Channel LED Driver (Linear - current)
 $ENDCMP
 #
 #End Doc Library

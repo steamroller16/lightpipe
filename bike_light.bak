@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 13
+Sheet 1 14
 Title "Bike Light"
-Date "8 nov 2013"
+Date "10 nov 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -137,5 +137,16 @@ F1 "sensors_acceleration.sch" 50
 F2 "SCL" I L 4500 3100 60 
 F3 "SDA" B L 4500 3250 60 
 F4 "~INT" O R 5400 3100 60 
+$EndSheet
+$Sheet
+S 4500 4100 900  650 
+U 527F3E83
+F0 "lights_signal_brake" 50
+F1 "lights_signal_brake.sch" 50
+F2 "SDI" I L 4500 4200 60 
+F3 "CLK" I L 4500 4350 60 
+F4 "LE" I L 4500 4500 60 
+F5 "~OE" I L 4500 4650 60 
+F6 "SDO" O R 5400 4200 60 
 $EndSheet
 $EndSCHEMATC
