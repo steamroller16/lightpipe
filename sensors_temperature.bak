@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 11 14
+Sheet 6 11
 Title ""
-Date "10 nov 2013"
+Date "11 nov 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -94,7 +94,7 @@ Wire Wire Line
 Wire Wire Line
 	1300 850  1300 1050
 Text HLabel 3000 1050 2    60   Output ~ 0
-V_Temp
+V_TEMP
 Wire Wire Line
 	2900 1550 2900 1450
 $Comp

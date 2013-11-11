@@ -35,7 +35,7 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 14 14
+Sheet 14 15
 Title ""
 Date "10 nov 2013"
 Rev ""
@@ -640,11 +640,11 @@ Wire Wire Line
 Wire Wire Line
 	1550 4450 1600 4450
 Wire Wire Line
-	1050 4450 1050 4650
+	1050 4400 1050 4650
 Wire Wire Line
 	1050 4650 1600 4650
 Wire Wire Line
-	1050 2150 1050 2350
+	1050 2100 1050 2350
 Wire Wire Line
 	1050 2350 1600 2350
 Connection ~ 4450 3050
@@ -731,4 +731,36 @@ Text Notes 6000 900  0    60   ~ 0
 Turn Signal
 Text Notes 6000 1100 0    60   ~ 0
 Brake Signal
+$Comp
+L C C?
+U 1 1 527FF632
+P 1050 1900
+F 0 "C?" H 1050 2000 40  0000 L CNN
+F 1 "Cap Nominal" H 650 1800 40  0000 L CNN
+F 2 "~" H 1088 1750 30  0000 C CNN
+F 3 "~" H 1050 1900 60  0000 C CNN
+	1    1050 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 527FF638
+P 1050 4200
+F 0 "C?" H 1050 4300 40  0000 L CNN
+F 1 "Cap Nominal" H 650 4100 40  0000 L CNN
+F 2 "~" H 1088 4050 30  0000 C CNN
+F 3 "~" H 1050 4200 60  0000 C CNN
+	1    1050 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1050 1700 1050 1500
+Wire Wire Line
+	1050 1500 1600 1500
+Connection ~ 1050 2150
+Connection ~ 1050 4450
+Wire Wire Line
+	1050 4000 1050 3800
+Wire Wire Line
+	1050 3800 1600 3800
 $EndSCHEMATC

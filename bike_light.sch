@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 14
+Sheet 1 11
 Title "Bike Light"
-Date "10 nov 2013"
+Date "11 nov 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -63,62 +63,25 @@ F2 "V_IN-" I L 2900 1350 60
 F3 "V_IN+" I L 2900 1200 60 
 $EndSheet
 $Sheet
-S 5500 1100 1100 850 
+S 5500 2250 1100 850 
 U 5224C543
 F0 "micro_proc" 50
 F1 "micro_proc.sch" 50
 $EndSheet
 $Sheet
-S 4350 1100 700  350 
-U 5224C574
-F0 "user_input" 50
-F1 "user_input.sch" 50
-F2 "SW_1" O R 5050 1200 60 
-F3 "SW_2" O R 5050 1350 60 
-$EndSheet
-$Sheet
-S 6850 1100 700  350 
+S 6700 1100 900  350 
 U 5224C595
-F0 "external_conn" 50
-F1 "external_conn.sch" 50
-F2 "USB" I L 6850 1200 60 
-F3 "DEBUG" I L 6850 1350 60 
-$EndSheet
-$Sheet
-S 6850 2500 700  200 
-U 5224C62E
-F0 "rear_brake" 50
-F1 "rear_brake.sch" 50
-F2 "CTRL" I L 6850 2600 60 
-$EndSheet
-$Sheet
-S 6850 2050 700  200 
-U 5224C648
-F0 "rear_signal" 50
-F1 "rear_signal.sch" 50
-F2 "CTRL" I L 6850 2150 60 
-$EndSheet
-$Sheet
-S 6850 2900 700  200 
-U 5224C659
-F0 "front_headlight" 50
-F1 "front_headlight.sch" 50
-F2 "CTRL" I L 6850 3000 60 
-F3 "TEMP" O R 7550 3000 60 
-$EndSheet
-$Sheet
-S 6850 1650 700  200 
-U 5224C605
-F0 "front_signal" 50
-F1 "front_signal.sch" 50
-F2 "CTRL" I L 6850 1750 60 
+F0 "interface_usb" 50
+F1 "interface_usb.sch" 50
+F2 "USB" I L 6700 1200 60 
+F3 "DEBUG" I L 6700 1350 60 
 $EndSheet
 $Sheet
 S 4500 3550 900  350 
 U 527B19B4
 F0 "sensors_temperature" 50
 F1 "sensors_temperature.sch" 50
-F2 "V_Temp" O R 5400 3650 60 
+F2 "V_TEMP" O R 5400 3650 60 
 $EndSheet
 $Sheet
 S 4500 2450 900  350 
@@ -139,14 +102,36 @@ F3 "SDA" B L 4500 3250 60
 F4 "~INT" O R 5400 3100 60 
 $EndSheet
 $Sheet
-S 4500 4100 900  650 
+S 6700 1750 900  650 
 U 527F3E83
-F0 "lights_signal_brake" 50
-F1 "lights_signal_brake.sch" 50
-F2 "SDI" I L 4500 4200 60 
-F3 "CLK" I L 4500 4350 60 
-F4 "LE" I L 4500 4500 60 
-F5 "~OE" I L 4500 4650 60 
-F6 "SDO" O R 5400 4200 60 
+F0 "output_signal_brake" 50
+F1 "output_signal_brake.sch" 50
+F2 "SDI" I L 6700 1850 60 
+F3 "CLK" I L 6700 2000 60 
+F4 "LE" I L 6700 2150 60 
+F5 "~OE" I L 6700 2300 60 
+F6 "SDO" O R 7600 1850 60 
+$EndSheet
+$Sheet
+S 4500 1750 900  500 
+U 527FE989
+F0 "sensors_touch" 50
+F1 "sensors_touch.sch" 50
+F2 "TOUCH_1" O R 5400 1850 60 
+F3 "TOUCH_2" O R 5400 2000 60 
+F4 "TOUCH_3" O R 5400 2150 60 
+$EndSheet
+$Sheet
+S 6700 2600 900  1200
+U 528029D1
+F0 "output_general" 50
+F1 "output_general.sch" 50
+F2 "SPEAKER" I L 6700 2700 60 
+F3 "LED_1" I L 6700 2900 60 
+F4 "LED_2" I L 6700 3050 60 
+F5 "LED_3" I L 6700 3200 60 
+F6 "RED_CTRL" I L 6700 3400 60 
+F7 "BLUE_CTRL" I L 6700 3550 60 
+F8 "GREEN_CTRL" I L 6700 3700 60 
 $EndSheet
 $EndSCHEMATC

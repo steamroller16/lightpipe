@@ -1,7 +1,27 @@
-EESchema-DOCLIB  Version 2.0  Date: 11/7/2013 11:33:02 PM
+EESchema-DOCLIB  Version 2.0  Date: 11/10/2013 9:52:17 PM
+#
+$CMP 74LVC2G06
+D DUAL INVERTERS with OPEN DRAIN OUTPUTS
+F http://www.diodes.com/datasheets/74LVC2G06.pdf
+$ENDCMP
+#
+$CMP AT42QT1011
+D 1-key Capacitive Q-Touch Sensor IC 6-pin
+$ENDCMP
 #
 $CMP BH1620FVC
 D IC AMBIENT LIGHT SENSOR
+$ENDCMP
+#
+$CMP CONN_USB
+D USB Connector
+K USB Connector
+$ENDCMP
+#
+$CMP DMN65D8L
+D Generic N-Channel MOSFET
+K N-Channel MOSFET
+F http://www.diodes.com/datasheets/DMN65D8L.pdf
 $ENDCMP
 #
 $CMP MCP9701T
@@ -10,6 +30,35 @@ $ENDCMP
 #
 $CMP MMA7660FC
 D 3-Axis Accelerometer I2C
+$ENDCMP
+#
+$CMP NC7WZ08
+D IC AND-GATE UHS DUAL 2INPUT US8
+K CMOS And2
+F http://www.fairchildsemi.com/ds/NC/NC7WZ08.pdf
+$ENDCMP
+#
+$CMP RBG_LED
+D RGB Led Common Anode
+K LED
+F http://media.digikey.com/pdf/Data%20Sheets/Lite-On%20PDFs/LTST-C19FD1WT.pdf
+$ENDCMP
+#
+$CMP SPEAKER
+F http://www.murata.com/products/catalog/pdf/p37e.pdf
+$ENDCMP
+#
+$CMP TLC5917IDR
+D 8-Channel LED Driver (Linear - current)
+$ENDCMP
+#
+$CMP TOUCHPAD
+D Capacitive touch pad
+$ENDCMP
+#
+$CMP TPS3700
+D Window Comparator for Over-Undervoltage Detection
+F http://www.ti.com/lit/ds/symlink/tps3700.pdf
 $ENDCMP
 #
 #End Doc Library

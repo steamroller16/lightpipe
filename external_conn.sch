@@ -35,7 +35,7 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 14
+Sheet 5 11
 Title ""
 Date "10 nov 2013"
 Rev ""
@@ -45,4 +45,15 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L CONN_USB U?
+U 1 1 52807223
+P 850 550
+F 0 "U?" H 850 550 60  0000 C CNN
+F 1 "CONN_USB" H 850 -100 60  0000 C CNN
+F 2 "" H 850 550 60  0000 C CNN
+F 3 "" H 850 550 60  0000 C CNN
+	1    850  550 
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
