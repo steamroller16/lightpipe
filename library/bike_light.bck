@@ -1,8 +1,14 @@
-EESchema-DOCLIB  Version 2.0  Date: 11/10/2013 9:52:17 PM
+EESchema-DOCLIB  Version 2.0  Date: 11/11/2013 11:37:00 PM
 #
 $CMP 74LVC2G06
 D DUAL INVERTERS with OPEN DRAIN OUTPUTS
 F http://www.diodes.com/datasheets/74LVC2G06.pdf
+$ENDCMP
+#
+$CMP AON7611
+D 30V Complementary MOSFET
+K 30V Complementary MOSFET
+F http://www.aosmd.com/res/data_sheets/AON7611.pdf
 $ENDCMP
 #
 $CMP AT42QT1011
@@ -22,6 +28,12 @@ $CMP DMN65D8L
 D Generic N-Channel MOSFET
 K N-Channel MOSFET
 F http://www.diodes.com/datasheets/DMN65D8L.pdf
+$ENDCMP
+#
+$CMP MBR1045ULPS
+D 10A Schottky Barrier Rectifier
+K 10A Schottky Barrier Rectifier
+F http://www.mccsemi.com/up_pdf/MBR1045ULPS(TO-277B).pdf
 $ENDCMP
 #
 $CMP MCP9701T

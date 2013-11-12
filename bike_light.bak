@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 11
+Sheet 1 14
 Title "Bike Light"
-Date "11 nov 2013"
+Date "12 nov 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -46,21 +46,20 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 1900 1100 550  500 
+S 2450 1650 1000 350 
 U 5224C457
 F0 "battery_pack" 50
 F1 "battery_pack.sch" 50
-F2 "PACK+" O R 2450 1200 60 
-F3 "PACK-" O R 2450 1350 60 
-F4 "STATUS" O R 2450 1500 60 
+F2 "V_PACK" O R 3450 1750 60 
+F3 "V_PACK_BUFFERED" O R 3450 1900 60 
 $EndSheet
 $Sheet
-S 2900 1100 550  350 
+S 3850 850  550  350 
 U 5224C4FA
 F0 "power_regulation" 50
 F1 "power_regulation.sch" 50
-F2 "V_IN-" I L 2900 1350 60 
-F3 "V_IN+" I L 2900 1200 60 
+F2 "V_IN-" I L 3850 1100 60 
+F3 "V_IN+" I L 3850 950 60 
 $EndSheet
 $Sheet
 S 5500 2250 1100 850 
@@ -77,7 +76,7 @@ F2 "USB" I L 6700 1200 60
 F3 "DEBUG" I L 6700 1350 60 
 $EndSheet
 $Sheet
-S 4500 3550 900  350 
+S 4500 3550 900  200 
 U 527B19B4
 F0 "sensors_temperature" 50
 F1 "sensors_temperature.sch" 50
