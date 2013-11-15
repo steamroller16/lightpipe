@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 14
 Title ""
-Date "12 nov 2013"
+Date "15 nov 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -194,13 +194,13 @@ F 3 "" H 4750 1050 60  0000 C CNN
 $EndComp
 $Comp
 L 74LVC2G06 U?
-U 1 1 5281D386
+U 2 1 5281D386
 P 6000 3200
 F 0 "U?" H 6200 3400 60  0000 C CNN
 F 1 "74LVC2G06" H 6350 3050 60  0000 C CNN
 F 2 "" H 6000 3100 60  0000 C CNN
 F 3 "" H 6000 3100 60  0000 C CNN
-	1    6000 3200
+	2    6000 3200
 	1    0    0    -1  
 $EndComp
 $Comp

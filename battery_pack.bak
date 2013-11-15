@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 14
 Title ""
-Date "12 nov 2013"
+Date "15 nov 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -261,4 +261,8 @@ F 3 "" H 3250 2000 60  0000 C CNN
 $EndComp
 Wire Wire Line
 	3250 1950 3250 2000
+Text Notes 650  700  0    60   ~ 0
+Should we include a fuse?
+Text Notes 650  1050 0    60   ~ 0
+What should the current sense resistor be?
 $EndSCHEMATC
