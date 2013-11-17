@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 14
 Title "Bike Light"
-Date "15 nov 2013"
+Date "17 nov 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -46,20 +46,20 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 2450 1650 1000 350 
+S 1250 1650 1000 350 
 U 5224C457
 F0 "battery_pack" 50
 F1 "battery_pack.sch" 50
-F2 "V_PACK" O R 3450 1750 60 
-F3 "V_PACK_BUFFERED" O R 3450 1900 60 
+F2 "V_PACK" O R 2250 1750 60 
+F3 "V_PACK_BUFFERED" O R 2250 1900 60 
 $EndSheet
 $Sheet
-S 3850 850  550  350 
+S 1200 2400 550  350 
 U 5224C4FA
 F0 "power_regulation" 50
 F1 "power_regulation.sch" 50
-F2 "V_IN-" I L 3850 1100 60 
-F3 "V_IN+" I L 3850 950 60 
+F2 "V_IN-" I L 1200 2650 60 
+F3 "V_IN+" I L 1200 2500 60 
 $EndSheet
 $Sheet
 S 5500 1750 1100 2350
@@ -68,12 +68,12 @@ F0 "micro_proc" 50
 F1 "micro_proc.sch" 50
 $EndSheet
 $Sheet
-S 6700 750  900  350 
+S 1250 1100 900  350 
 U 5224C595
 F0 "interface_usb" 50
 F1 "interface_usb.sch" 50
-F2 "USB" I L 6700 850 60 
-F3 "DEBUG" I L 6700 1000 60 
+F2 "USB" I L 1250 1200 60 
+F3 "DEBUG" I L 1250 1350 60 
 $EndSheet
 $Sheet
 S 4500 3750 900  200 
@@ -197,4 +197,28 @@ Wire Wire Line
 	6700 3550 6600 3550
 Wire Wire Line
 	6700 3700 6600 3700
+Text Notes 3950 1900 0    60   ~ 0
+<Done>
+Text Notes 3950 2700 0    60   ~ 0
+<Done>
+Text Notes 3950 3900 0    60   ~ 0
+<Done>
+Text Notes 7850 3500 0    60   ~ 0
+<Done>
+Text Notes 7900 2100 0    60   ~ 0
+<Revise part for LED's>
+Text Notes 5700 2400 0    60   ~ 0
+<Choose one!>
+Text Notes 3950 3400 0    60   ~ 0
+<Done>
+Text Notes 2350 1750 0    60   ~ 0
+<Sense Resistor??>
+Text Notes 2350 1850 0    60   ~ 0
+<Fuse??>
+Text Notes 2350 1950 0    60   ~ 0
+<Current measuring for \nbattery level detection??>
+Text Notes 2250 1250 0    60   ~ 0
+<What the crap is this...>
+Text Notes 600  2900 0    60   ~ 0
+<Make sure chip works at low LiFePO4 voltages>
 $EndSCHEMATC
