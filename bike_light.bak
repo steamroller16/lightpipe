@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 14
 Title "Bike Light"
-Date "17 nov 2013"
+Date "18 nov 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -211,4 +211,14 @@ Text Notes 5700 2400 0    60   ~ 0
 <Choose one!>
 Text Notes 3950 3400 0    60   ~ 0
 <Done>
+Text Notes 2350 1750 0    60   ~ 0
+<Sense Resistor??>
+Text Notes 2350 1850 0    60   ~ 0
+<Fuse??>
+Text Notes 2350 1950 0    60   ~ 0
+<Current measuring for \nbattery level detection??>
+Text Notes 2250 1250 0    60   ~ 0
+<What the crap is this...>
+Text Notes 600  2900 0    60   ~ 0
+<Make sure chip works at low LiFePO4 voltages>
 $EndSCHEMATC
