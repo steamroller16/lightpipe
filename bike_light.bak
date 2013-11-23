@@ -54,12 +54,10 @@ F2 "V_PACK" O R 2250 1750 60
 F3 "V_PACK_BUFFERED" O R 2250 1900 60 
 $EndSheet
 $Sheet
-S 1200 2400 550  350 
+S 1200 2400 950  500 
 U 5224C4FA
 F0 "power_regulation" 50
 F1 "power_regulation.sch" 50
-F2 "V_IN-" I L 1200 2650 60 
-F3 "V_IN+" I L 1200 2500 60 
 $EndSheet
 $Sheet
 S 5500 1750 1100 2350
@@ -206,7 +204,7 @@ Text Notes 3950 3900 0    60   ~ 0
 Text Notes 7850 3500 0    60   ~ 0
 <Done>
 Text Notes 7900 2100 0    60   ~ 0
-<Revise part for LED's>
+<Done>
 Text Notes 5700 2400 0    60   ~ 0
 <Choose one!>
 Text Notes 3950 3400 0    60   ~ 0

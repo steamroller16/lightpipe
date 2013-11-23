@@ -89,4 +89,6 @@ F 3 "~" H 5350 1600 60  0000 C CNN
 	1    5350 1600
 	1    0    0    -1  
 $EndComp
+Text HLabel 2300 3600 0    60   Input ~ 0
+V_PACK
 $EndSCHEMATC
