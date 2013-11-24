@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 11/18/2013 2:09:21 AM
+EESchema-DOCLIB  Version 2.0  Date: 11/24/2013 1:43:20 PM
 #
 $CMP 74LVC2G06
 D DUAL INVERTERS with OPEN DRAIN OUTPUTS
@@ -24,10 +24,22 @@ D USB Connector
 K USB Connector
 $ENDCMP
 #
+$CMP CP2110
+D IC HID USB-TO-UART BRIDGE 24QFN
+K IC HID USB-TO-UART BRIDGE 24QFN
+F http://www.silabs.com/Support%20Documents/TechnicalDocs/cp2110.pdf
+$ENDCMP
+#
 $CMP DMN65D8L
 D Generic N-Channel MOSFET
 K N-Channel MOSFET
 F http://www.diodes.com/datasheets/DMN65D8L.pdf
+$ENDCMP
+#
+$CMP ESDR0502N
+D TVS ARRAY LOW CAP 5.5V 6UDFN
+K TVS ARRAY LOW CAP 5.5V 6UDFN
+F http://www.onsemi.com/pub_link/Collateral/ESDR0502N-D.PDF
 $ENDCMP
 #
 $CMP LR-A67F
@@ -43,9 +55,9 @@ F http://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0CC4QFjAA&u
 $ENDCMP
 #
 $CMP LY-A67F
-D LED SIDELED RED 625NM CLR RA SMD
+D LED SIDELED YELLOW 587NM CLR SMD
 K Enhanced Thinfilm LED
-F http://catalog.osram-os.com/jsp/download.jsp?rootPath=/media/&name=LA_LO_LR_LS_LY_A67F_Pb_free.pdf&docPath=Graphics/00041620_0.pdf&url=/media//_en/Graphics/00041620_0.pdf
+F http://catalog.osram-os.com/media/_en/Graphics/00041635_0.pdf
 $ENDCMP
 #
 $CMP LY-E63F

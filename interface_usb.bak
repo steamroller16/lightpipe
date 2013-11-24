@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 8 14
 Title ""
-Date "18 nov 2013"
+Date "24 nov 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -54,6 +54,17 @@ F 1 "CONN_USB" H 850 -100 60  0000 C CNN
 F 2 "" H 850 550 60  0000 C CNN
 F 3 "" H 850 550 60  0000 C CNN
 	1    850  550 
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP2110 U?
+U 1 1 5291A63B
+P 2450 600
+F 0 "U?" H 2450 600 60  0000 C CNN
+F 1 "CP2110" H 2450 -1100 60  0000 C CNN
+F 2 "" H 2450 600 60  0000 C CNN
+F 3 "" H 2450 600 60  0000 C CNN
+	1    2450 600 
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
