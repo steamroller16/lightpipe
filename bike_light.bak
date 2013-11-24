@@ -66,12 +66,17 @@ F0 "micro_proc" 50
 F1 "micro_proc.sch" 50
 $EndSheet
 $Sheet
-S 1250 1100 900  350 
+S 1250 3250 900  1250
 U 5224C595
 F0 "interface_usb" 50
 F1 "interface_usb.sch" 50
-F2 "USB" I L 1250 1200 60 
-F3 "DEBUG" I L 1250 1350 60 
+F2 "UART_RX" I R 2150 3350 60 
+F3 "UART_TX" O R 2150 3500 60 
+F4 "USB_SUSPEND" O R 2150 3700 60 
+F5 "USB_5V" U R 2150 3950 60 
+F6 "USB_D+" B R 2150 4100 60 
+F7 "USB_D-" B R 2150 4250 60 
+F8 "USB_ID" B R 2150 4400 60 
 $EndSheet
 $Sheet
 S 4500 3750 900  200 
@@ -215,8 +220,8 @@ Text Notes 2350 1850 0    60   ~ 0
 <Fuse??>
 Text Notes 2350 1950 0    60   ~ 0
 <Current measuring for \nbattery level detection??>
-Text Notes 2250 1250 0    60   ~ 0
-<What the crap is this...>
+Text Notes 2300 3850 0    60   ~ 0
+<Done>
 Text Notes 600  2900 0    60   ~ 0
 <Make sure chip works at low LiFePO4 voltages>
 $EndSCHEMATC

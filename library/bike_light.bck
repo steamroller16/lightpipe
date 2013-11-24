@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 11/24/2013 2:28:49 PM
+EESchema-DOCLIB  Version 2.0  Date: 11/24/2013 2:29:25 PM
 #
 $CMP 74LVC2G06
 D DUAL INVERTERS with OPEN DRAIN OUTPUTS
@@ -113,6 +113,8 @@ $ENDCMP
 #
 $CMP TLC5917IDR
 D 8-Channel LED Driver (Linear - current)
+K 8-Channel LED Driver (Linear - current)
+F http://www.ti.com/lit/ds/symlink/tlc5917.pdf
 $ENDCMP
 #
 $CMP TOUCHPAD
