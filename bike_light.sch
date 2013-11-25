@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 14
+Sheet 1 15
 Title "Bike Light"
-Date "24 nov 2013"
+Date "25 nov 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -224,4 +224,10 @@ Text Notes 2300 3850 0    60   ~ 0
 <Done>
 Text Notes 600  2900 0    60   ~ 0
 <Make sure chip works at low LiFePO4 voltages>
+$Sheet
+S 1250 700  900  750 
+U 52929F4D
+F0 "battery_charger" 50
+F1 "battery_charger.sch" 50
+$EndSheet
 $EndSCHEMATC
