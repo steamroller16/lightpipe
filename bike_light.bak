@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 14
+Sheet 1 15
 Title "Bike Light"
-Date "24 nov 2013"
+Date "30 nov 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -54,10 +54,13 @@ F2 "V_PACK" O R 2250 1750 60
 F3 "V_PACK_BUFFERED" O R 2250 1900 60 
 $EndSheet
 $Sheet
-S 1200 2400 950  500 
+S 1200 2400 1000 950 
 U 5224C4FA
 F0 "power_regulation" 50
 F1 "power_regulation.sch" 50
+F2 "V_PACK+" I R 2200 2550 60 
+F3 "V_PACK-" I R 2200 2700 60 
+F4 "3.3V" O R 2200 2850 60 
 $EndSheet
 $Sheet
 S 5500 1750 1100 2350
@@ -66,17 +69,17 @@ F0 "micro_proc" 50
 F1 "micro_proc.sch" 50
 $EndSheet
 $Sheet
-S 1250 3250 900  1250
+S 1250 4250 900  1250
 U 5224C595
 F0 "interface_usb" 50
 F1 "interface_usb.sch" 50
-F2 "UART_RX" I R 2150 3350 60 
-F3 "UART_TX" O R 2150 3500 60 
-F4 "USB_SUSPEND" O R 2150 3700 60 
-F5 "USB_5V" U R 2150 3950 60 
-F6 "USB_D+" B R 2150 4100 60 
-F7 "USB_D-" B R 2150 4250 60 
-F8 "USB_ID" B R 2150 4400 60 
+F2 "UART_RX" I R 2150 4350 60 
+F3 "UART_TX" O R 2150 4500 60 
+F4 "USB_SUSPEND" O R 2150 4700 60 
+F5 "USB_5V" U R 2150 4950 60 
+F6 "USB_D+" B R 2150 5100 60 
+F7 "USB_D-" B R 2150 5250 60 
+F8 "USB_ID" B R 2150 5400 60 
 $EndSheet
 $Sheet
 S 4500 3750 900  200 
@@ -220,8 +223,14 @@ Text Notes 2350 1850 0    60   ~ 0
 <Fuse??>
 Text Notes 2350 1950 0    60   ~ 0
 <Current measuring for \nbattery level detection??>
-Text Notes 2300 3850 0    60   ~ 0
+Text Notes 2300 4850 0    60   ~ 0
 <Done>
-Text Notes 600  2900 0    60   ~ 0
+Text Notes 650  3550 0    60   ~ 0
 <Make sure chip works at low LiFePO4 voltages>
+$Sheet
+S 1250 700  900  750 
+U 52929F4D
+F0 "battery_charger" 50
+F1 "battery_charger.sch" 50
+$EndSheet
 $EndSCHEMATC
