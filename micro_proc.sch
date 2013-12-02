@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 15
+Sheet 7 15
 Title ""
-Date "30 nov 2013"
+Date "2 dec 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -45,4 +45,15 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L MSP430G2203IPW28 U?
+U 1 1 529C2A65
+P 6000 1850
+F 0 "U?" H 6000 1900 60  0000 C CNN
+F 1 "MSP430G2203IPW28" H 6000 50  60  0000 C CNN
+F 2 "~" H 5950 1850 60  0000 C CNN
+F 3 "~" H 5950 1850 60  0000 C CNN
+	1    6000 1850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

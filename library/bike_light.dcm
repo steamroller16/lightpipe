@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 11/30/2013 4:02:03 PM
+EESchema-DOCLIB  Version 2.0  Date: 12/2/2013 12:26:06 AM
 #
 $CMP 74LVC2G06
 D DUAL INVERTERS with OPEN DRAIN OUTPUTS
@@ -99,6 +99,12 @@ $CMP MMA7660FC
 D 3-Axis Accelerometer I2C
 K 3-Axis Accelerometer I2C
 F http://cache.freescale.com/files/sensors/doc/data_sheet/MMA7660FC.pdf
+$ENDCMP
+#
+$CMP MSP430G2203IPW28
+D TI MSP430 MCU 16BIT 2KB FLASH 28TSSOP
+K TI MSP430 MCU 16BIT 2KB FLASH 28TSSOP
+F http://www.ti.com/lit/ds/symlink/msp430g2203.pdf
 $ENDCMP
 #
 $CMP NC7WZ08
