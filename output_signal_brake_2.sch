@@ -1,0 +1,728 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:bike_light
+LIBS:bike_light-cache
+EELAYER 27 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 16 16
+Title ""
+Date "5 dec 2013"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Notes 5600 6000 0    60   ~ 0
+Rear Turn Signal
+Text Notes 5850 6200 0    60   ~ 0
+Rear Brake
+Text Notes 5700 6450 0    60   ~ 0
+Front Turn Signal
+Text Notes 5900 6800 0    60   ~ 0
+Side Turn Signal
+Text Notes 5950 7000 0    60   ~ 0
+Side Brake
+NoConn ~ 5700 5750
+NoConn ~ 5800 5750
+NoConn ~ 5900 5750
+NoConn ~ 6000 5750
+NoConn ~ 5700 5850
+NoConn ~ 5800 5850
+NoConn ~ 5900 5850
+NoConn ~ 6000 5850
+NoConn ~ 4850 7400
+NoConn ~ 4950 7300
+NoConn ~ 4950 7400
+NoConn ~ 5050 7400
+NoConn ~ 5150 7400
+NoConn ~ 5050 7300
+Text Notes 5250 7400 0    60   ~ 0
+Turn Signal
+Text Notes 6100 5850 0    60   ~ 0
+Brake Signal
+Text Notes 6850 6850 0    60   ~ 0
+2.65V max ea.
+Text Notes 6850 6950 0    60   ~ 0
+10.6 V rail for string
+$Comp
+L LS-E63F D?
+U 1 1 52A0BB7B
+P 6100 800
+F 0 "D?" H 6100 900 50  0000 C CNN
+F 1 "LS-E63F" H 6100 650 50  0001 C CNN
+F 2 "~" H 6100 800 60  0000 C CNN
+F 3 "~" H 6100 800 60  0000 C CNN
+	1    6100 800 
+	0    1    1    0   
+$EndComp
+$Comp
+L LS-E63F D?
+U 1 1 52A0BB81
+P 6400 800
+F 0 "D?" H 6400 900 50  0000 C CNN
+F 1 "LS-E63F" H 6400 650 50  0001 C CNN
+F 2 "~" H 6400 800 60  0000 C CNN
+F 3 "~" H 6400 800 60  0000 C CNN
+	1    6400 800 
+	0    1    1    0   
+$EndComp
+$Comp
+L LS-E63F D?
+U 1 1 52A0BB87
+P 7000 800
+F 0 "D?" H 7000 900 50  0000 C CNN
+F 1 "LS-E63F" H 7000 650 50  0001 C CNN
+F 2 "~" H 7000 800 60  0000 C CNN
+F 3 "~" H 7000 800 60  0000 C CNN
+	1    7000 800 
+	0    1    1    0   
+$EndComp
+$Comp
+L LS-E63F D?
+U 1 1 52A0BB8D
+P 6550 1150
+F 0 "D?" H 6550 1250 50  0000 C CNN
+F 1 "LS-E63F" H 6550 1000 50  0001 C CNN
+F 2 "~" H 6550 1150 60  0000 C CNN
+F 3 "~" H 6550 1150 60  0000 C CNN
+	1    6550 1150
+	0    1    1    0   
+$EndComp
+$Comp
+L LS-E63F D?
+U 1 1 52A0BB93
+P 5950 1150
+F 0 "D?" H 5950 1250 50  0000 C CNN
+F 1 "LS-E63F" H 5950 1000 50  0001 C CNN
+F 2 "~" H 5950 1150 60  0000 C CNN
+F 3 "~" H 5950 1150 60  0000 C CNN
+	1    5950 1150
+	0    1    1    0   
+$EndComp
+$Comp
+L LS-E63F D?
+U 1 1 52A0BB99
+P 6700 800
+F 0 "D?" H 6700 900 50  0000 C CNN
+F 1 "LS-E63F" H 6700 650 50  0001 C CNN
+F 2 "~" H 6700 800 60  0000 C CNN
+F 3 "~" H 6700 800 60  0000 C CNN
+	1    6700 800 
+	0    1    1    0   
+$EndComp
+$Comp
+L LS-E63F D?
+U 1 1 52A0BB9F
+P 6250 1150
+F 0 "D?" H 6250 1250 50  0000 C CNN
+F 1 "LS-E63F" H 6250 1000 50  0001 C CNN
+F 2 "~" H 6250 1150 60  0000 C CNN
+F 3 "~" H 6250 1150 60  0000 C CNN
+	1    6250 1150
+	0    1    1    0   
+$EndComp
+$Comp
+L LS-E63F D?
+U 1 1 52A0BBA5
+P 6850 1150
+F 0 "D?" H 6850 1250 50  0000 C CNN
+F 1 "LS-E63F" H 6850 1000 50  0001 C CNN
+F 2 "~" H 6850 1150 60  0000 C CNN
+F 3 "~" H 6850 1150 60  0000 C CNN
+	1    6850 1150
+	0    1    1    0   
+$EndComp
+Text Notes 5450 5700 0    60   ~ 0
+2.65V max ea.
+Text Notes 5450 5800 0    60   ~ 0
+10.6 V rail for string
+$Comp
+L LR-A67F D?
+U 1 1 52A0C2C3
+P 4350 5950
+F 0 "D?" H 4350 6050 50  0000 C CNN
+F 1 "LR-A67F" H 4350 5750 50  0001 C CNN
+F 2 "~" H 4350 5950 60  0000 C CNN
+F 3 "~" H 4350 5950 60  0000 C CNN
+	1    4350 5950
+	0    1    1    0   
+$EndComp
+Wire Notes Line
+	5450 7100 6200 7100
+Wire Notes Line
+	6200 7100 6200 7150
+Wire Notes Line
+	6500 7150 6500 7100
+Wire Notes Line
+	6500 7100 6800 7100
+Wire Notes Line
+	6800 7100 6800 7150
+Wire Notes Line
+	6900 6450 6900 6400
+Wire Notes Line
+	6900 6400 6150 6400
+Wire Notes Line
+	7200 6450 7200 6400
+Wire Notes Line
+	7200 6400 7750 6400
+Wire Notes Line
+	7750 6400 7750 6450
+Wire Notes Line
+	8050 6450 8050 6400
+Wire Notes Line
+	8050 6400 8250 6400
+Wire Notes Line
+	4950 7300 4850 7400
+Wire Notes Line
+	4850 7400 5150 7400
+Wire Notes Line
+	5150 7400 5050 7300
+Wire Notes Line
+	5700 5750 6000 5750
+Wire Notes Line
+	6000 5750 6000 5850
+Wire Notes Line
+	6000 5850 5700 5850
+Wire Notes Line
+	5700 5850 5700 5750
+Wire Wire Line
+	4350 5650 4350 5750
+$Comp
+L C C?
+U 1 1 52A0C655
+P 5300 4900
+F 0 "C?" H 5300 5000 40  0000 L CNN
+F 1 "Cap Nominal" H 4900 4800 40  0000 L CNN
+F 2 "~" H 5338 4750 30  0000 C CNN
+F 3 "~" H 5300 4900 60  0000 C CNN
+	1    5300 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L DGND #PWR?
+U 1 1 52A0C65B
+P 5200 5350
+F 0 "#PWR?" H 5200 5350 40  0001 C CNN
+F 1 "DGND" H 5200 5280 40  0000 C CNN
+F 2 "" H 5200 5350 60  0000 C CNN
+F 3 "" H 5200 5350 60  0000 C CNN
+	1    5200 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR?
+U 1 1 52A0C661
+P 5250 4500
+F 0 "#PWR?" H 5250 4460 30  0001 C CNN
+F 1 "+3.3V" H 5250 4610 30  0000 C CNN
+F 2 "" H 5250 4500 60  0000 C CNN
+F 3 "" H 5250 4500 60  0000 C CNN
+	1    5250 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 950  5950 600 
+Wire Wire Line
+	6850 600  6850 950 
+Wire Wire Line
+	5700 600  7000 600 
+Wire Wire Line
+	6550 600  6550 950 
+Wire Wire Line
+	6250 600  6250 950 
+Connection ~ 6100 600 
+Connection ~ 6400 600 
+Connection ~ 6250 600 
+Connection ~ 6700 600 
+Connection ~ 6550 600 
+Connection ~ 6850 600 
+Wire Wire Line
+	7000 1000 7000 1450
+Wire Wire Line
+	6700 1000 6700 1450
+Wire Wire Line
+	6400 1000 6400 1450
+Wire Wire Line
+	6100 1000 6100 1450
+Text HLabel 5700 600  0    60   Input ~ 0
+V_BATT
+Connection ~ 5950 600 
+$Comp
+L R R?
+U 1 1 52A0CCEF
+P 3700 3450
+F 0 "R?" V 3780 3450 40  0000 C CNN
+F 1 "200" V 3707 3451 40  0000 C CNN
+F 2 "~" V 3630 3450 30  0000 C CNN
+F 3 "~" H 3700 3450 30  0000 C CNN
+	1    3700 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L LY-A67F D?
+U 1 1 52A0CCF5
+P 3150 3500
+F 0 "D?" H 3150 3600 50  0000 C CNN
+F 1 "LY-A67F" H 3150 3300 50  0001 C CNN
+F 2 "~" H 3150 3500 60  0000 C CNN
+F 3 "~" H 3150 3500 60  0000 C CNN
+	1    3150 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L LY-A67F D?
+U 1 1 52A0CCFB
+P 3450 3500
+F 0 "D?" H 3450 3600 50  0000 C CNN
+F 1 "LY-A67F" H 3450 3300 50  0001 C CNN
+F 2 "~" H 3450 3500 60  0000 C CNN
+F 3 "~" H 3450 3500 60  0000 C CNN
+	1    3450 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L LY-E63F D?
+U 1 1 52A0CD01
+P 2950 3150
+F 0 "D?" H 2950 3250 50  0000 C CNN
+F 1 "LY-E63F" H 2950 2950 50  0001 C CNN
+F 2 "~" H 2950 3150 60  0000 C CNN
+F 3 "~" H 2950 3150 60  0000 C CNN
+	1    2950 3150
+	0    1    1    0   
+$EndComp
+$Comp
+L LY-E63F D?
+U 1 1 52A0CD07
+P 2800 3500
+F 0 "D?" H 2800 3600 50  0000 C CNN
+F 1 "LY-E63F" H 2800 3300 50  0001 C CNN
+F 2 "~" H 2800 3500 60  0000 C CNN
+F 3 "~" H 2800 3500 60  0000 C CNN
+	1    2800 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L LY-E63F D?
+U 1 1 52A0CD0D
+P 2650 3150
+F 0 "D?" H 2650 3250 50  0000 C CNN
+F 1 "LY-E63F" H 2650 2950 50  0001 C CNN
+F 2 "~" H 2650 3150 60  0000 C CNN
+F 3 "~" H 2650 3150 60  0000 C CNN
+	1    2650 3150
+	0    1    1    0   
+$EndComp
+$Comp
+L LY-E63F D?
+U 1 1 52A0CD13
+P 2500 3500
+F 0 "D?" H 2500 3600 50  0000 C CNN
+F 1 "LY-E63F" H 2500 3300 50  0001 C CNN
+F 2 "~" H 2500 3500 60  0000 C CNN
+F 3 "~" H 2500 3500 60  0000 C CNN
+	1    2500 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L LY-E63F D?
+U 1 1 52A0CD19
+P 2350 3150
+F 0 "D?" H 2350 3250 50  0000 C CNN
+F 1 "LY-E63F" H 2350 2950 50  0001 C CNN
+F 2 "~" H 2350 3150 60  0000 C CNN
+F 3 "~" H 2350 3150 60  0000 C CNN
+	1    2350 3150
+	0    1    1    0   
+$EndComp
+$Comp
+L LY-E63F D?
+U 1 1 52A0CD1F
+P 2200 3500
+F 0 "D?" H 2200 3600 50  0000 C CNN
+F 1 "LY-E63F" H 2200 3300 50  0001 C CNN
+F 2 "~" H 2200 3500 60  0000 C CNN
+F 3 "~" H 2200 3500 60  0000 C CNN
+	1    2200 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 52A0CD25
+P 4250 3450
+F 0 "R?" V 4330 3450 40  0000 C CNN
+F 1 "200" V 4257 3451 40  0000 C CNN
+F 2 "~" V 4180 3450 30  0000 C CNN
+F 3 "~" H 4250 3450 30  0000 C CNN
+	1    4250 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L LR-A67F D?
+U 1 1 52A0CD2B
+P 4000 3500
+F 0 "D?" H 4000 3600 50  0000 C CNN
+F 1 "LR-A67F" H 4000 3300 50  0001 C CNN
+F 2 "~" H 4000 3500 60  0000 C CNN
+F 3 "~" H 4000 3500 60  0000 C CNN
+	1    4000 3500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2200 3300 2200 2950
+Wire Wire Line
+	2500 2950 2500 3300
+Wire Wire Line
+	2800 2950 2800 3300
+Wire Wire Line
+	3150 3200 3700 3200
+Wire Wire Line
+	3150 2950 3150 3300
+Wire Wire Line
+	3450 3300 3450 3200
+Connection ~ 3450 3200
+Wire Wire Line
+	3100 3700 3700 3700
+Connection ~ 3450 3700
+Connection ~ 3150 3200
+Wire Wire Line
+	2350 3350 2350 3800
+Wire Wire Line
+	2650 3350 2650 3800
+Wire Wire Line
+	2950 3350 2950 3800
+Wire Wire Line
+	4000 2950 4000 3300
+Wire Wire Line
+	4000 3200 4500 3200
+Wire Wire Line
+	4000 3700 4500 3700
+Connection ~ 4000 3200
+Text HLabel 1950 2950 0    60   Input ~ 0
+V_BATT
+Wire Wire Line
+	1950 2950 4000 2950
+Connection ~ 2200 2950
+Connection ~ 2350 2950
+Connection ~ 2500 2950
+Connection ~ 2650 2950
+Connection ~ 2800 2950
+Connection ~ 2950 2950
+Connection ~ 3150 2950
+$Comp
+L R R?
+U 1 1 52A0CD4B
+P 4500 3450
+F 0 "R?" V 4580 3450 40  0000 C CNN
+F 1 "200" V 4507 3451 40  0000 C CNN
+F 2 "~" V 4430 3450 30  0000 C CNN
+F 3 "~" H 4500 3450 30  0000 C CNN
+	1    4500 3450
+	1    0    0    -1  
+$EndComp
+Connection ~ 4250 3200
+Connection ~ 4250 3700
+$Comp
+L TLC59108IPWR U?
+U 1 1 52A0D841
+P 5900 1700
+F 0 "U?" H 5700 1700 60  0000 C CNN
+F 1 "TLC59108IPWR" H 6250 800 60  0000 C CNN
+F 2 "" H 5900 1700 60  0000 C CNN
+F 3 "" H 5900 1700 60  0000 C CNN
+	1    5900 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L TLC59108IPWR U?
+U 1 1 52A0D84E
+P 2150 4050
+F 0 "U?" H 1950 4050 60  0000 C CNN
+F 1 "TLC59108IPWR" H 2500 3150 60  0000 C CNN
+F 2 "" H 2150 4050 60  0000 C CNN
+F 3 "" H 2150 4050 60  0000 C CNN
+	1    2150 4050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5950 1350 5950 1450
+Wire Wire Line
+	6250 1350 6250 1450
+Wire Wire Line
+	6550 1350 6550 1450
+Wire Wire Line
+	6850 1350 6850 1450
+Wire Wire Line
+	2200 3800 2200 3700
+Wire Wire Line
+	2500 3700 2500 3800
+Wire Wire Line
+	2800 3700 2800 3800
+Wire Wire Line
+	3100 3800 3100 3700
+Connection ~ 3150 3700
+Wire Wire Line
+	3250 3800 3250 3750
+Wire Wire Line
+	3250 3750 4000 3750
+Wire Wire Line
+	4000 3750 4000 3700
+$Comp
+L R R?
+U 1 1 52A0DF51
+P 3700 1100
+F 0 "R?" V 3780 1100 40  0000 C CNN
+F 1 "200" V 3707 1101 40  0000 C CNN
+F 2 "~" V 3630 1100 30  0000 C CNN
+F 3 "~" H 3700 1100 30  0000 C CNN
+	1    3700 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L LY-A67F D?
+U 1 1 52A0DF57
+P 3150 1150
+F 0 "D?" H 3150 1250 50  0000 C CNN
+F 1 "LY-A67F" H 3150 950 50  0001 C CNN
+F 2 "~" H 3150 1150 60  0000 C CNN
+F 3 "~" H 3150 1150 60  0000 C CNN
+	1    3150 1150
+	0    1    1    0   
+$EndComp
+$Comp
+L LY-A67F D?
+U 1 1 52A0DF5D
+P 3450 1150
+F 0 "D?" H 3450 1250 50  0000 C CNN
+F 1 "LY-A67F" H 3450 950 50  0001 C CNN
+F 2 "~" H 3450 1150 60  0000 C CNN
+F 3 "~" H 3450 1150 60  0000 C CNN
+	1    3450 1150
+	0    1    1    0   
+$EndComp
+$Comp
+L LY-E63F D?
+U 1 1 52A0DF63
+P 2950 800
+F 0 "D?" H 2950 900 50  0000 C CNN
+F 1 "LY-E63F" H 2950 600 50  0001 C CNN
+F 2 "~" H 2950 800 60  0000 C CNN
+F 3 "~" H 2950 800 60  0000 C CNN
+	1    2950 800 
+	0    1    1    0   
+$EndComp
+$Comp
+L LY-E63F D?
+U 1 1 52A0DF69
+P 2800 1150
+F 0 "D?" H 2800 1250 50  0000 C CNN
+F 1 "LY-E63F" H 2800 950 50  0001 C CNN
+F 2 "~" H 2800 1150 60  0000 C CNN
+F 3 "~" H 2800 1150 60  0000 C CNN
+	1    2800 1150
+	0    1    1    0   
+$EndComp
+$Comp
+L LY-E63F D?
+U 1 1 52A0DF6F
+P 2650 800
+F 0 "D?" H 2650 900 50  0000 C CNN
+F 1 "LY-E63F" H 2650 600 50  0001 C CNN
+F 2 "~" H 2650 800 60  0000 C CNN
+F 3 "~" H 2650 800 60  0000 C CNN
+	1    2650 800 
+	0    1    1    0   
+$EndComp
+$Comp
+L LY-E63F D?
+U 1 1 52A0DF75
+P 2500 1150
+F 0 "D?" H 2500 1250 50  0000 C CNN
+F 1 "LY-E63F" H 2500 950 50  0001 C CNN
+F 2 "~" H 2500 1150 60  0000 C CNN
+F 3 "~" H 2500 1150 60  0000 C CNN
+	1    2500 1150
+	0    1    1    0   
+$EndComp
+$Comp
+L LY-E63F D?
+U 1 1 52A0DF7B
+P 2350 800
+F 0 "D?" H 2350 900 50  0000 C CNN
+F 1 "LY-E63F" H 2350 600 50  0001 C CNN
+F 2 "~" H 2350 800 60  0000 C CNN
+F 3 "~" H 2350 800 60  0000 C CNN
+	1    2350 800 
+	0    1    1    0   
+$EndComp
+$Comp
+L LY-E63F D?
+U 1 1 52A0DF81
+P 2200 1150
+F 0 "D?" H 2200 1250 50  0000 C CNN
+F 1 "LY-E63F" H 2200 950 50  0001 C CNN
+F 2 "~" H 2200 1150 60  0000 C CNN
+F 3 "~" H 2200 1150 60  0000 C CNN
+	1    2200 1150
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 52A0DF87
+P 4250 1100
+F 0 "R?" V 4330 1100 40  0000 C CNN
+F 1 "200" V 4257 1101 40  0000 C CNN
+F 2 "~" V 4180 1100 30  0000 C CNN
+F 3 "~" H 4250 1100 30  0000 C CNN
+	1    4250 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L LR-A67F D?
+U 1 1 52A0DF8D
+P 4000 1150
+F 0 "D?" H 4000 1250 50  0000 C CNN
+F 1 "LR-A67F" H 4000 950 50  0001 C CNN
+F 2 "~" H 4000 1150 60  0000 C CNN
+F 3 "~" H 4000 1150 60  0000 C CNN
+	1    4000 1150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2200 950  2200 600 
+Wire Wire Line
+	2500 600  2500 950 
+Wire Wire Line
+	2800 600  2800 950 
+Wire Wire Line
+	3150 850  3700 850 
+Wire Wire Line
+	3150 600  3150 950 
+Wire Wire Line
+	3450 950  3450 850 
+Connection ~ 3450 850 
+Wire Wire Line
+	3100 1350 3700 1350
+Connection ~ 3450 1350
+Connection ~ 3150 850 
+Wire Wire Line
+	2350 1000 2350 1450
+Wire Wire Line
+	2650 1000 2650 1450
+Wire Wire Line
+	2950 1000 2950 1450
+Wire Wire Line
+	4000 600  4000 950 
+Wire Wire Line
+	4000 850  4500 850 
+Wire Wire Line
+	4000 1350 4500 1350
+Connection ~ 4000 850 
+Text HLabel 1950 600  0    60   Input ~ 0
+V_BATT
+Wire Wire Line
+	1950 600  4000 600 
+Connection ~ 2200 600 
+Connection ~ 2350 600 
+Connection ~ 2500 600 
+Connection ~ 2650 600 
+Connection ~ 2800 600 
+Connection ~ 2950 600 
+Connection ~ 3150 600 
+$Comp
+L R R?
+U 1 1 52A0DFAD
+P 4500 1100
+F 0 "R?" V 4580 1100 40  0000 C CNN
+F 1 "200" V 4507 1101 40  0000 C CNN
+F 2 "~" V 4430 1100 30  0000 C CNN
+F 3 "~" H 4500 1100 30  0000 C CNN
+	1    4500 1100
+	1    0    0    -1  
+$EndComp
+Connection ~ 4250 850 
+Connection ~ 4250 1350
+$Comp
+L TLC59108IPWR U?
+U 1 1 52A0DFB5
+P 2150 1700
+F 0 "U?" H 1950 1700 60  0000 C CNN
+F 1 "TLC59108IPWR" H 2500 800 60  0000 C CNN
+F 2 "" H 2150 1700 60  0000 C CNN
+F 3 "" H 2150 1700 60  0000 C CNN
+	1    2150 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 1450 2200 1350
+Wire Wire Line
+	2500 1350 2500 1450
+Wire Wire Line
+	2800 1350 2800 1450
+Wire Wire Line
+	3100 1450 3100 1350
+Connection ~ 3150 1350
+Wire Wire Line
+	3250 1450 3250 1400
+Wire Wire Line
+	3250 1400 4000 1400
+Wire Wire Line
+	4000 1400 4000 1350
+Text HLabel 1350 2150 0    60   Input ~ 0
+SCL
+Text HLabel 1350 2250 0    60   BiDi ~ 0
+SDA
+Wire Wire Line
+	1350 2150 1450 2150
+Wire Wire Line
+	1350 2250 1450 2250
+Text HLabel 1350 4500 0    60   Input ~ 0
+SCL
+Text HLabel 1350 4600 0    60   BiDi ~ 0
+SDA
+Wire Wire Line
+	1350 4500 1450 4500
+Wire Wire Line
+	1350 4600 1450 4600
+Text HLabel 5100 2150 0    60   Input ~ 0
+SCL
+Text HLabel 5100 2250 0    60   BiDi ~ 0
+SDA
+Wire Wire Line
+	5100 2150 5200 2150
+Wire Wire Line
+	5100 2250 5200 2250
+$EndSCHEMATC

@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 15
+Sheet 1 16
 Title "Bike Light"
-Date "2 dec 2013"
+Date "5 dec 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -232,5 +232,11 @@ S 1250 700  900  750
 U 52929F4D
 F0 "battery_charger" 50
 F1 "battery_charger.sch" 50
+$EndSheet
+$Sheet
+S 6700 4050 900  850 
+U 52A0B607
+F0 "output_signal_brake_2" 50
+F1 "output_signal_brake_2.sch" 50
 $EndSheet
 $EndSCHEMATC

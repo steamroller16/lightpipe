@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 12/2/2013 12:26:06 AM
+EESchema-DOCLIB  Version 2.0  Date: 12/5/2013 11:36:23 AM
 #
 $CMP 74LVC2G06
 D DUAL INVERTERS with OPEN DRAIN OUTPUTS
@@ -121,6 +121,12 @@ $ENDCMP
 #
 $CMP SPEAKER
 F http://www.murata.com/products/catalog/pdf/p37e.pdf
+$ENDCMP
+#
+$CMP TLC59108IPWR
+D IC LED DVR 8BIT I2C RGBA 20TSSOP
+K IC LED DVR 8BIT I2C RGBA 20TSSOP
+F http://www.ti.com/lit/ds/symlink/tlc59108.pdf
 $ENDCMP
 #
 $CMP TLC5917IDR
