@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 16
 Title "Bike Light"
-Date "5 dec 2013"
+Date "6 dec 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -234,9 +234,13 @@ F0 "battery_charger" 50
 F1 "battery_charger.sch" 50
 $EndSheet
 $Sheet
-S 6700 4050 900  850 
+S 8600 1750 900  850 
 U 52A0B607
 F0 "output_signal_brake_2" 50
 F1 "output_signal_brake_2.sch" 50
+F2 "V_BATT" I L 8600 1850 60 
+F3 "SCL" I L 8600 2250 60 
+F4 "SDA" B L 8600 2400 60 
+F5 "~RESET" I L 8600 2000 60 
 $EndSheet
 $EndSCHEMATC
