@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 16 16
+Sheet 16 17
 Title ""
-Date "6 dec 2013"
+Date "7 dec 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -195,7 +195,7 @@ F 3 "" H 4350 2550 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 1500 1400 0    60   Input ~ 0
-V_BATT
+BATT_IN
 $Comp
 L R R?
 U 1 1 52A0CCEF
@@ -317,8 +317,6 @@ F 3 "~" H 10250 1950 60  0000 C CNN
 	1    10250 1950
 	0    1    1    0   
 $EndComp
-Text HLabel 8200 1400 0    60   Input ~ 0
-V_BATT
 $Comp
 L R R?
 U 1 1 52A0CD4B
@@ -473,8 +471,6 @@ F 3 "~" H 6900 1950 60  0000 C CNN
 	1    6900 1950
 	0    1    1    0   
 $EndComp
-Text HLabel 4850 1400 0    60   Input ~ 0
-V_BATT
 $Comp
 L R R?
 U 1 1 52A0DFAD
@@ -1180,4 +1176,8 @@ Text Notes 3500 4500 0    60   ~ 0
 Turn Signal
 Text Notes 3500 4700 0    60   ~ 0
 Brake Signal
+Text HLabel 4850 1400 0    60   Input ~ 0
+BATT_IN
+Text HLabel 8200 1400 0    60   Input ~ 0
+BATT_IN
 $EndSCHEMATC

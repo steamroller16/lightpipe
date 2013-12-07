@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 16
+Sheet 1 17
 Title "Bike Light"
-Date "6 dec 2013"
+Date "7 dec 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -238,9 +238,22 @@ S 8600 1750 900  850
 U 52A0B607
 F0 "output_signal_brake_2" 50
 F1 "output_signal_brake_2.sch" 50
-F2 "V_BATT" I L 8600 1850 60 
-F3 "SCL" I L 8600 2250 60 
-F4 "SDA" B L 8600 2400 60 
-F5 "~RESET" I L 8600 2000 60 
+F2 "SCL" I L 8600 2250 60 
+F3 "SDA" B L 8600 2400 60 
+F4 "~RESET" I L 8600 2000 60 
+F5 "BATT_IN" I L 8600 1850 60 
 $EndSheet
+$Sheet
+S 6700 750  900  700 
+U 52A3795F
+F0 "output_headlight" 50
+F1 "output_headlight.sch" 50
+F2 "SCL" I L 6700 1100 60 
+F3 "SDA" B L 6700 1250 60 
+F4 "BATT_IN" I L 6700 850 60 
+$EndSheet
+Text Notes 9600 2150 0    60   ~ 0
+<Done>
+Text Notes 7850 1050 0    60   ~ 0
+<Need to select High Power buck-boost regulator>
 $EndSCHEMATC

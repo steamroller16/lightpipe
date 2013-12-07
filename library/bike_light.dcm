@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 12/5/2013 11:36:23 AM
+EESchema-DOCLIB  Version 2.0  Date: 12/7/2013 12:40:05 PM
 #
 $CMP 74LVC2G06
 D DUAL INVERTERS with OPEN DRAIN OUTPUTS
@@ -83,6 +83,12 @@ K 10A Schottky Barrier Rectifier
 F http://www.mccsemi.com/up_pdf/MBR1045ULPS(TO-277B).pdf
 $ENDCMP
 #
+$CMP MCP4706
+D IC DAC 8BIT NV EEP I2C 6DFN
+K IC DAC 8BIT NV EEP I2C 6DFN
+F http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en552842
+$ENDCMP
+#
 $CMP MCP6L02
 D IC OPAMP 1.0MHZ 1.8V 8-MSOP
 K IC OPAMP 1.0MHZ 1.8V 8-MSOP
@@ -142,6 +148,12 @@ $ENDCMP
 $CMP TPS3700
 D Window Comparator for Over-Undervoltage Detection
 F http://www.ti.com/lit/ds/symlink/tps3700.pdf
+$ENDCMP
+#
+$CMP XM-L2
+D CREE XML2 LED COOL WHITE XLAMP SMD
+K CREE XML2 LED COOL WHITE XLAMP SMD
+F http://www.cree.com/led-components-and-modules/products/xlamp/discrete-directional/~/media/Files/Cree/LED%20Components%20and%20Modules/XLamp/Data%20and%20Binning/XLampXML2.pdf
 $ENDCMP
 #
 #End Doc Library
