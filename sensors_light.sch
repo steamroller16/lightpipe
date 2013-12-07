@@ -101,7 +101,7 @@ F 3 "~" H 2800 1300 30  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 4700 800  2    60   Output ~ 0
-V_Light
+V_LIGHT
 $Comp
 L AGND #PWR?
 U 1 1 527B22B7
