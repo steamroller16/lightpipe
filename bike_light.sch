@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 17
 Title "Bike Light"
-Date "7 dec 2013"
+Date "8 dec 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -84,19 +84,21 @@ F15 "B_CTRL" O R 6700 3050 60
 F16 "G_CTRL" O R 6700 3200 60 
 F17 "LIGHT_CTRL_1" O L 5500 2850 60 
 F18 "LIGHT_CTRL_2" O L 5500 3000 60 
+F19 "UART_RX" I L 5500 3900 60 
+F20 "UART_TX" O L 5500 3750 60 
 $EndSheet
 $Sheet
-S 1250 4250 900  1250
+S 4500 3650 900  1250
 U 5224C595
 F0 "interface_usb" 50
 F1 "interface_usb.sch" 50
-F2 "UART_RX" I R 2150 4350 60 
-F3 "UART_TX" O R 2150 4500 60 
-F4 "USB_SUSPEND" O R 2150 4700 60 
-F5 "USB_5V" U R 2150 4950 60 
-F6 "USB_D+" B R 2150 5100 60 
-F7 "USB_D-" B R 2150 5250 60 
-F8 "USB_ID" B R 2150 5400 60 
+F2 "UART_RX" I R 5400 3750 60 
+F3 "UART_TX" O R 5400 3900 60 
+F4 "USB_SUSPEND" O R 5400 4100 60 
+F5 "USB_5V" U R 5400 4350 60 
+F6 "USB_D+" B R 5400 4500 60 
+F7 "USB_D-" B R 5400 4650 60 
+F8 "USB_ID" B R 5400 4800 60 
 $EndSheet
 $Sheet
 S 7050 5800 900  200 
@@ -176,7 +178,7 @@ Text Notes 1200 1700 0    60   ~ 0
 <Fuse??>
 Text Notes 1200 1800 0    60   ~ 0
 <Current measuring for \nbattery level detection??>
-Text Notes 2300 4850 0    60   ~ 0
+Text Notes 5550 4250 0    60   ~ 0
 <Done>
 Text Notes 650  3550 0    60   ~ 0
 <Make sure chip works at low LiFePO4 voltages>
@@ -335,4 +337,8 @@ Wire Wire Line
 	4350 3000 5500 3000
 Wire Wire Line
 	5400 3200 5500 3200
+Wire Wire Line
+	5500 3750 5400 3750
+Wire Wire Line
+	5400 3900 5500 3900
 $EndSCHEMATC

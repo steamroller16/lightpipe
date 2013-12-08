@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 7 17
 Title ""
-Date "7 dec 2013"
+Date "8 dec 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -99,32 +99,100 @@ Wire Wire Line
 	2800 1800 2800 1850
 Text HLabel 4100 2250 0    60   Input ~ 0
 ADC_BATT
-Text HLabel 4100 2350 0    60   Input ~ 0
+Text HLabel 4100 2550 0    60   Input ~ 0
 ADC_LIGHT
-Text HLabel 4950 900  0    60   Input ~ 0
+Text HLabel 7900 1950 2    60   Input ~ 0
 ~INT~_ACCEL
-Text HLabel 4950 1050 0    60   Input ~ 0
+Text HLabel 7900 2050 2    60   Input ~ 0
 TOUCH_1
-Text HLabel 4950 1200 0    60   Input ~ 0
+Text HLabel 7900 2150 2    60   Input ~ 0
 TOUCH_2
-Text HLabel 4950 1350 0    60   Input ~ 0
+Text HLabel 7900 2250 2    60   Input ~ 0
 TOUCH_3
-Text HLabel 8050 1900 2    60   Output ~ 0
+Text HLabel 7900 2900 2    60   Output ~ 0
 SPEAKER
-Text HLabel 8050 2050 2    60   Output ~ 0
+Text HLabel 7900 3000 2    60   Output ~ 0
 LED_1
-Text HLabel 8050 2200 2    60   Output ~ 0
+Text HLabel 7900 3100 2    60   Output ~ 0
 LED_2
-Text HLabel 8050 2350 2    60   Output ~ 0
+Text HLabel 7900 3200 2    60   Output ~ 0
 LED_3
-Text HLabel 8050 2500 2    60   Output ~ 0
+Text HLabel 7900 3300 2    60   Output ~ 0
 R_CTRL
-Text HLabel 8050 2650 2    60   Output ~ 0
+Text HLabel 7900 3500 2    60   Output ~ 0
 B_CTRL
-Text HLabel 8050 2800 2    60   Output ~ 0
+Text HLabel 7900 3400 2    60   Output ~ 0
 G_CTRL
-Text HLabel 3700 2600 0    60   Output ~ 0
+Text HLabel 7900 2600 2    60   Output ~ 0
 LIGHT_CTRL_1
-Text HLabel 3700 2450 0    60   Output ~ 0
+Text HLabel 7900 2700 2    60   Output ~ 0
 LIGHT_CTRL_2
+Wire Wire Line
+	4100 2950 4200 2950
+Wire Wire Line
+	4100 2850 4200 2850
+$Comp
+L +3.3V #PWR?
+U 1 1 52A4573A
+P 4200 1850
+F 0 "#PWR?" H 4200 1810 30  0001 C CNN
+F 1 "+3.3V" H 4200 1960 30  0000 C CNN
+F 2 "" H 4200 1850 60  0000 C CNN
+F 3 "" H 4200 1850 60  0000 C CNN
+	1    4200 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 1850 4200 1950
+$Comp
+L DGND #PWR?
+U 1 1 52A45745
+P 4200 3700
+F 0 "#PWR?" H 4200 3700 40  0001 C CNN
+F 1 "DGND" H 4200 3630 40  0000 C CNN
+F 2 "" H 4200 3700 60  0000 C CNN
+F 3 "" H 4200 3700 60  0000 C CNN
+	1    4200 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 3700 4200 3600
+Wire Wire Line
+	4100 2250 4200 2250
+Wire Wire Line
+	4100 2550 4200 2550
+Wire Wire Line
+	7800 1950 7900 1950
+Wire Wire Line
+	7800 2050 7900 2050
+Wire Wire Line
+	7800 2150 7900 2150
+Wire Wire Line
+	7800 2250 7900 2250
+Wire Wire Line
+	7800 2600 7900 2600
+Wire Wire Line
+	7900 2700 7800 2700
+Wire Wire Line
+	7800 2900 7900 2900
+Wire Wire Line
+	7900 3000 7800 3000
+Wire Wire Line
+	7800 3100 7900 3100
+Wire Wire Line
+	7900 3200 7800 3200
+Wire Wire Line
+	7800 3300 7900 3300
+Wire Wire Line
+	7900 3400 7800 3400
+Wire Wire Line
+	7800 3500 7900 3500
+Text HLabel 4100 2350 0    60   Input ~ 0
+UART_RX
+Text HLabel 4100 2450 0    60   Output ~ 0
+UART_TX
+Wire Wire Line
+	4100 2350 4200 2350
+Wire Wire Line
+	4200 2450 4100 2450
 $EndSCHEMATC
