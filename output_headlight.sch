@@ -35,7 +35,7 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 17 17
+Sheet 16 18
 Title ""
 Date "8 dec 2013"
 Rev ""
@@ -165,4 +165,6 @@ Wire Wire Line
 	3450 1300 4400 1300
 Text Notes 4600 1200 0    60   ~ 0
 HP BUCK BOOST Goes here
+Text Notes 5000 2100 0    60   ~ 0
+3.3V 3A Headlight LED
 $EndSCHEMATC

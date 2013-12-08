@@ -35,7 +35,7 @@ EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 17
+Sheet 1 18
 Title "Bike Light"
 Date "8 dec 2013"
 Rev "1.0"
@@ -54,16 +54,7 @@ F2 "V_PACK" O R 2200 1150 60
 F3 "V_PACK_BUFFERED" O R 2200 1300 60 
 $EndSheet
 $Sheet
-S 1200 2400 1000 950 
-U 5224C4FA
-F0 "power_regulation" 50
-F1 "power_regulation.sch" 50
-F2 "V_PACK+" I R 2200 2550 60 
-F3 "V_PACK-" I R 2200 2700 60 
-F4 "3.3V" O R 2200 2850 60 
-$EndSheet
-$Sheet
-S 5500 1050 1200 3250
+S 5500 1050 1200 4400
 U 5224C543
 F0 "micro_proc" 50
 F1 "micro_proc.sch" 50
@@ -86,6 +77,8 @@ F17 "LIGHT_CTRL_1" O L 5500 2850 60
 F18 "LIGHT_CTRL_2" O L 5500 3000 60 
 F19 "UART_RX" I L 5500 3900 60 
 F20 "UART_TX" O L 5500 3750 60 
+F21 "SBWTCK" I L 5500 5200 60 
+F22 "SBWTDIO" B L 5500 5350 60 
 $EndSheet
 $Sheet
 S 4500 3650 900  1250
@@ -158,19 +151,17 @@ F6 "RED_CTRL" I L 6800 2900 60
 F7 "BLUE_CTRL" I L 6800 3050 60 
 F8 "GREEN_CTRL" I L 6800 3200 60 
 $EndSheet
-Text Notes 3950 2350 0    60   ~ 0
+Text Notes 4100 2750 0    60   ~ 0
 <Done>
-Text Notes 3950 3200 0    60   ~ 0
+Text Notes 4100 3450 0    60   ~ 0
 <Done>
 Text Notes 6500 5950 0    60   ~ 0
 <Done>
-Text Notes 7950 3000 0    60   ~ 0
+Text Notes 7750 3350 0    60   ~ 0
 <Done>
 Text Notes 7500 6900 0    60   ~ 0
 <Done>
-Text Notes 6450 4450 0    60   ~ 0
-<>
-Text Notes 3800 1850 0    60   ~ 0
+Text Notes 3950 2050 0    60   ~ 0
 <Done>
 Text Notes 1200 1600 0    60   ~ 0
 <Sense Resistor??>
@@ -178,12 +169,12 @@ Text Notes 1200 1700 0    60   ~ 0
 <Fuse??>
 Text Notes 1200 1800 0    60   ~ 0
 <Current measuring for \nbattery level detection??>
-Text Notes 5550 4250 0    60   ~ 0
+Text Notes 4100 4950 0    60   ~ 0
 <Done>
 Text Notes 650  3550 0    60   ~ 0
 <Make sure chip works at low LiFePO4 voltages>
 $Sheet
-S 2450 2450 900  750 
+S 1350 2250 900  750 
 U 52929F4D
 F0 "battery_charger" 50
 F1 "battery_charger.sch" 50
@@ -209,8 +200,6 @@ F4 "BATT_IN" I L 8200 1150 60
 $EndSheet
 Text Notes 7450 1800 0    60   ~ 0
 <Done>
-Text Notes 5300 900  0    60   ~ 0
-<Need to select High Power buck-boost regulator>
 Text Notes 6500 6200 0    60   ~ 0
 This should be integrated into the headlight module somehow. \nNot sure yet what way to do that.
 Text Notes 8700 5550 0    60   ~ 0
@@ -286,8 +275,6 @@ Wire Wire Line
 Wire Wire Line
 	2200 1300 5500 1300
 Wire Wire Line
-	2200 1150 7000 1150
-Wire Wire Line
 	6450 1400 6450 1450
 Wire Wire Line
 	6450 1450 6700 1450
@@ -341,4 +328,102 @@ Wire Wire Line
 	5500 3750 5400 3750
 Wire Wire Line
 	5400 3900 5500 3900
+$Comp
+L +3.3V #PWR?
+U 1 1 52A50B64
+P 3700 1000
+F 0 "#PWR?" H 3700 960 30  0001 C CNN
+F 1 "+3.3V" H 3700 1110 30  0000 C CNN
+F 2 "" H 3700 1000 60  0000 C CNN
+F 3 "" H 3700 1000 60  0000 C CNN
+	1    3700 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 1000 3700 1000
+$Sheet
+S 2550 900  1050 500 
+U 5224C4FA
+F0 "power_regulation" 50
+F1 "power_regulation.sch" 50
+F2 "3.3V_600mA" O R 3600 1000 60 
+F3 "BATT_IN" I L 2550 1150 60 
+$EndSheet
+Wire Wire Line
+	2200 1150 2550 1150
+Wire Wire Line
+	2550 1150 2550 1200
+Wire Wire Line
+	2550 1200 3000 1200
+Wire Wire Line
+	3000 1200 3000 1150
+Wire Wire Line
+	3000 1150 7000 1150
+Text Notes 2300 800  0    60   ~ 0
+<other 3.3V reg and 2.5V reg go in output sheets>
+Text Notes 7200 650  0    60   ~ 0
+<2.5V 1A Reg goes here (check that LED voltage)>
+Wire Notes Line
+	7200 700  7200 950 
+Text Notes 8400 800  0    60   ~ 0
+<3.3V 3A Reg goes here>
+Wire Notes Line
+	8400 850  8400 950 
+Wire Notes Line
+	4750 750  4900 750 
+Wire Notes Line
+	4900 750  4850 800 
+Wire Notes Line
+	4900 750  4850 700 
+Text Notes 6800 4300 0    60   ~ 0
+<Need to select proper bypass caps>
+$Sheet
+S 4300 5100 900  350 
+U 52A6745A
+F0 "interface_JTAG_2_wire" 50
+F1 "interface_JTAG_2_wire.sch" 50
+F2 "SBWTCK" O R 5200 5200 60 
+F3 "SBWTDIO" B R 5200 5350 60 
+$EndSheet
+$Comp
+L C C?
+U 1 1 52A6923B
+P 9800 6050
+F 0 "C?" H 9800 6150 40  0000 L CNN
+F 1 "Cap Nominal" H 9900 5950 40  0000 L CNN
+F 2 "~" H 9838 5900 30  0000 C CNN
+F 3 "~" H 9800 6050 60  0000 C CNN
+	1    9800 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR?
+U 1 1 52A69241
+P 9800 5800
+F 0 "#PWR?" H 9800 5760 30  0001 C CNN
+F 1 "+3.3V" H 9800 5910 30  0000 C CNN
+F 2 "" H 9800 5800 60  0000 C CNN
+F 3 "" H 9800 5800 60  0000 C CNN
+	1    9800 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L DGND #PWR?
+U 1 1 52A69247
+P 9800 6300
+F 0 "#PWR?" H 9800 6300 40  0001 C CNN
+F 1 "DGND" H 9800 6230 40  0000 C CNN
+F 2 "" H 9800 6300 60  0000 C CNN
+F 3 "" H 9800 6300 60  0000 C CNN
+	1    9800 6300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9800 5800 9800 5850
+Wire Wire Line
+	9800 6250 9800 6300
+Wire Wire Line
+	5200 5200 5500 5200
+Wire Wire Line
+	5200 5350 5500 5350
 $EndSCHEMATC

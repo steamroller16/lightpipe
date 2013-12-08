@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 12/7/2013 12:40:05 PM
+EESchema-DOCLIB  Version 2.0  Date: 12/8/2013 1:51:03 PM
 #
 $CMP 74LVC2G06
 D DUAL INVERTERS with OPEN DRAIN OUTPUTS
@@ -21,6 +21,12 @@ $CMP BH1620FVC
 D IC AMBIENT LIGHT SENSOR
 K IC AMBIENT LIGHT SENSOR
 F http://rohmfs.rohm.com/en/products/databook/datasheet/ic/sensor/light/bh1620fvc-e.pdf
+$ENDCMP
+#
+$CMP CONN_JTAG_14
+D JTAG 14-pin for 2-wire debug MSP430F2xx, MSP430G2xx, and MSP430F4xx Devices
+K JTAG 14-pin for 2-wire debug MSP430F2xx, MSP430G2xx, and MSP430F4xx Devices
+F http://www.ti.com/litv/pdf/slau278p
 $ENDCMP
 #
 $CMP CONN_USB

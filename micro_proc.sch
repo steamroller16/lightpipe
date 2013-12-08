@@ -35,7 +35,7 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 17
+Sheet 6 18
 Title ""
 Date "8 dec 2013"
 Rev ""
@@ -195,4 +195,12 @@ Wire Wire Line
 	4100 2350 4200 2350
 Wire Wire Line
 	4200 2450 4100 2450
+Text HLabel 4100 3300 0    60   Input ~ 0
+SBWTCK
+Text HLabel 4100 3200 0    60   BiDi ~ 0
+SBWTDIO
+Wire Wire Line
+	4100 3200 4200 3200
+Wire Wire Line
+	4100 3300 4200 3300
 $EndSCHEMATC
