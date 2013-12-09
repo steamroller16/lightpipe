@@ -198,8 +198,6 @@ F2 "SCL" I L 8200 1400 60
 F3 "SDA" B L 8200 1550 60 
 F4 "BATT_IN" I L 8200 1150 60 
 $EndSheet
-Text Notes 7450 1800 0    60   ~ 0
-<Done>
 Text Notes 6500 6200 0    60   ~ 0
 This should be integrated into the headlight module somehow. \nNot sure yet what way to do that.
 Text Notes 8700 5550 0    60   ~ 0
