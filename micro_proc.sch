@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 6 18
 Title ""
-Date "10 dec 2013"
+Date "11 dec 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -109,7 +109,7 @@ Text HLabel 7900 2150 2    60   Input ~ 0
 TOUCH_2
 Text HLabel 7900 2250 2    60   Input ~ 0
 TOUCH_3
-Text HLabel 7900 2900 2    60   Output ~ 0
+Text HLabel 7900 2350 2    60   Output ~ 0
 SPEAKER
 Text HLabel 7900 3000 2    60   Output ~ 0
 LED_1
@@ -174,7 +174,7 @@ Wire Wire Line
 Wire Wire Line
 	7900 2700 7800 2700
 Wire Wire Line
-	7800 2900 7900 2900
+	7800 2350 7900 2350
 Wire Wire Line
 	7900 3000 7800 3000
 Wire Wire Line

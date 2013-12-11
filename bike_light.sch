@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 18
 Title "Bike Light"
-Date "10 dec 2013"
+Date "11 dec 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -188,6 +188,8 @@ F2 "SCL" I L 7000 1400 60
 F3 "SDA" B L 7000 1550 60 
 F4 "~RESET" I L 7000 1800 60 
 F5 "BATT_IN" I L 7000 1150 60 
+F6 "PWR_GOOD" O R 7900 1650 60 
+F7 "PWR_EN" I L 7000 1250 60 
 $EndSheet
 $Sheet
 S 8200 1050 900  700 
@@ -424,4 +426,9 @@ Wire Wire Line
 	5200 5200 5500 5200
 Wire Wire Line
 	5200 5350 5500 5350
+Wire Wire Line
+	6900 1150 6900 1250
+Wire Wire Line
+	6900 1250 7000 1250
+Connection ~ 6900 1150
 $EndSCHEMATC

@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 15 18
 Title ""
-Date "10 dec 2013"
+Date "11 dec 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -194,8 +194,6 @@ F 3 "" H 4350 2550 60  0000 C CNN
 	1    4350 2550
 	1    0    0    -1  
 $EndComp
-Text HLabel 1500 1400 0    60   Input ~ 0
-BATT_IN
 $Comp
 L R R?
 U 1 1 52A0CCEF
@@ -1176,10 +1174,6 @@ Text Notes 3500 4500 0    60   ~ 0
 Turn Signal
 Text Notes 3500 4700 0    60   ~ 0
 Brake Signal
-Text HLabel 4850 1400 0    60   Input ~ 0
-BATT_IN
-Text HLabel 8200 1400 0    60   Input ~ 0
-BATT_IN
 $Comp
 L TPS62090 U?
 U 1 1 52A68F9E
@@ -1199,17 +1193,6 @@ Wire Wire Line
 	8450 5400 8350 5400
 Wire Wire Line
 	8350 6600 8350 6150
-$Comp
-L +BATT #PWR?
-U 1 1 52A69339
-P 8450 6000
-F 0 "#PWR?" H 8450 5950 20  0001 C CNN
-F 1 "+BATT" H 8450 6100 30  0000 C CNN
-F 2 "" H 8450 6000 60  0000 C CNN
-F 3 "" H 8450 6000 60  0000 C CNN
-	1    8450 6000
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8350 6000 8450 6000
 $Comp
@@ -1232,28 +1215,6 @@ F 1 "22uF" H 9925 5350 30  0000 L CNN
 F 2 "~" H 9900 5400 60  0000 C CNN
 F 3 "~" H 9900 5400 60  0000 C CNN
 	1    9900 5400
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 52A68AC2
-P 7500 6700
-F 0 "#PWR?" H 7500 6700 30  0001 C CNN
-F 1 "GND" H 7500 6630 30  0001 C CNN
-F 2 "" H 7500 6700 60  0000 C CNN
-F 3 "" H 7500 6700 60  0000 C CNN
-	1    7500 6700
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 52A68AD1
-P 6500 6300
-F 0 "#PWR?" H 6500 6300 30  0001 C CNN
-F 1 "GND" H 6500 6230 30  0001 C CNN
-F 2 "" H 6500 6300 60  0000 C CNN
-F 3 "" H 6500 6300 60  0000 C CNN
-	1    6500 6300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1289,24 +1250,11 @@ F 3 "~" H 6400 5400 60  0000 C CNN
 	1    6400 5400
 	1    0    0    -1  
 $EndComp
-$Comp
-L GND #PWR?
-U 1 1 52A68B1C
-P 6400 5600
-F 0 "#PWR?" H 6400 5600 30  0001 C CNN
-F 1 "GND" H 6400 5530 30  0001 C CNN
-F 2 "" H 6400 5600 60  0000 C CNN
-F 3 "" H 6400 5600 60  0000 C CNN
-	1    6400 5600
-	1    0    0    -1  
-$EndComp
 Connection ~ 8450 5250
 Wire Wire Line
 	9100 5250 10050 5250
 Wire Wire Line
 	9400 5250 9400 5300
-Wire Wire Line
-	9650 5250 9650 5450
 Connection ~ 9400 5250
 Wire Wire Line
 	9900 5250 9900 5300
@@ -1326,17 +1274,6 @@ Wire Wire Line
 Wire Wire Line
 	9200 5700 8350 5700
 Connection ~ 9400 5550
-$Comp
-L GND #PWR?
-U 1 1 52A693F7
-P 9400 5900
-F 0 "#PWR?" H 9400 5900 30  0001 C CNN
-F 1 "GND" H 9400 5830 30  0001 C CNN
-F 2 "" H 9400 5900 60  0000 C CNN
-F 3 "" H 9400 5900 60  0000 C CNN
-	1    9400 5900
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9400 5800 9400 5900
 Wire Wire Line
@@ -1346,22 +1283,12 @@ Wire Wire Line
 Wire Wire Line
 	9100 6050 10050 6050
 Wire Wire Line
-	9650 6050 9650 5650
-Wire Wire Line
-	6000 5250 6850 5250
-Wire Wire Line
-	6800 5250 6800 5550
-Wire Wire Line
-	6800 5400 6850 5400
-Connection ~ 6800 5250
-Wire Wire Line
-	6800 5550 6850 5550
-Connection ~ 6800 5400
+	6250 5250 6850 5250
 Wire Wire Line
 	6400 5300 6400 5250
 Connection ~ 6400 5250
 Wire Wire Line
-	6400 5500 6400 5600
+	6400 5500 6400 5550
 Wire Wire Line
 	6750 5850 6850 5850
 Wire Wire Line
@@ -1378,30 +1305,6 @@ Wire Wire Line
 	6500 6150 6500 6300
 Wire Wire Line
 	7500 6600 7500 6700
-$Comp
-L +BATT #PWR?
-U 1 1 52A6A360
-P 6000 5200
-F 0 "#PWR?" H 6000 5150 20  0001 C CNN
-F 1 "+BATT" H 6000 5300 30  0000 C CNN
-F 2 "" H 6000 5200 60  0000 C CNN
-F 3 "" H 6000 5200 60  0000 C CNN
-	1    6000 5200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6000 5250 6000 5200
-$Comp
-L GND #PWR?
-U 1 1 52A6A483
-P 9900 5550
-F 0 "#PWR?" H 9900 5550 30  0001 C CNN
-F 1 "GND" H 9900 5480 30  0001 C CNN
-F 2 "" H 9900 5550 60  0000 C CNN
-F 3 "" H 9900 5550 60  0000 C CNN
-	1    9900 5550
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9900 5500 9900 5550
 $Comp
@@ -1417,38 +1320,8 @@ F 3 "" H 10050 5200 60  0000 C CNN
 $EndComp
 Wire Wire Line
 	10050 5250 10050 5200
-Text HLabel 1500 850  0    60   Input ~ 0
-BATT_IN
-$Comp
-L +BATT #PWR?
-U 1 1 52A6AAF7
-P 1650 750
-F 0 "#PWR?" H 1650 700 20  0001 C CNN
-F 1 "+BATT" H 1650 850 30  0000 C CNN
-F 2 "" H 1650 750 60  0000 C CNN
-F 3 "" H 1650 750 60  0000 C CNN
-	1    1650 750 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1650 750  1650 850 
-Wire Wire Line
-	1650 850  1500 850 
-Wire Wire Line
-	6850 5700 5700 5700
 Text Notes 6800 4750 0    60   ~ 0
 Battery to 2.5V Buck Power Supply
-$Comp
-L RSMALL R?
-U 1 1 52A6B2AD
-P 9400 5400
-F 0 "R?" V 9450 5400 30  0000 C TNN
-F 1 "160k" V 9350 5400 30  0000 C BNN
-F 2 "~" H 9400 5435 60  0000 C CNN
-F 3 "~" H 9400 5435 60  0000 C CNN
-	1    9400 5400
-	1    0    0    -1  
-$EndComp
 $Comp
 L RSMALL R?
 U 1 1 52A6B2C1
@@ -1460,24 +1333,138 @@ F 3 "~" H 9400 5735 60  0000 C CNN
 	1    9400 5700
 	1    0    0    -1  
 $EndComp
-$Comp
-L RSMALL R?
-U 1 1 52A6B2D5
-P 9650 5550
-F 0 "R?" V 9700 5550 30  0000 C TNN
-F 1 "470k" V 9600 5550 30  0000 C BNN
-F 2 "~" H 9650 5585 60  0000 C CNN
-F 3 "~" H 9650 5585 60  0000 C CNN
-	1    9650 5550
-	1    0    0    -1  
-$EndComp
 Connection ~ 9650 6050
 Wire Wire Line
 	7500 6600 8350 6600
 Connection ~ 7700 6600
 Connection ~ 7600 6600
-Text Notes 9100 6150 0    60   ~ 0
+Text Notes 9100 6600 0    60   ~ 0
 Don't think we need this output\nor the pull up here. We aren't reading it...?
-Text Notes 5050 5800 0    60   ~ 0
-This needs to be connected.
+Text HLabel 6250 5250 0    60   Input ~ 0
+BATT_IN
+Text HLabel 8450 6000 2    60   Input ~ 0
+BATT_IN
+$Comp
+L DGND #PWR?
+U 1 1 52A7FDF9
+P 6400 5550
+F 0 "#PWR?" H 6400 5550 40  0001 C CNN
+F 1 "DGND" H 6400 5480 40  0000 C CNN
+F 2 "" H 6400 5550 60  0000 C CNN
+F 3 "" H 6400 5550 60  0000 C CNN
+	1    6400 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L DGND #PWR?
+U 1 1 52A7FDFF
+P 6500 6300
+F 0 "#PWR?" H 6500 6300 40  0001 C CNN
+F 1 "DGND" H 6500 6230 40  0000 C CNN
+F 2 "" H 6500 6300 60  0000 C CNN
+F 3 "" H 6500 6300 60  0000 C CNN
+	1    6500 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L DGND #PWR?
+U 1 1 52A7FE05
+P 7500 6700
+F 0 "#PWR?" H 7500 6700 40  0001 C CNN
+F 1 "DGND" H 7500 6630 40  0000 C CNN
+F 2 "" H 7500 6700 60  0000 C CNN
+F 3 "" H 7500 6700 60  0000 C CNN
+	1    7500 6700
+	1    0    0    -1  
+$EndComp
+$Comp
+L DGND #PWR?
+U 1 1 52A7FE0B
+P 9400 5900
+F 0 "#PWR?" H 9400 5900 40  0001 C CNN
+F 1 "DGND" H 9400 5830 40  0000 C CNN
+F 2 "" H 9400 5900 60  0000 C CNN
+F 3 "" H 9400 5900 60  0000 C CNN
+	1    9400 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L DGND #PWR?
+U 1 1 52A7FE11
+P 9900 5550
+F 0 "#PWR?" H 9900 5550 40  0001 C CNN
+F 1 "DGND" H 9900 5480 40  0000 C CNN
+F 2 "" H 9900 5550 60  0000 C CNN
+F 3 "" H 9900 5550 60  0000 C CNN
+	1    9900 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L +2.5V #PWR?
+U 1 1 52A802AB
+P 1500 1400
+F 0 "#PWR?" H 1500 1350 20  0001 C CNN
+F 1 "+2.5V" H 1500 1500 30  0000 C CNN
+F 2 "" H 1500 1400 60  0000 C CNN
+F 3 "" H 1500 1400 60  0000 C CNN
+	1    1500 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L +2.5V #PWR?
+U 1 1 52A802B1
+P 4850 1400
+F 0 "#PWR?" H 4850 1350 20  0001 C CNN
+F 1 "+2.5V" H 4850 1500 30  0000 C CNN
+F 2 "" H 4850 1400 60  0000 C CNN
+F 3 "" H 4850 1400 60  0000 C CNN
+	1    4850 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L +2.5V #PWR?
+U 1 1 52A802B7
+P 8200 1400
+F 0 "#PWR?" H 8200 1350 20  0001 C CNN
+F 1 "+2.5V" H 8200 1500 30  0000 C CNN
+F 2 "" H 8200 1400 60  0000 C CNN
+F 3 "" H 8200 1400 60  0000 C CNN
+	1    8200 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 52A80325
+P 9650 5550
+F 0 "R?" V 9730 5550 40  0000 C CNN
+F 1 "Nominal" V 9657 5551 40  0000 C CNN
+F 2 "~" V 9580 5550 30  0000 C CNN
+F 3 "~" H 9650 5550 30  0000 C CNN
+	1    9650 5550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9650 5250 9650 5300
+Wire Wire Line
+	9650 5800 9650 6050
+$Comp
+L RSMALL R?
+U 1 1 52A6B2AD
+P 9400 5400
+F 0 "R?" V 9450 5400 30  0000 C TNN
+F 1 "160k" V 9350 5400 30  0000 C BNN
+F 2 "~" H 9400 5435 60  0000 C CNN
+F 3 "~" H 9400 5435 60  0000 C CNN
+	1    9400 5400
+	1    0    0    -1  
+$EndComp
+Text HLabel 10050 6050 2    60   Output ~ 0
+PWR_GOOD
+Wire Wire Line
+	6850 5250 6850 5550
+Connection ~ 6850 5400
+Text HLabel 6250 5700 0    60   Input ~ 0
+PWR_EN
+Wire Wire Line
+	6250 5700 6850 5700
 $EndSCHEMATC
