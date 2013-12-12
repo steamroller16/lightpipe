@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 12/10/2013 1:14:08 AM
+EESchema-DOCLIB  Version 2.0  Date: 12/12/2013 1:33:38 AM
 #
 $CMP 74LVC2G06
 D DUAL INVERTERS with OPEN DRAIN OUTPUTS
@@ -21,6 +21,12 @@ $CMP BH1620FVC
 D IC AMBIENT LIGHT SENSOR
 K IC AMBIENT LIGHT SENSOR
 F http://rohmfs.rohm.com/en/products/databook/datasheet/ic/sensor/light/bh1620fvc-e.pdf
+$ENDCMP
+#
+$CMP BQ24190
+D IC CHRG MGMT LI-ION/POL 24VQFN
+K IC CHRG MGMT LI-ION/POL 24VQFN
+F http://www.ti.com/lit/ds/symlink/bq24190.pdf
 $ENDCMP
 #
 $CMP CONN_JTAG_14

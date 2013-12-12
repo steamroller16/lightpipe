@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 18
 Title "Bike Light"
-Date "11 dec 2013"
+Date "12 dec 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -431,4 +431,6 @@ Wire Wire Line
 Wire Wire Line
 	6900 1250 7000 1250
 Connection ~ 6900 1150
+Text HLabel 2250 2350 0    60   BiDi ~ 0
+BATT
 $EndSCHEMATC
