@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 18
 Title "Bike Light"
-Date "12 dec 2013"
+Date "13 dec 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -349,8 +349,6 @@ F1 "power_regulation.sch" 50
 F2 "3.3V_600mA" O R 3600 1000 60 
 F3 "BATT_IN" I L 2550 1150 60 
 $EndSheet
-Wire Wire Line
-	2200 1150 2550 1150
 Wire Wire Line
 	2550 1150 2550 1200
 Wire Wire Line
