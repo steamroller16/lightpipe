@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 18
 Title "Bike Light"
-Date "13 dec 2013"
+Date "14 dec 2013"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -79,19 +79,6 @@ F19 "UART_RX" I L 5500 3900 60
 F20 "UART_TX" O L 5500 3750 60 
 F21 "SBWTCK" I L 5500 5200 60 
 F22 "SBWTDIO" B L 5500 5350 60 
-$EndSheet
-$Sheet
-S 4500 3650 900  1250
-U 5224C595
-F0 "interface_usb" 50
-F1 "interface_usb.sch" 50
-F2 "UART_RX" I R 5400 3750 60 
-F3 "UART_TX" O R 5400 3900 60 
-F4 "USB_SUSPEND" O R 5400 4100 60 
-F5 "USB_5V" U R 5400 4350 60 
-F6 "USB_D+" B R 5400 4500 60 
-F7 "USB_D-" B R 5400 4650 60 
-F8 "USB_ID" B R 5400 4800 60 
 $EndSheet
 $Sheet
 S 7050 5800 900  200 
@@ -171,14 +158,8 @@ Text Notes 1200 1800 0    60   ~ 0
 <Current measuring for \nbattery level detection??>
 Text Notes 4100 4950 0    60   ~ 0
 <Done>
-Text Notes 650  3550 0    60   ~ 0
+Text Notes 700  5150 0    60   ~ 0
 <Make sure chip works at low LiFePO4 voltages>
-$Sheet
-S 1350 2250 900  750 
-U 52929F4D
-F0 "battery_charger" 50
-F1 "battery_charger.sch" 50
-$EndSheet
 $Sheet
 S 7000 1050 900  850 
 U 52A0B607
@@ -211,11 +192,11 @@ Wire Wire Line
 Wire Wire Line
 	5400 2600 5500 2600
 Wire Wire Line
-	4300 1750 4350 1750
+	2600 1750 4350 1750
 Wire Wire Line
 	4300 1400 4300 1750
 Wire Wire Line
-	4350 1900 4200 1900
+	2750 1900 4350 1900
 Wire Wire Line
 	5250 1750 5500 1750
 Wire Wire Line
@@ -429,6 +410,66 @@ Wire Wire Line
 Wire Wire Line
 	6900 1250 7000 1250
 Connection ~ 6900 1150
-Text HLabel 2250 2350 0    60   BiDi ~ 0
-BATT
+$Sheet
+S 4500 3650 900  1250
+U 5224C595
+F0 "interface_usb" 50
+F1 "interface_usb.sch" 50
+F2 "UART_RX" I R 5400 3750 60 
+F3 "UART_TX" O R 5400 3900 60 
+F4 "USB_SUSPEND" O R 5400 4100 60 
+F5 "USB_5V" U L 4500 4300 60 
+F6 "USB_D+" B L 4500 4450 60 
+F7 "USB_D-" B L 4500 4600 60 
+F8 "USB_ID" B L 4500 4750 60 
+$EndSheet
+Wire Wire Line
+	4500 4300 2200 4300
+Wire Wire Line
+	2200 4450 4500 4450
+Wire Wire Line
+	4500 4600 2200 4600
+Wire Wire Line
+	2200 1150 2300 1150
+Wire Wire Line
+	2300 1150 2300 2000
+Wire Wire Line
+	2300 2000 1100 2000
+Wire Wire Line
+	1100 2000 1100 2250
+Wire Wire Line
+	1100 2250 1200 2250
+Wire Wire Line
+	2200 2250 2450 2250
+Wire Wire Line
+	2450 2250 2450 1150
+Wire Wire Line
+	2450 1150 2550 1150
+Wire Wire Line
+	2200 2450 2600 2450
+Wire Wire Line
+	2600 2450 2600 1750
+Connection ~ 4300 1750
+Wire Wire Line
+	2200 2600 2750 2600
+Wire Wire Line
+	2750 2600 2750 1900
+Connection ~ 4200 1900
+$Sheet
+S 1200 2150 1000 2750
+U 52929F4D
+F0 "battery_charger" 50
+F1 "battery_charger.sch" 50
+F2 "USB_5V" U R 2200 4300 60 
+F3 "USB_D+" B R 2200 4450 60 
+F4 "USB_D-" B R 2200 4600 60 
+F5 "STATUS" O R 2200 2800 60 
+F6 "SCL" I R 2200 2450 60 
+F7 "SDA" B R 2200 2600 60 
+F8 "INT" O R 2200 2950 60 
+F9 "OTG_EN" I R 2200 3150 60 
+F10 "~CHG_EN" I R 2200 3300 60 
+F11 "BATT" B L 1200 2250 60 
+F12 "SYS_OUT" O R 2200 2250 60 
+$EndSheet
 $EndSCHEMATC
