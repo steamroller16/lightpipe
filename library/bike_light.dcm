@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  Date: 12/13/2013 1:26:45 AM
+EESchema-DOCLIB  Version 2.0  Date: 12/18/2013 8:57:29 AM
 #
 $CMP 74LVC2G06
 D DUAL INVERTERS with OPEN DRAIN OUTPUTS
@@ -57,6 +57,12 @@ $CMP ESDR0502N
 D TVS ARRAY LOW CAP 5.5V 6UDFN
 K TVS ARRAY LOW CAP 5.5V 6UDFN
 F http://www.onsemi.com/pub_link/Collateral/ESDR0502N-D.PDF
+$ENDCMP
+#
+$CMP LED_GENERIC_SMD
+D LED Generic SMD
+K LED generic smd smt
+F http://catalog.osram-os.com/catalogue/catalogue.do;jsessionid=B38D4035738FAE714C474120326E9384?act=downloadFile&favOid=02000002000009ee000100b6
 $ENDCMP
 #
 $CMP LM3668
@@ -139,6 +145,16 @@ $ENDCMP
 #
 $CMP SPEAKER
 F http://www.murata.com/products/catalog/pdf/p37e.pdf
+$ENDCMP
+#
+$CMP TEST
+D Test Point
+K Test Point
+$ENDCMP
+#
+$CMP TEST_PT
+D Test Point
+K Test Point
 $ENDCMP
 #
 $CMP TLC59108IPWR

@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 14 18
+Sheet 18 18
 Title ""
-Date "14 dec 2013"
+Date "18 dec 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -150,7 +150,7 @@ F 3 "~" H 3850 3300 30  0000 C CNN
 	1    3850 3300
 	0    -1   -1   0   
 $EndComp
-Text HLabel 2600 3150 0    60   Output ~ 0
+Text HLabel 2050 3150 0    60   Output ~ 0
 STATUS
 $Comp
 L THERMISTOR TH?
@@ -197,11 +197,7 @@ F 3 "" H 5400 3500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5400 3200 5400 3300
-Wire Wire Line
-	5400 3300 5400 3400
-Wire Wire Line
-	5400 3400 5400 3500
+	5400 3200 5400 3500
 Connection ~ 5400 3300
 Connection ~ 5400 3400
 Wire Wire Line
@@ -209,11 +205,7 @@ Wire Wire Line
 Wire Wire Line
 	3600 3300 3600 3400
 Wire Wire Line
-	5400 2800 5750 2800
-Wire Wire Line
-	5750 2800 6400 2800
-Wire Wire Line
-	6400 2800 6650 2800
+	5400 2800 6650 2800
 Connection ~ 5750 2800
 Wire Wire Line
 	5400 3000 5500 3000
@@ -247,44 +239,34 @@ Wire Wire Line
 Wire Wire Line
 	5600 3300 5750 3300
 Wire Wire Line
-	6400 3300 6400 3350
-Wire Wire Line
-	6400 3350 6400 3400
+	6400 3300 6400 3400
 Connection ~ 6400 3350
 Wire Wire Line
 	6400 3400 6700 3400
 Wire Wire Line
 	3450 2350 3450 2450
 Wire Wire Line
-	2600 2450 3450 2450
+	2050 2450 4200 2450
 Wire Wire Line
-	3450 2450 4200 2450
-Wire Wire Line
-	2600 2550 3250 2550
-Wire Wire Line
-	3250 2550 4200 2550
+	2050 2550 4200 2550
 Wire Wire Line
 	3250 2550 3250 2350
 Wire Wire Line
 	3050 2350 3050 2750
 Wire Wire Line
-	2600 2750 3050 2750
-Wire Wire Line
-	3050 2750 4200 2750
-Text HLabel 2600 2450 0    60   Input ~ 0
+	2050 2750 4200 2750
+Text HLabel 2050 2450 0    60   Input ~ 0
 SCL
-Text HLabel 2600 2550 0    60   BiDi ~ 0
+Text HLabel 2050 2550 0    60   BiDi ~ 0
 SDA
-Text HLabel 2600 2750 0    60   Output ~ 0
+Text HLabel 2050 2750 0    60   Output ~ 0
 INT
 Wire Wire Line
 	4100 2150 4200 2150
 Wire Wire Line
 	4100 2250 4200 2250
 Wire Wire Line
-	4200 1400 4200 1750
-Wire Wire Line
-	4200 1750 4200 1850
+	4200 1400 4200 1850
 $Comp
 L C C?
 U 1 1 52AAD29A
@@ -298,9 +280,7 @@ F 3 "~" H 3950 1600 60  0000 C CNN
 $EndComp
 Connection ~ 4200 1750
 Wire Wire Line
-	3700 1400 3950 1400
-Wire Wire Line
-	3950 1400 4200 1400
+	3700 1400 4200 1400
 Connection ~ 3950 1400
 $Comp
 L DGND #PWR?
@@ -320,7 +300,7 @@ Wire Wire Line
 Wire Wire Line
 	3750 1950 3750 1500
 Wire Wire Line
-	3750 1500 2450 1500
+	3750 1500 1900 1500
 $Comp
 L +3.3V #PWR?
 U 1 1 52AAD3EE
@@ -333,68 +313,48 @@ F 3 "" H 2850 1750 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2850 1850 3050 1850
-Wire Wire Line
-	3050 1850 3250 1850
-Wire Wire Line
-	3250 1850 3450 1850
+	2450 1850 3450 1850
 Connection ~ 3250 1850
 $Comp
 L C C?
 U 1 1 52AAD4A2
-P 2450 1700
-F 0 "C?" H 2450 1800 40  0000 L CNN
-F 1 "6.8uF" H 2456 1615 40  0000 L CNN
-F 2 "~" H 2488 1550 30  0000 C CNN
-F 3 "~" H 2450 1700 60  0000 C CNN
-	1    2450 1700
+P 1900 1700
+F 0 "C?" H 1900 1800 40  0000 L CNN
+F 1 "6.8uF" H 1906 1615 40  0000 L CNN
+F 2 "~" H 1938 1550 30  0000 C CNN
+F 3 "~" H 1900 1700 60  0000 C CNN
+	1    1900 1700
 	1    0    0    -1  
 $EndComp
 $Comp
 L DGND #PWR?
 U 1 1 52AAD4B3
-P 2450 1950
-F 0 "#PWR?" H 2450 1950 40  0001 C CNN
-F 1 "DGND" H 2450 1880 40  0000 C CNN
-F 2 "" H 2450 1950 60  0000 C CNN
-F 3 "" H 2450 1950 60  0000 C CNN
-	1    2450 1950
+P 1900 1950
+F 0 "#PWR?" H 1900 1950 40  0001 C CNN
+F 1 "DGND" H 1900 1880 40  0000 C CNN
+F 2 "" H 1900 1950 60  0000 C CNN
+F 3 "" H 1900 1950 60  0000 C CNN
+	1    1900 1950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2450 1950 2450 1900
-Text HLabel 4100 2850 0    60   Input ~ 0
+	1900 1950 1900 1900
+Text HLabel 2050 2850 0    60   Input ~ 0
 OTG_EN
-Text HLabel 4100 2950 0    60   Input ~ 0
+Text HLabel 2050 2950 0    60   Input ~ 0
 ~CHG_EN
 Wire Wire Line
-	4100 2850 4200 2850
+	2050 2850 4200 2850
 Wire Wire Line
-	4100 2950 4200 2950
+	2050 2950 4200 2950
 Connection ~ 3450 2450
 Connection ~ 3250 2550
 Connection ~ 3050 2750
-$Comp
-L R R?
-U 1 1 52AB2B7E
-P 2850 2100
-F 0 "R?" V 2930 2100 40  0000 C CNN
-F 1 "Nominal" V 2857 2101 40  0000 C CNN
-F 2 "~" V 2780 2100 30  0000 C CNN
-F 3 "~" H 2850 2100 30  0000 C CNN
-	1    2850 2100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2850 1750 2850 1850
 Connection ~ 3050 1850
 Wire Wire Line
-	2600 3150 2850 3150
-Wire Wire Line
-	2850 3150 4200 3150
-Wire Wire Line
-	2850 2350 2850 3150
-Connection ~ 2850 3150
+	2050 3150 4200 3150
 $Comp
 L C C?
 U 1 1 52AB375A
@@ -422,9 +382,7 @@ Wire Wire Line
 Wire Wire Line
 	5400 2500 5400 2600
 Wire Wire Line
-	5400 2600 6950 2600
-Wire Wire Line
-	6950 2600 7050 2600
+	5400 2600 7050 2600
 Text HLabel 7050 2600 2    60   BiDi ~ 0
 BATT
 Connection ~ 6950 2600
@@ -442,13 +400,9 @@ $EndComp
 Wire Wire Line
 	5400 2050 5600 2050
 Wire Wire Line
-	5400 1650 5400 1750
+	5400 1650 5400 1850
 Wire Wire Line
-	5400 1750 5400 1850
-Wire Wire Line
-	5400 1650 5600 1650
-Wire Wire Line
-	5600 1650 5700 1650
+	5400 1650 5700 1650
 Connection ~ 5400 1750
 Connection ~ 5600 1650
 $Comp
@@ -465,13 +419,7 @@ $EndComp
 Wire Wire Line
 	5400 2350 5400 2250
 Wire Wire Line
-	6300 1650 6400 1650
-Wire Wire Line
-	6400 1650 6650 1650
-Wire Wire Line
-	6650 1650 6950 1650
-Wire Wire Line
-	6950 1650 7150 1650
+	6300 1650 7150 1650
 Wire Wire Line
 	6400 1650 6400 2250
 Wire Wire Line
@@ -570,10 +518,86 @@ Text Notes 5650 2550 0    60   ~ 0
 4A @ 3.65V Charging
 Text HLabel 7150 1650 2    60   Output ~ 0
 SYS_OUT
-Text Notes 3900 3800 2    60   ~ 0
+Text Notes 4900 3750 2    60   ~ 0
 Charger limited to 2A @ 5V
 Text Notes 7100 1300 2    60   ~ 0
 I_SAT >= 4A + 0.5*I_RIPPLE = 4 + .5*.378 = 4.189A
 Text Notes 6650 1150 2    60   ~ 0
 I_RIPPLE = 5*.5*.5/1.5/2.2 = 0.378A
+Text Notes 2350 3500 2    60   ~ 0
+Indicator LED
+$Comp
+L LED_GENERIC_SMD D?
+U 1 1 52B37BFF
+P 2450 3450
+F 0 "D?" H 2450 3550 50  0000 C CNN
+F 1 "LED_GENERIC_SMD" H 2450 3300 50  0001 C CNN
+F 2 "~" H 2450 3450 60  0000 C CNN
+F 3 "~" H 2450 3450 60  0000 C CNN
+	1    2450 3450
+	0    1    1    0   
+$EndComp
+Text Notes 1750 3600 0    60   ~ 0
+1.9V @ 2mA
+$Comp
+L DGND #PWR?
+U 1 1 52B37C0F
+P 2450 3800
+F 0 "#PWR?" H 2450 3800 40  0001 C CNN
+F 1 "DGND" H 2450 3730 40  0000 C CNN
+F 2 "" H 2450 3800 60  0000 C CNN
+F 3 "" H 2450 3800 60  0000 C CNN
+	1    2450 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 3800 2450 3650
+Wire Notes Line
+	3900 3400 3900 3650
+Connection ~ 2850 1850
+$Comp
+L R R?
+U 1 1 52B3B9CF
+P 2850 2100
+F 0 "R?" V 2930 2100 40  0000 C CNN
+F 1 "Nominal" V 2857 2101 40  0000 C CNN
+F 2 "~" V 2780 2100 30  0000 C CNN
+F 3 "~" H 2850 2100 30  0000 C CNN
+	1    2850 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2850 2350 2850 2850
+Connection ~ 2850 2850
+$Comp
+L R R?
+U 1 1 52B3BA8E
+P 2450 2100
+F 0 "R?" V 2530 2100 40  0000 C CNN
+F 1 "700" V 2457 2101 40  0000 C CNN
+F 2 "~" V 2380 2100 30  0000 C CNN
+F 3 "~" H 2450 2100 30  0000 C CNN
+	1    2450 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 2350 2450 3250
+Connection ~ 2450 3150
+Wire Wire Line
+	2650 2950 2650 3250
+Connection ~ 2650 2950
+$Comp
+L R R?
+U 1 1 52B3BBFD
+P 2650 3500
+F 0 "R?" V 2730 3500 40  0000 C CNN
+F 1 "Nominal" V 2657 3501 40  0000 C CNN
+F 2 "~" V 2580 3500 30  0000 C CNN
+F 3 "~" H 2650 3500 30  0000 C CNN
+	1    2650 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 3750 2650 3750
+Connection ~ 2450 3750
 $EndSCHEMATC

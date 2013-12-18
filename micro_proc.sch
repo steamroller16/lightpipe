@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 6 18
 Title ""
-Date "14 dec 2013"
+Date "18 dec 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -203,4 +203,8 @@ Wire Wire Line
 	4100 3200 4200 3200
 Wire Wire Line
 	4100 3300 4200 3300
+Text HLabel 7900 2450 2    60   Input ~ 0
+INT_CHG
+Wire Wire Line
+	7800 2450 7900 2450
 $EndSCHEMATC

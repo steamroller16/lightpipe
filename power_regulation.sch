@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 17 18
+Sheet 15 18
 Title ""
-Date "14 dec 2013"
+Date "18 dec 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -50,22 +50,11 @@ L R R?
 U 1 1 5225739D
 P 4150 1950
 F 0 "R?" V 4230 1950 40  0000 C CNN
-F 1 "500/1k" V 4157 1951 40  0000 C CNN
+F 1 "700" V 4157 1951 40  0000 C CNN
 F 2 "~" V 4080 1950 30  0000 C CNN
 F 3 "~" H 4150 1950 30  0000 C CNN
 	1    4150 1950
 	-1   0    0    1   
-$EndComp
-$Comp
-L LED D?
-U 1 1 522573BB
-P 4150 2450
-F 0 "D?" H 4150 2550 50  0000 C CNN
-F 1 "LED" H 4150 2350 50  0000 C CNN
-F 2 "~" H 4150 2450 60  0000 C CNN
-F 3 "~" H 4150 2450 60  0000 C CNN
-	1    4150 2450
-	0    1    1    0   
 $EndComp
 $Comp
 L LM3668 U?
@@ -112,21 +101,13 @@ F 3 "~" H 3800 1900 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1350 850  1450 850 
-Wire Wire Line
-	1450 850  2100 850 
-Wire Wire Line
-	2100 850  2300 850 
+	1350 850  2300 850 
 Wire Wire Line
 	2100 2850 2100 2900
 Wire Wire Line
-	2100 2900 2200 2900
+	2100 2900 2300 2900
 Wire Wire Line
-	2200 2900 2300 2900
-Wire Wire Line
-	2200 2850 2200 2900
-Wire Wire Line
-	2200 2900 2200 3050
+	2200 2850 2200 3050
 Connection ~ 2200 2900
 Wire Wire Line
 	2300 2900 2300 2850
@@ -135,9 +116,7 @@ Wire Wire Line
 Wire Wire Line
 	1400 2300 1400 2350
 Wire Wire Line
-	3800 2100 3800 2650
-Wire Wire Line
-	3800 2650 3800 2700
+	3800 2100 3800 2700
 Wire Wire Line
 	2950 1800 3050 1800
 Wire Wire Line
@@ -154,12 +133,10 @@ Wire Wire Line
 Wire Wire Line
 	1450 1450 1450 1350
 Connection ~ 1450 850 
-Wire Wire Line
-	4150 2200 4150 2250
 Text HLabel 4250 1700 2    60   Output ~ 0
 3.3V_600mA
-Text Notes 4450 2650 1    60   ~ 0
-3.3V Indicator LED
+Text Notes 4950 2500 2    60   ~ 0
+Indicator LED
 Text HLabel 1350 850  0    60   Input ~ 0
 BATT_IN
 Wire Wire Line
@@ -213,8 +190,6 @@ F 3 "" H 3800 2700 60  0000 C CNN
 	1    3800 2700
 	1    0    0    -1  
 $EndComp
-Text HLabel 1350 2200 0    60   Input ~ 0
-BATT_IN
 Wire Wire Line
 	1050 2050 1450 2050
 Wire Wire Line
@@ -241,12 +216,23 @@ Wire Wire Line
 Connection ~ 3800 2650
 Connection ~ 3800 1700
 Wire Wire Line
-	2950 1700 3050 1700
-Wire Wire Line
-	3050 1700 3800 1700
-Wire Wire Line
-	3800 1700 4150 1700
-Wire Wire Line
-	4150 1700 4250 1700
+	2950 1700 4250 1700
 Connection ~ 4150 1700
+Text HLabel 1350 2200 0    60   Input ~ 0
+PWR_EN
+$Comp
+L LED_GENERIC_SMD D?
+U 1 1 52B2DEF7
+P 4150 2450
+F 0 "D?" H 4150 2550 50  0000 C CNN
+F 1 "LED_GENERIC_SMD" H 4150 2300 50  0001 C CNN
+F 2 "~" H 4150 2450 60  0000 C CNN
+F 3 "~" H 4150 2450 60  0000 C CNN
+	1    4150 2450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4150 2200 4150 2250
+Text Notes 4350 2600 0    60   ~ 0
+1.9V @ 2mA
 $EndSCHEMATC
