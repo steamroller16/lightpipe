@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: 12/18/2013 8:57:29 AM
+EESchema-LIBRARY Version 2.3  Date: 12/19/2013 12:57:29 AM
 #encoding utf-8
 #
 # +2.5V_local
@@ -690,7 +690,7 @@ F1 "TEST_PT" 0 200 60 H I C CNN
 F2 "~" 0 0 60 H V C CNN
 F3 "~" 0 0 60 H V C CNN
 DRAW
-T 0 0 -150 20 0 0 0 TEST  Normal 0 C C
+T 0 0 0 20 0 0 0 TEST  Normal 0 C C
 C 0 0 50 0 1 0 N
 X PAD 1 100 0 50 L 50 50 1 1 O
 ENDDRAW
