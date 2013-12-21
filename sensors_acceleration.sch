@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 9 18
 Title ""
-Date "20 dec 2013"
+Date "21 dec 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -165,11 +165,11 @@ Wire Wire Line
 	2900 1300 3500 1300
 Connection ~ 1700 1400
 Wire Wire Line
-	1500 2000 1700 2000
+	1700 2000 1500 2000
 Wire Wire Line
-	1500 2150 1500 2000
+	1500 2000 1500 2150
 Wire Wire Line
-	1100 2150 1500 2150
+	1500 2150 1100 2150
 Connection ~ 1700 2000
 Connection ~ 1700 1900
 Connection ~ 1700 1800
@@ -209,4 +209,34 @@ Wire Wire Line
 	3200 650  3200 700 
 Wire Wire Line
 	3200 700  3350 700 
+Connection ~ 1250 1150
+Connection ~ 1250 1750
+$Comp
+L DGND #PWR050
+U 1 1 52B5F4D4
+P 1400 2400
+F 0 "#PWR050" H 1400 2400 40  0001 C CNN
+F 1 "DGND" H 1400 2330 40  0000 C CNN
+F 2 "" H 1400 2400 60  0000 C CNN
+F 3 "" H 1400 2400 60  0000 C CNN
+	1    1400 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L AGND #PWR051
+U 1 1 52B5F4DA
+P 1600 2400
+F 0 "#PWR051" H 1600 2400 40  0001 C CNN
+F 1 "AGND" H 1600 2330 50  0000 C CNN
+F 2 "" H 1600 2400 60  0000 C CNN
+F 3 "" H 1600 2400 60  0000 C CNN
+	1    1600 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1400 2400 1400 2350
+Wire Wire Line
+	1400 2350 1600 2350
+Wire Wire Line
+	1600 2350 1600 2400
 $EndSCHEMATC
