@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 18
 Title "Bike Light"
-Date "21 dec 2013"
+Date "12 jan 2014"
 Rev "1.0"
 Comp ""
 Comment1 ""
