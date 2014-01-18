@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 18
+Sheet 1 15
 Title "Bike Light"
-Date "12 jan 2014"
+Date "18 jan 2014"
 Rev "1.0"
 Comp ""
 Comment1 ""
@@ -82,13 +82,6 @@ F22 "SBWTDIO" B L 5500 5350 60
 F23 "INT_CHG" I L 5500 2100 60 
 $EndSheet
 $Sheet
-S 7050 5800 900  200 
-U 527B19B4
-F0 "sensors_temperature" 50
-F1 "sensors_temperature.sch" 50
-F2 "V_TEMP" O R 7950 5900 60 
-$EndSheet
-$Sheet
 S 4500 3100 900  350 
 U 527B1CA6
 F0 "sensors_light" 50
@@ -105,17 +98,6 @@ F1 "sensors_acceleration.sch" 50
 F2 "SCL" I L 4350 1750 60 
 F3 "SDA" B L 4350 1900 60 
 F4 "~INT" O R 5250 1750 60 
-$EndSheet
-$Sheet
-S 7050 6600 900  650 
-U 527F3E83
-F0 "output_signal_brake" 50
-F1 "output_signal_brake.sch" 50
-F2 "SDI" I L 7050 6700 60 
-F3 "CLK" I L 7050 6850 60 
-F4 "LE" I L 7050 7000 60 
-F5 "~OE" I L 7050 7150 60 
-F6 "SDO" O R 7950 6700 60 
 $EndSheet
 $Sheet
 S 4500 2200 900  500 
@@ -143,11 +125,7 @@ Text Notes 4100 2750 0    60   ~ 0
 <Done>
 Text Notes 4100 3450 0    60   ~ 0
 <Done>
-Text Notes 6500 5950 0    60   ~ 0
-<Done>
 Text Notes 7750 3350 0    60   ~ 0
-<Done>
-Text Notes 7500 6900 0    60   ~ 0
 <Done>
 Text Notes 3950 2050 0    60   ~ 0
 <Done>
@@ -173,19 +151,6 @@ F5 "BATT_IN" I L 7000 1150 60
 F6 "PWR_GOOD" O R 7900 1650 60 
 F7 "PWR_EN" I L 7000 1250 60 
 $EndSheet
-$Sheet
-S 8200 1050 900  700 
-U 52A3795F
-F0 "output_headlight" 50
-F1 "output_headlight.sch" 50
-F2 "SCL" I L 8200 1400 60 
-F3 "SDA" B L 8200 1550 60 
-F4 "BATT_IN" I L 8200 1150 60 
-$EndSheet
-Text Notes 6500 6200 0    60   ~ 0
-This should be integrated into the headlight module somehow. \nNot sure yet what way to do that.
-Text Notes 8700 5550 0    60   ~ 0
-Unused components go here:
 Wire Wire Line
 	5400 2300 5500 2300
 Wire Wire Line
@@ -201,29 +166,11 @@ Wire Wire Line
 Wire Wire Line
 	5250 1750 5500 1750
 Wire Wire Line
-	7950 5900 8050 5900
-Wire Notes Line
-	10500 5600 6350 5600
-Wire Notes Line
-	6350 5600 6350 7350
+	7250 1400 9300 1400
 Wire Wire Line
-	8200 1450 8450 1450
+	7250 1550 9300 1550
 Wire Wire Line
-	8450 1450 8450 1400
-Wire Wire Line
-	8450 1400 9300 1400
-Wire Wire Line
-	8200 1600 8450 1600
-Wire Wire Line
-	8450 1600 8450 1550
-Wire Wire Line
-	8450 1550 9300 1550
-Wire Wire Line
-	8200 1200 8650 1200
-Wire Wire Line
-	8650 1200 8650 1150
-Wire Wire Line
-	8650 1150 9300 1150
+	7450 1150 9300 1150
 Wire Wire Line
 	7000 1150 7000 1200
 Wire Wire Line
@@ -231,15 +178,11 @@ Wire Wire Line
 Wire Wire Line
 	7450 1200 7450 1150
 Wire Wire Line
-	7450 1150 8200 1150
-Wire Wire Line
 	7000 1400 7000 1450
 Wire Wire Line
 	7000 1450 7250 1450
 Wire Wire Line
 	7250 1450 7250 1400
-Wire Wire Line
-	7250 1400 8200 1400
 Wire Wire Line
 	7000 1550 7000 1600
 Wire Wire Line
@@ -247,13 +190,11 @@ Wire Wire Line
 Wire Wire Line
 	7250 1600 7250 1550
 Wire Wire Line
-	7250 1550 8200 1550
+	8200 1150 8200 1150
 Wire Wire Line
-	8200 1150 8200 1200
+	8200 1400 8200 1400
 Wire Wire Line
-	8200 1400 8200 1450
-Wire Wire Line
-	8200 1550 8200 1600
+	8200 1550 8200 1550
 Wire Wire Line
 	2200 1300 5500 1300
 Wire Wire Line
@@ -307,7 +248,7 @@ Wire Wire Line
 Wire Wire Line
 	5400 3200 5500 3200
 Wire Wire Line
-	5500 3750 5400 3750
+	5400 3750 5500 3750
 Wire Wire Line
 	5400 3900 5500 3900
 $Comp
@@ -340,10 +281,8 @@ Wire Wire Line
 	3000 1200 3000 1150
 Wire Wire Line
 	3000 1150 7000 1150
-Text Notes 8400 800  0    60   ~ 0
-<3.3V 3A Reg goes here>
-Wire Notes Line
-	8400 850  8400 950 
+Text Notes 8650 7350 0    60   ~ 0
+<See future_use.sch for unused items>
 Text Notes 6800 4300 0    60   ~ 0
 <Need to select proper bypass caps>
 $Sheet
@@ -354,43 +293,6 @@ F1 "interface_JTAG_2_wire.sch" 50
 F2 "SBWTCK" O R 5200 5200 60 
 F3 "SBWTDIO" B R 5200 5350 60 
 $EndSheet
-$Comp
-L C C1
-U 1 1 52A6923B
-P 9800 6050
-F 0 "C1" H 9800 6150 40  0000 L CNN
-F 1 "Cap Nominal" H 9900 5950 40  0000 L CNN
-F 2 "~" H 9838 5900 30  0000 C CNN
-F 3 "~" H 9800 6050 60  0000 C CNN
-	1    9800 6050
-	1    0    0    -1  
-$EndComp
-$Comp
-L +3.3V #PWR02
-U 1 1 52A69241
-P 9800 5800
-F 0 "#PWR02" H 9800 5760 30  0001 C CNN
-F 1 "+3.3V" H 9800 5910 30  0000 C CNN
-F 2 "" H 9800 5800 60  0000 C CNN
-F 3 "" H 9800 5800 60  0000 C CNN
-	1    9800 5800
-	1    0    0    -1  
-$EndComp
-$Comp
-L DGND #PWR03
-U 1 1 52A69247
-P 9800 6300
-F 0 "#PWR03" H 9800 6300 40  0001 C CNN
-F 1 "DGND" H 9800 6230 40  0000 C CNN
-F 2 "" H 9800 6300 60  0000 C CNN
-F 3 "" H 9800 6300 60  0000 C CNN
-	1    9800 6300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9800 5800 9800 5850
-Wire Wire Line
-	9800 6250 9800 6300
 Wire Wire Line
 	5200 5200 5500 5200
 Wire Wire Line
@@ -415,11 +317,11 @@ F8 "USB_ID" B L 4500 4750 60
 F9 "~RESET" I L 4500 3750 60 
 $EndSheet
 Wire Wire Line
-	4500 4300 2200 4300
+	2200 4300 4500 4300
 Wire Wire Line
 	2200 4450 4500 4450
 Wire Wire Line
-	4500 4600 2200 4600
+	2200 4600 4500 4600
 Wire Wire Line
 	2200 1150 2300 1150
 Wire Wire Line
@@ -718,10 +620,16 @@ F 3 "~" H 4350 3750 60  0000 C CNN
 $EndComp
 Wire Wire Line
 	4450 3750 4500 3750
-NoConn ~ 8050 5900
-NoConn ~ 7050 6700
-NoConn ~ 7050 6850
-NoConn ~ 7050 7000
-NoConn ~ 7050 7150
-NoConn ~ 7950 6700
+Wire Notes Line
+	8550 7350 8550 7150
+Wire Notes Line
+	8550 7150 10450 7150
+Wire Notes Line
+	10450 7100 8500 7100
+Wire Notes Line
+	8500 7100 8500 7350
+Wire Notes Line
+	8450 7350 8450 7050
+Wire Notes Line
+	8450 7050 10450 7050
 $EndSCHEMATC
