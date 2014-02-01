@@ -1,0 +1,268 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:bike_light
+LIBS:bike_light-cache
+EELAYER 27 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 14 18
+Title ""
+Date "27 jan 2014"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Notes 5250 3050 0    60   ~ 0
+Brake
+$Comp
+L LS-E63F D?
+U 1 1 52E61A2E
+P 5400 3450
+F 0 "D?" H 5400 3550 50  0000 C CNN
+F 1 "LS-E63F" H 5400 3300 50  0001 C CNN
+F 2 "~" H 5400 3450 60  0000 C CNN
+F 3 "~" H 5400 3450 60  0000 C CNN
+	1    5400 3450
+	0    1    1    0   
+$EndComp
+$Comp
+L LS-E63F D?
+U 1 1 52E61A34
+P 5700 3450
+F 0 "D?" H 5700 3550 50  0000 C CNN
+F 1 "LS-E63F" H 5700 3300 50  0001 C CNN
+F 2 "~" H 5700 3450 60  0000 C CNN
+F 3 "~" H 5700 3450 60  0000 C CNN
+	1    5700 3450
+	0    1    1    0   
+$EndComp
+$Comp
+L LS-E63F D?
+U 1 1 52E61A3A
+P 6300 3450
+F 0 "D?" H 6300 3550 50  0000 C CNN
+F 1 "LS-E63F" H 6300 3300 50  0001 C CNN
+F 2 "~" H 6300 3450 60  0000 C CNN
+F 3 "~" H 6300 3450 60  0000 C CNN
+	1    6300 3450
+	0    1    1    0   
+$EndComp
+$Comp
+L LS-E63F D?
+U 1 1 52E61A40
+P 5850 3800
+F 0 "D?" H 5850 3900 50  0000 C CNN
+F 1 "LS-E63F" H 5850 3650 50  0001 C CNN
+F 2 "~" H 5850 3800 60  0000 C CNN
+F 3 "~" H 5850 3800 60  0000 C CNN
+	1    5850 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L LS-E63F D?
+U 1 1 52E61A46
+P 5250 3800
+F 0 "D?" H 5250 3900 50  0000 C CNN
+F 1 "LS-E63F" H 5250 3650 50  0001 C CNN
+F 2 "~" H 5250 3800 60  0000 C CNN
+F 3 "~" H 5250 3800 60  0000 C CNN
+	1    5250 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L LS-E63F D?
+U 1 1 52E61A4C
+P 6000 3450
+F 0 "D?" H 6000 3550 50  0000 C CNN
+F 1 "LS-E63F" H 6000 3300 50  0001 C CNN
+F 2 "~" H 6000 3450 60  0000 C CNN
+F 3 "~" H 6000 3450 60  0000 C CNN
+	1    6000 3450
+	0    1    1    0   
+$EndComp
+$Comp
+L LS-E63F D?
+U 1 1 52E61A52
+P 5550 3800
+F 0 "D?" H 5550 3900 50  0000 C CNN
+F 1 "LS-E63F" H 5550 3650 50  0001 C CNN
+F 2 "~" H 5550 3800 60  0000 C CNN
+F 3 "~" H 5550 3800 60  0000 C CNN
+	1    5550 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L LS-E63F D?
+U 1 1 52E61A58
+P 6150 3800
+F 0 "D?" H 6150 3900 50  0000 C CNN
+F 1 "LS-E63F" H 6150 3650 50  0001 C CNN
+F 2 "~" H 6150 3800 60  0000 C CNN
+F 3 "~" H 6150 3800 60  0000 C CNN
+	1    6150 3800
+	0    1    1    0   
+$EndComp
+Text HLabel 4800 3250 0    60   Input ~ 0
++2.5V
+Text HLabel 6400 4800 2    60   UnSpc ~ 0
+CATHODE_1
+Text HLabel 6400 4700 2    60   UnSpc ~ 0
+CATHODE_2
+Text HLabel 6400 4600 2    60   UnSpc ~ 0
+CATHODE_3
+Text HLabel 6400 4500 2    60   UnSpc ~ 0
+CATHODE_4
+Text HLabel 6400 4400 2    60   UnSpc ~ 0
+CATHODE_5
+Text HLabel 6400 4300 2    60   UnSpc ~ 0
+CATHODE_6
+Text HLabel 6400 4200 2    60   UnSpc ~ 0
+CATHODE_7
+Text HLabel 6400 4100 2    60   UnSpc ~ 0
+CATHODE_8
+Wire Wire Line
+	5250 3600 5250 3250
+Wire Wire Line
+	6150 3250 6150 3600
+Wire Wire Line
+	4800 3250 4950 3250
+Wire Wire Line
+	4950 3250 5250 3250
+Wire Wire Line
+	5250 3250 5400 3250
+Wire Wire Line
+	5400 3250 5550 3250
+Wire Wire Line
+	5550 3250 5700 3250
+Wire Wire Line
+	5700 3250 5850 3250
+Wire Wire Line
+	5850 3250 6000 3250
+Wire Wire Line
+	6000 3250 6150 3250
+Wire Wire Line
+	6150 3250 6300 3250
+Wire Wire Line
+	5850 3250 5850 3600
+Wire Wire Line
+	5550 3250 5550 3600
+Connection ~ 5400 3250
+Connection ~ 5700 3250
+Connection ~ 5550 3250
+Connection ~ 6000 3250
+Connection ~ 5850 3250
+Connection ~ 6150 3250
+Wire Wire Line
+	6300 3650 6300 4100
+Wire Wire Line
+	6000 3650 6000 4300
+Wire Wire Line
+	5700 3650 5700 4500
+Wire Wire Line
+	5400 3650 5400 4700
+Connection ~ 5250 3250
+Wire Wire Line
+	5250 4000 5250 4800
+Wire Wire Line
+	5550 4000 5550 4600
+Wire Wire Line
+	5850 4000 5850 4400
+Wire Wire Line
+	6150 4000 6150 4200
+Wire Notes Line
+	5250 3150 5250 3100
+Wire Notes Line
+	5250 3100 6300 3100
+Wire Notes Line
+	6300 3100 6300 3150
+Wire Wire Line
+	4950 4100 6300 4100
+Wire Wire Line
+	6300 4100 6400 4100
+Wire Wire Line
+	4950 4200 6150 4200
+Wire Wire Line
+	6150 4200 6400 4200
+Wire Wire Line
+	4950 4300 6000 4300
+Wire Wire Line
+	6000 4300 6400 4300
+Wire Wire Line
+	4950 4400 5850 4400
+Wire Wire Line
+	5850 4400 6400 4400
+Wire Wire Line
+	4950 4500 5700 4500
+Wire Wire Line
+	5700 4500 6400 4500
+Wire Wire Line
+	4950 4600 5550 4600
+Wire Wire Line
+	5550 4600 6400 4600
+Wire Wire Line
+	4950 4700 5400 4700
+Wire Wire Line
+	5400 4700 6400 4700
+Wire Wire Line
+	4950 4800 5250 4800
+Wire Wire Line
+	5250 4800 6400 4800
+Connection ~ 6300 4100
+Connection ~ 6150 4200
+Connection ~ 6000 4300
+Connection ~ 5850 4400
+Connection ~ 5700 4500
+Connection ~ 5550 4600
+Connection ~ 5400 4700
+Connection ~ 5250 4800
+$Comp
+L CONN_10 P?
+U 1 1 52E61B94
+P 4600 4350
+F 0 "P?" V 4550 4350 60  0000 C CNN
+F 1 "REAR_CONN" V 4650 4350 60  0000 C CNN
+F 2 "" H 4600 4350 60  0000 C CNN
+F 3 "" H 4600 4350 60  0000 C CNN
+	1    4600 4350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4950 3250 4950 3900
+Wire Wire Line
+	4950 3900 4950 4000
+Connection ~ 4950 3250
+Connection ~ 4950 3900
+$EndSCHEMATC

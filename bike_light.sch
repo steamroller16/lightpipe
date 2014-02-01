@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 15
+Sheet 1 16
 Title "Bike Light"
-Date "18 jan 2014"
+Date "1 feb 2014"
 Rev "1.0"
 Comp ""
 Comment1 ""

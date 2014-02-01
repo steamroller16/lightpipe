@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 15
+Sheet 2 16
 Title ""
-Date "18 jan 2014"
+Date "1 feb 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -52,22 +52,6 @@ F0 "battery_module_1" 50
 F1 "battery_module.sch" 50
 F2 "V_BATT" O R 1600 2200 60 
 F3 "CHG" I L 700 2200 60 
-$EndSheet
-$Sheet
-S 700  2500 900  200 
-U 5281E180
-F0 "battery_module_2" 50
-F1 "battery_module.sch" 50
-F2 "V_BATT" O R 1600 2600 60 
-F3 "CHG" I L 700 2600 60 
-$EndSheet
-$Sheet
-S 700  2900 900  200 
-U 5281E2A4
-F0 "battery_module_3" 50
-F1 "battery_module.sch" 50
-F2 "V_BATT" O R 1600 3000 60 
-F3 "CHG" I L 700 3000 60 
 $EndSheet
 Text HLabel 3550 1250 2    60   Output ~ 0
 V_PACK
@@ -136,7 +120,7 @@ $Comp
 L FUSE #F1
 U 1 1 5281EB5E
 P 2150 650
-F 0 "#F1" H 2250 700 40  0000 C CNN
+F 0 "#F1" H 2250 700 40  0001 C CNN
 F 1 "FUSE" H 2050 600 40  0000 C CNN
 F 2 "~" H 2150 650 60  0000 C CNN
 F 3 "~" H 2150 650 60  0000 C CNN
@@ -184,8 +168,6 @@ Wire Wire Line
 	700  2200 600  2200
 Wire Wire Line
 	600  2200 600  3250
-Wire Wire Line
-	600  2600 700  2600
 Wire Wire Line
 	600  3000 700  3000
 Connection ~ 600  2600
@@ -252,4 +234,6 @@ Should we include a fuse?
 Text Notes 650  1050 0    60   ~ 0
 What should the current sense resistor be?
 Connection ~ 3250 1550
+Wire Wire Line
+	600  2600 700  2600
 $EndSCHEMATC
