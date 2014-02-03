@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 9 16
 Title ""
-Date "1 feb 2014"
+Date "3 feb 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -1473,4 +1473,10 @@ Wire Wire Line
 	9000 4550 8950 4550
 Wire Wire Line
 	9000 4650 8950 4650
+Text Notes 8450 6150 0    60   ~ 0
+1.4MHz operation
+Text Notes 8400 5100 0    60   ~ 0
+-30%< L <+20% 
+Text Notes 9450 5150 0    60   ~ 0
+-50% < C < +20%
 $EndSCHEMATC
