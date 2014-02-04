@@ -3,9 +3,9 @@
   (general
     (links 509)
     (no_connects 499)
-    (area 0 0 0 0)
+    (area 159.919999 37.999999 567.790001 234.796001)
     (thickness 1.6)
-    (drawings 106)
+    (drawings 39)
     (tracks 0)
     (zones 0)
     (modules 181)
@@ -335,7 +335,7 @@
   )
 
   (module WSOF_5 (layer F.Cu) (tedit 52D9D1CC) (tstamp 52ECCB5F)
-    (at 444.627 199.898 90)
+    (at 196.215 84.074 90)
     (path /527B1CA6/529265A6)
     (fp_text reference U31 (at 0.5 1.3 90) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -368,12 +368,12 @@
   )
 
   (module USB_MICRO_AB_SMT (layer F.Cu) (tedit 52DA1846) (tstamp 52ECCB53)
-    (at 401.32 193.548 180)
+    (at 155.448 89.408)
     (path /5224C595/52807223)
-    (fp_text reference U47 (at 0 7.25 180) (layer F.SilkS) hide
+    (fp_text reference U47 (at 0 7.25) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value CONN_USB (at 0.25 -2 180) (layer F.SilkS)
+    (fp_text value CONN_USB (at 0.25 -2) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start -3.75 5) (end -4.4 5.6) (layer F.SilkS) (width 0.15))
@@ -383,124 +383,124 @@
     (fp_line (start 3.75 5) (end 3.75 0) (layer F.SilkS) (width 0.15))
     (fp_line (start 3.75 0) (end -3.75 0) (layer F.SilkS) (width 0.15))
     (fp_line (start -3.75 0) (end -3.75 5) (layer F.SilkS) (width 0.15))
-    (pad 1 smd rect (at -1.3 0 180) (size 0.4 1.4)
+    (pad 1 smd rect (at -1.3 0) (size 0.4 1.4)
       (layers F.Cu F.Paste F.Mask)
       (net 8 /battery_charger/USB_5V)
     )
-    (pad 2 smd rect (at -0.65 0 180) (size 0.4 1.4)
+    (pad 2 smd rect (at -0.65 0) (size 0.4 1.4)
       (layers F.Cu F.Paste F.Mask)
       (net 10 /battery_charger/USB_D-)
     )
-    (pad 3 smd rect (at 0 0 180) (size 0.4 1.4)
+    (pad 3 smd rect (at 0 0) (size 0.4 1.4)
       (layers F.Cu F.Paste F.Mask)
       (net 9 /battery_charger/USB_D+)
     )
-    (pad 4 smd rect (at 0.65 0 180) (size 0.4 1.4)
+    (pad 4 smd rect (at 0.65 0) (size 0.4 1.4)
       (layers F.Cu F.Paste F.Mask)
       (net 22 /interface_usb/USB_ID)
     )
-    (pad 5 smd rect (at 1.3 0 180) (size 0.4 1.4)
+    (pad 5 smd rect (at 1.3 0) (size 0.4 1.4)
       (layers F.Cu F.Paste F.Mask)
       (net 69 AGND)
     )
-    (pad "" smd rect (at -1.125 2.85 180) (size 1.85 1.9)
+    (pad "" smd rect (at -1.125 2.85) (size 1.85 1.9)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad "" smd rect (at 1.125 2.85 180) (size 1.85 1.9)
+    (pad "" smd rect (at 1.125 2.85) (size 1.85 1.9)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad "" smd rect (at -3.75 2.85 180) (size 2.3 1.9)
+    (pad "" smd rect (at -3.75 2.85) (size 2.3 1.9)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad "" smd rect (at 3.75 2.85 180) (size 2.3 1.9)
+    (pad "" smd rect (at 3.75 2.85) (size 2.3 1.9)
       (layers F.Cu F.Paste F.Mask)
     )
   )
 
   (module US8 (layer F.Cu) (tedit 52D9BA3D) (tstamp 52ECCB3E)
-    (at 374.269 189.611 180)
+    (at 127.635 81.153 90)
     (path /5224C457/5281D330/5281D398)
-    (fp_text reference U23 (at 0.5 2.7 180) (layer F.SilkS) hide
+    (fp_text reference U23 (at 0.5 2.7 90) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value NC7WZ08 (at 0.5 -5.4 180) (layer F.SilkS)
+    (fp_text value NC7WZ08 (at 0.5 -5.4 90) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start -0.53086 0.73152) (end -0.53086 0.47752) (layer F.SilkS) (width 0.15))
     (fp_line (start -0.53086 0.73152) (end -0.27686 0.73152) (layer F.SilkS) (width 0.15))
-    (pad 1 smd rect (at 0 0 180) (size 0.3 0.7)
+    (pad 1 smd rect (at 0 0 90) (size 0.3 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 12 /battery_pack/battery_module_1/CHG)
     )
-    (pad 2 smd rect (at 0.5 0 180) (size 0.3 0.7)
+    (pad 2 smd rect (at 0.5 0 90) (size 0.3 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 17 /battery_pack/battery_module_1/~OV)
     )
-    (pad 3 smd rect (at 1 0 180) (size 0.3 0.7)
+    (pad 3 smd rect (at 1 0 90) (size 0.3 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 79 N-00000176)
     )
-    (pad 4 smd rect (at 1.5 0 180) (size 0.3 0.7)
+    (pad 4 smd rect (at 1.5 0 90) (size 0.3 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 69 AGND)
     )
-    (pad 5 smd rect (at 1.5 -2.7 180) (size 0.3 0.7)
+    (pad 5 smd rect (at 1.5 -2.7 90) (size 0.3 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 16 /battery_pack/battery_module_1/~CHG)
     )
-    (pad 6 smd rect (at 1 -2.7 180) (size 0.3 0.7)
+    (pad 6 smd rect (at 1 -2.7 90) (size 0.3 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 18 /battery_pack/battery_module_1/~UV)
     )
-    (pad 7 smd rect (at 0.5 -2.7 180) (size 0.3 0.7)
+    (pad 7 smd rect (at 0.5 -2.7 90) (size 0.3 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 13 /battery_pack/battery_module_1/NMOS_CTRL)
     )
-    (pad 8 smd rect (at 0 -2.7 180) (size 0.3 0.7)
+    (pad 8 smd rect (at 0 -2.7 90) (size 0.3 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 1 +3.3V)
     )
   )
 
   (module UDFN6 (layer F.Cu) (tedit 52DA1319) (tstamp 52ECCB2F)
-    (at 401.066 195.834 90)
+    (at 155.829 87.249 270)
     (path /5224C595/529256B4)
-    (fp_text reference U46 (at 0.65 2.4 90) (layer F.SilkS) hide
+    (fp_text reference U46 (at 0.65 2.4 270) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value ESDR0502N (at 0.65 -1.6 90) (layer F.SilkS)
+    (fp_text value ESDR0502N (at 0.65 -1.6 270) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start -0.59055 -0.49149) (end -0.59055 -0.23749) (layer F.SilkS) (width 0.15))
     (fp_line (start -0.59055 -0.49149) (end -0.33655 -0.49149) (layer F.SilkS) (width 0.15))
-    (pad 1 smd rect (at 0 0 90) (size 0.42 0.22)
+    (pad 1 smd rect (at 0 0 270) (size 0.42 0.22)
       (layers F.Cu F.Paste F.Mask)
       (net 69 AGND)
     )
-    (pad 2 smd rect (at 0 0.4 90) (size 0.42 0.22)
+    (pad 2 smd rect (at 0 0.4 270) (size 0.42 0.22)
       (layers F.Cu F.Paste F.Mask)
       (net 9 /battery_charger/USB_D+)
     )
-    (pad 3 smd rect (at 0 0.8 90) (size 0.42 0.22)
+    (pad 3 smd rect (at 0 0.8 270) (size 0.42 0.22)
       (layers F.Cu F.Paste F.Mask)
       (net 10 /battery_charger/USB_D-)
     )
-    (pad 4 smd rect (at 0.65 0.8 90) (size 0.42 0.22)
+    (pad 4 smd rect (at 0.65 0.8 270) (size 0.42 0.22)
       (layers F.Cu F.Paste F.Mask)
       (net 10 /battery_charger/USB_D-)
     )
-    (pad 5 smd rect (at 0.65 0.4 90) (size 0.42 0.22)
+    (pad 5 smd rect (at 0.65 0.4 270) (size 0.42 0.22)
       (layers F.Cu F.Paste F.Mask)
       (net 9 /battery_charger/USB_D+)
     )
-    (pad 6 smd rect (at 0.65 0 90) (size 0.42 0.22)
+    (pad 6 smd rect (at 0.65 0 270) (size 0.42 0.22)
       (layers F.Cu F.Paste F.Mask)
       (net 8 /battery_charger/USB_5V)
     )
   )
 
   (module tssop-28 (layer F.Cu) (tedit 50BDFACC) (tstamp 52ECCB22)
-    (at 431.8 206.756)
+    (at 183.388 90.932)
     (descr TSSOP-28)
     (path /5224C543/529C2A65)
     (attr smd)
@@ -631,7 +631,7 @@
   )
 
   (module tssop-20 (layer B.Cu) (tedit 50BDFA70) (tstamp 52ECCAFC)
-    (at 336.55 199.39)
+    (at 88.138 83.566)
     (descr TSSOP-20)
     (path /52A0B607/52A0D84E)
     (attr smd)
@@ -734,7 +734,7 @@
   )
 
   (module tssop-20 (layer B.Cu) (tedit 50BDFA70) (tstamp 52ECCADE)
-    (at 466.09 199.39)
+    (at 217.678 83.566)
     (descr TSSOP-20)
     (path /52A0B607/52A0D841)
     (attr smd)
@@ -837,7 +837,7 @@
   )
 
   (module tssop-20 (layer B.Cu) (tedit 50BDFA70) (tstamp 52ECCAC0)
-    (at 306.07 199.39)
+    (at 57.658 83.566)
     (descr TSSOP-20)
     (path /52A0B607/52A0DFB5)
     (attr smd)
@@ -940,7 +940,7 @@
   )
 
   (module TOUCH_PAD_CONN (layer F.Cu) (tedit 52D9D9C5) (tstamp 52ECCAA2)
-    (at 384.683 223.393 270)
+    (at 136.271 107.569 270)
     (path /527FE989/527FF019)
     (fp_text reference U34 (at 0 2.48 270) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -958,7 +958,7 @@
   )
 
   (module TOUCH_PAD_CONN (layer F.Cu) (tedit 52D9D9C5) (tstamp 52ECCA9B)
-    (at 372.618 216.662 270)
+    (at 124.206 100.838 270)
     (path /527FE989/528002F9)
     (fp_text reference U36 (at 0 2.48 270) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -976,7 +976,7 @@
   )
 
   (module TOUCH_PAD_CONN (layer F.Cu) (tedit 52D9D9C5) (tstamp 52ECCA94)
-    (at 372.618 230.124)
+    (at 124.206 114.3)
     (path /527FE989/52800354)
     (fp_text reference U38 (at 0 2.48) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -994,7 +994,7 @@
   )
 
   (module TO_277B (layer F.Cu) (tedit 52D9A821) (tstamp 52ECCA8D)
-    (at 367.665 192.024 90)
+    (at 119.253 80.01 90)
     (path /5224C457/5281D330/5281D3CD)
     (fp_text reference D2 (at 0.92 3.982 90) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1017,7 +1017,7 @@
   )
 
   (module TO_277B (layer F.Cu) (tedit 52D9A821) (tstamp 52ECCA85)
-    (at 361.95 194.056 270)
+    (at 113.538 74.168 270)
     (path /5224C457/5281D330/5281D3C7)
     (fp_text reference D1 (at 0.92 3.982 270) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1040,7 +1040,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA7D)
-    (at 378.46 185.42)
+    (at 130.048 69.596)
     (path /52B1A44A)
     (fp_text reference U5 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1056,7 +1056,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA76)
-    (at 381 185.42)
+    (at 132.588 69.596)
     (path /52B3393A)
     (fp_text reference U14 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1072,7 +1072,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA6F)
-    (at 386.08 185.42)
+    (at 137.668 69.596)
     (path /52B1ED13)
     (fp_text reference U1 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1088,7 +1088,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA68)
-    (at 388.62 185.42)
+    (at 140.208 69.596)
     (path /52B1ED19)
     (fp_text reference U2 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1104,7 +1104,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA61)
-    (at 365.76 185.42)
+    (at 117.348 69.596)
     (path /52B1ED1F)
     (fp_text reference U4 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1120,7 +1120,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA5A)
-    (at 408.94 185.42)
+    (at 160.528 69.596)
     (path /52B19189)
     (fp_text reference U6 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1136,7 +1136,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA53)
-    (at 414.02 185.42)
+    (at 165.608 69.596)
     (path /52B2155E)
     (fp_text reference U15 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1152,7 +1152,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA4C)
-    (at 419.1 185.42)
+    (at 170.688 69.596)
     (path /52B350A4)
     (fp_text reference U18 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1168,7 +1168,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA45)
-    (at 421.64 185.42)
+    (at 173.228 69.596)
     (path /52B2295F)
     (fp_text reference U19 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1184,7 +1184,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA3E)
-    (at 426.72 185.42)
+    (at 178.308 69.596)
     (path /52B350AA)
     (fp_text reference U17 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1200,7 +1200,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA37)
-    (at 429.26 185.42)
+    (at 180.848 69.596)
     (path /52B350B0)
     (fp_text reference U16 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1216,7 +1216,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA30)
-    (at 434.34 185.42)
+    (at 185.928 69.596)
     (path /52B2B981)
     (fp_text reference U7 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1232,7 +1232,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA29)
-    (at 439.42 185.42)
+    (at 191.008 69.596)
     (path /52B2C8DE)
     (fp_text reference U3 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1248,7 +1248,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA22)
-    (at 393.7 185.42)
+    (at 145.288 69.596)
     (path /52B32F47)
     (fp_text reference U12 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1264,7 +1264,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA1B)
-    (at 406.4 185.42)
+    (at 157.988 69.596)
     (path /52B3F6D1)
     (fp_text reference U13 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1280,7 +1280,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA14)
-    (at 401.32 185.42)
+    (at 152.908 69.596)
     (path /52B35EA5)
     (fp_text reference U11 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1296,7 +1296,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA0D)
-    (at 398.78 185.42)
+    (at 150.368 69.596)
     (path /52B3C205)
     (fp_text reference U10 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1312,7 +1312,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECCA06)
-    (at 373.38 185.42)
+    (at 124.968 69.596)
     (path /52B3BE57)
     (fp_text reference U9 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1328,7 +1328,7 @@
   )
 
   (module TEST_PT (layer F.Cu) (tedit 52D9CC60) (tstamp 52ECC9FF)
-    (at 368.3 185.42)
+    (at 119.888 69.596)
     (path /52B38585)
     (fp_text reference U8 (at 0 -2.54) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1344,7 +1344,7 @@
   )
 
   (module SPEAKER_SMD_12_12 (layer F.Cu) (tedit 52D9CB08) (tstamp 52ECC9F8)
-    (at 415.163 203.835 180)
+    (at 166.751 88.011 180)
     (path /528029D1/52803375)
     (fp_text reference SP1 (at 0 7.62 180) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1367,44 +1367,44 @@
   )
 
   (module SOT363 (layer F.Cu) (tedit 52D9B8B4) (tstamp 52ECC9ED)
-    (at 376.428 190.881 180)
+    (at 123.19 74.295 90)
     (path /5224C457/5281D330/5281D380)
-    (fp_text reference U21 (at 0.65 -3.8 180) (layer F.SilkS)
+    (fp_text reference U21 (at 0.65 -3.8 90) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value 74LVC2G06 (at 0.65 1.9 180) (layer F.SilkS)
+    (fp_text value 74LVC2G06 (at 0.65 1.9 90) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start -0.59055 0.68072) (end -0.59055 0.42672) (layer F.SilkS) (width 0.15))
     (fp_line (start -0.59055 0.68072) (end -0.33655 0.68072) (layer F.SilkS) (width 0.15))
-    (pad 1 smd rect (at 0 0 180) (size 0.42 0.6)
+    (pad 1 smd rect (at 0 0 90) (size 0.42 0.6)
       (layers F.Cu F.Paste F.Mask)
       (net 12 /battery_pack/battery_module_1/CHG)
     )
-    (pad 2 smd rect (at 0.65 0 180) (size 0.42 0.6)
+    (pad 2 smd rect (at 0.65 0 90) (size 0.42 0.6)
       (layers F.Cu F.Paste F.Mask)
       (net 69 AGND)
     )
-    (pad 3 smd rect (at 1.3 0 180) (size 0.42 0.6)
+    (pad 3 smd rect (at 1.3 0 90) (size 0.42 0.6)
       (layers F.Cu F.Paste F.Mask)
       (net 79 N-00000176)
     )
-    (pad 4 smd rect (at 1.3 -1.9 180) (size 0.42 0.6)
+    (pad 4 smd rect (at 1.3 -1.9 90) (size 0.42 0.6)
       (layers F.Cu F.Paste F.Mask)
       (net 14 /battery_pack/battery_module_1/PMOS_CTRL)
     )
-    (pad 5 smd rect (at 0.65 -1.9 180) (size 0.42 0.6)
+    (pad 5 smd rect (at 0.65 -1.9 90) (size 0.42 0.6)
       (layers F.Cu F.Paste F.Mask)
       (net 1 +3.3V)
     )
-    (pad 6 smd rect (at 0 -1.9 180) (size 0.42 0.6)
+    (pad 6 smd rect (at 0 -1.9 90) (size 0.42 0.6)
       (layers F.Cu F.Paste F.Mask)
       (net 16 /battery_pack/battery_module_1/~CHG)
     )
   )
 
   (module SOT23_6_thin (layer F.Cu) (tedit 52D9B655) (tstamp 52ECC9E0)
-    (at 365.506 202.311 180)
+    (at 117.094 86.487 180)
     (path /5224C457/5281D330/5281D33C)
     (fp_text reference U22 (at 0.95 2.7 180) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -1441,7 +1441,7 @@
   )
 
   (module SOT23_6 (layer F.Cu) (tedit 4ECF791C) (tstamp 52ECC9D3)
-    (at 382.143 223.139 270)
+    (at 133.731 107.315 270)
     (path /527FE989/527FEAD6)
     (fp_text reference U33 (at 1.99898 0 360) (layer F.SilkS)
       (effects (font (size 0.762 0.762) (thickness 0.0762)))
@@ -1486,7 +1486,7 @@
   )
 
   (module SOT23_6 (layer F.Cu) (tedit 4ECF791C) (tstamp 52ECC9C3)
-    (at 372.618 218.44 270)
+    (at 124.206 102.616 270)
     (path /527FE989/528002DB)
     (fp_text reference U35 (at 1.99898 0 360) (layer F.SilkS)
       (effects (font (size 0.762 0.762) (thickness 0.0762)))
@@ -1531,7 +1531,7 @@
   )
 
   (module SOT23_6 (layer F.Cu) (tedit 4ECF791C) (tstamp 52ECC9B3)
-    (at 372.618 227.838)
+    (at 124.206 112.014)
     (path /527FE989/52800336)
     (fp_text reference U37 (at 1.99898 0 90) (layer F.SilkS)
       (effects (font (size 0.762 0.762) (thickness 0.0762)))
@@ -1576,7 +1576,7 @@
   )
 
   (module SOT23 (layer F.Cu) (tedit 5051A6D7) (tstamp 52ECC9A3)
-    (at 436.626 196.088 270)
+    (at 188.214 80.264 270)
     (tags SOT23)
     (path /528029D1/52804046)
     (fp_text reference Q6 (at 1.99898 -0.09906 360) (layer F.SilkS)
@@ -1610,7 +1610,7 @@
   )
 
   (module SOT23 (layer F.Cu) (tedit 5051A6D7) (tstamp 52ECC996)
-    (at 438.658 203.2)
+    (at 190.246 87.376)
     (tags SOT23)
     (path /528029D1/528037B6)
     (fp_text reference Q7 (at 1.99898 -0.09906 90) (layer F.SilkS)
@@ -1644,7 +1644,7 @@
   )
 
   (module SOT23 (layer F.Cu) (tedit 5051A6D7) (tstamp 52ECC989)
-    (at 438.658 207.01)
+    (at 190.246 91.186)
     (tags SOT23)
     (path /528029D1/528037C3)
     (fp_text reference Q9 (at 1.99898 -0.09906 90) (layer F.SilkS)
@@ -1678,7 +1678,7 @@
   )
 
   (module SOT23 (layer F.Cu) (tedit 5051A6D7) (tstamp 52ECC97C)
-    (at 441.706 203.962)
+    (at 193.294 88.138)
     (tags SOT23)
     (path /528029D1/528037C9)
     (fp_text reference Q8 (at 1.99898 -0.09906 90) (layer F.SilkS)
@@ -1712,7 +1712,7 @@
   )
 
   (module SOT23 (layer F.Cu) (tedit 5051A6D7) (tstamp 52ECC96F)
-    (at 405.638 202.438 180)
+    (at 158.496 86.741 180)
     (tags SOT23)
     (path /528029D1/5280404C)
     (fp_text reference Q5 (at 1.99898 -0.09906 270) (layer F.SilkS)
@@ -1746,7 +1746,7 @@
   )
 
   (module SOT23 (layer F.Cu) (tedit 5051A6D7) (tstamp 52ECC962)
-    (at 370.586 196.469 270)
+    (at 122.174 80.645 270)
     (tags SOT23)
     (path /528029D1/52804052)
     (fp_text reference Q4 (at 1.99898 -0.09906 360) (layer F.SilkS)
@@ -1780,245 +1780,245 @@
   )
 
   (module QFN_24_sq (layer F.Cu) (tedit 52DA1175) (tstamp 52ECC469)
-    (at 401.066 200.152 270)
+    (at 154.686 74.93)
     (path /5224C595/5291A63B)
-    (fp_text reference U45 (at 0 4 270) (layer F.SilkS) hide
+    (fp_text reference U45 (at 0 4) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value CP2110 (at 0 -3.5 270) (layer F.SilkS)
+    (fp_text value CP2110 (at 0 -3.5) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start -1.75514 2.4765) (end -1.75514 2.7305) (layer F.SilkS) (width 0.15))
     (fp_line (start -1.75514 2.7305) (end -1.50114 2.7305) (layer F.SilkS) (width 0.15))
-    (pad 1 smd rect (at -1.25 2 270) (size 0.25 0.7)
+    (pad 1 smd rect (at -1.25 2) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad 2 smd rect (at -0.75 2 270) (size 0.25 0.7)
+    (pad 2 smd rect (at -0.75 2) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 69 AGND)
     )
-    (pad 3 smd rect (at -0.25 2 270) (size 0.25 0.7)
+    (pad 3 smd rect (at -0.25 2) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 9 /battery_charger/USB_D+)
     )
-    (pad 4 smd rect (at 0.25 2 270) (size 0.25 0.7)
+    (pad 4 smd rect (at 0.25 2) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 10 /battery_charger/USB_D-)
     )
-    (pad 5 smd rect (at 0.75 2 270) (size 0.25 0.7)
+    (pad 5 smd rect (at 0.75 2) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 1 +3.3V)
     )
-    (pad 6 smd rect (at 1.25 2 270) (size 0.25 0.7)
+    (pad 6 smd rect (at 1.25 2) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 1 +3.3V)
     )
-    (pad 13 smd rect (at 1.25 -2 270) (size 0.25 0.7)
+    (pad 13 smd rect (at 1.25 -2) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad 14 smd rect (at 0.75 -2 270) (size 0.25 0.7)
+    (pad 14 smd rect (at 0.75 -2) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad 15 smd rect (at 0.25 -2 270) (size 0.25 0.7)
+    (pad 15 smd rect (at 0.25 -2) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad 16 smd rect (at -0.25 -2 270) (size 0.25 0.7)
+    (pad 16 smd rect (at -0.25 -2) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad 17 smd rect (at -0.75 -2 270) (size 0.25 0.7)
+    (pad 17 smd rect (at -0.75 -2) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad 18 smd rect (at -1.25 -2 270) (size 0.25 0.7)
+    (pad 18 smd rect (at -1.25 -2) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad 7 smd rect (at 2 1.25) (size 0.25 0.7)
+    (pad 7 smd rect (at 2 1.25 90) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 1 +3.3V)
     )
-    (pad 8 smd rect (at 2 0.75) (size 0.25 0.7)
+    (pad 8 smd rect (at 2 0.75 90) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 8 /battery_charger/USB_5V)
     )
-    (pad 9 smd rect (at 2 0.25) (size 0.25 0.7)
+    (pad 9 smd rect (at 2 0.25 90) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 24 /interface_usb/~RESET)
     )
-    (pad 10 smd rect (at 2 -0.25) (size 0.25 0.7)
+    (pad 10 smd rect (at 2 -0.25 90) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad 11 smd rect (at 2 -0.75) (size 0.25 0.7)
+    (pad 11 smd rect (at 2 -0.75 90) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 23 /interface_usb/USB_SUSPEND)
     )
-    (pad 12 smd rect (at 2 -1.25) (size 0.25 0.7)
+    (pad 12 smd rect (at 2 -1.25 90) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad 19 smd rect (at -2 -1.25) (size 0.25 0.7)
+    (pad 19 smd rect (at -2 -1.25 90) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad 20 smd rect (at -2 -0.75) (size 0.25 0.7)
+    (pad 20 smd rect (at -2 -0.75 90) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 21 /interface_usb/UART_RX)
     )
-    (pad 21 smd rect (at -2 -0.25) (size 0.25 0.7)
+    (pad 21 smd rect (at -2 -0.25 90) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
       (net 34 /micro_proc/UART_RX)
     )
-    (pad 22 smd rect (at -2 0.25) (size 0.25 0.7)
+    (pad 22 smd rect (at -2 0.25 90) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad 23 smd rect (at -2 0.75) (size 0.25 0.7)
+    (pad 23 smd rect (at -2 0.75 90) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad 24 smd rect (at -2 1.25) (size 0.25 0.7)
+    (pad 24 smd rect (at -2 1.25 90) (size 0.25 0.7)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad "" smd rect (at 0 0 270) (size 2.75 2.75)
+    (pad "" smd rect (at 0 0) (size 2.75 2.75)
       (layers F.Cu F.Paste F.Mask)
     )
   )
 
   (module QFN_24_PWR (layer F.Cu) (tedit 52DA1D13) (tstamp 52ECC449)
-    (at 395.351 195.834 90)
+    (at 134.112 78.105 135)
     (path /52929F4D/52A98672)
-    (fp_text reference U48 (at 0 4.5 90) (layer F.SilkS)
+    (fp_text reference U48 (at 0 4.5 135) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value BQ24190 (at 0 -4.5 90) (layer F.SilkS)
+    (fp_text value BQ24190 (at 0 -4.5 135) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start -1.77038 2.921) (end -1.77038 2.667) (layer F.SilkS) (width 0.15))
     (fp_line (start -1.77038 2.921) (end -1.51638 2.921) (layer F.SilkS) (width 0.15))
-    (pad 1 smd oval (at -1.25 2.045 90) (size 0.28 0.99)
+    (pad 1 smd oval (at -1.25 2.045 135) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 8 /battery_charger/USB_5V)
     )
-    (pad 2 smd oval (at -0.75 2.045 90) (size 0.28 0.99)
+    (pad 2 smd oval (at -0.75 2.045 135) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 9 /battery_charger/USB_D+)
     )
-    (pad 3 smd oval (at -0.25 2.045 90) (size 0.28 0.99)
+    (pad 3 smd oval (at -0.25 2.045 135) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 10 /battery_charger/USB_D-)
     )
-    (pad 4 smd oval (at 0.25 2.045 90) (size 0.28 0.99)
+    (pad 4 smd oval (at 0.25 2.045 135) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 7 /battery_charger/STATUS)
     )
-    (pad 5 smd oval (at 0.75 2.045 90) (size 0.28 0.99)
+    (pad 5 smd oval (at 0.75 2.045 135) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 5 /battery_charger/SCL)
     )
-    (pad 6 smd oval (at 1.25 2.045 90) (size 0.28 0.99)
+    (pad 6 smd oval (at 1.25 2.045 135) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 6 /battery_charger/SDA)
     )
-    (pad 13 smd oval (at 1.25 -2.045 90) (size 0.28 0.99)
+    (pad 13 smd oval (at 1.25 -2.045 135) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 2 /battery_charger/BATT)
     )
-    (pad 14 smd oval (at 0.75 -2.045 90) (size 0.28 0.99)
+    (pad 14 smd oval (at 0.75 -2.045 135) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 2 /battery_charger/BATT)
     )
-    (pad 15 smd oval (at 0.25 -2.045 90) (size 0.28 0.99)
+    (pad 15 smd oval (at 0.25 -2.045 135) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 38 /output_signal_brake_2/BATT_IN)
     )
-    (pad 16 smd oval (at -0.25 -2.045 90) (size 0.28 0.99)
+    (pad 16 smd oval (at -0.25 -2.045 135) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 38 /output_signal_brake_2/BATT_IN)
     )
-    (pad 17 smd oval (at -0.75 -2.045 90) (size 0.28 0.99)
+    (pad 17 smd oval (at -0.75 -2.045 135) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 69 AGND)
     )
-    (pad 18 smd oval (at -1.25 -2.045 90) (size 0.28 0.99)
+    (pad 18 smd oval (at -1.25 -2.045 135) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 69 AGND)
     )
-    (pad 7 smd oval (at 2.045 1.25 180) (size 0.28 0.99)
+    (pad 7 smd oval (at 2.045 1.25 225) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 3 /battery_charger/INT)
     )
-    (pad 8 smd oval (at 2.045 0.75 180) (size 0.28 0.99)
+    (pad 8 smd oval (at 2.045 0.75 225) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 4 /battery_charger/OTG_EN)
     )
-    (pad 9 smd oval (at 2.045 0.25 180) (size 0.28 0.99)
+    (pad 9 smd oval (at 2.045 0.25 225) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 11 /battery_charger/~CHG_EN)
     )
-    (pad 10 smd oval (at 2.045 -0.25 180) (size 0.28 0.99)
+    (pad 10 smd oval (at 2.045 -0.25 225) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 115 N-0000094)
     )
-    (pad 11 smd oval (at 2.045 -0.75 180) (size 0.28 0.99)
+    (pad 11 smd oval (at 2.045 -0.75 225) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 114 N-0000093)
     )
-    (pad 12 smd oval (at 2.045 -1.25 180) (size 0.28 0.99)
+    (pad 12 smd oval (at 2.045 -1.25 225) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 113 N-0000092)
     )
-    (pad 19 smd oval (at -2.045 -1.25 180) (size 0.28 0.99)
+    (pad 19 smd oval (at -2.045 -1.25 225) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 110 N-0000089)
     )
-    (pad 20 smd oval (at -2.045 -0.75 180) (size 0.28 0.99)
+    (pad 20 smd oval (at -2.045 -0.75 225) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 110 N-0000089)
     )
-    (pad 21 smd oval (at -2.045 -0.25 180) (size 0.28 0.99)
+    (pad 21 smd oval (at -2.045 -0.25 225) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 111 N-0000090)
     )
-    (pad 22 smd oval (at -2.045 0.25 180) (size 0.28 0.99)
+    (pad 22 smd oval (at -2.045 0.25 225) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 112 N-0000091)
     )
-    (pad 23 smd oval (at -2.045 0.75 180) (size 0.28 0.99)
+    (pad 23 smd oval (at -2.045 0.75 225) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 109 N-0000088)
     )
-    (pad 24 smd oval (at -2.045 1.25 180) (size 0.28 0.99)
+    (pad 24 smd oval (at -2.045 1.25 225) (size 0.28 0.99)
       (layers F.Cu F.Paste F.Mask)
       (net 8 /battery_charger/USB_5V)
     )
-    (pad "" smd rect (at 0 0 90) (size 2.7 2.7)
+    (pad "" smd rect (at 0 0 135) (size 2.7 2.7)
       (layers F.Cu F.Paste F.Mask)
     )
-    (pad "" thru_hole circle (at -0.9 -0.9 90) (size 0.6 0.6) (drill 0.3)
+    (pad "" thru_hole circle (at -0.9 -0.9 135) (size 0.6 0.6) (drill 0.3)
       (layers *.Cu *.Mask F.SilkS)
     )
-    (pad "" thru_hole circle (at 0 -0.9 90) (size 0.6 0.6) (drill 0.3)
+    (pad "" thru_hole circle (at 0 -0.9 135) (size 0.6 0.6) (drill 0.3)
       (layers *.Cu *.Mask F.SilkS)
     )
-    (pad "" thru_hole circle (at 0.9 -0.9 90) (size 0.6 0.6) (drill 0.3)
+    (pad "" thru_hole circle (at 0.9 -0.9 135) (size 0.6 0.6) (drill 0.3)
       (layers *.Cu *.Mask F.SilkS)
     )
-    (pad "" thru_hole circle (at 0.9 0 90) (size 0.6 0.6) (drill 0.3)
+    (pad "" thru_hole circle (at 0.9 0 135) (size 0.6 0.6) (drill 0.3)
       (layers *.Cu *.Mask F.SilkS)
     )
-    (pad "" thru_hole circle (at 0 0 90) (size 0.6 0.6) (drill 0.3)
+    (pad "" thru_hole circle (at 0 0 135) (size 0.6 0.6) (drill 0.3)
       (layers *.Cu *.Mask F.SilkS)
     )
-    (pad "" thru_hole circle (at -0.9 0 90) (size 0.6 0.6) (drill 0.3)
+    (pad "" thru_hole circle (at -0.9 0 135) (size 0.6 0.6) (drill 0.3)
       (layers *.Cu *.Mask F.SilkS)
     )
-    (pad "" thru_hole circle (at -0.9 0.9 90) (size 0.6 0.6) (drill 0.3)
+    (pad "" thru_hole circle (at -0.9 0.9 135) (size 0.6 0.6) (drill 0.3)
       (layers *.Cu *.Mask F.SilkS)
     )
-    (pad "" thru_hole circle (at 0 0.9 90) (size 0.6 0.6) (drill 0.3)
+    (pad "" thru_hole circle (at 0 0.9 135) (size 0.6 0.6) (drill 0.3)
       (layers *.Cu *.Mask F.SilkS)
     )
-    (pad "" thru_hole circle (at 0.9 0.9 90) (size 0.6 0.6) (drill 0.3)
+    (pad "" thru_hole circle (at 0.9 0.9 135) (size 0.6 0.6) (drill 0.3)
       (layers *.Cu *.Mask F.SilkS)
     )
   )
 
   (module QFN_16 (layer F.Cu) (tedit 52D9F636) (tstamp 52ECC420)
-    (at 383.6035 193.4845 180)
+    (at 134.4295 64.1985 180)
     (path /52A0B607/52A68F9E)
     (fp_text reference U42 (at 0 3.81 180) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -2119,12 +2119,12 @@
   )
 
   (module MSOP_8 (layer F.Cu) (tedit 48A96A8A) (tstamp 52ECC403)
-    (at 376.428 205.486)
+    (at 127.508 74.041 90)
     (path /5224C457/5281F116)
-    (fp_text reference U20 (at 0 0.635) (layer F.SilkS)
+    (fp_text reference U20 (at 0 0.635 90) (layer F.SilkS)
       (effects (font (size 1.00076 1.00076) (thickness 0.1524)))
     )
-    (fp_text value MCP6L02 (at 0 -0.762) (layer F.SilkS)
+    (fp_text value MCP6L02 (at 0 -0.762 90) (layer F.SilkS)
       (effects (font (size 1.00076 1.00076) (thickness 0.127)))
     )
     (fp_line (start -0.3175 1.5875) (end -1.5875 0.381) (layer F.SilkS) (width 0.2032))
@@ -2132,35 +2132,35 @@
     (fp_line (start 1.5875 1.5875) (end 1.5875 -1.5875) (layer F.SilkS) (width 0.2032))
     (fp_line (start 1.5875 -1.5875) (end -1.5875 -1.5875) (layer F.SilkS) (width 0.2032))
     (fp_line (start -1.5875 -1.5875) (end -1.5875 1.5875) (layer F.SilkS) (width 0.2032))
-    (pad 1 smd rect (at -0.97536 2.159) (size 0.381 1.27)
+    (pad 1 smd rect (at -0.97536 2.159 90) (size 0.381 1.27)
       (layers F.Cu F.Paste F.Mask)
       (net 25 /micro_proc/ADC_BATT)
     )
-    (pad 2 smd rect (at -0.32512 2.159) (size 0.381 1.27)
+    (pad 2 smd rect (at -0.32512 2.159 90) (size 0.381 1.27)
       (layers F.Cu F.Paste F.Mask)
       (net 25 /micro_proc/ADC_BATT)
     )
-    (pad 3 smd rect (at 0.32512 2.159) (size 0.381 1.27)
+    (pad 3 smd rect (at 0.32512 2.159 90) (size 0.381 1.27)
       (layers F.Cu F.Paste F.Mask)
       (net 2 /battery_charger/BATT)
     )
-    (pad 4 smd rect (at 0.97536 2.159) (size 0.381 1.27)
+    (pad 4 smd rect (at 0.97536 2.159 90) (size 0.381 1.27)
       (layers F.Cu F.Paste F.Mask)
       (net 69 AGND)
     )
-    (pad 5 smd rect (at 0.97536 -2.159) (size 0.381 1.27)
+    (pad 5 smd rect (at 0.97536 -2.159 90) (size 0.381 1.27)
       (layers F.Cu F.Paste F.Mask)
       (net 2 /battery_charger/BATT)
     )
-    (pad 6 smd rect (at 0.32512 -2.159) (size 0.381 1.27)
+    (pad 6 smd rect (at 0.32512 -2.159 90) (size 0.381 1.27)
       (layers F.Cu F.Paste F.Mask)
       (net 15 /battery_pack/battery_module_1/V_BATT)
     )
-    (pad 7 smd rect (at -0.32512 -2.159) (size 0.381 1.27)
+    (pad 7 smd rect (at -0.32512 -2.159 90) (size 0.381 1.27)
       (layers F.Cu F.Paste F.Mask)
       (net 12 /battery_pack/battery_module_1/CHG)
     )
-    (pad 8 smd rect (at -0.97536 -2.159) (size 0.381 1.27)
+    (pad 8 smd rect (at -0.97536 -2.159 90) (size 0.381 1.27)
       (layers F.Cu F.Paste F.Mask)
       (net 1 +3.3V)
     )
@@ -2172,7 +2172,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC3F1)
-    (at 340.36 205.74)
+    (at 91.948 89.916)
     (descr led)
     (tags led)
     (path /52A0B607/52E619E6/52EC9FB0)
@@ -2213,7 +2213,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ED3C16)
-    (at 306.07 190.5 180)
+    (at 57.658 74.676 180)
     (descr led)
     (tags led)
     (path /52A0B607/52ECD75E/52E62896)
@@ -2254,7 +2254,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC3CB)
-    (at 336.55 205.74 180)
+    (at 88.138 89.916 180)
     (descr led)
     (tags led)
     (path /52A0B607/52E619E6/52EC9FA4)
@@ -2295,7 +2295,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC3B8)
-    (at 336.55 195.58 180)
+    (at 88.138 79.756 180)
     (descr led)
     (tags led)
     (path /52A0B607/52E619E6/52EC9FB6)
@@ -2336,7 +2336,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC3A5)
-    (at 464.82 195.58 180)
+    (at 216.408 79.756 180)
     (descr led)
     (tags led)
     (path /52A0B607/52E619E4/52E62890)
@@ -2377,7 +2377,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC392)
-    (at 306.07 205.74 180)
+    (at 57.658 89.916 180)
     (descr led)
     (tags led)
     (path /52A0B607/52ECD75E/52E62884)
@@ -2418,7 +2418,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC37F)
-    (at 464.82 205.74 180)
+    (at 216.408 89.916 180)
     (descr led)
     (tags led)
     (path /52A0B607/52E619E4/52E62884)
@@ -2459,7 +2459,7 @@
   )
 
   (module LED_TOPLED_PWR (layer B.Cu) (tedit 52DAD8B0) (tstamp 52ECC36C)
-    (at 298.45 198.12)
+    (at 50.038 82.296)
     (descr led)
     (tags led)
     (path /52A0B607/52ECD75E/52ECA2F4)
@@ -2500,7 +2500,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC359)
-    (at 340.36 195.58)
+    (at 91.948 79.756)
     (descr led)
     (tags led)
     (path /52A0B607/52E619E6/52EC9FAA)
@@ -2541,7 +2541,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC346)
-    (at 336.55 200.66 180)
+    (at 88.138 84.836 180)
     (descr led)
     (tags led)
     (path /52A0B607/52E619E6/52EC9F9E)
@@ -2582,7 +2582,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC333)
-    (at 336.55 190.5 180)
+    (at 88.138 74.676 180)
     (descr led)
     (tags led)
     (path /52A0B607/52E619E6/52EC9F98)
@@ -2623,7 +2623,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC320)
-    (at 299.72 205.74)
+    (at 51.308 89.916)
     (descr led)
     (tags led)
     (path /52A0B607/52ECD75E/52E6287E)
@@ -2664,7 +2664,7 @@
   )
 
   (module LED_TOPLED_PWR (layer B.Cu) (tedit 52DAD8B0) (tstamp 52ECC30D)
-    (at 470.662 198.12)
+    (at 222.25 82.296)
     (descr led)
     (tags led)
     (path /52A0B607/52E619E4/52ECA2F4)
@@ -2705,7 +2705,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC2FA)
-    (at 306.07 200.66 180)
+    (at 57.658 84.836 180)
     (descr led)
     (tags led)
     (path /52A0B607/52ECD75E/52E6288A)
@@ -2746,7 +2746,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC2E7)
-    (at 468.63 195.58)
+    (at 220.218 79.756)
     (descr led)
     (tags led)
     (path /52A0B607/52E619E4/52E6289C)
@@ -2787,7 +2787,7 @@
   )
 
   (module LED_SIDELED_PWR (layer B.Cu) (tedit 52DADBA1) (tstamp 52ECC2D4)
-    (at 300.99 194.31 270)
+    (at 52.578 78.486 270)
     (path /52A0B607/52ECD75E/52E62878)
     (fp_text reference D27 (at 0 -4.7 270) (layer B.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
@@ -2833,7 +2833,7 @@
   )
 
   (module LED_RGB_SMD (layer F.Cu) (tedit 52D9C393) (tstamp 52ECC2B4)
-    (at 369.57 199.898)
+    (at 121.158 84.074)
     (path /528029D1/52803F35)
     (fp_text reference D7 (at 0 2.286) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -2861,7 +2861,7 @@
   )
 
   (module LED_RGB_SMD (layer F.Cu) (tedit 52D9C393) (tstamp 52ECC2AA)
-    (at 404.876 199.898)
+    (at 156.464 84.074)
     (path /528029D1/52803F45)
     (fp_text reference D8 (at 0 2.286) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -2889,7 +2889,7 @@
   )
 
   (module LED_RGB_SMD (layer F.Cu) (tedit 52D9C393) (tstamp 52ECC2A0)
-    (at 434.34 199.898)
+    (at 185.928 84.074)
     (path /528029D1/52803F28)
     (fp_text reference D9 (at 0 2.286) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -2917,7 +2917,7 @@
   )
 
   (module LED_0805 (layer F.Cu) (tedit 52D9C4C4) (tstamp 52ECC296)
-    (at 405.257 209.423 180)
+    (at 150.749 64.008 180)
     (descr "SMT LED 0805")
     (path /5224C4FA/52B2DEF7)
     (fp_text reference D37 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -2950,7 +2950,7 @@
   )
 
   (module LED_0805 (layer F.Cu) (tedit 52D9C4C4) (tstamp 52ECC287)
-    (at 379.222 207.264)
+    (at 130.81 91.44)
     (descr "SMT LED 0805")
     (path /52929F4D/52B37BFF)
     (fp_text reference D38 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -2983,7 +2983,7 @@
   )
 
   (module LED_0805 (layer F.Cu) (tedit 52D9C4C4) (tstamp 52ECC278)
-    (at 378.079 190.754 270)
+    (at 128.905 61.468 270)
     (descr "SMT LED 0805")
     (path /52A0B607/52B2FD6A)
     (fp_text reference D36 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -3016,66 +3016,66 @@
   )
 
   (module DFN_3x3A_8L_EP1_P (layer F.Cu) (tedit 52D9A59B) (tstamp 52ECC269)
-    (at 369.57 192.532)
+    (at 120.904 75.946 270)
     (descr "qfn dfn")
     (tags "qfn dfn")
     (path /5224C457/5281D330/5281D3B9)
-    (fp_text reference Q1 (at 1.27 2.54) (layer F.SilkS) hide
+    (fp_text reference Q1 (at 1.27 2.54 270) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value AON7611 (at 1.27 -5.08) (layer F.SilkS)
+    (fp_text value AON7611 (at 1.27 -5.08 270) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start -0.5588 0.381) (end -0.5588 0.635) (layer F.SilkS) (width 0.15))
     (fp_line (start -0.5588 0.635) (end -0.3048 0.635) (layer F.SilkS) (width 0.15))
-    (pad 1 smd rect (at 0 0) (size 0.35 0.5)
+    (pad 1 smd rect (at 0 0 270) (size 0.35 0.5)
       (layers F.Cu F.Paste F.Mask)
       (net 83 N-00000185)
     )
-    (pad 2 smd rect (at 0.65 0) (size 0.35 0.5)
+    (pad 2 smd rect (at 0.65 0 270) (size 0.35 0.5)
       (layers F.Cu F.Paste F.Mask)
       (net 14 /battery_pack/battery_module_1/PMOS_CTRL)
     )
-    (pad 3 smd rect (at 1.3 0) (size 0.35 0.5)
+    (pad 3 smd rect (at 1.3 0 270) (size 0.35 0.5)
       (layers F.Cu F.Paste F.Mask)
       (net 82 N-00000182)
     )
-    (pad 4 smd rect (at 1.95 0) (size 0.35 0.5)
+    (pad 4 smd rect (at 1.95 0 270) (size 0.35 0.5)
       (layers F.Cu F.Paste F.Mask)
       (net 13 /battery_pack/battery_module_1/NMOS_CTRL)
     )
-    (pad 5 smd rect (at 0 -2.9) (size 0.4 0.3)
+    (pad 5 smd rect (at 0 -2.9 270) (size 0.4 0.3)
       (layers F.Cu F.Paste F.Mask)
       (net 15 /battery_pack/battery_module_1/V_BATT)
     )
-    (pad 5 smd rect (at 0.65 -2.9) (size 0.4 0.3)
+    (pad 5 smd rect (at 0.65 -2.9 270) (size 0.4 0.3)
       (layers F.Cu F.Paste F.Mask)
       (net 15 /battery_pack/battery_module_1/V_BATT)
     )
-    (pad 5 smd rect (at 1.3 -2.9) (size 0.4 0.3)
+    (pad 5 smd rect (at 1.3 -2.9 270) (size 0.4 0.3)
       (layers F.Cu F.Paste F.Mask)
       (net 15 /battery_pack/battery_module_1/V_BATT)
     )
-    (pad 5 smd rect (at 1.95 -2.9) (size 0.4 0.3)
+    (pad 5 smd rect (at 1.95 -2.9 270) (size 0.4 0.3)
       (layers F.Cu F.Paste F.Mask)
       (net 15 /battery_pack/battery_module_1/V_BATT)
     )
-    (pad 5 smd rect (at 0.975 -1.76) (size 2.45 1.98)
+    (pad 5 smd rect (at 0.975 -1.76 270) (size 2.45 1.98)
       (layers F.Cu F.Paste F.Mask)
       (net 15 /battery_pack/battery_module_1/V_BATT)
     )
-    (pad 5 smd rect (at -0.44 -1.4) (size 0.38 0.43)
+    (pad 5 smd rect (at -0.44 -1.4 270) (size 0.38 0.43)
       (layers F.Cu F.Paste F.Mask)
       (net 15 /battery_pack/battery_module_1/V_BATT)
     )
-    (pad 5 smd rect (at 2.39 -1.4) (size 0.38 0.43)
+    (pad 5 smd rect (at 2.39 -1.4 270) (size 0.38 0.43)
       (layers F.Cu F.Paste F.Mask)
       (net 15 /battery_pack/battery_module_1/V_BATT)
     )
   )
 
   (module DFN_10 (layer F.Cu) (tedit 52D9D3EB) (tstamp 52ECC257)
-    (at 422.91 207.772)
+    (at 174.498 91.948)
     (path /527C7E4B/527C80D0)
     (fp_text reference U32 (at 1 2.48) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -3128,7 +3128,7 @@
   )
 
   (module BATT_18650 (layer B.Cu) (tedit 52D9B33D) (tstamp 52ECC21E)
-    (at 402.59 199.39)
+    (at 154.178 83.566)
     (path /5224C457/5281D330/5281D336)
     (fp_text reference BT1 (at 0 5.842) (layer B.SilkS)
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
@@ -3171,7 +3171,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC1AA)
-    (at 464.82 190.5 180)
+    (at 216.408 74.676 180)
     (descr led)
     (tags led)
     (path /52A0B607/52E619E4/52E62896)
@@ -3212,7 +3212,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC197)
-    (at 464.82 200.66 180)
+    (at 216.408 84.836 180)
     (descr led)
     (tags led)
     (path /52A0B607/52E619E4/52E6288A)
@@ -3253,7 +3253,7 @@
   )
 
   (module LED_SIDELED_PWR (layer B.Cu) (tedit 52DADBA1) (tstamp 52ECC184)
-    (at 464.82 191.77 90)
+    (at 216.408 75.946 90)
     (path /52A0B607/52E619E4/52E62872)
     (fp_text reference D6 (at 0 -4.7 90) (layer B.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
@@ -3299,7 +3299,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC164)
-    (at 468.63 205.74)
+    (at 220.218 89.916)
     (descr led)
     (tags led)
     (path /52A0B607/52E619E4/52E6287E)
@@ -3340,7 +3340,7 @@
   )
 
   (module LED_SIDELED_PWR (layer B.Cu) (tedit 52DADBA1) (tstamp 52ECC151)
-    (at 335.28 191.77 90)
+    (at 86.868 75.946 90)
     (path /52A0B607/52E619E6/52EC9FE7)
     (fp_text reference D22 (at 0 -4.7 90) (layer B.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
@@ -3386,7 +3386,7 @@
   )
 
   (module LED_SIDELED_PWR (layer B.Cu) (tedit 52DADBA1) (tstamp 52ECC131)
-    (at 335.28 207.01 90)
+    (at 86.868 91.186 90)
     (path /52A0B607/52E619E6/52EC9FCB)
     (fp_text reference D21 (at 0 -4.7 90) (layer B.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
@@ -3432,7 +3432,7 @@
   )
 
   (module LED_SIDELED_PWR (layer B.Cu) (tedit 52DADBA1) (tstamp 52ECC111)
-    (at 300.99 204.47 270)
+    (at 52.578 88.646 270)
     (path /52A0B607/52ECD75E/52E62872)
     (fp_text reference D26 (at 0 -4.7 270) (layer B.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
@@ -3478,7 +3478,7 @@
   )
 
   (module LED_SIDELED_PWR (layer B.Cu) (tedit 52DADBA1) (tstamp 52ECC0F1)
-    (at 464.82 207.01 90)
+    (at 216.408 91.186 90)
     (path /52A0B607/52E619E4/52E62878)
     (fp_text reference D10 (at 0 -4.7 90) (layer B.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
@@ -3524,7 +3524,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ECC0D1)
-    (at 299.72 195.58)
+    (at 51.308 79.756)
     (descr led)
     (tags led)
     (path /52A0B607/52ECD75E/52E6289C)
@@ -3565,7 +3565,7 @@
   )
 
   (module LED_TOPLED_PWR (layer F.Cu) (tedit 52DAD8B0) (tstamp 52ED3C29)
-    (at 306.07 195.58 180)
+    (at 57.658 79.756 180)
     (descr led)
     (tags led)
     (path /52A0B607/52ECD75E/52E62890)
@@ -3606,7 +3606,7 @@
   )
 
   (module smt_1816 (layer F.Cu) (tedit 52EEE924) (tstamp 52EF2BA4)
-    (at 388.493 189.357 270)
+    (at 139.446 60.071 270)
     (descr "SMT inductor 1816")
     (path /52A0B607/52A69422)
     (fp_text reference L1 (at 0 -3 270) (layer F.SilkS) hide
@@ -3635,24 +3635,24 @@
   )
 
   (module smt_1816 (layer F.Cu) (tedit 52EEE924) (tstamp 52EF2BAE)
-    (at 389.89 198.501 90)
+    (at 133.096 83.82 180)
     (descr "SMT inductor 1816")
     (path /52929F4D/52AB3CD7)
-    (fp_text reference L3 (at 0 -3 90) (layer F.SilkS) hide
+    (fp_text reference L3 (at 0 -3 180) (layer F.SilkS) hide
       (effects (font (size 0.29972 0.29972) (thickness 0.06096)))
     )
-    (fp_text value 2.2uH (at 0 3 90) (layer F.SilkS)
+    (fp_text value 2.2uH (at 0 3 180) (layer F.SilkS)
       (effects (font (size 0.29972 0.29972) (thickness 0.06096)))
     )
     (fp_line (start -0.7 -2.05) (end 3.8 -2.05) (layer F.SilkS) (width 0.15))
     (fp_line (start 3.8 -2.05) (end 3.8 2.05) (layer F.SilkS) (width 0.15))
     (fp_line (start 3.8 2.05) (end -0.7 2.05) (layer F.SilkS) (width 0.15))
     (fp_line (start -0.7 2.05) (end -0.7 -2.05) (layer F.SilkS) (width 0.15))
-    (pad 1 smd rect (at 0 0 90) (size 2.1 4.7)
+    (pad 1 smd rect (at 0 0 180) (size 2.1 4.7)
       (layers F.Cu F.Paste F.Mask)
       (net 110 N-0000089)
     )
-    (pad 2 smd rect (at 3.1 0 90) (size 2.1 4.7)
+    (pad 2 smd rect (at 3.1 0 180) (size 2.1 4.7)
       (layers F.Cu F.Paste F.Mask)
       (net 38 /output_signal_brake_2/BATT_IN)
     )
@@ -3664,7 +3664,7 @@
   )
 
   (module smt_1008 (layer F.Cu) (tedit 52EF0108) (tstamp 52EF2BB8)
-    (at 400.812 205.74 270)
+    (at 146.177 60.071 270)
     (descr "SMT inductor 1008")
     (path /5224C4FA/529A2E2E)
     (fp_text reference L2 (at 0.05 -2 270) (layer F.SilkS) hide
@@ -3693,7 +3693,7 @@
   )
 
   (module r_0805 (layer F.Cu) (tedit 52D9B02F) (tstamp 52EF2BC6)
-    (at 386.334 209.804 180)
+    (at 127.127 78.105 180)
     (descr "SMT resistor, 0805")
     (path /5224C457/5281E89A)
     (fp_text reference R1 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -3726,7 +3726,7 @@
   )
 
   (module r_0402 (layer F.Cu) (tedit 52EF17B1) (tstamp 52EF2BD4)
-    (at 367.411 201.803)
+    (at 118.999 85.979)
     (path /52929F4D/52A9865D)
     (fp_text reference TH1 (at 0.254 -1.27) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -3753,7 +3753,7 @@
   )
 
   (module r_0402 (layer F.Cu) (tedit 52EF17B1) (tstamp 52EF2BE2)
-    (at 376.936 196.088)
+    (at 131.318 72.898)
     (path /52929F4D/52A9866A)
     (fp_text reference TH2 (at 0.254 -1.27) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -3780,7 +3780,7 @@
   )
 
   (module WSON_12 (layer F.Cu) (tedit 52EF2BFE) (tstamp 52ECC22B)
-    (at 404.495 206.756 270)
+    (at 149.987 61.341 270)
     (path /5224C4FA/529A2E0E)
     (fp_text reference U43 (at 0 3.81 270) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
@@ -3865,7 +3865,7 @@
   )
 
   (module CONN_7x2_POL (layer F.Cu) (tedit 52DA0C24) (tstamp 52ECC246)
-    (at 410.972 193.548)
+    (at 162.56 77.724)
     (path /52A6745A/52A68398)
     (fp_text reference U44 (at 7.62 4.445) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
@@ -3930,7 +3930,7 @@
   )
 
   (module CONN_6_MALE_RA (layer B.Cu) (tedit 52EF3916) (tstamp 52ECC20D)
-    (at 316.23 205.74 90)
+    (at 67.818 89.916 90)
     (path /52A0B607/52EC37B2)
     (fp_text reference P4 (at 6.35 -2.54 90) (layer B.SilkS)
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
@@ -3975,7 +3975,7 @@
   )
 
   (module CONN_6_MALE_RA (layer B.Cu) (tedit 52EF3916) (tstamp 52ECC1FB)
-    (at 461.01 193.04 270)
+    (at 212.598 77.216 270)
     (path /52A0B607/52ED1463)
     (fp_text reference P1 (at 6.35 -2.54 270) (layer B.SilkS)
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
@@ -4020,7 +4020,7 @@
   )
 
   (module CONN_6_MALE_RA (layer B.Cu) (tedit 52EF3916) (tstamp 52ECC1E9)
-    (at 344.17 205.74 90)
+    (at 95.758 89.916 90)
     (path /52A0B607/52ED25DB)
     (fp_text reference P3 (at 6.35 -2.54 90) (layer B.SilkS)
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
@@ -4065,7 +4065,7 @@
   )
 
   (module CONN_6_FEMALE (layer B.Cu) (tedit 52EF39CB) (tstamp 52ECC1D7)
-    (at 328.93 205.74 90)
+    (at 80.518 89.916 90)
     (path /52A0B607/52ED264B)
     (fp_text reference P2 (at 6.35 -2.54 90) (layer B.SilkS)
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
@@ -4104,7 +4104,7 @@
   )
 
   (module CONN_6_FEMALE (layer B.Cu) (tedit 52EF39CB) (tstamp 52ECC1C8)
-    (at 448.31 193.04 270)
+    (at 199.898 77.216 270)
     (path /52A0B607/52EDDB84)
     (fp_text reference P6 (at 6.35 -2.54 270) (layer B.SilkS)
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
@@ -4143,7 +4143,7 @@
   )
 
   (module CONN_6_FEMALE (layer B.Cu) (tedit 52EF39CB) (tstamp 52ECC1B9)
-    (at 356.87 205.74 90)
+    (at 108.458 89.916 90)
     (path /52A0B607/52EDF405)
     (fp_text reference P5 (at 6.35 -2.54 90) (layer B.SilkS)
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
@@ -4182,7 +4182,7 @@
   )
 
   (module r_0603 (layer B.Cu) (tedit 52EF41A7) (tstamp 52ECC955)
-    (at 331.47 195.58 90)
+    (at 83.058 79.756 90)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52A189E4)
     (fp_text reference C18 (at 0.9525 1.27 90) (layer B.SilkS) hide
@@ -4215,7 +4215,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC946)
-    (at 401.574 209.169 180)
+    (at 147.066 63.754 180)
     (descr "SMT resistor, 0603")
     (path /5224C4FA/529A2E1F)
     (fp_text reference C25 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -4248,7 +4248,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC90A)
-    (at 360.172 197.358 180)
+    (at 111.76 81.534 180)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52B1BE16)
     (fp_text reference C20 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -4281,7 +4281,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC8CE)
-    (at 386.588 195.834 90)
+    (at 137.414 66.548 90)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52A68B0D)
     (fp_text reference C21 (at 0.9525 -1.27 90) (layer F.SilkS) hide
@@ -4314,7 +4314,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC8BF)
-    (at 380.492 193.04 270)
+    (at 131.318 63.754 270)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52A68AFE)
     (fp_text reference C23 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -4347,7 +4347,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC8B0)
-    (at 381.762 195.961 180)
+    (at 132.588 66.675 180)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52A68AEF)
     (fp_text reference C24 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -4380,7 +4380,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC8A1)
-    (at 384.937 190.373 90)
+    (at 135.763 61.087 90)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52A68A6D)
     (fp_text reference C22 (at 0.9525 -1.27 90) (layer F.SilkS) hide
@@ -4413,7 +4413,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC892)
-    (at 407.797 205.74 90)
+    (at 153.289 60.579 90)
     (descr "SMT resistor, 0603")
     (path /5224C4FA/529A2E3D)
     (fp_text reference C26 (at 0.9525 -1.27 90) (layer F.SilkS) hide
@@ -4446,7 +4446,7 @@
   )
 
   (module r_0603 (layer B.Cu) (tedit 52EF41A7) (tstamp 52ECC883)
-    (at 306.07 205.74 180)
+    (at 57.658 89.916 180)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52A189D0)
     (fp_text reference C17 (at 0.9525 1.27 180) (layer B.SilkS) hide
@@ -4479,7 +4479,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC847)
-    (at 378.206 200.406)
+    (at 125.73 89.535)
     (descr "SMT resistor, 0603")
     (path /5224C457/5281F708)
     (fp_text reference C1 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -4512,7 +4512,7 @@
   )
 
   (module r_0603 (layer B.Cu) (tedit 52EF41A7) (tstamp 52ECC838)
-    (at 463.804 203.962)
+    (at 215.392 88.138)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52A0C655)
     (fp_text reference C19 (at 0.9525 1.27) (layer B.SilkS) hide
@@ -4545,7 +4545,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC7ED)
-    (at 389.89 204.978)
+    (at 141.478 89.154)
     (descr "SMT resistor, 0603")
     (path /52929F4D/52AB3EBB)
     (fp_text reference C35 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -4578,7 +4578,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC7DE)
-    (at 393.954 204.978)
+    (at 145.542 89.154)
     (descr "SMT resistor, 0603")
     (path /52929F4D/52AB3EAE)
     (fp_text reference C34 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -4611,7 +4611,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC7CF)
-    (at 393.954 207.264)
+    (at 145.542 91.44)
     (descr "SMT resistor, 0603")
     (path /52929F4D/52AB3E00)
     (fp_text reference C37 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -4644,7 +4644,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC7C0)
-    (at 389.128 209.55)
+    (at 140.716 93.726)
     (descr "SMT resistor, 0603")
     (path /52929F4D/52AB388A)
     (fp_text reference C33 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -4677,13 +4677,13 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC7B1)
-    (at 389.89 207.264)
+    (at 145.542 85.598 90)
     (descr "SMT resistor, 0603")
     (path /52929F4D/52AB375A)
-    (fp_text reference C36 (at 0.9525 -1.27) (layer F.SilkS) hide
+    (fp_text reference C36 (at 0.9525 -1.27 90) (layer F.SilkS) hide
       (effects (font (size 0.29972 0.29972) (thickness 0.06096)))
     )
-    (fp_text value 10uF (at 0.9525 1.27) (layer F.SilkS)
+    (fp_text value 10uF (at 0.9525 1.27 90) (layer F.SilkS)
       (effects (font (size 0.29972 0.29972) (thickness 0.06096)))
     )
     (fp_line (start 1.9431 -0.70485) (end 1.9431 -0.45085) (layer F.SilkS) (width 0.15))
@@ -4694,11 +4694,11 @@
     (fp_line (start -0.5842 0.70485) (end -0.3302 0.70485) (layer F.SilkS) (width 0.15))
     (fp_line (start -0.5842 0.45085) (end -0.5842 0.70485) (layer F.SilkS) (width 0.15))
     (fp_line (start -0.3302 -0.70485) (end -0.5842 -0.70485) (layer F.SilkS) (width 0.15))
-    (pad 1 smd rect (at 0 0) (size 0.6604 0.9017)
+    (pad 1 smd rect (at 0 0 90) (size 0.6604 0.9017)
       (layers F.Cu F.Paste F.Mask)
       (net 2 /battery_charger/BATT)
     )
-    (pad 2 smd rect (at 1.3589 0) (size 0.6604 0.9017)
+    (pad 2 smd rect (at 1.3589 0 90) (size 0.6604 0.9017)
       (layers F.Cu F.Paste F.Mask)
       (net 69 AGND)
     )
@@ -4710,7 +4710,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC7A2)
-    (at 379.222 204.978)
+    (at 130.81 89.154)
     (descr "SMT resistor, 0603")
     (path /52929F4D/52AAD4A2)
     (fp_text reference C32 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -4743,7 +4743,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC793)
-    (at 390.398 201.676)
+    (at 141.478 86.995)
     (descr "SMT resistor, 0603")
     (path /52929F4D/52AAD29A)
     (fp_text reference C31 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -4776,7 +4776,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC70C)
-    (at 399.542 203.835)
+    (at 151.638 79.248)
     (descr "SMT resistor, 0603")
     (path /5224C595/52927D03)
     (fp_text reference C30 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -4809,7 +4809,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC6FD)
-    (at 370.078 208.788)
+    (at 125.222 76.581)
     (descr "SMT resistor, 0603")
     (path /5224C457/5281E7DA)
     (fp_text reference C2 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -4842,7 +4842,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC6EE)
-    (at 432.308 192.532)
+    (at 183.896 76.708)
     (descr "SMT resistor, 0603")
     (path /52A6745A/52A69CB7)
     (fp_text reference C29 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -4875,7 +4875,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC6D0)
-    (at 432.308 190.754)
+    (at 183.896 74.93)
     (descr "SMT resistor, 0603")
     (path /52A6745A/52A699A3)
     (fp_text reference C28 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -4908,7 +4908,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC6C1)
-    (at 432.308 188.976)
+    (at 183.896 73.152)
     (descr "SMT resistor, 0603")
     (path /52A6745A/52A6994D)
     (fp_text reference C27 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -4941,7 +4941,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC6B2)
-    (at 369.824 228.854 90)
+    (at 121.412 113.03 90)
     (descr "SMT resistor, 0603")
     (path /527FE989/5280034E)
     (fp_text reference C14 (at 0.9525 -1.27 90) (layer F.SilkS) hide
@@ -4974,7 +4974,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC6A3)
-    (at 380.873 218.567 270)
+    (at 132.461 102.743 270)
     (descr "SMT resistor, 0603")
     (path /527FE989/527FFCCE)
     (fp_text reference C9 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -5007,7 +5007,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC676)
-    (at 369.57 217.932 270)
+    (at 121.158 102.108 270)
     (descr "SMT resistor, 0603")
     (path /527FE989/528002F3)
     (fp_text reference C11 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -5040,7 +5040,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC658)
-    (at 371.602 221.234)
+    (at 123.19 105.41)
     (descr "SMT resistor, 0603")
     (path /527FE989/52800317)
     (fp_text reference C13 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -5073,7 +5073,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC649)
-    (at 367.284 217.932 270)
+    (at 118.872 102.108 270)
     (descr "SMT resistor, 0603")
     (path /527FE989/52800325)
     (fp_text reference C12 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -5106,7 +5106,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC61C)
-    (at 378.587 222.123 270)
+    (at 130.175 106.299 270)
     (descr "SMT resistor, 0603")
     (path /527FE989/527FF8F3)
     (fp_text reference C10 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -5139,7 +5139,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC5FE)
-    (at 375.412 228.854 90)
+    (at 127 113.03 90)
     (descr "SMT resistor, 0603")
     (path /527FE989/52800372)
     (fp_text reference C16 (at 0.9525 -1.27 90) (layer F.SilkS) hide
@@ -5172,7 +5172,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC595)
-    (at 443.103 201.168)
+    (at 194.691 85.344)
     (descr "SMT resistor, 0603")
     (path /527B1CA6/527B20AA)
     (fp_text reference C5 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -5205,7 +5205,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC577)
-    (at 425.958 209.55 180)
+    (at 177.546 93.726 180)
     (descr "SMT resistor, 0603")
     (path /5224C543/52A38C98)
     (fp_text reference C3 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -5238,7 +5238,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC54A)
-    (at 445.77 199.898 270)
+    (at 197.358 84.074 270)
     (descr "SMT resistor, 0603")
     (path /527B1CA6/527B1FD5)
     (fp_text reference C4 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -5271,7 +5271,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC53B)
-    (at 377.698 228.854 90)
+    (at 129.286 113.03 90)
     (descr "SMT resistor, 0603")
     (path /527FE989/52800380)
     (fp_text reference C15 (at 0.9525 -1.27 90) (layer F.SilkS) hide
@@ -5304,7 +5304,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC50E)
-    (at 423.418 209.55 180)
+    (at 175.006 93.726 180)
     (descr "SMT resistor, 0603")
     (path /527C7E4B/527C831C)
     (fp_text reference C6 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -5337,7 +5337,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC4FF)
-    (at 423.164 203.835 90)
+    (at 174.752 88.011 90)
     (descr "SMT resistor, 0603")
     (path /527C7E4B/527C8323)
     (fp_text reference C7 (at 0.9525 -1.27 90) (layer F.SilkS) hide
@@ -5370,7 +5370,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC4D2)
-    (at 383.159 225.679 270)
+    (at 134.747 109.855 270)
     (descr "SMT resistor, 0603")
     (path /527FE989/527FEF93)
     (fp_text reference C8 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -5403,7 +5403,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC937)
-    (at 407.797 208.788 90)
+    (at 153.289 63.373 90)
     (descr "SMT resistor, 0603")
     (path /5224C4FA/5225739D)
     (fp_text reference R45 (at 0.9525 -1.27 90) (layer F.SilkS) hide
@@ -5436,7 +5436,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC928)
-    (at 380.111 188.849 180)
+    (at 130.937 59.563 180)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52B2FEBB)
     (fp_text reference R42 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -5469,7 +5469,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC919)
-    (at 383.286 188.976 270)
+    (at 134.112 59.69 270)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52B1C377)
     (fp_text reference R43 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -5502,7 +5502,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC8FB)
-    (at 360.172 195.707 180)
+    (at 111.76 79.883 180)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52B1B0C8)
     (fp_text reference R40 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -5535,7 +5535,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC8EC)
-    (at 381.635 188.976 270)
+    (at 132.461 59.69 270)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52A6B2AD)
     (fp_text reference R41 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -5568,7 +5568,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC8DD)
-    (at 380.111 191.77 90)
+    (at 130.937 62.484 90)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52A6B2C1)
     (fp_text reference R44 (at 0.9525 -1.27 90) (layer F.SilkS) hide
@@ -5601,7 +5601,7 @@
   )
 
   (module r_0603 (layer B.Cu) (tedit 52EF41A7) (tstamp 52ECC874)
-    (at 463.804 194.818)
+    (at 215.392 78.994)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52A174AF)
     (fp_text reference R37 (at 0.9525 1.27) (layer B.SilkS) hide
@@ -5634,7 +5634,7 @@
   )
 
   (module r_0603 (layer B.Cu) (tedit 52EF41A7) (tstamp 52ECC865)
-    (at 331.47 205.74 90)
+    (at 83.058 89.916 90)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52A174A1)
     (fp_text reference R39 (at 0.9525 1.27 90) (layer B.SilkS) hide
@@ -5667,7 +5667,7 @@
   )
 
   (module r_0603 (layer B.Cu) (tedit 52EF41A7) (tstamp 52ECC856)
-    (at 306.07 208.28 180)
+    (at 57.658 92.456 180)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52A172F9)
     (fp_text reference R38 (at 0.9525 1.27 180) (layer B.SilkS) hide
@@ -5700,13 +5700,13 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC829)
-    (at 385.064 206.248)
+    (at 134.112 74.295 90)
     (descr "SMT resistor, 0603")
     (path /52929F4D/5292B89B)
-    (fp_text reference R54 (at 0.9525 -1.27) (layer F.SilkS) hide
+    (fp_text reference R54 (at 0.9525 -1.27 90) (layer F.SilkS) hide
       (effects (font (size 0.29972 0.29972) (thickness 0.06096)))
     )
-    (fp_text value 5.52K (at 0.9525 1.27) (layer F.SilkS)
+    (fp_text value 5.52K (at 0.9525 1.27 90) (layer F.SilkS)
       (effects (font (size 0.29972 0.29972) (thickness 0.06096)))
     )
     (fp_line (start 1.9431 -0.70485) (end 1.9431 -0.45085) (layer F.SilkS) (width 0.15))
@@ -5717,11 +5717,11 @@
     (fp_line (start -0.5842 0.70485) (end -0.3302 0.70485) (layer F.SilkS) (width 0.15))
     (fp_line (start -0.5842 0.45085) (end -0.5842 0.70485) (layer F.SilkS) (width 0.15))
     (fp_line (start -0.3302 -0.70485) (end -0.5842 -0.70485) (layer F.SilkS) (width 0.15))
-    (pad 1 smd rect (at 0 0) (size 0.6604 0.9017)
+    (pad 1 smd rect (at 0 0 90) (size 0.6604 0.9017)
       (layers F.Cu F.Paste F.Mask)
       (net 112 N-0000091)
     )
-    (pad 2 smd rect (at 1.3589 0) (size 0.6604 0.9017)
+    (pad 2 smd rect (at 1.3589 0 90) (size 0.6604 0.9017)
       (layers F.Cu F.Paste F.Mask)
       (net 113 N-0000092)
     )
@@ -5733,7 +5733,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC81A)
-    (at 379.222 209.55)
+    (at 130.81 93.726)
     (descr "SMT resistor, 0603")
     (path /52929F4D/52B3BBFD)
     (fp_text reference R56 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -5766,7 +5766,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC80B)
-    (at 386.334 199.39)
+    (at 137.795 92.075)
     (descr "SMT resistor, 0603")
     (path /52929F4D/52B3BA8E)
     (fp_text reference R48 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -5799,7 +5799,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC7FC)
-    (at 379.222 202.692)
+    (at 126.111 91.948)
     (descr "SMT resistor, 0603")
     (path /52929F4D/52B3B9CF)
     (fp_text reference R49 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -5832,7 +5832,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC784)
-    (at 386.334 201.676)
+    (at 140.208 91.567)
     (descr "SMT resistor, 0603")
     (path /52929F4D/5292B8A7)
     (fp_text reference R55 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -5865,7 +5865,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC775)
-    (at 377.063 197.612)
+    (at 131.318 74.168)
     (descr "SMT resistor, 0603")
     (path /52929F4D/5292B8A1)
     (fp_text reference R58 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -5898,7 +5898,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC766)
-    (at 367.03 203.2)
+    (at 118.618 87.376)
     (descr "SMT resistor, 0603")
     (path /52929F4D/5292B895)
     (fp_text reference R57 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -5931,7 +5931,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC757)
-    (at 393.192 209.55)
+    (at 144.78 93.726)
     (descr "SMT resistor, 0603")
     (path /52929F4D/5292B88F)
     (fp_text reference R53 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -5964,7 +5964,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC748)
-    (at 390.398 199.39)
+    (at 142.621 90.551)
     (descr "SMT resistor, 0603")
     (path /52929F4D/5292B889)
     (fp_text reference R52 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -5997,7 +5997,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC739)
-    (at 381.508 197.993)
+    (at 137.414 88.9)
     (descr "SMT resistor, 0603")
     (path /52929F4D/5292B883)
     (fp_text reference R51 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -6030,13 +6030,13 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC72A)
-    (at 382.27 200.406)
+    (at 137.922 73.66 270)
     (descr "SMT resistor, 0603")
     (path /52929F4D/5292B87D)
-    (fp_text reference R50 (at 0.9525 -1.27) (layer F.SilkS) hide
+    (fp_text reference R50 (at 0.9525 -1.27 270) (layer F.SilkS) hide
       (effects (font (size 0.29972 0.29972) (thickness 0.06096)))
     )
-    (fp_text value Nominal (at 0.9525 1.27) (layer F.SilkS)
+    (fp_text value Nominal (at 0.9525 1.27 270) (layer F.SilkS)
       (effects (font (size 0.29972 0.29972) (thickness 0.06096)))
     )
     (fp_line (start 1.9431 -0.70485) (end 1.9431 -0.45085) (layer F.SilkS) (width 0.15))
@@ -6047,11 +6047,11 @@
     (fp_line (start -0.5842 0.70485) (end -0.3302 0.70485) (layer F.SilkS) (width 0.15))
     (fp_line (start -0.5842 0.45085) (end -0.5842 0.70485) (layer F.SilkS) (width 0.15))
     (fp_line (start -0.3302 -0.70485) (end -0.5842 -0.70485) (layer F.SilkS) (width 0.15))
-    (pad 1 smd rect (at 0 0) (size 0.6604 0.9017)
+    (pad 1 smd rect (at 0 0 270) (size 0.6604 0.9017)
       (layers F.Cu F.Paste F.Mask)
       (net 1 +3.3V)
     )
-    (pad 2 smd rect (at 1.3589 0) (size 0.6604 0.9017)
+    (pad 2 smd rect (at 1.3589 0 270) (size 0.6604 0.9017)
       (layers F.Cu F.Paste F.Mask)
       (net 3 /battery_charger/INT)
     )
@@ -6063,7 +6063,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC71B)
-    (at 403.733 203.835 180)
+    (at 156.083 79.121 180)
     (descr "SMT resistor, 0603")
     (path /5224C595/52927D44)
     (fp_text reference R47 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -6096,7 +6096,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC6DF)
-    (at 432.308 194.31)
+    (at 183.896 78.486)
     (descr "SMT resistor, 0603")
     (path /52A6745A/52A69CB1)
     (fp_text reference R46 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -6129,7 +6129,7 @@
   )
 
   (module r_0603 (layer B.Cu) (tedit 52EF41A7) (tstamp 52ECC694)
-    (at 331.47 210.82 90)
+    (at 83.058 94.996 90)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52E619E6/52EC9FC5)
     (fp_text reference R8 (at 0.9525 1.27 90) (layer B.SilkS) hide
@@ -6162,7 +6162,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC685)
-    (at 375.666 217.932 270)
+    (at 127.254 102.108 270)
     (descr "SMT resistor, 0603")
     (path /527FE989/528002ED)
     (fp_text reference R24 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -6195,7 +6195,7 @@
   )
 
   (module r_0603 (layer B.Cu) (tedit 52EF41A7) (tstamp 52ECC667)
-    (at 331.47 189.23 270)
+    (at 83.058 73.406 270)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52E619E6/52EC9FED)
     (fp_text reference R11 (at 0.9525 1.27 270) (layer B.SilkS) hide
@@ -6228,7 +6228,7 @@
   )
 
   (module r_0603 (layer B.Cu) (tedit 52EF41A7) (tstamp 52ECC63A)
-    (at 339.09 194.31)
+    (at 90.678 78.486)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52E619E6/52EC9FE1)
     (fp_text reference R10 (at 0.9525 1.27) (layer B.SilkS) hide
@@ -6261,7 +6261,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC62B)
-    (at 371.602 224.536)
+    (at 123.19 108.712)
     (descr "SMT resistor, 0603")
     (path /527FE989/52800348)
     (fp_text reference R26 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -6294,7 +6294,7 @@
   )
 
   (module r_0603 (layer B.Cu) (tedit 52EF41A7) (tstamp 52ECC60D)
-    (at 461.01 209.042 90)
+    (at 212.598 93.218 90)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52E619E4/52E6286C)
     (fp_text reference R7 (at 0.9525 1.27 90) (layer B.SilkS) hide
@@ -6327,7 +6327,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC5EF)
-    (at 380.873 225.679 270)
+    (at 132.461 109.855 270)
     (descr "SMT resistor, 0603")
     (path /527FE989/5280170F)
     (fp_text reference R23 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -6360,7 +6360,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC5E0)
-    (at 377.952 217.932 270)
+    (at 129.54 102.108 270)
     (descr "SMT resistor, 0603")
     (path /527FE989/52801715)
     (fp_text reference R25 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -6393,7 +6393,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC5D1)
-    (at 367.538 228.854 90)
+    (at 119.126 113.03 90)
     (descr "SMT resistor, 0603")
     (path /527FE989/5280171B)
     (fp_text reference R27 (at 0.9525 -1.27 90) (layer F.SilkS) hide
@@ -6426,7 +6426,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC5C2)
-    (at 370.967 201.168 180)
+    (at 122.555 85.344 180)
     (descr "SMT resistor, 0603")
     (path /528029D1/52803610)
     (fp_text reference R28 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -6459,7 +6459,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC5B3)
-    (at 407.924 199.898 90)
+    (at 159.512 84.074 90)
     (descr "SMT resistor, 0603")
     (path /528029D1/52803622)
     (fp_text reference R29 (at 0.9525 -1.27 90) (layer F.SilkS) hide
@@ -6492,7 +6492,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC5A4)
-    (at 435.61 201.422 180)
+    (at 187.198 85.598 180)
     (descr "SMT resistor, 0603")
     (path /528029D1/5280362D)
     (fp_text reference R30 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -6525,7 +6525,7 @@
   )
 
   (module r_0603 (layer B.Cu) (tedit 52EF41A7) (tstamp 52ECC586)
-    (at 306.07 193.04 180)
+    (at 57.658 77.216 180)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52ECD75E/52E6286C)
     (fp_text reference R12 (at 0.9525 1.27 180) (layer B.SilkS) hide
@@ -6558,7 +6558,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC568)
-    (at 444.754 197.739 90)
+    (at 196.342 81.915 90)
     (descr "SMT resistor, 0603")
     (path /527B1CA6/527B1EF8)
     (fp_text reference R18 (at 0.9525 -1.27 90) (layer F.SilkS) hide
@@ -6591,7 +6591,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC559)
-    (at 443.103 202.565)
+    (at 194.691 86.741)
     (descr "SMT resistor, 0603")
     (path /527B1CA6/527B1F07)
     (fp_text reference R17 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -6624,7 +6624,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC52C)
-    (at 443.357 197.739 90)
+    (at 194.945 81.915 90)
     (descr "SMT resistor, 0603")
     (path /527B1CA6/527B20B2)
     (fp_text reference R19 (at 0.9525 -1.27 90) (layer F.SilkS) hide
@@ -6657,7 +6657,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC51D)
-    (at 426.085 202.565 180)
+    (at 177.673 86.741 180)
     (descr "SMT resistor, 0603")
     (path /527C7E4B/527C8316)
     (fp_text reference R20 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -6690,7 +6690,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC4F0)
-    (at 426.085 203.962 180)
+    (at 177.673 88.138 180)
     (descr "SMT resistor, 0603")
     (path /527C7E4B/527C8433)
     (fp_text reference R21 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -6723,7 +6723,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC4E1)
-    (at 383.159 218.567 270)
+    (at 134.747 102.743 270)
     (descr "SMT resistor, 0603")
     (path /527FE989/527FEBAE)
     (fp_text reference R22 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -6756,7 +6756,7 @@
   )
 
   (module r_0603 (layer B.Cu) (tedit 52EF41A7) (tstamp 52ECC4C3)
-    (at 339.09 204.47)
+    (at 90.678 88.646)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52E619E6/52EC9FD1)
     (fp_text reference R9 (at 0.9525 1.27) (layer B.SilkS) hide
@@ -6789,7 +6789,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC4B4)
-    (at 364.363 206.756)
+    (at 115.951 90.932)
     (descr "SMT resistor, 0603")
     (path /5224C457/5281D330/5281D372)
     (fp_text reference R4 (at 0.9525 -1.27) (layer F.SilkS) hide
@@ -6822,7 +6822,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC4A5)
-    (at 361.95 197.612 270)
+    (at 113.538 81.788 270)
     (descr "SMT resistor, 0603")
     (path /5224C457/5281D330/5281D342)
     (fp_text reference R2 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -6855,7 +6855,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC496)
-    (at 368.3 204.851 180)
+    (at 119.888 89.027 180)
     (descr "SMT resistor, 0603")
     (path /5224C457/5281D330/5281D36C)
     (fp_text reference R3 (at 0.9525 -1.27 180) (layer F.SilkS) hide
@@ -6888,7 +6888,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC487)
-    (at 361.95 200.406 270)
+    (at 113.538 84.582 270)
     (descr "SMT resistor, 0603")
     (path /5224C457/5281D330/5281D348)
     (fp_text reference R5 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -6921,7 +6921,7 @@
   )
 
   (module r_0603 (layer F.Cu) (tedit 52EF41A7) (tstamp 52ECC478)
-    (at 361.95 203.2 270)
+    (at 113.538 87.376 270)
     (descr "SMT resistor, 0603")
     (path /5224C457/5281D330/5281D34E)
     (fp_text reference R6 (at 0.9525 -1.27 270) (layer F.SilkS) hide
@@ -6953,110 +6953,49 @@
     )
   )
 
-  (gr_line (start 459.74 210.82) (end 462.28 210.82) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 459.74 187.96) (end 459.74 210.82) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 462.28 187.96) (end 459.74 187.96) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 411.48 175.26) (end 406.4 175.26) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 411.48 170.18) (end 411.48 175.26) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 406.4 170.18) (end 411.48 170.18) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 406.4 175.26) (end 406.4 170.18) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_text "Touch Adj -" (at 344.424 229.108) (layer Dwgs.User)
+  (gr_line (start 211.328 94.996) (end 213.868 94.996) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 211.328 72.136) (end 211.328 94.996) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 213.868 72.136) (end 211.328 72.136) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 163.068 59.436) (end 157.988 59.436) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 163.068 54.356) (end 163.068 59.436) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 157.988 54.356) (end 163.068 54.356) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 157.988 59.436) (end 157.988 54.356) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_text "Touch Adj -" (at 96.012 113.284) (layer Dwgs.User)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
   )
-  (gr_text "Back Signal" (at 291.338 181.356) (layer Dwgs.User) (tstamp 52DBBE37)
+  (gr_text "Back Signal" (at 42.926 65.532) (layer Dwgs.User) (tstamp 52DBBE37)
     (effects (font (size 1.5 1.5) (thickness 0.3)) (justify left))
   )
-  (gr_line (start 385.572 212.344) (end 385.572 234.188) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 356.108 223.266) (end 365.506 223.266) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 366.014 212.344) (end 366.014 234.188) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 355.6 234.696) (end 355.6 211.836) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 449.58 234.696) (end 355.6 234.696) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 449.58 211.836) (end 449.58 234.696) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 355.6 211.836) (end 449.58 211.836) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_arc (start 307.34 199.39) (end 307.34 210.82) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_arc (start 307.34 199.39) (end 295.91 199.39) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 355.6 210.82) (end 449.58 210.82) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 355.6 187.96) (end 355.6 210.82) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_arc (start 334.01 199.39) (end 334.01 187.96) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_arc (start 334.01 199.39) (end 345.44 199.39) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_arc (start 462.28 199.39) (end 473.71 199.39) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_arc (start 462.28 199.39) (end 462.28 187.96) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_circle (center 554.99 199.39) (end 567.69 199.39) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 449.58 187.96) (end 449.58 210.82) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 355.6 187.96) (end 449.58 187.96) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_circle (center 287.02 134.62) (end 295.91 134.62) (layer Dwgs.User) (width 0.2))
-  (gr_arc (start 365.76 50.8) (end 378.46 50.8) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE50))
-  (gr_arc (start 365.76 50.8) (end 365.76 38.1) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE4F))
-  (gr_line (start 365.76 63.5) (end 340.36 63.5) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE4E))
-  (gr_line (start 365.76 38.1) (end 365.76 63.5) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE4D))
-  (gr_line (start 340.36 38.1) (end 365.76 38.1) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE4C))
-  (gr_line (start 340.36 63.5) (end 340.36 38.1) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE4B))
-  (gr_line (start 340.36 91.44) (end 340.36 66.04) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE4A))
-  (gr_line (start 340.36 66.04) (end 365.76 66.04) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE49))
-  (gr_line (start 365.76 66.04) (end 365.76 91.44) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE48))
-  (gr_line (start 365.76 91.44) (end 340.36 91.44) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE47))
-  (gr_arc (start 365.76 78.74) (end 365.76 66.04) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE46))
-  (gr_arc (start 365.76 78.74) (end 378.46 78.74) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE45))
-  (gr_arc (start 365.76 134.62) (end 378.46 134.62) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE44))
-  (gr_arc (start 365.76 134.62) (end 365.76 121.92) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE43))
-  (gr_line (start 365.76 147.32) (end 340.36 147.32) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE42))
-  (gr_line (start 365.76 121.92) (end 365.76 147.32) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE41))
-  (gr_line (start 340.36 121.92) (end 365.76 121.92) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE40))
-  (gr_line (start 340.36 147.32) (end 340.36 121.92) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE3F))
-  (gr_line (start 340.36 119.38) (end 340.36 93.98) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE3E))
-  (gr_line (start 340.36 93.98) (end 365.76 93.98) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE3D))
-  (gr_line (start 365.76 93.98) (end 365.76 119.38) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE3C))
-  (gr_line (start 365.76 119.38) (end 340.36 119.38) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE3B))
-  (gr_arc (start 365.76 106.68) (end 365.76 93.98) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE3A))
-  (gr_arc (start 365.76 106.68) (end 378.46 106.68) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE39))
-  (gr_text "Brake\n" (at 329.692 180.34) (layer Dwgs.User) (tstamp 52DBBE36)
+  (gr_line (start 137.16 96.52) (end 137.16 118.364) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 107.696 107.442) (end 117.094 107.442) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 117.602 96.52) (end 117.602 118.364) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 107.188 118.872) (end 107.188 96.012) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 201.168 118.872) (end 107.188 118.872) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 201.168 96.012) (end 201.168 118.872) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 107.188 96.012) (end 201.168 96.012) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_arc (start 58.928 83.566) (end 58.928 94.996) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_arc (start 58.928 83.566) (end 47.498 83.566) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 107.188 94.996) (end 201.168 94.996) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 107.188 72.136) (end 107.188 94.996) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_arc (start 85.598 83.566) (end 85.598 72.136) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_arc (start 85.598 83.566) (end 97.028 83.566) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_arc (start 213.868 83.566) (end 225.298 83.566) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_arc (start 213.868 83.566) (end 213.868 72.136) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_circle (center 246.634 82.931) (end 259.334 82.931) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 201.168 72.136) (end 201.168 94.996) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_line (start 107.188 72.136) (end 201.168 72.136) (angle 90) (layer Dwgs.User) (width 0.2))
+  (gr_text "Brake\n" (at 81.28 64.516) (layer Dwgs.User) (tstamp 52DBBE36)
     (effects (font (size 1.5 1.5) (thickness 0.3)) (justify left))
   )
-  (gr_arc (start 299.72 106.68) (end 312.42 106.68) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE1F))
-  (gr_arc (start 299.72 106.68) (end 299.72 93.98) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE1E))
-  (gr_line (start 299.72 119.38) (end 274.32 119.38) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE1D))
-  (gr_line (start 299.72 93.98) (end 299.72 119.38) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE1C))
-  (gr_line (start 274.32 93.98) (end 299.72 93.98) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE1B))
-  (gr_line (start 274.32 119.38) (end 274.32 93.98) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE1A))
-  (gr_line (start 274.32 147.32) (end 274.32 121.92) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE19))
-  (gr_line (start 274.32 121.92) (end 299.72 121.92) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE18))
-  (gr_line (start 299.72 121.92) (end 299.72 147.32) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE17))
-  (gr_line (start 299.72 147.32) (end 274.32 147.32) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE16))
-  (gr_arc (start 299.72 134.62) (end 299.72 121.92) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE15))
-  (gr_arc (start 299.72 134.62) (end 312.42 134.62) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE14))
-  (gr_arc (start 299.72 78.74) (end 312.42 78.74) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE13))
-  (gr_arc (start 299.72 78.74) (end 299.72 66.04) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE12))
-  (gr_line (start 299.72 91.44) (end 274.32 91.44) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE11))
-  (gr_line (start 299.72 66.04) (end 299.72 91.44) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE10))
-  (gr_line (start 274.32 66.04) (end 299.72 66.04) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE0F))
-  (gr_line (start 274.32 91.44) (end 274.32 66.04) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE0E))
-  (gr_line (start 274.32 63.5) (end 274.32 38.1) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE03))
-  (gr_line (start 274.32 38.1) (end 299.72 38.1) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE02))
-  (gr_line (start 299.72 38.1) (end 299.72 63.5) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE01))
-  (gr_line (start 299.72 63.5) (end 274.32 63.5) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBE00))
-  (gr_arc (start 299.72 50.8) (end 299.72 38.1) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBDFF))
-  (gr_arc (start 299.72 50.8) (end 312.42 50.8) (angle 90) (layer Dwgs.User) (width 0.2) (tstamp 52DBBDFE))
-  (gr_text "Touch Adj +" (at 344.424 217.932) (layer Dwgs.User)
+  (gr_text "Touch Adj +" (at 96.012 102.108) (layer Dwgs.User)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
   )
-  (gr_text "Touch Main" (at 415.29 223.012) (layer Dwgs.User)
+  (gr_text "Touch Main" (at 166.878 107.188) (layer Dwgs.User)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
   )
-  (gr_text "Front signal" (at 467.36 178.562) (layer Dwgs.User)
+  (gr_text "Front signal" (at 218.948 62.738) (layer Dwgs.User)
     (effects (font (size 1.5 1.5) (thickness 0.3)) (justify left))
   )
-  (gr_arc (start 185.42 121.92) (end 198.12 121.92) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_arc (start 185.42 121.92) (end 185.42 109.22) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 185.42 134.62) (end 160.02 134.62) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 185.42 109.22) (end 185.42 134.62) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 160.02 109.22) (end 185.42 109.22) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 160.02 134.62) (end 160.02 109.22) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_arc (start 185.42 66.04) (end 198.12 66.04) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_arc (start 185.42 66.04) (end 185.42 53.34) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 185.42 78.74) (end 160.02 78.74) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 185.42 53.34) (end 185.42 78.74) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 160.02 53.34) (end 185.42 53.34) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 160.02 78.74) (end 160.02 53.34) (angle 90) (layer Dwgs.User) (width 0.2))
   (gr_line (start 244.602 46.736) (end 244.602 46.228) (angle 90) (layer Dwgs.User) (width 0.2))
   (gr_line (start 245.618 46.736) (end 244.602 46.736) (angle 90) (layer Dwgs.User) (width 0.2))
   (gr_line (start 245.618 46.228) (end 245.618 46.736) (angle 90) (layer Dwgs.User) (width 0.2))
@@ -7065,11 +7004,5 @@
   (gr_line (start 246.634 44.45) (end 246.634 45.72) (angle 90) (layer Dwgs.User) (width 0.2))
   (gr_line (start 244.602 44.45) (end 246.634 44.45) (angle 90) (layer Dwgs.User) (width 0.2))
   (gr_line (start 244.602 45.72) (end 244.602 44.45) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_arc (start 185.42 93.98) (end 198.12 93.98) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_arc (start 185.42 93.98) (end 185.42 81.28) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 185.42 106.68) (end 160.02 106.68) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 185.42 81.28) (end 185.42 106.68) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 160.02 81.28) (end 185.42 81.28) (angle 90) (layer Dwgs.User) (width 0.2))
-  (gr_line (start 160.02 106.68) (end 160.02 81.28) (angle 90) (layer Dwgs.User) (width 0.2))
 
 )
