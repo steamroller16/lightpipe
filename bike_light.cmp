@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 2/3/2014 1:16:53 AM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 2/8/2014 4:49:22 PM
 
 BeginCmp
 TimeStamp = /5224C457/5281D330/5281D336;
@@ -533,38 +533,38 @@ IdModule  = CONN_6_MALE_RA;
 EndCmp
 
 BeginCmp
-TimeStamp = /52A0B607/52ED264B;
+TimeStamp = /52A0B607/52F6FC7F;
 Reference = P2;
-ValeurCmp = CONN_6_RA_FEMALE;
-IdModule  = CONN_6_FEMALE;
+ValeurCmp = CONN_2x2_MALE_RA;
+IdModule  = CONN_2x2_MALE_RA;
 EndCmp
 
 BeginCmp
-TimeStamp = /52A0B607/52ED25DB;
+TimeStamp = /52A0B607/52F6FEC3;
 Reference = P3;
-ValeurCmp = CONN_6_RA_MALE;
-IdModule  = CONN_6_MALE_RA;
+ValeurCmp = CONN_2x2_MALE_RA;
+IdModule  = CONN_2x2_MALE_RA;
 EndCmp
 
 BeginCmp
-TimeStamp = /52A0B607/52EC37B2;
+TimeStamp = /52A0B607/52F702E8;
 Reference = P4;
-ValeurCmp = CONN_6_RA_MALE;
-IdModule  = CONN_6_MALE_RA;
+ValeurCmp = CONN_2x2_FEMALE_BACK;
+IdModule  = CONN_2x2;
 EndCmp
 
 BeginCmp
 TimeStamp = /52A0B607/52EDF405;
 Reference = P5;
-ValeurCmp = CONN_6_MALE_FRONT;
+ValeurCmp = CONN_6_FEMALE_FRONT;
 IdModule  = CONN_6_FEMALE;
 EndCmp
 
 BeginCmp
-TimeStamp = /52A0B607/52EDDB84;
+TimeStamp = /52A0B607/52F702F5;
 Reference = P6;
-ValeurCmp = CONN_6_MALE_BACK;
-IdModule  = CONN_6_FEMALE;
+ValeurCmp = CONN_2x2_FEMALE_BACK;
+IdModule  = CONN_2x2;
 EndCmp
 
 BeginCmp

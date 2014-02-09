@@ -3,9 +3,9 @@
   (general
     (links 509)
     (no_connects 499)
-    (area 42.776 44.349999 259.434001 118.972001)
+    (area 40.793999 30.533112 260.450001 121.131001)
     (thickness 1.6)
-    (drawings 56)
+    (drawings 57)
     (tracks 0)
     (zones 0)
     (modules 181)
@@ -59,7 +59,7 @@
     (mod_edge_width 0.15)
     (mod_text_size 1 1)
     (mod_text_width 0.15)
-    (pad_size 0.6604 0.9017)
+    (pad_size 0.254 0.254)
     (pad_drill 0)
     (pad_to_mask_clearance 0)
     (aux_axis_origin 0 0)
@@ -7054,6 +7054,7 @@
     )
   )
 
+  (gr_line (start 201.803 79.756) (end 201.803 87.376) (angle 90) (layer Dwgs.User) (width 0.2))
   (gr_circle (center 181.991 107.442) (end 184.912 107.442) (layer Dwgs.User) (width 0.2))
   (gr_circle (center 181.991 107.442) (end 183.896 107.442) (layer Dwgs.User) (width 0.2))
   (gr_line (start 181.991 95.631) (end 181.991 121.031) (angle 90) (layer Dwgs.User) (width 0.2))
