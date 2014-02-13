@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 15 16
 Title ""
-Date "10 feb 2014"
+Date "13 feb 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -103,13 +103,11 @@ $EndComp
 Wire Wire Line
 	1750 3050 1750 2800
 Wire Wire Line
-	1750 3150 1750 3550
-Wire Wire Line
 	1200 2950 1550 2950
 Wire Wire Line
 	1200 3350 1550 3350
 Wire Wire Line
-	1500 3350 1500 3400
+	1500 3250 1500 3400
 Connection ~ 1500 3350
 Wire Wire Line
 	2550 3050 3400 3050
@@ -117,8 +115,6 @@ Wire Wire Line
 	2550 3150 3400 3150
 Wire Wire Line
 	1200 3050 1750 3050
-Wire Wire Line
-	1200 3150 1750 3150
 Wire Wire Line
 	3400 2500 3400 2750
 Connection ~ 3400 2550
@@ -260,10 +256,6 @@ Text HLabel 3300 3350 0    60   Input ~ 0
 Wire Wire Line
 	2550 3050 2550 2800
 Wire Wire Line
-	2550 3150 2550 3550
-Wire Wire Line
-	2550 3550 1750 3550
-Wire Wire Line
 	2550 2800 1750 2800
 Text HLabel 4050 2000 0    60   Input ~ 0
 ~RESET
@@ -293,4 +285,14 @@ Connection ~ 1250 2150
 Wire Wire Line
 	1250 3400 1250 3350
 Connection ~ 1250 3350
+Wire Wire Line
+	1750 3250 1500 3250
+Wire Wire Line
+	1200 3150 1650 3150
+Wire Wire Line
+	1650 3150 1650 3550
+Wire Wire Line
+	1650 3550 2550 3550
+Wire Wire Line
+	2550 3550 2550 3150
 $EndSCHEMATC

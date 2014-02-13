@@ -1,4 +1,4 @@
-PCBNEW-LibModule-V1  2/9/2014 11:06:38 PM
+PCBNEW-LibModule-V1  2/12/2014 8:36:00 PM
 # encoding utf-8
 Units mm
 $INDEX
@@ -1335,7 +1335,7 @@ Po -0.5 -0.5
 $EndPAD
 $EndMODULE QFN_16
 $MODULE QFN_24_PWR
-Po 0 0 0 15 52F55FD5 00000000 ~~
+Po 0 0 0 15 52FC1545 00000000 ~~
 Li QFN_24_PWR
 Sc 0
 AR 
@@ -1517,70 +1517,70 @@ Ne 0 ""
 Po -2.045 1.25
 $EndPAD
 $PAD
-Sh "" R 2.7 2.7 0 0 0
+Sh "25" R 2.7 2.7 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
 Po 0 0
 $EndPAD
 $PAD
-Sh "" C 0.6 0.6 0 0 0
+Sh "25" C 0.6 0.6 0 0 0
 Dr 0.3 0 0
 At STD N 00E0FFFF
 Ne 0 ""
 Po -0.9 -0.9
 $EndPAD
 $PAD
-Sh "" C 0.6 0.6 0 0 0
+Sh "25" C 0.6 0.6 0 0 0
 Dr 0.3 0 0
 At STD N 00E0FFFF
 Ne 0 ""
 Po 0 -0.9
 $EndPAD
 $PAD
-Sh "" C 0.6 0.6 0 0 0
+Sh "25" C 0.6 0.6 0 0 0
 Dr 0.3 0 0
 At STD N 00E0FFFF
 Ne 0 ""
 Po 0.9 -0.9
 $EndPAD
 $PAD
-Sh "" C 0.6 0.6 0 0 0
+Sh "25" C 0.6 0.6 0 0 0
 Dr 0.3 0 0
 At STD N 00E0FFFF
 Ne 0 ""
 Po 0.9 0
 $EndPAD
 $PAD
-Sh "" C 0.6 0.6 0 0 0
+Sh "25" C 0.6 0.6 0 0 0
 Dr 0.3 0 0
 At STD N 00E0FFFF
 Ne 0 ""
 Po 0 0
 $EndPAD
 $PAD
-Sh "" C 0.6 0.6 0 0 0
+Sh "25" C 0.6 0.6 0 0 0
 Dr 0.3 0 0
 At STD N 00E0FFFF
 Ne 0 ""
 Po -0.9 0
 $EndPAD
 $PAD
-Sh "" C 0.6 0.6 0 0 0
+Sh "25" C 0.6 0.6 0 0 0
 Dr 0.3 0 0
 At STD N 00E0FFFF
 Ne 0 ""
 Po -0.9 0.9
 $EndPAD
 $PAD
-Sh "" C 0.6 0.6 0 0 0
+Sh "25" C 0.6 0.6 0 0 0
 Dr 0.3 0 0
 At STD N 00E0FFFF
 Ne 0 ""
 Po 0 0.9
 $EndPAD
 $PAD
-Sh "" C 0.6 0.6 0 0 0
+Sh "25" C 0.6 0.6 0 0 0
 Dr 0.3 0 0
 At STD N 00E0FFFF
 Ne 0 ""
@@ -1990,49 +1990,49 @@ AR
 Op 0 0 0
 T0 0.65 2.4 1 1 0 0.15 N I 21 N "UDFN6"
 T1 0.65 -1.6 1 1 0 0.15 N V 21 N "VAL**"
-DS -0.59055 -0.49149 -0.59055 -0.23749 0.15 21
-DS -0.59055 -0.49149 -0.33655 -0.49149 0.15 21
+DS -0.91555 -0.89149 -0.91555 -0.63749 0.15 21
+DS -0.91555 -0.89149 -0.66155 -0.89149 0.15 21
 $PAD
 Sh "1" R 0.42 0.22 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po 0 0
+Po -0.325 -0.4
 $EndPAD
 $PAD
 Sh "2" R 0.42 0.22 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po 0 0.4
+Po -0.325 0
 $EndPAD
 $PAD
 Sh "3" R 0.42 0.22 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po 0 0.8
+Po -0.325 0.4
 $EndPAD
 $PAD
 Sh "4" R 0.42 0.22 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po 0.65 0.8
+Po 0.325 0.4
 $EndPAD
 $PAD
 Sh "5" R 0.42 0.22 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po 0.65 0.4
+Po 0.325 0
 $EndPAD
 $PAD
 Sh "6" R 0.42 0.22 0 0 0
 Dr 0 0 0
 At SMD N 00888000
 Ne 0 ""
-Po 0.65 0
+Po 0.325 -0.4
 $EndPAD
 $EndMODULE UDFN6
 $MODULE US8
