@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 9 16
 Title ""
-Date "13 feb 2014"
+Date "16 feb 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -764,12 +764,12 @@ Text HLabel 4600 2550 2    60   Input ~ 0
 $Comp
 L +3.3V #PWR080
 U 1 1 52EDDB8A
-P 10300 4100
-F 0 "#PWR080" H 10300 4060 30  0001 C CNN
-F 1 "+3.3V" H 10300 4210 30  0000 C CNN
-F 2 "" H 10300 4100 60  0000 C CNN
-F 3 "" H 10300 4100 60  0000 C CNN
-	1    10300 4100
+P 9700 4250
+F 0 "#PWR080" H 9700 4210 30  0001 C CNN
+F 1 "+3.3V" H 9700 4360 30  0000 C CNN
+F 2 "" H 9700 4250 60  0000 C CNN
+F 3 "" H 9700 4250 60  0000 C CNN
+	1    9700 4250
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -783,13 +783,13 @@ F 3 "" H 10300 4950 60  0000 C CNN
 	1    10300 4950
 	-1   0    0    -1  
 $EndComp
-Text Label 10300 4300 2    60   ~ 0
+Text Label 10300 4450 2    60   ~ 0
 +2.5V local
 Text HLabel 10300 4800 0    60   BiDi ~ 0
 SDA
 Text HLabel 10300 4700 0    60   Input ~ 0
 SCL
-Text HLabel 10300 4450 0    60   Input ~ 0
+Text HLabel 10300 4350 0    60   Input ~ 0
 ~RESET
 $Comp
 L CONN_6 P5
@@ -805,12 +805,12 @@ $EndComp
 $Comp
 L +3.3V #PWR082
 U 1 1 52EDF40B
-P 8950 4200
-F 0 "#PWR082" H 8950 4160 30  0001 C CNN
-F 1 "+3.3V" H 8950 4310 30  0000 C CNN
-F 2 "" H 8950 4200 60  0000 C CNN
-F 3 "" H 8950 4200 60  0000 C CNN
-	1    8950 4200
+P 8300 4350
+F 0 "#PWR082" H 8300 4310 30  0001 C CNN
+F 1 "+3.3V" H 8300 4460 30  0000 C CNN
+F 2 "" H 8300 4350 60  0000 C CNN
+F 3 "" H 8300 4350 60  0000 C CNN
+	1    8300 4350
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -824,7 +824,7 @@ F 3 "" H 8950 4800 60  0000 C CNN
 	1    8950 4800
 	-1   0    0    -1  
 $EndComp
-Text Label 8950 4350 2    60   ~ 0
+Text Label 8950 4250 2    60   ~ 0
 +2.5V local
 Text HLabel 8950 4550 0    60   BiDi ~ 0
 SDA
@@ -1310,15 +1310,11 @@ Wire Notes Line
 Wire Notes Line
 	5800 3550 5700 3650
 Wire Wire Line
-	10300 4100 10300 4150
-Wire Wire Line
 	10300 4150 10350 4150
 Wire Wire Line
 	10000 4900 10350 4900
 Wire Wire Line
 	10300 4900 10300 4950
-Wire Wire Line
-	10350 4300 10300 4300
 Wire Wire Line
 	10350 4700 10300 4700
 Wire Wire Line
@@ -1326,15 +1322,13 @@ Wire Wire Line
 Wire Wire Line
 	10350 4450 10300 4450
 Wire Wire Line
-	8950 4200 8950 4250
-Wire Wire Line
 	8950 4250 9000 4250
 Wire Wire Line
 	9000 4750 8950 4750
 Wire Wire Line
 	8950 4750 8950 4800
 Wire Wire Line
-	9000 4350 8950 4350
+	8300 4350 9000 4350
 Wire Wire Line
 	9000 4450 8950 4450
 Wire Wire Line
@@ -1346,23 +1340,26 @@ Wire Wire Line
 Wire Wire Line
 	10000 4600 10000 4900
 Connection ~ 10300 4900
+Text Label 10300 4150 2    60   ~ 0
++2.5V local
 Wire Wire Line
-	10350 4250 10350 4350
-Connection ~ 10350 4300
+	10300 4350 10350 4350
+Wire Wire Line
+	9700 4250 10350 4250
 $Comp
 L +3.3V #PWR084
-U 1 1 52F71619
-P 10650 1950
-F 0 "#PWR084" H 10650 1910 30  0001 C CNN
-F 1 "+3.3V" H 10650 2060 30  0000 C CNN
-F 2 "" H 10650 1950 60  0000 C CNN
-F 3 "" H 10650 1950 60  0000 C CNN
-	1    10650 1950
+U 1 1 530021E7
+P 10700 2100
+F 0 "#PWR084" H 10700 2060 30  0001 C CNN
+F 1 "+3.3V" H 10700 2210 30  0000 C CNN
+F 2 "" H 10700 2100 60  0000 C CNN
+F 3 "" H 10700 2100 60  0000 C CNN
+	1    10700 2100
 	1    0    0    -1  
 $EndComp
 $Comp
 L DGND #PWR085
-U 1 1 52F7161F
+U 1 1 530021ED
 P 10650 2800
 F 0 "#PWR085" H 10650 2800 40  0001 C CNN
 F 1 "DGND" H 10650 2730 40  0000 C CNN
@@ -1371,24 +1368,20 @@ F 3 "" H 10650 2800 60  0000 C CNN
 	1    10650 2800
 	1    0    0    -1  
 $EndComp
-Text Label 10650 2150 0    60   ~ 0
+Text Label 10650 2300 0    60   ~ 0
 +2.5V local
 Text HLabel 10650 2650 2    60   BiDi ~ 0
 SDA
 Text HLabel 10650 2550 2    60   Input ~ 0
 SCL
-Text HLabel 10650 2300 2    60   Input ~ 0
+Text HLabel 10650 2200 2    60   Input ~ 0
 ~RESET
-Wire Wire Line
-	10650 1950 10650 2000
 Wire Wire Line
 	10650 2000 10600 2000
 Wire Wire Line
-	10950 2750 10600 2750
+	10600 2750 10950 2750
 Wire Wire Line
 	10650 2750 10650 2800
-Wire Wire Line
-	10600 2150 10650 2150
 Wire Wire Line
 	10600 2550 10650 2550
 Wire Wire Line
@@ -1400,7 +1393,10 @@ Wire Wire Line
 Wire Wire Line
 	10950 2450 10950 2750
 Connection ~ 10650 2750
+Text Label 10650 2000 0    60   ~ 0
++2.5V local
 Wire Wire Line
-	10600 2100 10600 2200
-Connection ~ 10600 2150
+	10650 2200 10600 2200
+Wire Wire Line
+	10700 2100 10600 2100
 $EndSCHEMATC
