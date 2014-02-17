@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 16
 Title ""
-Date "16 feb 2014"
+Date "17 feb 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -210,5 +210,8 @@ Wire Wire Line
 NoConn ~ 4200 2650
 NoConn ~ 4200 2750
 NoConn ~ 7800 2900
-NoConn ~ 7800 3600
+Text HLabel 7900 3600 2    60   Output ~ 0
+VIBRATOR
+Wire Wire Line
+	7800 3600 7900 3600
 $EndSCHEMATC
