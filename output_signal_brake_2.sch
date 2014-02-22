@@ -37,7 +37,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 9 16
 Title ""
-Date "17 feb 2014"
+Date "22 feb 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -734,12 +734,12 @@ $EndComp
 $Comp
 L +3.3V #PWR071
 U 1 1 52ED1469
-P 4600 2100
-F 0 "#PWR071" H 4600 2060 30  0001 C CNN
-F 1 "+3.3V" H 4600 2210 30  0000 C CNN
-F 2 "" H 4600 2100 60  0000 C CNN
-F 3 "" H 4600 2100 60  0000 C CNN
-	1    4600 2100
+P 5200 2250
+F 0 "#PWR071" H 5200 2210 30  0001 C CNN
+F 1 "+3.3V" H 5200 2360 30  0000 C CNN
+F 2 "" H 5200 2250 60  0000 C CNN
+F 3 "" H 5200 2250 60  0000 C CNN
+	1    5200 2250
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -753,7 +753,7 @@ F 3 "" H 4600 2700 60  0000 C CNN
 	1    4600 2700
 	1    0    0    -1  
 $EndComp
-Text Label 4600 2250 0    60   ~ 0
+Text Label 4600 2150 0    60   ~ 0
 +2.5V local
 Text HLabel 4600 2450 2    60   BiDi ~ 0
 SDA
@@ -1270,15 +1270,13 @@ Wire Notes Line
 Wire Notes Line
 	4500 4400 600  4400
 Wire Wire Line
-	4600 2100 4600 2150
-Wire Wire Line
 	4600 2150 4550 2150
 Wire Wire Line
 	4550 2650 4600 2650
 Wire Wire Line
 	4600 2650 4600 2700
 Wire Wire Line
-	4550 2250 4600 2250
+	4550 2250 5200 2250
 Wire Wire Line
 	4550 2350 4600 2350
 Wire Wire Line
