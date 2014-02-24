@@ -1,0 +1,396 @@
+eeschema (2013-07-07 BZR 4022)-stable  >> Creation date: 2/24/2014 12:16:52 AM
+#Cmp ( order = Reference )
+| BT1        BATTERY     ~                   ; ~           ; ~           
+| C1         Cap Steadystate~                   ; ~           ; ~           
+| C2         Cap Steadystate~                   ; ~           ; ~           
+| C3         Cap Nominal ~                   ; ~           ; ~           
+| C4         Cap Nominal ~                   ; ~           ; ~           
+| C5         Cap Steadystate~                   ; ~           ; ~           
+| C6         Cap Nominal ~                   ; ~           ; ~           
+| C7         Cap Nominal ~                   ; ~           ; ~           
+| C8         22nF        ~                   ; ~           ; ~           
+| C9         Cap Steadystate~                   ; ~           ; ~           
+| C10        Cap Nominal ~                   ; ~           ; ~           
+| C11        22nF        ~                   ; ~           ; ~           
+| C12        Cap Steadystate~                   ; ~           ; ~           
+| C13        Cap Nominal ~                   ; ~           ; ~           
+| C14        22nF        ~                   ; ~           ; ~           
+| C15        Cap Steadystate~                   ; ~           ; ~           
+| C16        Cap Nominal ~                   ; ~           ; ~           
+| C17        Cap Nominal ~                   ; ~           ; ~           
+| C18        Cap Nominal ~                   ; ~           ; ~           
+| C19        Cap Nominal ~                   ; ~           ; ~           
+| C20        Cap Nominal ~                   ; ~           ; ~           
+| C21        22uF        ~                   ; ~           ; ~           
+| C22        22uF        ~                   ; ~           ; ~           
+| C23        10nF        ~                   ; ~           ; ~           
+| C24        10nF        ~                   ; ~           ; ~           
+| C25        10uF        ~                   ; ~           ; ~           
+| C26        22uF        ~                   ; ~           ; ~           
+| C27        0.1uF       ~                   ; ~           ; ~           
+| C28        10uF        ~                   ; ~           ; ~           
+| C29        2.2 nF      ~                   ; ~           ; ~           
+| C30        Cap Nominal ~                   ; ~           ; ~           
+| C31        1uF         ~                   ; ~           ; ~           
+| C32        6.8uF       ~                   ; ~           ; ~           
+| C33        47nF        ~                   ; ~           ; ~           
+| C34        10uF        ~                   ; ~           ; ~           
+| C35        10uF        ~                   ; ~           ; ~           
+| C36        10uF        ~                   ; ~           ; ~           
+| C37        4.7uF       ~                   ; ~           ; ~           
+| D1         MBR1045ULPS ~                   ; ~           ; ~           
+| D2         MBR1045ULPS ~                   ; ~           ; ~           
+| D3         LY-E63F     ~                   ; ~           ; ~           
+| D4         LY-E63F     ~                   ; ~           ; ~           
+| D5         LY-E63F     ~                   ; ~           ; ~           
+| D6         LY-A67F     ~                   ; ~           ; ~           
+| D7         RBG_LED     ~                   ; ~           ; ~           
+| D8         RBG_LED     ~                   ; ~           ; ~           
+| D9         RBG_LED     ~                   ; ~           ; ~           
+| D10        LY-A67F     ~                   ; ~           ; ~           
+| D11        LY-E63F     ~                   ; ~           ; ~           
+| D12        LY-E63F     ~                   ; ~           ; ~           
+| D13        LY-E63F     ~                   ; ~           ; ~           
+| D14        LY-E63F     ~                   ; ~           ; ~           
+| D15        LS-E63F     ~                   ; ~           ; ~           
+| D16        LS-E63F     ~                   ; ~           ; ~           
+| D17        LS-E63F     ~                   ; ~           ; ~           
+| D18        LS-E63F     ~                   ; ~           ; ~           
+| D19        LS-E63F     ~                   ; ~           ; ~           
+| D20        LS-E63F     ~                   ; ~           ; ~           
+| D21        LR-A67F     ~                   ; ~           ; ~           
+| D22        LR-A67F     ~                   ; ~           ; ~           
+| D23        LY-E63F     ~                   ; ~           ; ~           
+| D24        LY-E63F     ~                   ; ~           ; ~           
+| D25        LY-E63F     ~                   ; ~           ; ~           
+| D26        LY-A67F     ~                   ; ~           ; ~           
+| D27        LY-A67F     ~                   ; ~           ; ~           
+| D28        LY-E63F     ~                   ; ~           ; ~           
+| D29        LY-E63F     ~                   ; ~           ; ~           
+| D30        LY-E63F     ~                   ; ~           ; ~           
+| D31        LY-E63F     ~                   ; ~           ; ~           
+| D36        LED_GENERIC_SMD~                   ; ~           ; ~           
+| D37        LED_GENERIC_SMD~                   ; ~           ; ~           
+| D38        LED_GENERIC_SMD~                   ; ~           ; ~           
+| JP1        JUMPER3     ~                   ; ~           ; ~           
+| L1         1uH         ~                   ; ~           ; ~           
+| L2         2.2uH       ~                   ; ~           ; ~           
+| L3         2.2uH       ~                   ; ~           ; ~           
+| P1         CONN_6_RA_MALE                    ;             ;             
+| P2         CONN_2x2_MALE_RA                    ;             ;             
+| P3         CONN_2x2_MALE_RA                    ;             ;             
+| P4         CONN_2x2_FEMALE_BACK                    ;             ;             
+| P5         CONN_6_FEMALE_FRONT                    ;             ;             
+| P6         CONN_2x2_FEMALE_BACK                    ;             ;             
+| P7         CONN_2      ~                   ; ~           ; ~           
+| P8         CONN_2      ~                   ; ~           ; ~           
+| P9         CONN_2      ~                   ; ~           ; ~           
+| P10        CONN_2      ~                   ; ~           ; ~           
+| P11        CONN_2      ~                   ; ~           ; ~           
+| P12        CONN_2      ~                   ; ~           ; ~           
+| P13        CONN_2      ~                   ; ~           ; ~           
+| P14        CONN_2      ~                   ; ~           ; ~           
+| P15        CONN_2      ~                   ; ~           ; ~           
+| P16        CONN_2      ~                   ; ~           ; ~           
+| Q1         AON7611     ~                   ; ~           ; ~           
+| Q2         DMN65D8L    ~                   ; SOT23       ; ~           
+| Q4         DMN65D8L    ~                   ; SOT23       ; ~           
+| Q5         DMN65D8L    ~                   ; SOT23       ; ~           
+| Q6         DMN65D8L    ~                   ; SOT23       ; ~           
+| Q7         DMN65D8L    ~                   ; SOT23       ; ~           
+| Q8         DMN65D8L    ~                   ; SOT23       ; ~           
+| Q9         DMN65D8L    ~                   ; SOT23       ; ~           
+| R1         R           ~                   ; ~           ; ~           
+| R2         1.58M       ~                   ; ~           ; ~           
+| R3         Nominal     ~                   ; ~           ; ~           
+| R4         Nominal     ~                   ; ~           ; ~           
+| R5         102K        ~                   ; ~           ; ~           
+| R6         191K        ~                   ; ~           ; ~           
+| R7         200         ~                   ; ~           ; ~           
+| R8         200         ~                   ; ~           ; ~           
+| R9         200         ~                   ; ~           ; ~           
+| R10        200         ~                   ; ~           ; ~           
+| R11        200         ~                   ; ~           ; ~           
+| R12        200         ~                   ; ~           ; ~           
+| R17        1K          ~                   ; ~           ; ~           
+| R18        Nominal     ~                   ; ~           ; ~           
+| R19        Nominal     ~                   ; ~           ; ~           
+| R20        Nominal     ~                   ; ~           ; ~           
+| R21        Nominal     ~                   ; ~           ; ~           
+| R22        10K         ~                   ; ~           ; ~           
+| R23        Nominal     ~                   ; ~           ; ~           
+| R24        10K         ~                   ; ~           ; ~           
+| R25        Nominal     ~                   ; ~           ; ~           
+| R26        10K         ~                   ; ~           ; ~           
+| R27        Nominal     ~                   ; ~           ; ~           
+| R28        120         ~                   ; ~           ; ~           
+| R29        120         ~                   ; ~           ; ~           
+| R30        120         ~                   ; ~           ; ~           
+| R37        270         ~                   ; ~           ; ~           
+| R38        270         ~                   ; ~           ; ~           
+| R39        270         ~                   ; ~           ; ~           
+| R40        Nominal     ~                   ; ~           ; ~           
+| R41        160k        ~                   ; ~           ; ~           
+| R42        300         ~                   ; ~           ; ~           
+| R43        Nominal     ~                   ; ~           ; ~           
+| R44        75k         ~                   ; ~           ; ~           
+| R45        700         ~                   ; ~           ; ~           
+| R46        47K         ~                   ; ~           ; ~           
+| R47        Nominal     ~                   ; ~           ; ~           
+| R48        700         ~                   ; ~           ; ~           
+| R49        Nominal     ~                   ; ~           ; ~           
+| R50        Nominal     ~                   ; ~           ; ~           
+| R51        Nominal     ~                   ; ~           ; ~           
+| R52        Nominal     ~                   ; ~           ; ~           
+| R53        5.52K       ~                   ; ~           ; ~           
+| R54        5.52K       ~                   ; ~           ; ~           
+| R55        267         ~                   ; ~           ; ~           
+| R56        Nominal     ~                   ; ~           ; ~           
+| R57        31.23K      ~                   ; ~           ; ~           
+| R58        31.23K      ~                   ; ~           ; ~           
+| SP1        BUZZER PIEZO 25VP-P SMD~                   ; ~           ; ~           
+| SP2        VIBRATIONAL MOTOR (COIN)~                   ; ~           ; ~           
+| TH1        NTC 10K     ~                   ; ~           ; ~           
+| TH2        NTC 10K     ~                   ; ~           ; ~           
+| U1         TEST_PT     ~                   ; ~           ; ~           
+| U2         TEST_PT     ~                   ; ~           ; ~           
+| U3         TEST_PT     ~                   ; ~           ; ~           
+| U4         TEST_PT     ~                   ; ~           ; ~           
+| U5         TEST_PT     ~                   ; ~           ; ~           
+| U6         TEST_PT     ~                   ; ~           ; ~           
+| U7         TEST_PT     ~                   ; ~           ; ~           
+| U8         TEST_PT     ~                   ; ~           ; ~           
+| U9         TEST_PT     ~                   ; ~           ; ~           
+| U10        TEST_PT     ~                   ; ~           ; ~           
+| U11        TEST_PT     ~                   ; ~           ; ~           
+| U12        TEST_PT     ~                   ; ~           ; ~           
+| U13        TEST_PT     ~                   ; ~           ; ~           
+| U14        TEST_PT     ~                   ; ~           ; ~           
+| U15        TEST_PT     ~                   ; ~           ; ~           
+| U16        TEST_PT     ~                   ; ~           ; ~           
+| U17        TEST_PT     ~                   ; ~           ; ~           
+| U18        TEST_PT     ~                   ; ~           ; ~           
+| U19        TEST_PT     ~                   ; ~           ; ~           
+| U20        MCP6L02                         ;             ;             
+| U21        74LVC2G06                       ;             ;             
+| U22        TPS3700                         ;             ;             
+| U23        NC7WZ08                         ;             ;             
+| U30        MSP430G2203IPW28~                   ; ~           ; ~           
+| U31        BH1620FVC   ~                   ; ~           ; ~           
+| U32        MMA7660FC                       ;             ;             
+| U33        AT42QT1011                      ;             ;             
+| U34        TOUCHPAD                        ;             ;             
+| U35        AT42QT1011                      ;             ;             
+| U36        TOUCHPAD                        ;             ;             
+| U37        AT42QT1011                      ;             ;             
+| U38        TOUCHPAD                        ;             ;             
+| U39        TLC59108IPWR                    ;             ;             
+| U40        TLC59108IPWR                    ;             ;             
+| U41        TLC59108IPWR                    ;             ;             
+| U42        TPS62090    ~                   ; ~           ; ~           
+| U43        LM3668                          ;             ;             
+| U44        CONN_JTAG_14_2_wire                    ;             ;             
+| U45        CP2110                          ;             ;             
+| U46        ESDR0502N                       ;             ;             
+| U47        CONN_USB                        ;             ;             
+| U48        BQ24190     ~                   ; ~           ; ~           
+#End Cmp
+
+#Cmp ( order = Value )
+| BATTERY      BT1       ; ~           ; ~           
+| 10nF         C23       ; ~           ; ~           
+| 10nF         C24       ; ~           ; ~           
+| 22nF         C8        ; ~           ; ~           
+| 22nF         C11       ; ~           ; ~           
+| 22nF         C14       ; ~           ; ~           
+| 47nF         C33       ; ~           ; ~           
+| 0.1uF        C27       ; ~           ; ~           
+| 1uF          C31       ; ~           ; ~           
+| 4.7uF        C37       ; ~           ; ~           
+| 6.8uF        C32       ; ~           ; ~           
+| 10uF         C25       ; ~           ; ~           
+| 10uF         C28       ; ~           ; ~           
+| 10uF         C34       ; ~           ; ~           
+| 10uF         C35       ; ~           ; ~           
+| 10uF         C36       ; ~           ; ~           
+| 22uF         C21       ; ~           ; ~           
+| 22uF         C22       ; ~           ; ~           
+| 22uF         C26       ; ~           ; ~           
+| 2.2 nF       C29       ; ~           ; ~           
+| Cap Steadystate C1        ; ~           ; ~           
+| Cap Steadystate C2        ; ~           ; ~           
+| Cap Nominal  C3        ; ~           ; ~           
+| Cap Nominal  C4        ; ~           ; ~           
+| Cap Steadystate C5        ; ~           ; ~           
+| Cap Nominal  C6        ; ~           ; ~           
+| Cap Nominal  C7        ; ~           ; ~           
+| Cap Steadystate C9        ; ~           ; ~           
+| Cap Nominal  C10       ; ~           ; ~           
+| Cap Steadystate C12       ; ~           ; ~           
+| Cap Nominal  C13       ; ~           ; ~           
+| Cap Steadystate C15       ; ~           ; ~           
+| Cap Nominal  C16       ; ~           ; ~           
+| Cap Nominal  C17       ; ~           ; ~           
+| Cap Nominal  C18       ; ~           ; ~           
+| Cap Nominal  C19       ; ~           ; ~           
+| Cap Nominal  C20       ; ~           ; ~           
+| Cap Nominal  C30       ; ~           ; ~           
+| MBR1045ULPS  D1        ; ~           ; ~           
+| MBR1045ULPS  D2        ; ~           ; ~           
+| LY-E63F      D3        ; ~           ; ~           
+| LY-E63F      D23       ; ~           ; ~           
+| LY-E63F      D4        ; ~           ; ~           
+| LY-E63F      D24       ; ~           ; ~           
+| LY-E63F      D5        ; ~           ; ~           
+| LY-E63F      D25       ; ~           ; ~           
+| LY-A67F      D6        ; ~           ; ~           
+| LY-A67F      D26       ; ~           ; ~           
+| RBG_LED      D7        ; ~           ; ~           
+| RBG_LED      D8        ; ~           ; ~           
+| RBG_LED      D9        ; ~           ; ~           
+| LY-A67F      D10       ; ~           ; ~           
+| LY-A67F      D27       ; ~           ; ~           
+| LY-E63F      D11       ; ~           ; ~           
+| LY-E63F      D28       ; ~           ; ~           
+| LY-E63F      D12       ; ~           ; ~           
+| LY-E63F      D29       ; ~           ; ~           
+| LY-E63F      D13       ; ~           ; ~           
+| LY-E63F      D30       ; ~           ; ~           
+| LY-E63F      D14       ; ~           ; ~           
+| LY-E63F      D31       ; ~           ; ~           
+| LS-E63F      D15       ; ~           ; ~           
+| LS-E63F      D16       ; ~           ; ~           
+| LS-E63F      D17       ; ~           ; ~           
+| LS-E63F      D18       ; ~           ; ~           
+| LS-E63F      D19       ; ~           ; ~           
+| LS-E63F      D20       ; ~           ; ~           
+| LR-A67F      D21       ; ~           ; ~           
+| LR-A67F      D22       ; ~           ; ~           
+| LED_GENERIC_SMD D36       ; ~           ; ~           
+| LED_GENERIC_SMD D37       ; ~           ; ~           
+| LED_GENERIC_SMD D38       ; ~           ; ~           
+| JUMPER3      JP1       ; ~           ; ~           
+| 1uH          L1        ; ~           ; ~           
+| 2.2uH        L2        ; ~           ; ~           
+| 2.2uH        L3        ; ~           ; ~           
+| CONN_6_RA_MALE P1        ;             ;             
+| CONN_2x2_MALE_RA P2        ;             ;             
+| CONN_2x2_MALE_RA P3        ;             ;             
+| CONN_2x2_FEMALE_BACK P4        ;             ;             
+| CONN_6_FEMALE_FRONT P5        ;             ;             
+| CONN_2x2_FEMALE_BACK P6        ;             ;             
+| CONN_2       P7        ; ~           ; ~           
+| CONN_2       P8        ; ~           ; ~           
+| CONN_2       P9        ; ~           ; ~           
+| CONN_2       P10       ; ~           ; ~           
+| CONN_2       P11       ; ~           ; ~           
+| CONN_2       P12       ; ~           ; ~           
+| CONN_2       P13       ; ~           ; ~           
+| CONN_2       P14       ; ~           ; ~           
+| CONN_2       P15       ; ~           ; ~           
+| CONN_2       P16       ; ~           ; ~           
+| DMN65D8L     Q2        ; SOT23       ; ~           
+| DMN65D8L     Q4        ; SOT23       ; ~           
+| DMN65D8L     Q5        ; SOT23       ; ~           
+| DMN65D8L     Q6        ; SOT23       ; ~           
+| DMN65D8L     Q7        ; SOT23       ; ~           
+| DMN65D8L     Q8        ; SOT23       ; ~           
+| DMN65D8L     Q9        ; SOT23       ; ~           
+| AON7611      Q1        ; ~           ; ~           
+| 120          R28       ; ~           ; ~           
+| 120          R29       ; ~           ; ~           
+| 120          R30       ; ~           ; ~           
+| 200          R7        ; ~           ; ~           
+| 200          R12       ; ~           ; ~           
+| 200          R8        ; ~           ; ~           
+| 200          R9        ; ~           ; ~           
+| 200          R10       ; ~           ; ~           
+| 200          R11       ; ~           ; ~           
+| 267          R55       ; ~           ; ~           
+| 270          R37       ; ~           ; ~           
+| 270          R38       ; ~           ; ~           
+| 270          R39       ; ~           ; ~           
+| 300          R42       ; ~           ; ~           
+| 700          R45       ; ~           ; ~           
+| 700          R48       ; ~           ; ~           
+| 1K           R17       ; ~           ; ~           
+| 5.52K        R53       ; ~           ; ~           
+| 5.52K        R54       ; ~           ; ~           
+| 10K          R22       ; ~           ; ~           
+| 10K          R24       ; ~           ; ~           
+| 10K          R26       ; ~           ; ~           
+| 31.23K       R57       ; ~           ; ~           
+| 31.23K       R58       ; ~           ; ~           
+| 47K          R46       ; ~           ; ~           
+| 75k          R44       ; ~           ; ~           
+| 102K         R5        ; ~           ; ~           
+| 160k         R41       ; ~           ; ~           
+| 191K         R6        ; ~           ; ~           
+| 1.58M        R2        ; ~           ; ~           
+| R            R1        ; ~           ; ~           
+| Nominal      R3        ; ~           ; ~           
+| Nominal      R4        ; ~           ; ~           
+| Nominal      R18       ; ~           ; ~           
+| Nominal      R19       ; ~           ; ~           
+| Nominal      R20       ; ~           ; ~           
+| Nominal      R21       ; ~           ; ~           
+| Nominal      R23       ; ~           ; ~           
+| Nominal      R25       ; ~           ; ~           
+| Nominal      R27       ; ~           ; ~           
+| Nominal      R40       ; ~           ; ~           
+| Nominal      R43       ; ~           ; ~           
+| Nominal      R47       ; ~           ; ~           
+| Nominal      R49       ; ~           ; ~           
+| Nominal      R50       ; ~           ; ~           
+| Nominal      R51       ; ~           ; ~           
+| Nominal      R52       ; ~           ; ~           
+| Nominal      R56       ; ~           ; ~           
+| BUZZER PIEZO 25VP-P SMD SP1       ; ~           ; ~           
+| VIBRATIONAL MOTOR (COIN) SP2       ; ~           ; ~           
+| NTC 10K      TH1       ; ~           ; ~           
+| NTC 10K      TH2       ; ~           ; ~           
+| MCP6L02      U20       ;             ;             
+| 74LVC2G06    U21       ;             ;             
+| TPS3700      U22       ;             ;             
+| NC7WZ08      U23       ;             ;             
+| MMA7660FC    U32       ;             ;             
+| AT42QT1011   U33       ;             ;             
+| TOUCHPAD     U34       ;             ;             
+| AT42QT1011   U35       ;             ;             
+| TOUCHPAD     U36       ;             ;             
+| AT42QT1011   U37       ;             ;             
+| TOUCHPAD     U38       ;             ;             
+| TLC59108IPWR U39       ;             ;             
+| TLC59108IPWR U40       ;             ;             
+| TLC59108IPWR U41       ;             ;             
+| LM3668       U43       ;             ;             
+| CONN_JTAG_14_2_wire U44       ;             ;             
+| CP2110       U45       ;             ;             
+| ESDR0502N    U46       ;             ;             
+| CONN_USB     U47       ;             ;             
+| TEST_PT      U1        ; ~           ; ~           
+| TEST_PT      U2        ; ~           ; ~           
+| TEST_PT      U3        ; ~           ; ~           
+| TEST_PT      U4        ; ~           ; ~           
+| TEST_PT      U5        ; ~           ; ~           
+| TEST_PT      U6        ; ~           ; ~           
+| TEST_PT      U7        ; ~           ; ~           
+| TEST_PT      U8        ; ~           ; ~           
+| TEST_PT      U9        ; ~           ; ~           
+| TEST_PT      U10       ; ~           ; ~           
+| TEST_PT      U11       ; ~           ; ~           
+| TEST_PT      U12       ; ~           ; ~           
+| TEST_PT      U13       ; ~           ; ~           
+| TEST_PT      U14       ; ~           ; ~           
+| TEST_PT      U15       ; ~           ; ~           
+| TEST_PT      U16       ; ~           ; ~           
+| TEST_PT      U17       ; ~           ; ~           
+| TEST_PT      U18       ; ~           ; ~           
+| TEST_PT      U19       ; ~           ; ~           
+| MSP430G2203IPW28 U30       ; ~           ; ~           
+| BH1620FVC    U31       ; ~           ; ~           
+| TPS62090     U42       ; ~           ; ~           
+| BQ24190      U48       ; ~           ; ~           
+#End Cmp
+
+#End List
