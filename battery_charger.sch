@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 16 16
+Sheet 15 16
 Title ""
-Date "22 feb 2014"
+Date "27 feb 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -150,7 +150,7 @@ F 3 "~" H 3850 3300 30  0000 C CNN
 	1    3850 3300
 	0    -1   -1   0   
 $EndComp
-Text HLabel 2050 3150 0    60   Output ~ 0
+Text HLabel 2050 3450 0    60   Output ~ 0
 STATUS
 $Comp
 L THERMISTOR TH1
@@ -313,7 +313,7 @@ F 3 "" H 2850 1750 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2450 1850 3450 1850
+	2350 1850 3450 1850
 Connection ~ 3250 1850
 $Comp
 L C C32
@@ -353,8 +353,6 @@ Connection ~ 3050 2750
 Wire Wire Line
 	2850 1750 2850 1850
 Connection ~ 3050 1850
-Wire Wire Line
-	2050 3150 4200 3150
 $Comp
 L C C36
 U 1 1 52AB375A
@@ -517,34 +515,32 @@ Text Notes 7100 1300 2    60   ~ 0
 I_SAT >= 4A + 0.5*I_RIPPLE = 4 + .5*.378 = 4.189A
 Text Notes 6650 1150 2    60   ~ 0
 I_RIPPLE = 5*.5*.5/1.5/2.2 = 0.378A
-Text Notes 2350 3500 2    60   ~ 0
+Text Notes 2150 3200 2    60   ~ 0
 Indicator LED
 $Comp
 L LED_GENERIC_SMD D38
 U 1 1 52B37BFF
-P 2450 3450
-F 0 "D38" H 2450 3550 50  0000 C CNN
-F 1 "LED_GENERIC_SMD" H 2450 3300 50  0001 C CNN
-F 2 "~" H 2450 3450 60  0000 C CNN
-F 3 "~" H 2450 3450 60  0000 C CNN
-	1    2450 3450
+P 2350 3200
+F 0 "D38" H 2350 3300 50  0000 C CNN
+F 1 "LED_GENERIC_SMD" H 2350 3050 50  0001 C CNN
+F 2 "~" H 2350 3200 60  0000 C CNN
+F 3 "~" H 2350 3200 60  0000 C CNN
+	1    2350 3200
 	0    1    1    0   
 $EndComp
-Text Notes 1750 3600 0    60   ~ 0
+Text Notes 1550 3300 0    60   ~ 0
 1.9V @ 2mA
 $Comp
 L DGND #PWR0108
 U 1 1 52B37C0F
-P 2450 3800
-F 0 "#PWR0108" H 2450 3800 40  0001 C CNN
-F 1 "DGND" H 2450 3730 40  0000 C CNN
-F 2 "" H 2450 3800 60  0000 C CNN
-F 3 "" H 2450 3800 60  0000 C CNN
-	1    2450 3800
+P 2650 3800
+F 0 "#PWR0108" H 2650 3800 40  0001 C CNN
+F 1 "DGND" H 2650 3730 40  0000 C CNN
+F 2 "" H 2650 3800 60  0000 C CNN
+F 3 "" H 2650 3800 60  0000 C CNN
+	1    2650 3800
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2450 3800 2450 3650
 Wire Notes Line
 	3900 3400 3900 3650
 Connection ~ 2850 1850
@@ -565,17 +561,14 @@ Connection ~ 2850 2850
 $Comp
 L R R48
 U 1 1 52B3BA8E
-P 2450 2100
-F 0 "R48" V 2530 2100 40  0000 C CNN
-F 1 "700" V 2457 2101 40  0000 C CNN
-F 2 "~" V 2380 2100 30  0000 C CNN
-F 3 "~" H 2450 2100 30  0000 C CNN
-	1    2450 2100
+P 2350 2100
+F 0 "R48" V 2430 2100 40  0000 C CNN
+F 1 "700" V 2357 2101 40  0000 C CNN
+F 2 "~" V 2280 2100 30  0000 C CNN
+F 3 "~" H 2350 2100 30  0000 C CNN
+	1    2350 2100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2450 2350 2450 3250
-Connection ~ 2450 3150
 Wire Wire Line
 	2650 2950 2650 3250
 Connection ~ 2650 2950
@@ -590,13 +583,23 @@ F 3 "~" H 2650 3500 30  0000 C CNN
 	1    2650 3500
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2450 3750 2650 3750
-Connection ~ 2450 3750
 Connection ~ 6050 3900
 Connection ~ 6400 3900
 Wire Wire Line
 	5400 1650 5400 1750
 Wire Wire Line
 	5400 2500 5400 2600
+Wire Wire Line
+	2650 3750 2650 3800
+Wire Wire Line
+	2550 3450 2550 3150
+Wire Wire Line
+	2550 3150 4200 3150
+Wire Wire Line
+	2350 2350 2350 3000
+Wire Wire Line
+	2050 3450 2550 3450
+Wire Wire Line
+	2350 3450 2350 3400
+Connection ~ 2350 3450
 $EndSCHEMATC
