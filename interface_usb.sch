@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 15 16
+Sheet 14 16
 Title ""
-Date "27 feb 2014"
+Date "1 mar 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -219,31 +219,31 @@ Wire Wire Line
 Wire Wire Line
 	1250 2100 1250 2950
 Wire Wire Line
-	1250 2150 1500 2150
+	1250 2150 2350 2150
 Connection ~ 1250 2950
 Wire Wire Line
 	1300 3050 1300 2250
 Wire Wire Line
-	1300 2250 1500 2250
+	1300 2250 2350 2250
 Connection ~ 1300 3050
 Wire Wire Line
 	1350 3150 1350 2350
 Wire Wire Line
-	1350 2350 1500 2350
+	1350 2350 2350 2350
 Connection ~ 1350 3150
 Wire Wire Line
 	1200 3250 1400 3250
 Wire Wire Line
 	1400 3250 1400 2450
 Wire Wire Line
-	1400 2450 1500 2450
-Text HLabel 1500 2150 2    60   UnSpc ~ 0
+	1400 2450 2350 2450
+Text HLabel 2350 2150 2    60   UnSpc ~ 0
 USB_5V
-Text HLabel 1500 2250 2    60   BiDi ~ 0
+Text HLabel 2350 2250 2    60   BiDi ~ 0
 USB_D+
-Text HLabel 1500 2350 2    60   BiDi ~ 0
+Text HLabel 2350 2350 2    60   BiDi ~ 0
 USB_D-
-Text HLabel 1500 2450 2    60   BiDi ~ 0
+Text HLabel 2350 2450 2    60   BiDi ~ 0
 USB_ID
 Wire Wire Line
 	4400 1950 4400 2050
@@ -295,4 +295,31 @@ Wire Wire Line
 	1650 3550 2550 3550
 Wire Wire Line
 	2550 3550 2550 3150
+$Comp
+L CONN_2 P17
+U 1 1 5311308F
+P 1850 1600
+F 0 "P17" V 1800 1600 40  0000 C CNN
+F 1 "SOLAR_CONN" V 1900 1600 40  0000 C CNN
+F 2 "" H 1850 1600 60  0000 C CNN
+F 3 "" H 1850 1600 60  0000 C CNN
+	1    1850 1600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1750 1950 1750 2150
+Connection ~ 1750 2150
+$Comp
+L DGND #PWR098
+U 1 1 531130EB
+P 1950 2000
+F 0 "#PWR098" H 1950 2000 40  0001 C CNN
+F 1 "DGND" H 1950 1930 40  0000 C CNN
+F 2 "" H 1950 2000 60  0000 C CNN
+F 3 "" H 1950 2000 60  0000 C CNN
+	1    1950 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 1950 1950 2000
 $EndSCHEMATC

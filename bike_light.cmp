@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 2/22/2014 4:28:03 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 2/28/2014 6:11:05 PM
 
 BeginCmp
 TimeStamp = /5224C457/5281D330/5281D336;
@@ -642,6 +642,13 @@ TimeStamp = /527FE989/52F8754C;
 Reference = P16;
 ValeurCmp = CONN_2;
 IdModule  = CONN_2x1_FEMALE;
+EndCmp
+
+BeginCmp
+TimeStamp = /5224C595/5311308F;
+Reference = P17;
+ValeurCmp = SOLAR_CONN;
+IdModule  = CONN_2x1;
 EndCmp
 
 BeginCmp
