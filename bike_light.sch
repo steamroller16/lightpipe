@@ -35,7 +35,7 @@ EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 16
+Sheet 1 17
 Title "Bike Light"
 Date "1 mar 2014"
 Rev "1.0"
@@ -636,4 +636,16 @@ F9 "VIBRATOR" I L 6800 3400 60
 $EndSheet
 Wire Wire Line
 	6700 3400 6800 3400
+$Sheet
+S 2500 3950 900  200 
+U 53124CE2
+F0 "interface_solar" 50
+F1 "interface_solar.sch" 50
+F2 "V_OUT" U L 2500 4050 60 
+$EndSheet
+Wire Wire Line
+	2500 4050 2400 4050
+Wire Wire Line
+	2400 4050 2400 4300
+Connection ~ 2400 4300
 $EndSCHEMATC

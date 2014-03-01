@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 2/28/2014 6:11:05 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 3/1/2014 2:28:37 PM
 
 BeginCmp
 TimeStamp = /5224C457/5281D330/5281D336;
@@ -484,6 +484,20 @@ IdModule  = LED_TOPLED_PWR;
 EndCmp
 
 BeginCmp
+TimeStamp = /53124CE2/531252E3;
+Reference = D32;
+ValeurCmp = LED_GENERIC_SMD;
+IdModule  = LED_0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /53124CE2/531252DD;
+Reference = D33;
+ValeurCmp = DIODESCH;
+IdModule  = SMini2-F5-B;
+EndCmp
+
+BeginCmp
 TimeStamp = /52A0B607/52B2FD6A;
 Reference = D36;
 ValeurCmp = LED_GENERIC_SMD;
@@ -645,7 +659,7 @@ IdModule  = CONN_2x1_FEMALE;
 EndCmp
 
 BeginCmp
-TimeStamp = /5224C595/5311308F;
+TimeStamp = /53124CE2/531252D0;
 Reference = P17;
 ValeurCmp = SOLAR_CONN;
 IdModule  = CONN_2x1;
@@ -788,6 +802,13 @@ BeginCmp
 TimeStamp = /52A0B607/52ECD75E/52E6286C;
 Reference = R12;
 ValeurCmp = 200;
+IdModule  = r_0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /53124CE2/531252EC;
+Reference = R13;
+ValeurCmp = 1.55K;
 IdModule  = r_0603;
 EndCmp
 

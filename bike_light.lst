@@ -1,4 +1,4 @@
-eeschema (2013-07-07 BZR 4022)-stable  >> Creation date: 2/24/2014 12:16:52 AM
+eeschema (2013-07-07 BZR 4022)-stable  >> Creation date: 3/1/2014 3:46:21 PM
 #Cmp ( order = Reference )
 | BT1        BATTERY     ~                   ; ~           ; ~           
 | C1         Cap Steadystate~                   ; ~           ; ~           
@@ -69,6 +69,8 @@ eeschema (2013-07-07 BZR 4022)-stable  >> Creation date: 2/24/2014 12:16:52 AM
 | D29        LY-E63F     ~                   ; ~           ; ~           
 | D30        LY-E63F     ~                   ; ~           ; ~           
 | D31        LY-E63F     ~                   ; ~           ; ~           
+| D32        LED_GENERIC_SMD~                   ; ~           ; ~           
+| D33        DIODESCH    ~                   ; ~           ; ~           
 | D36        LED_GENERIC_SMD~                   ; ~           ; ~           
 | D37        LED_GENERIC_SMD~                   ; ~           ; ~           
 | D38        LED_GENERIC_SMD~                   ; ~           ; ~           
@@ -92,6 +94,7 @@ eeschema (2013-07-07 BZR 4022)-stable  >> Creation date: 2/24/2014 12:16:52 AM
 | P14        CONN_2      ~                   ; ~           ; ~           
 | P15        CONN_2      ~                   ; ~           ; ~           
 | P16        CONN_2      ~                   ; ~           ; ~           
+| P17        SOLAR_CONN                      ;             ;             
 | Q1         AON7611     ~                   ; ~           ; ~           
 | Q2         DMN65D8L    ~                   ; SOT23       ; ~           
 | Q4         DMN65D8L    ~                   ; SOT23       ; ~           
@@ -112,6 +115,7 @@ eeschema (2013-07-07 BZR 4022)-stable  >> Creation date: 2/24/2014 12:16:52 AM
 | R10        200         ~                   ; ~           ; ~           
 | R11        200         ~                   ; ~           ; ~           
 | R12        200         ~                   ; ~           ; ~           
+| R13        1.55K       ~                   ; ~           ; ~           
 | R17        1K          ~                   ; ~           ; ~           
 | R18        Nominal     ~                   ; ~           ; ~           
 | R19        Nominal     ~                   ; ~           ; ~           
@@ -237,6 +241,17 @@ eeschema (2013-07-07 BZR 4022)-stable  >> Creation date: 2/24/2014 12:16:52 AM
 | Cap Nominal  C30       ; ~           ; ~           
 | MBR1045ULPS  D1        ; ~           ; ~           
 | MBR1045ULPS  D2        ; ~           ; ~           
+| RBG_LED      D7        ; ~           ; ~           
+| RBG_LED      D8        ; ~           ; ~           
+| RBG_LED      D9        ; ~           ; ~           
+| LS-E63F      D15       ; ~           ; ~           
+| LS-E63F      D16       ; ~           ; ~           
+| LS-E63F      D17       ; ~           ; ~           
+| LS-E63F      D18       ; ~           ; ~           
+| LS-E63F      D19       ; ~           ; ~           
+| LS-E63F      D20       ; ~           ; ~           
+| LR-A67F      D21       ; ~           ; ~           
+| LR-A67F      D22       ; ~           ; ~           
 | LY-E63F      D3        ; ~           ; ~           
 | LY-E63F      D23       ; ~           ; ~           
 | LY-E63F      D4        ; ~           ; ~           
@@ -245,9 +260,6 @@ eeschema (2013-07-07 BZR 4022)-stable  >> Creation date: 2/24/2014 12:16:52 AM
 | LY-E63F      D25       ; ~           ; ~           
 | LY-A67F      D6        ; ~           ; ~           
 | LY-A67F      D26       ; ~           ; ~           
-| RBG_LED      D7        ; ~           ; ~           
-| RBG_LED      D8        ; ~           ; ~           
-| RBG_LED      D9        ; ~           ; ~           
 | LY-A67F      D10       ; ~           ; ~           
 | LY-A67F      D27       ; ~           ; ~           
 | LY-E63F      D11       ; ~           ; ~           
@@ -258,14 +270,8 @@ eeschema (2013-07-07 BZR 4022)-stable  >> Creation date: 2/24/2014 12:16:52 AM
 | LY-E63F      D30       ; ~           ; ~           
 | LY-E63F      D14       ; ~           ; ~           
 | LY-E63F      D31       ; ~           ; ~           
-| LS-E63F      D15       ; ~           ; ~           
-| LS-E63F      D16       ; ~           ; ~           
-| LS-E63F      D17       ; ~           ; ~           
-| LS-E63F      D18       ; ~           ; ~           
-| LS-E63F      D19       ; ~           ; ~           
-| LS-E63F      D20       ; ~           ; ~           
-| LR-A67F      D21       ; ~           ; ~           
-| LR-A67F      D22       ; ~           ; ~           
+| LED_GENERIC_SMD D32       ; ~           ; ~           
+| DIODESCH     D33       ; ~           ; ~           
 | LED_GENERIC_SMD D36       ; ~           ; ~           
 | LED_GENERIC_SMD D37       ; ~           ; ~           
 | LED_GENERIC_SMD D38       ; ~           ; ~           
@@ -279,6 +285,7 @@ eeschema (2013-07-07 BZR 4022)-stable  >> Creation date: 2/24/2014 12:16:52 AM
 | CONN_2x2_FEMALE_BACK P4        ;             ;             
 | CONN_6_FEMALE_FRONT P5        ;             ;             
 | CONN_2x2_FEMALE_BACK P6        ;             ;             
+| SOLAR_CONN   P17       ;             ;             
 | CONN_2       P7        ; ~           ; ~           
 | CONN_2       P8        ; ~           ; ~           
 | CONN_2       P9        ; ~           ; ~           
@@ -300,12 +307,12 @@ eeschema (2013-07-07 BZR 4022)-stable  >> Creation date: 2/24/2014 12:16:52 AM
 | 120          R28       ; ~           ; ~           
 | 120          R29       ; ~           ; ~           
 | 120          R30       ; ~           ; ~           
-| 200          R7        ; ~           ; ~           
-| 200          R12       ; ~           ; ~           
 | 200          R8        ; ~           ; ~           
 | 200          R9        ; ~           ; ~           
 | 200          R10       ; ~           ; ~           
 | 200          R11       ; ~           ; ~           
+| 200          R7        ; ~           ; ~           
+| 200          R12       ; ~           ; ~           
 | 267          R55       ; ~           ; ~           
 | 270          R37       ; ~           ; ~           
 | 270          R38       ; ~           ; ~           
@@ -314,6 +321,7 @@ eeschema (2013-07-07 BZR 4022)-stable  >> Creation date: 2/24/2014 12:16:52 AM
 | 700          R45       ; ~           ; ~           
 | 700          R48       ; ~           ; ~           
 | 1K           R17       ; ~           ; ~           
+| 1.55K        R13       ; ~           ; ~           
 | 5.52K        R53       ; ~           ; ~           
 | 5.52K        R54       ; ~           ; ~           
 | 10K          R22       ; ~           ; ~           
