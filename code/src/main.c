@@ -25,9 +25,9 @@ GPIO (Inputs)
 	Touch sensors (x3)
 
 GPIO (Outputs)
-	Control light sensor gain
+	Control light sensor gain (x2)
 	Speaker
-	General RGB LED (x3)
+	General RGB LED color/brightness (x3)
 	Vibrator
 
 Debug (JTAG)
