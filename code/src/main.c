@@ -34,6 +34,8 @@ Debug (JTAG)
 	2-wire TCK, TDIO
 
 -------------------------------------------
+Use vertical acceleration to synchronize flashing?
+
 */
 
 
