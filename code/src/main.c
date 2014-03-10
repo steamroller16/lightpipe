@@ -48,50 +48,87 @@ init_main(void)
 	// Stop the watch dog timer
 	WDTCTL = WDTPW + WDTHOLD;
 	Call the various other init's
+	init_adc(void)
+	
 }
 
-// sensor_light.c
-init_sensor_light(void)
+//-----------------------------------------------------------
+//-----------------------------------------------------------
+// util_i2c.c
+//-----------------------------------------------------------
+init_i2c(void)
 {
-
-	// ADC
-	// [A3] Read light sensor voltage ()
-	// Adjust behavior in accordance with ambient lighting
+	// (GLOBAL i2c SETTING)
 	
-	// ----Set ADC10CTL0----
-	// Set sample-and-hold time to 4,8,[16],64 x ADC10CLK -> ADC10SHT_2
-	// Turn on ADC10 -> ADC10ON
-	// Enable ADC10 interrupt -> ADC10IE
-	ADC10CTL0 = ADC10SHT_2 + ADC10ON + ADC10IE;
+	// ----Set P1SEL, P1SEL2----
+	// Enabling I2C functionality on P1.6, P1.7
+	P1SEL |= BIT6 + BIT7;
+	P1SEL2|= BIT6 + BIT7;
 	
-	// ----Set ADC10AE0----
-	// Set A3 as analog input (disable CMOS buffer)
-	ADC10AE0 |= BIT3;
+	// ----Set UCB0CTL1----
+	// Perform UCB0 software reset
+	UCB0CTL1 |= UCSWRST;
 	
-	// Set as output: [P2.6, P2.7]; control light sensor gain (hardware pulldown)
-	P2DIR |= BIT6 + BIT7;
+	// ----Set UCB0CTL0----
+	// Set UCB0 to be Master -> UCMST
+	// Set UCB0 to use I2C protocol -> UCMODE_3
+	// Set UCB0 to use synchronous comm -> UCSYNC
+	UCB0CTL0 = UCMST + UCMODE_3 + UCSYNC;
 	
+	// ----Set UCB0CTL1----
+	// Set UCB0 to use SMCLK -> UCSSEL_2
+	// Maintain software reset -> UCSWRST
+	UCB0CTL1 = UCSSEL_2 + UCSWRST;
 	
+	// ----Set UCB0BRO, UCB0BR1----
+	// Set UCB0 clock divider to 12
+	// fSCL = SMCLK/12 = ~100kHz
+	UCB0BR0 = 12;
+	UCB0BR1 = 0;
 	
+	init_sensor_accel(void)
+	init_sensor_batteryCharger
+	init_output_signalFront
+	init_output_signalBack
+	init_output_brake
+  
+  
+  
+  
+  
+	// Initialize i2c modules
+	init_sensor_light(void)
+	init_sensor_batteryVoltage(void)
 }
-
-sample_sensor_light()
+ISR_i2c(void)
 {
-	// Disable ADC before switching 
-ADC10CTL0 &= ~ENC;                        // ADC10 disabled
-	// ----Set ADC10CTL1----
-	// Set A3 as input -> INCH_3
-	ADC10CTL1 = INCH_3;
+	// Turn CPU back on when exiting
+	__bic_SR_register_on_exit(CPUOFF);
 }
+//-----------------------------------------------------------
+//-----------------------------------------------------------
 
-sample_battery_buffer()
-{
-// battery dies @2.5V
-// fully charged @3.6V -> buffered to 3.3V
-// fullscale (3.3V) = 0x3FF
-// 2.5V = 0x307
+UCB0I2CSA = 0x4e;                         // Set slave address
+  UCB0CTL1 &= ~UCSWRST;                     // Clear SW reset, resume operation
+  IE2 |= UCB0RXIE;                          // Enable RX interrupt
 
-}
+//-----------------------------------------------------------
+//-----------------------------------------------------------
+// util_i2c.c
+//-----------------------------------------------------------
+//-----------------------------------------------------------
+// sensor_accel.c
+//-----------------------------------------------------------
+// Peripheral(s) used: ADC
+// Pin(s) used: [A3] Read light sensor voltage (0V - 3.3V)
+// Function(s): Adjust behavior in accordance with ambient lighting
+//-----------------------------------------------------------
+
+//-----------------------------------------------------------
+//-----------------------------------------------------------
+// util_i2c.c
+//-----------------------------------------------------------
+
 
 
 
