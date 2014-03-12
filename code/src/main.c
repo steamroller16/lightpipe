@@ -1,7 +1,56 @@
 
-
-
 /*
+
+main.c
+-inits
+-go to sleep
+
+isr.c
+-SAM
+
+util_adc.c
+-init_adc
+-start_adc(channel)
+-read_adc(channel)
+
+util_i2c.c
+-init_i2c
+-write_i2c(slave_address, msg)
+-read_i2c(slave_address, msg)
+
+util_uart.c
+-init_uart
+-send_uart(msg)
+-parse_uart
+-add_char_to_buffer
+
+util_gpio.c
+-init_gpio
+-set_pin_dir(channel, pin, dir)
+-write_pin(channel, pin, state)
+
+sensor_battery_voltage.c
+sensor_ambient_light.c
+sensor_accelerometer.c
+sensor_battery_charger.c
+
+chip_TLC59108IPWR.c
+output_signal_lights.c
+output_brake_lights.c
+
+chip_AT42QT1011.c
+sensor_touch_sensor.c
+
+output_speaker.c
+output_indicator_lights.c
+output_vibrator.c
+
+
+
+
+
+
+
 -------------------------------------------
 Peripherals:
 
