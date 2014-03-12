@@ -21,5 +21,17 @@ ISR_adc(void)
 	// Turn CPU back on when exiting
 	__bic_SR_register_on_exit(CPUOFF);
 }
+start_adc(int channel)
+{
+
+}
+read_adc(int channel)
+{
+
+}
+
+
+
+
 //-----------------------------------------------------------
 //-----------------------------------------------------------

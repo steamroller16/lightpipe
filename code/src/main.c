@@ -9,25 +9,25 @@ isr.c
 -SAM
 
 util_adc.c
--init_adc
--start_adc(channel)
--read_adc(channel)
+-util_adc_init
+-util_adc_start(channel)
+-util_adc_read(channel)
 
 util_i2c.c
--init_i2c
--write_i2c(slave_address, msg)
--read_i2c(slave_address, msg)
+-util_i2c_init
+-util_i2c_write(slave_address, msg)
+-util_i2c_read(slave_address, msg)
 
 util_uart.c
--init_uart
--send_uart(msg)
--parse_uart
--add_char_to_buffer
+-util_uart_init
+-util_uart_send(msg)
+-util_uart_parse
+-util_uart_add_char_to_buffer
 
 util_gpio.c
--init_gpio
--set_pin_dir(channel, pin, dir)
--write_pin(channel, pin, state)
+-util_gpio_init
+-util_gpio_set_pin_dir(channel, pin, dir)
+-util_gpio_write_pin(channel, pin, state)
 
 sensor_battery_voltage.c
 sensor_ambient_light.c
