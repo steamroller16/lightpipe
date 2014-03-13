@@ -1,6 +1,7 @@
+#include "pins.h"
 
 //Setup the pin multiplexers
-setup_pins(void)
+void setup_pins(void)
 {
 //P1.0/TA0CLK/ACLK/A0
 	/// Set A0 as analog input (disable CMOS buffer)
