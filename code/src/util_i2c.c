@@ -9,3 +9,6 @@ util_i2c_init(void)
 }
 //-----------------------------------------------------------
 //-----------------------------------------------------------
+// -util_i2c_init
+// -util_i2c_write(slave_address, msg)
+// -util_i2c_read(slave_address, msg)
