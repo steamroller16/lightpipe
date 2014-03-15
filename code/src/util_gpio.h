@@ -8,12 +8,21 @@
 //-----------------------------------------------------------
 #include <msp430.h>
 //-----------------------------------------------------------
+// # Defines
+//-----------------------------------------------------------
+#define MIN_PIN_NUM 0
+#define MAX_PIN_NUM 7
+#define MIN_CHAN_NUM 1
+#define MAX_CHAN_NUM 3
+//-----------------------------------------------------------
 // Function prototypes
 //-----------------------------------------------------------
 void util_gpio_toggle(int, int);
 void util_gpio_sw_on(int, int);
 void util_gpio_sw_off(int, int);
 void util_gpio_write(int, int);
+int util_gpio_pin_in_range(int);
+int util_gpio_chan_in_range(int);
 //-----------------------------------------------------------
 //-----------------------------------------------------------
 #endif
