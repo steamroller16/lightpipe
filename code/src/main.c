@@ -1,71 +1,44 @@
 
 /*
-OUTLINE
---------------------
-Touching the device:
 
--these keep track of how many touch events occur for the different sensors-
-global touch_1_counts
-global touch_2_counts
-global touch_3_counts
+Guiding principle: device should require NO instruction to use
 
--this threshold sets the "sensitivity" of the touch input-
-touch_count_threshold
+How device is supposed to behave:
 
--the feedback lights are glowing this color nominally-
-color_nominal
+When device is stationary:
+	after few seconds, device goes to sleep.
+	if device moving, device activates
 
--the feedback lights glow this color when the device is flashing its turn signal-
-color_turning
+When device is activated (moving):
+	battery level shown in color on front feedback LED at all times
+		COLORMAP: Red (depleted) <-> Green (full), mirror visible spectrum color change. Red (flashing) is crisis mode - brake lights flash then go double flash at night (no solid), signal light duty cycle reduced.
+	ready for touch inputs
+	ready for brake maneuver
 
+When touched:
+	touch 1 -> toggles turn signal
+	touch 2 (non-critical) -> checks orientation
+		increases/decreases brightness of turn and brake lights
+	touch 3 (non-critical) -> checks orientation
+		increases/decreases brightness of turn and brake lights
 
+When signaling turns:
+	turn signal LED's flash 
+	middle feedback LED flashes yellow in unison with turn signal LED's
+	speaker produces click sounds in unison with turn signal LED's
+	(non-critical) vibrator vibrates in unison with turn signal LED's
 
-
-
----pseudo code---
-
-*GPIO INTTERUPT FIRES*
-parse GP
-
-
-switch(TOUCH TYPE)
-{
-case FRONT TOUCH
-	touch_1_counts++
-	feedback_light_update_turn(touch_1_counts, touch_count_threshold)
-	
-		if user removes touch input, touch_count decays over time, feedback lights reflect this change
-	when touch_count reaches touch_count_threshold, trigger signal
-	
-	to deactivate signal, same process repeats, touches are counted,colors go from 2 to 1
-case TOUCH2 TOUCH
-{
-	accel orientation?
-		adjust brightness up if 2 is on top
-		adjust brightness down if 2 is on bottom
-}
-case TOUCH3 TOUCH
-{
-	accel orientation?
-		adjust brightness up if 2 is on top
-		adjust brightness down if 2 is on bottom
-}
-
-feedback_light_update_turn()
-{
-as touch_count increases towards touch_count_threshold, feedback lights change color from color_1 to color_2
-}
+When brake maneuver detected:
+	in daytime, brake LED's (normally off) turn on
+	in nighttime, brake LED's (normally dimly glowing or flashing) turn on 
+	rear feedback LED's lights up red/glows in unison with brake light
+	brake maneuver remains active until next forward acceleration
 
 
+NOTES:
+just like how in a car the driver can not control the brightness of the brake lights or signal lights, I don't think that the operator should be able to control those brightnesses either. Those settings are just for debug.
 
-
-
-
-
-
-
-
-
+Possibly the only controls which should be user adjustable are trigger sensitivity and MAYBE brake sensitivity
 
 
 
@@ -263,3 +236,71 @@ UCB0I2CSA = 0x4e;                         // Set slave address
   P1IFG &= ~BIT3;                           // P1.3 IFG cleared
   P1OUT ^= BIT0;                            // P1.0 = toggle
   P1IFG &= ~BIT3;                           // P1.3 IFG cleared
+  
+  
+
+
+
+
+
+
+
+
+// OUTLINE
+// --------------------
+// Touching the device:
+
+// -these keep track of how many touch events occur for the different sensors-
+// global touch_1_counts
+// global touch_2_counts
+// global touch_3_counts
+
+// -this threshold sets the "sensitivity" of the touch input-
+// touch_count_threshold
+
+// -the feedback lights are glowing this color nominally-
+// color_nominal
+
+// -the feedback lights glow this color when the device is flashing its turn signal-
+// color_turning
+
+// ---pseudo code---
+
+// *GPIO INTERRUPT FIRES - TOUCH INPUT DETECTED!*
+// parse PxIFG to see where touch occured
+// switch(TOUCH TYPE)
+// {
+// case TOUCH1 TOUCH
+	// touch_1_counts++
+	// feedback_light_update(FRONT, touch_1_counts, touch_count_threshold)
+// case TOUCH2 TOUCH
+	// touch_2_counts++
+	// feedback_light_update(BACK, touch_2_counts, touch_count_threshold)
+// case TOUCH3 TOUCH
+	// touch_3_counts++
+	// feedback_light_update(BACK, touch_2_counts, touch_count_threshold)
+// }
+
+
+// feedback_light_update(POSITION, num_counts, count_threshold)
+// {
+	// duty cycle = count_threshold / 
+
+// as touch_count increases towards touch_count_threshold, feedback lights change color from color_1 to color_2
+// }
+
+	// if user removes touch input, touch_count decays over time, feedback lights reflect this change
+// when touch_count reaches touch_count_threshold, trigger signal
+
+	// to deactivate signal, same process repeats, touches are counted,colors go from 2 to 1
+
+	// accel orientation?
+		// adjust brightness up if 2 is on top
+		// adjust brightness down if 2 is on bottom
+
+	// accel orientation?
+		// adjust brightness up if 2 is on top
+		// adjust brightness down if 2 is on bottom
+
+
+
