@@ -4,6 +4,7 @@
 void setup_pins(void)
 {
 //P1.0/TA0CLK/ACLK/A0
+	/// ADC_BATT
 	/// Set A0 as analog input (disable CMOS buffer)
 	ADC10AE0 |= BIT0;
 //P1.1/TA0.0/UCA0RXD/UCA0SOMI/A1
@@ -15,6 +16,7 @@ void setup_pins(void)
 	P1SEL |= BIT2;
 	P1SEL2|= BIT2;
 //P1.3/ADC10CLK/A3/VREF-/VEREF-
+	/// ADC_LIGHT
 	/// Set A3 as analog input (disable CMOS buffer)
 	ADC10AE0 |= BIT3;
 //P1.4/SMCLK/UCB0STE/UCA0CLK/A4/VREF+/VEREF+/TCK

@@ -1,25 +1,29 @@
 //-----------------------------------------------------------
 //-----------------------------------------------------------
-// util_adc.c
+// sensor_battery_voltage.c
 //-----------------------------------------------------------
-init_adc(void)
+// Read the battery voltage from the ADC
+int sensor_battery_voltage_measure(void)
 {
-	// (GLOBAL ADC SETTING)
-	
-	// ----Set ADC10CTL0----
-	// Set sample-and-hold time to 4,8,[16],64 x ADC10CLK -> ADC10SHT_2
-	// Turn on ADC10 -> ADC10ON
-	// Enable ADC10 interrupt -> ADC10IE
-	ADC10CTL0 = ADC10SHT_2 + ADC10ON + ADC10IE;
-	
-	// Initialize ADC modules
-	init_sensor_light(void)
-	init_sensor_batteryVoltage(void)
+	util_adc_start(SENSOR_BATTERY_VOLTAGE_ADC_CHANNEL);
+	return(util_adc_read(void));
 }
-ISR_adc(void)
+// Respond to measured battery voltage
+int sensor_battery_voltage_diagnose(int voltage)
 {
-	// Turn CPU back on when exiting
-	__bic_SR_register_on_exit(CPUOFF);
+	if(voltage <= SENSOR_BATTERY_VOLTAGE_CRISIS_VOLTAGE)
+	{
+		// *enter crisis mode*
+		// brake lights are flashing nominally at night, and double flash when activated
+		// signal duty cycle is reduced
+		// feedback LED (FRONT) flashes
+	}
+	else
+	{
+		// Battery OK
+		// Update batt level display on feedback LED (FRONT)
+	}
 }
+
 //-----------------------------------------------------------
 //-----------------------------------------------------------
