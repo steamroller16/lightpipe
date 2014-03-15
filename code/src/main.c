@@ -1,5 +1,75 @@
 
 /*
+OUTLINE
+--------------------
+Touching the device:
+
+-these keep track of how many touch events occur for the different sensors-
+global touch_1_counts
+global touch_2_counts
+global touch_3_counts
+
+-this threshold sets the "sensitivity" of the touch input-
+touch_count_threshold
+
+-the feedback lights are glowing this color nominally-
+color_nominal
+
+-the feedback lights glow this color when the device is flashing its turn signal-
+color_turning
+
+
+
+
+
+---pseudo code---
+
+*GPIO INTTERUPT FIRES*
+parse GP
+
+
+switch(TOUCH TYPE)
+{
+case FRONT TOUCH
+	touch_1_counts++
+	feedback_light_update_turn(touch_1_counts, touch_count_threshold)
+	
+		if user removes touch input, touch_count decays over time, feedback lights reflect this change
+	when touch_count reaches touch_count_threshold, trigger signal
+	
+	to deactivate signal, same process repeats, touches are counted,colors go from 2 to 1
+case TOUCH2 TOUCH
+{
+	accel orientation?
+		adjust brightness up if 2 is on top
+		adjust brightness down if 2 is on bottom
+}
+case TOUCH3 TOUCH
+{
+	accel orientation?
+		adjust brightness up if 2 is on top
+		adjust brightness down if 2 is on bottom
+}
+
+feedback_light_update_turn()
+{
+as touch_count increases towards touch_count_threshold, feedback lights change color from color_1 to color_2
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 main.c
 -inits
@@ -68,6 +138,8 @@ I2C [UCB0SCL, UCB0SDA]
 	[100 0001 - 0x41] Signal LEDs (front)
 	[100 0010 - 0x42] Signal LEDs (back)
 	[100 0011 - 0x43] Brake LEDs (back)
+	[100 1000 - 0x48] LED All Call
+	[100 1011 - 0x4B] LED Software Reset
 
 UART [UCA0RXD, UCA0TXD]
 	USB connectivity
@@ -114,26 +186,7 @@ init_i2c(void)
 	P1SEL |= BIT6 + BIT7;
 	P1SEL2|= BIT6 + BIT7;
 	
-	// ----Set UCB0CTL1----
-	// Perform UCB0 software reset
-	UCB0CTL1 |= UCSWRST;
-	
-	// ----Set UCB0CTL0----
-	// Set UCB0 to be Master -> UCMST
-	// Set UCB0 to use I2C protocol -> UCMODE_3
-	// Set UCB0 to use synchronous comm -> UCSYNC
-	UCB0CTL0 = UCMST + UCMODE_3 + UCSYNC;
-	
-	// ----Set UCB0CTL1----
-	// Set UCB0 to use SMCLK -> UCSSEL_2
-	// Maintain software reset -> UCSWRST
-	UCB0CTL1 = UCSSEL_2 + UCSWRST;
-	
-	// ----Set UCB0BRO, UCB0BR1----
-	// Set UCB0 clock divider to 12
-	// fSCL = SMCLK/12 = ~100kHz
-	UCB0BR0 = 12;
-	UCB0BR1 = 0;
+
 	
 	init_sensor_accel(void)
 	init_sensor_batteryCharger
