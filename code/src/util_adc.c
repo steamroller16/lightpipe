@@ -1,8 +1,45 @@
-//-----------------------------------------------------------
+//------------------------------------------------------------------------------
 // util_adc.c
-//-----------------------------------------------------------
+//------------------------------------------------------------------------------
 // Utility: Functions to use ADC
-//-----------------------------------------------------------
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+// Includes
+//------------------------------------------------------------------------------
+#include "main.h"
+#include "isr.h"
+
+
+//------------------------------------------------------------------------------
+// Defines and typedefs
+//------------------------------------------------------------------------------
+#define UTIL_ADC_USE_INTERRUPT
+
+
+//------------------------------------------------------------------------------
+// Public global variables
+//------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------
+// Private global variables
+//------------------------------------------------------------------------------
+
+
+//------------------------------------------------------------------------------
+// Private function prototypes
+//------------------------------------------------------------------------------
+#ifdef UTIL_ADC_USE_INTERRUPT
+static void util_adc_isr(void);
+#else
+static void util_adc_wait(void);
+#endif
+
+
+//------------------------------------------------------------------------------
+// Functions
+//------------------------------------------------------------------------------
 void util_adc_init(void)
 {
 	// (GLOBAL ADC SETTING)
@@ -12,13 +49,18 @@ void util_adc_init(void)
 	// Turn on ADC10 -> ADC10ON
 	// Enable ADC10 interrupt -> ADC10IE
 	// Limit ADC10 buffer reads to 50ksps -> ADC10SR
-	ADC10CTL0 = ADC10SHT_2 + ADC10ON + ADC10IE + ADC10SR;
+	ADC10CTL0 = ADC10SHT_2 + ADC10ON + ADC10SR;
+	
+	
+	#ifdef UTIL_ADC_USE_INTERRUPT
+	// Enable the interrupt
+	ADC10CTL0 |= ADC10IE;
+	
+	// Register the interrupt service routine with the isr module
+	isr_add_handler(&util_adc_isr, ISR_INTERRUPT_SOURCE_ADC10);
+	#endif
 }
-// ISR_adc(void)
-// {
-	// // Turn CPU back on when exiting
-	// __bic_SR_register_on_exit(CPUOFF);
-// }
+
 void util_adc_start(int channel)
 {
 	// Disable conversion prior to changing input channel
@@ -68,7 +110,29 @@ void util_adc_start(int channel)
 	// Enable conversion, start conversion
 	ADC10CTL0 |= ENC + ADC10SC;
 }
-int util_adc_read(void)
+
+int util_adc_read(int channel)
+{
+	util_adc_start(channel);
+	
+	#ifdef UTIL_ADC_USE_INTERRUPT
+	main_go_to_sleep();
+	#else
+	util_adc_wait();
+	#endif
+
+	// Read ADC buffer
+	return ADC10MEM;
+}
+
+#ifdef UTIL_ADC_USE_INTERRUPT
+static void util_adc_isr(void)
+{
+	// Turn CPU back on when exiting
+	main_wake_up();
+}
+#else
+static void util_adc_wait(void)
 {
 	// Check to see if ADC is busy
 	if (ADC10CTL1 & ADC10BUSY)
@@ -76,8 +140,8 @@ int util_adc_read(void)
 		// Wait for conversion to finish
 		while (ADC10CTL1 & ADC10BUSY);
 	}
-	// Read ADC buffer
-	return ADC10MEM;
 }
+#endif
+
 //-----------------------------------------------------------
 //-----------------------------------------------------------
