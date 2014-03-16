@@ -67,12 +67,15 @@ void setup_pins(void)
 //P3.4/TA0.0
 	///R_CTRL
 	P3DIR |= BIT4;
+	P3SEL |= BIT4;
 //P3.5/TA0.1
 	///G_CTRL
 	P3DIR |= BIT5;
+	P3SEL |= BIT5;
 //P3.6/TA0.2
 	///B_CTRL
 	P3DIR |= BIT6;
+	P3SEL |= BIT6;
 //P3.7/TA1CLK
 	///VIBRATOR
 	P3DIR |= BIT7;
