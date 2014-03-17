@@ -12,13 +12,8 @@
 // # Defines
 //-----------------------------------------------------------
 #define UTIL_TIMER_PERIOD_FEEDBACK_RGB 0
-#define UTIL_TIMER_PERIOD_FEEDBACK_MULTIPLEXING 0
-// #define SENSOR_BATTERY_VOLTAGE_CRISIS_VOLTAGE 0x326
-// // Nominal voltage is 3.65V buffered to 3.3V
-// // 3.3V => 0x3FF
-// 2.7V => 0x345
-// 2.6V => 0x326
-// 2.5V => 0x307
+#define UTIL_TIMER_FEEDBACK_SINGLE_LED_ON_TIME 
+// The maximum this can be is 65535/3 = 21845
 //-----------------------------------------------------------
 // Function prototypes
 //-----------------------------------------------------------

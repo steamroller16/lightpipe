@@ -163,7 +163,12 @@ Use vertical acceleration to synchronize flashing?
 //------------------------------------------------------------------------------
 int Debug1;
 int Debug2;
-
+int main_feedback_red_on_time;
+int main_feedback_red_off_time;
+int main_feedback_green_on_time;
+int main_feedback_green_off_time;
+int main_feedback_blue_on_time;
+int main_feedback_blue_off_time;
 
 //------------------------------------------------------------------------------
 // Private global variables
