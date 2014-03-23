@@ -22,7 +22,7 @@
 // Function prototypes
 //-----------------------------------------------------------
 void output_feedback_lights_init(void);
-void output_feedback_lights_set_color(int, int, int);
+void output_feedback_lights_set_color(int[3]);
 //-----------------------------------------------------------
 //-----------------------------------------------------------
 #endif

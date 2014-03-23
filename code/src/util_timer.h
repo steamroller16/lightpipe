@@ -6,19 +6,26 @@
 //-----------------------------------------------------------
 // Dependencies
 //-----------------------------------------------------------
-// #include "util_adc.h"
-// #include 
+#include "main.h"
+#include "output_feedback_lights.h"
 //-----------------------------------------------------------
 // # Defines
 //-----------------------------------------------------------
-#define UTIL_TIMER_PERIOD_FEEDBACK_RGB 0
-#define UTIL_TIMER_FEEDBACK_SINGLE_LED_ON_TIME 
-// The maximum this can be is 65535/3 = 21845
+#define UTIL_TIMER_FEEDBACK_SINGLE_LED_ON_TIME = 255
+// The maximum single LED on time is 65535/3 = 21845
+// The minimum single LED on time is 1
 //-----------------------------------------------------------
 // Function prototypes
 //-----------------------------------------------------------
-// int sensor_battery_voltage_measure(void);
-// int sensor_battery_voltage_diagnose(void);
+void util_timer_init(void);
+void util_timer_rgb_mux_init(void);
+void util_timer_pos_mux_init(void);
+void util_timer_rgb_mux_isr_red(void);
+void util_timer_rgb_mux_isr_green(void);
+void util_timer_rgb_mux_isr_blue(void);
+void util_timer_pos_mux_isr_1(void);
+void util_timer_pos_mux_isr_2(void);
+void util_timer_pos_mux_isr_3(void);
 //-----------------------------------------------------------
 //-----------------------------------------------------------
 #endif

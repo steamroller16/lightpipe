@@ -4,53 +4,64 @@
 //-----------------------------------------------------------
 util_timer_init(void)
 {
-// NEEDS TO BE FIXED! WILL PRODUCE FLICKER DUE TO LOW FREQUENCY
-	
-	/// Setup the timer for RGB color mixing
+util_timer_rgb_mux_init(void);
+util_timer_pos_mux_init(void);
+}
+
+void util_timer_rgb_mux_init(void)
+{
 	// ----Set TA0CTL----
 	// Set TA0 to run on TACLK, ACLK, [SMCLK] -> TASSEL_2
-		// => PWM Period = SMCLK_freq / 65535
 	// Set TA0 to Continuous Mode -> MC_2
 	// Set TA0 to clk divide by 1,2,4,8 -> ID_x
 	// Clear TA0 Clk divider, count dir, counter -> TACLR
 	// (Enable TAIFG interrupt -> TAIE) - not used
 	TA0CTL = TASSEL_2 + MC_2 + TACLR;
-	
+
 	// ----Set TA0CCTL0----(Red Channel)
-	// Force output low to start -> OUTMOD_0
-	TA0CCTL0 = OUTMOD_0;
-	// Set CCR0 output to toggle -> OUTMOD_4
+	// Set CCR0 output to Manual -> OUTMOD_0
+	// Set manual output to low -> (default)
 	// Enable CCR0 interrupt -> CCIE
-	TA0CCTL0 = OUTMOD_4 + CCIE;
-	
+	TA0CCTL0 = OUTMOD_0 + CCIE;
+
 	// ----Set TA0CCTL1----(Blue Channel)
-	// Force output low to start -> OUTMOD_0
-	TA0CCTL1 = OUTMOD_0;
-	// Set CCR1 output to toggle -> OUTMOD_4
-	// Enable CCR1 interrupt -> CCIE
-	TA0CCTL1 = OUTMOD_4 + CCIE;
-	
+	// Set CCR0 output to Manual -> OUTMOD_0
+	// Set manual output to low -> (default)
+	// Enable CCR0 interrupt -> CCIE
+	TA0CCTL1 = OUTMOD_0 + CCIE;
+
 	// ----Set TA0CCTL2----(Green Channel)
-	// Force output low to start -> OUTMOD_0
-	TA0CCTL2 = OUTMOD_0;
-	// Set CCR2 output to toggle -> OUTMOD_4
-	// Enable CCR2 interrupt -> CCIE
-	TA0CCTL2 = OUTMOD_4 + CCIE;
+	// Set CCR0 output to Manual -> OUTMOD_0
+	// Set manual output to low -> (default)
+	// Enable CCR0 interrupt -> CCIE
+	TA0CCTL2 = OUTMOD_0 + CCIE;
+
+	TA0CCR0 = main_feedback_red_off_time;
+	TA0CCR1 = main_feedback_green_off_time;
+	TA0CCR2 = main_feedback_blue_off_time;
 	
+	main_feedback_red_status = 0;
+	main_feedback_green_status = 0;
+	main_feedback_blue_status = 0;
+}
+
+void util_timer_pos_mux_init(void)
+{
 	/// Setup the timer for front, middle, rear feedback LED time multiplexing
 	// ----Set TA1CTL----
 	// Set TA1 to run on TACLK, ACLK, [SMCLK] -> TASSEL_2
-		// => PWM Period = SMCLK_freq / 65535
 	// Set TA1 to Continuous Mode -> MC_2
-	// Set TA1 to clk divide by 1,2,4,[8] -> ID_3
+	// Set TA1 to clk divide by [1],2,4,8 -> ID_0
 	// Clear TA1 Clk divider, count dir, counter -> TACLR
 	// (Enable TAIFG interrupt -> TAIE) - not used
-	TA1CTL = TASSEL_2 + MC_2 + ID_3 + TACLR;
+	TA1CTL = TASSEL_2 + MC_2 + ID_0 + TACLR;
 	
 	// ----Set TA0CCTL0----(Front LED)
 	// Manual Mode, Force output high to start -> OUTMOD_0 + OUT
 	// Enable CCR0 interrupt -> CCIE
 	TA1CCTL0 = OUTMOD_0 + OUT + CCIE;
+	// Produce color for front LED
+	output_feedback_lights_set_color(main_feedback_front_color[3]);
 	
 	// ----Set TA0CCTL1----(Middle LED)
 	// Manual Mode, Force output low to start -> OUTMOD_0
@@ -67,20 +78,113 @@ util_timer_init(void)
 	TA1CCR2 = UTIL_TIMER_FEEDBACK_SINGLE_LED_ON_TIME * 3;
 }
 
+void util_timer_rgb_mux_isr_red(void)
+{
+	if(main_feedback_red_status) // If LED was on...
+	{
+		if(main_feedback_red_off_time) // and off-time is non-zero...
+		{
+			TA0CCR0 = main_feedback_red_off_time;
+			TA0CCTL0 &= ~OUT; // Turn off output
+			main_feedback_red_status = 0;
+		}
+		// If LED was on, but off-time is zero, do nothing (just stay on)
+	}
+	// else LED was off...
+	else if(main_feedback_red_on_time) // If on-time is non-zero...
+	{
+		TA0CCR0 = main_feedback_red_on_time;
+		TA0CCTL0 |= OUT; // Turn on output
+		main_feedback_red_status = 1;
+	}
+	// If LED was off, but on-time is zero, do nothing (just stay off)
+}
+
+void util_timer_rgb_mux_isr_green(void)
+{
+	if(main_feedback_green_status) // If LED was on...
+	{
+		if(main_feedback_green_off_time) // and off-time is non-zero...
+		{
+			TA0CCR1 = main_feedback_green_off_time;
+			TA0CCTL1 &= ~OUT; // Turn off output
+			main_feedback_green_status = 0;
+		}
+		// If LED was on, but off-time is zero, do nothing (just stay on)
+	}
+	// else LED was off...
+	else if(main_feedback_green_on_time) // If on-time is non-zero...
+	{
+		TA0CCR1 = main_feedback_green_on_time;
+		TA0CCTL1 |= OUT; // Turn on output
+		main_feedback_green_status = 1;
+	}
+	// If LED was off, but on-time is zero, do nothing (just stay off)
+}
+
+void util_timer_rgb_mux_isr_blue(void)
+{
+	if(main_feedback_blue_status) // If LED was on...
+	{
+		if(main_feedback_blue_off_time) // and off-time is non-zero...
+		{
+			TA0CCR2 = main_feedback_blue_off_time;
+			TA0CCTL2 &= ~OUT; // Turn off output
+			main_feedback_blue_status = 0;
+		}
+		// If LED was on, but off-time is zero, do nothing (just stay on)
+	}
+	// else LED was off...
+	else if(main_feedback_blue_on_time) // If on-time is non-zero...
+	{
+		TA0CCR2 = main_feedback_blue_on_time;
+		TA0CCTL2 |= OUT; // Turn on output
+		main_feedback_blue_status = 1;
+	}
+	// If LED was off, but on-time is zero, do nothing (just stay off)
+}
+
+void util_timer_pos_mux_isr_1(void)
+{
+	// Turn Front LED off
+	TA1CCTL0 &= ~OUT;
+	// Produce color for middle LED
+	output_feedback_lights_set_color(main_feedback_middle_color[3]);
+	// Turn Middle LED on
+	TA1CCTL1 |= OUT;
+}
+
+void util_timer_pos_mux_isr_2(void)
+{
+	// Turn Middle LED off
+	TA1CCTL1 &= ~OUT;
+	// Produce color for rear LED
+	output_feedback_lights_set_color(main_feedback_rear_color[3]);
+	// Turn Rear LED on
+	TA1CCTL2 |= OUT;
+}
+
+void util_timer_pos_mux_isr_3(void)
+{
+	// Turn Rear LED off
+	TA1CCTL2 &= ~OUT;
+	// Produce color for front LED
+	output_feedback_lights_set_color(main_feedback_front_color[3]);
+	TA1CCR0 = UTIL_TIMER_FEEDBACK_SINGLE_LED_ON_TIME;
+	TA1CCR1 = UTIL_TIMER_FEEDBACK_SINGLE_LED_ON_TIME * 2;
+	TA1CCR2 = UTIL_TIMER_FEEDBACK_SINGLE_LED_ON_TIME * 3;
+	// Turn Front LED on
+	TA1CCTL0 |= OUT;
+}
+
+//-----------------------------------------------------------
+// util_timer_rgb_mux ISR
+//-----------------------------------------------------------
 #pragma vector=TIMER0_A0_VECTOR
 __interrupt void TIMER0_A0_ISR (void)
 {
 	// TACCR0 CCIFG Interrupt
-	// Check to see if at end of PWM period
-	if(TA0CTL & TAIFG)
-	{
-		TA0CCR0 = main_feedback_red_off_time;
-	}
-	else
-	{
-		//Set on-time, add 1 count so TAIFG can be detected next time CCR0 interrupt fires
-		TA0CCR0 = main_feedback_red_on_time + 1;
-	}
+	util_timer_rgb_mux_isr_red(void)
 }
 
 #pragma vector = TIMER0_A1_VECTOR
@@ -91,32 +195,12 @@ __interrupt void TIMER0_A1_ISR (void)
 		case TA0IV_NONE: break;		// Vector  0:  No interrupt
 		case TA0IV_TACCR1:			// Vector  2:  TACCR1 CCIFG
 		{
-			// Check to see if at end of PWM period
-			if(TA0CTL & TAIFG)
-			{
-				TA0CCR1 = main_feedback_green_off_time;
-			}
-			else
-			{
-				//Set on-time, add 1 count so TAIFG can be detected next time CCR1 interrupt fires
-				TA0CCR1 = main_feedback_green_on_time + 1;
-			}
+			util_timer_rgb_mux_isr_green(void)
 			break;
 		}
 		case TA0IV_TACCR2:			// Vector  4:  TACCR2 CCIFG
 		{
-			// Check to see if at end of PWM period
-			if(TA0CTL & TAIFG)
-			{
-				TA0CCR2 = main_feedback_blue_off_time;
-				// Clear TAIFG
-				TA0CTL &= ~TAIFG;
-			}
-			else
-			{
-				//Set on-time, add 1 count so TAIFG can be detected next time CCR2 interrupt fires
-				TA0CCR2 = main_feedback_blue_on_time + 1;
-			}
+			util_timer_rgb_mux_isr_blue(void)
 			break;
 		}
 		case TA0IV_6: break;		// Vector  6:  Reserved CCIFG
@@ -125,14 +209,15 @@ __interrupt void TIMER0_A1_ISR (void)
 		default: break;
 	}
 }
-
+//-----------------------------------------------------------
+//-----------------------------------------------------------
+// util_timer_pos_mux ISR
+//-----------------------------------------------------------
 #pragma vector=TIMER1_A0_VECTOR
 __interrupt void TIMER1_A0_ISR (void)
 {
-	// Turn Front LED off
-	TA1CCTL0 &= ~OUT;
-	// Turn Middle LED on
-	TA1CCTL1 |= OUT;
+	// TACCR0 CCIFG Interrupt
+	util_timer_pos_mux_isr_1(void)
 }
 
 #pragma vector = TIMER1_A1_VECTOR
@@ -143,18 +228,12 @@ __interrupt void TIMER1_A1_ISR (void)
 		case TA1IV_NONE: break;		// Vector  0:  No interrupt
 		case TA1IV_TACCR1:			// Vector  2:  TACCR1 CCIFG
 		{
-			// Turn Middle LED off
-			TA1CCTL1 &= ~OUT;
-			// Turn Rear LED on
-			TA1CCTL2 |= OUT;
+			util_timer_pos_mux_isr_2(void)
 			break;
 		}
 		case TA1IV_TACCR2:			// Vector  4:  TACCR2 CCIFG
 		{
-			// Turn Rear LED off
-			TA1CCTL2 &= ~OUT;
-			// Turn Front LED on
-			TA1CCTL0 |= OUT;
+			util_timer_pos_mux_isr_3(void)
 			break;
 		}
 		case TA1IV_6: break;		// Vector  6:  Reserved CCIFG
