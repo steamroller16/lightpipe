@@ -17,6 +17,7 @@ int sensor_battery_voltage_diagnose(int voltage)
 		// brake lights are flashing nominally at night, and double flash when activated
 		// signal duty cycle is reduced
 		// feedback LED (FRONT) flashes
+		output_feedback_lights_set_front_color({255,0,0});
 	}
 	else
 	{
