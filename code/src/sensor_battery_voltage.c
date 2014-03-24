@@ -22,8 +22,13 @@ int sensor_battery_voltage_diagnose(int voltage)
 	{
 		// Battery OK
 		// Update batt level display on feedback LED (FRONT)
+		int offset = (voltage - SENSOR_BATTERY_VOLTAGE_DEPLETED)*255/(SENSOR_BATTERY_VOLTAGE_FULL - SENSOR_BATTERY_VOLTAGE_DEPLETED);
+		
+		output_feedback_lights_set_front_color({255-offset,offset,0});
 	}
 }
-
+// 3.3V (0x3FF) <-> 2.6V (0x326)
+// Green <-> Red
+// [0,255,0] <-> [255,0,0]
 //-----------------------------------------------------------
 //-----------------------------------------------------------

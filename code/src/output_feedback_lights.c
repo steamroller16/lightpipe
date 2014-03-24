@@ -18,5 +18,17 @@ void output_feedback_lights_set_color(int rgb_color[3])
 	main_feedback_blue_on_time = rgb_color[2];
 	main_feedback_blue_off_time = 255-main_feedback_blue_on_time;
 }
+void output_feedback_lights_set_front_color(int rgb_color[3])
+{
+	main_feedback_front_color[3] = rgb_color;
+}
+void output_feedback_lights_set_middle_color(int rgb_color[3])
+{
+	main_feedback_middle_color[3] = rgb_color;
+}
+void output_feedback_lights_set_rear_color(int rgb_color[3])
+{
+	main_feedback_rear_color[3] = rgb_color;
+}
 //-----------------------------------------------------------
 //-----------------------------------------------------------

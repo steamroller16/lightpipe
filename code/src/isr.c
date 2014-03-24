@@ -117,18 +117,6 @@ __interrupt void middleman_wdt(void)
 	call_handler(ISR_INTERRUPT_SOURCE_WDT);
 }
 
-#pragma vector=TIMER1_A1_VECTOR
-__interrupt void middleman_timer1_a1(void)
-{
-	call_handler(ISR_INTERRUPT_SOURCE_TIMER1_A1);
-}
-
-#pragma vector=TIMER1_A0_VECTOR
-__interrupt void middleman_timer1_a0(void)
-{
-	call_handler(ISR_INTERRUPT_SOURCE_TIMER1_A0);
-}
-
 #pragma vector=NMI_VECTOR
 __interrupt void middleman_nmi(void)
 {

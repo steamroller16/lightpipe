@@ -23,6 +23,9 @@
 //-----------------------------------------------------------
 void output_feedback_lights_init(void);
 void output_feedback_lights_set_color(int[3]);
+void output_feedback_lights_set_front_color(int[3]);
+void output_feedback_lights_set_middle_color(int[3]);
+void output_feedback_lights_set_rear_color(int[3]);
 //-----------------------------------------------------------
 //-----------------------------------------------------------
 #endif
