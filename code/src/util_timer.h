@@ -8,6 +8,7 @@
 //-----------------------------------------------------------
 #include "main.h"
 #include "output_feedback_lights.h"
+#include "isr.h"
 //-----------------------------------------------------------
 // # Defines
 //-----------------------------------------------------------
@@ -26,6 +27,11 @@ void util_timer_rgb_mux_isr_blue(void);
 void util_timer_pos_mux_isr_1(void);
 void util_timer_pos_mux_isr_2(void);
 void util_timer_pos_mux_isr_3(void);
+
+void util_timer_timer0_a0_isr(void);
+void util_timer_timer0_a1_isr(void);
+void util_timer_timer1_a0_isr(void);
+void util_timer_timer1_a1_isr(void);
 //-----------------------------------------------------------
 //-----------------------------------------------------------
 #endif

@@ -2,10 +2,15 @@
 //-----------------------------------------------------------
 // util_timer.c
 //-----------------------------------------------------------
-util_timer_init(void)
+void util_timer_init(void)
 {
 util_timer_rgb_mux_init(void);
 util_timer_pos_mux_init(void);
+// Register the interrupt service routines with the isr module
+isr_add_handler(&util_timer_timer0_a0_isr, ISR_INTERRUPT_SOURCE_TIMER0_A0);
+isr_add_handler(&util_timer_timer0_a1_isr, ISR_INTERRUPT_SOURCE_TIMER0_A1);
+isr_add_handler(&util_timer_timer1_a0_isr, ISR_INTERRUPT_SOURCE_TIMER1_A0);
+isr_add_handler(&util_timer_timer1_a1_isr, ISR_INTERRUPT_SOURCE_TIMER1_A1);
 }
 
 void util_timer_rgb_mux_init(void)
@@ -39,7 +44,7 @@ void util_timer_rgb_mux_init(void)
 	TA0CCR0 = main_feedback_red_off_time;
 	TA0CCR1 = main_feedback_green_off_time;
 	TA0CCR2 = main_feedback_blue_off_time;
-	
+
 	main_feedback_red_status = 0;
 	main_feedback_green_status = 0;
 	main_feedback_blue_status = 0;
@@ -180,15 +185,17 @@ void util_timer_pos_mux_isr_3(void)
 //-----------------------------------------------------------
 // util_timer_rgb_mux ISR
 //-----------------------------------------------------------
-#pragma vector=TIMER0_A0_VECTOR
-__interrupt void TIMER0_A0_ISR (void)
+// #pragma vector=TIMER0_A0_VECTOR
+// __interrupt void TIMER0_A0_ISR (void)
+void util_timer_timer0_a0_isr(void)
 {
 	// TACCR0 CCIFG Interrupt
 	util_timer_rgb_mux_isr_red(void)
 }
 
-#pragma vector = TIMER0_A1_VECTOR
-__interrupt void TIMER0_A1_ISR (void)
+// #pragma vector = TIMER0_A1_VECTOR
+// __interrupt void TIMER0_A1_ISR (void)
+void util_timer_timer0_a1_isr(void)
 {
 	switch(__even_in_range(TA0IV,0x0A))
 	{
@@ -213,15 +220,17 @@ __interrupt void TIMER0_A1_ISR (void)
 //-----------------------------------------------------------
 // util_timer_pos_mux ISR
 //-----------------------------------------------------------
-#pragma vector=TIMER1_A0_VECTOR
-__interrupt void TIMER1_A0_ISR (void)
+// #pragma vector=TIMER1_A0_VECTOR
+// __interrupt void TIMER1_A0_ISR (void)
+void util_timer_timer1_a0_isr(void)
 {
 	// TACCR0 CCIFG Interrupt
 	util_timer_pos_mux_isr_1(void)
 }
 
-#pragma vector = TIMER1_A1_VECTOR
-__interrupt void TIMER1_A1_ISR (void)
+// #pragma vector = TIMER1_A1_VECTOR
+// __interrupt void TIMER1_A1_ISR (void)
+void util_timer_timer1_a1_isr(void)
 {
 	switch(__even_in_range(TA1IV,0x0A))
 	{

@@ -87,16 +87,28 @@ __interrupt void middleman_usciab0rx(void)
 	call_handler(ISR_INTERRUPT_SOURCE_USCIAB0RX);
 }
 
+#pragma vector=TIMER0_A0_VECTOR
+__interrupt void middleman_timer0_a0(void)
+{
+	call_handler(ISR_INTERRUPT_SOURCE_TIMER0_A0);
+}
+
 #pragma vector=TIMER0_A1_VECTOR
 __interrupt void middleman_timer0_a1(void)
 {
 	call_handler(ISR_INTERRUPT_SOURCE_TIMER0_A1);
 }
 
-#pragma vector=TIMER0_A0_VECTOR
-__interrupt void middleman_timer0_a0(void)
+#pragma vector=TIMER1_A0_VECTOR
+__interrupt void middleman_timer1_a0(void)
 {
-	call_handler(ISR_INTERRUPT_SOURCE_TIMER0_A0);
+	call_handler(ISR_INTERRUPT_SOURCE_TIMER1_A0);
+}
+
+#pragma vector = TIMER1_A1_VECTOR
+__interrupt void middleman_timer1_a1(void)
+{
+	call_handler(ISR_INTERRUPT_SOURCE_TIMER1_A1);
 }
 
 #pragma vector=WDT_VECTOR
