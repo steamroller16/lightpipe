@@ -35,6 +35,8 @@ extern int main_feedback_blue_status;
 extern int main_feedback_front_color[3];
 extern int main_feedback_middle_color[3];
 extern int main_feedback_rear_color[3];
+extern int main_turnsignal_state;
+extern int main_orientation[3];
 
 //------------------------------------------------------------------------------
 // Public function prototypes

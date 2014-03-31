@@ -180,6 +180,9 @@ int main_feedback_front_color[3];
 int main_feedback_middle_color[3];
 int main_feedback_rear_color[3];
 
+// Default state is turn signal off
+int main_turnsignal_is_on = 0;
+int main_orientation[3];
 //------------------------------------------------------------------------------
 // Private global variables
 //------------------------------------------------------------------------------
@@ -201,8 +204,19 @@ int main(void)
 	// Call inits for all modules
 	util_adc_init();
 	
-	// Main loop
-	while(1) {}
+	
+	
+	main_go_to_sleep(void);
+	
+	// Turn signal loop
+	while(1) // use watch dog timer, so you don't have to stupid waiting stuff
+	{
+		// Make sound
+		// Vibrate
+		// Toggle signal lights
+		// Toggle middle feedback light
+		// wait 1sec (or whatever)
+	}
 }
 
 void main_go_to_sleep(void)

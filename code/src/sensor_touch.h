@@ -7,11 +7,15 @@
 // Dependencies
 //-----------------------------------------------------------
 #include <msp430.h>
+#include "main.h"
+#include "output_feedback_lights.h"
+#include "output_signal_lights.h"
+#include "output_brake_lights.h"
 //-----------------------------------------------------------
 // # Defines
 //-----------------------------------------------------------
-#define SENSOR_TOUCH_TOUCH_COUNT_THRESHOLD 	 100
-#define SENSOR_TOUCH_DORMANT_COLOR			
+#define SENSOR_TOUCH_BRIGHTNESS_ADJ 	 1
+// #define SENSOR_TOUCH_DORMANT_COLOR			
 // #define I2C_SLAVE_ADR_LED_REAR_SIGNAL 	0x42
 // #define I2C_SLAVE_ADR_LED_REAR_BRAKE 	0x43
 // #define I2C_SLAVE_ADR_LED_ALL_CALL 		0x48
@@ -21,9 +25,10 @@
 //-----------------------------------------------------------
 // Function prototypes
 //-----------------------------------------------------------
-void util_i2c_init(void);
-void util_i2c_write(int, int);
-void util_i2c_read(int, int);
+void sensor_touch_adj_brightness(signed int);
+void sensor_touch_1_isr(void);
+void sensor_touch_2_isr(void);
+void sensor_touch_3_isr(void);
 //-----------------------------------------------------------
 //-----------------------------------------------------------
 #endif

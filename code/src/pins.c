@@ -32,15 +32,20 @@ void setup_pins(void)
 //P2.0/TA1.0
 	///~INT_ACCEL
 	P2IE |= BIT0;
+	P2IES |= BIT0;
+	P2IFG &= ~BIT0;
 //P2.1/TA1.1
 	///TOUCH_1
 	P2IE |= BIT1;
+	P2IFG &= ~BIT1;
 //P2.2/TA1.1
 	///TOUCH_2
 	P2IE |= BIT2;
+	P2IFG &= ~BIT2;
 //P2.3/TA1.0
 	///TOUCH_3
 	P2IE |= BIT3;
+	P2IFG &= ~BIT3;
 //P2.4/TA1.2
 	///SPEAKER
 	P2DIR |= BIT4;
@@ -55,6 +60,8 @@ void setup_pins(void)
 	///LIGHT_CTRL_2
 	P2DIR |= BIT7;
 //P3.0/TA0.2
+	///[Unused] - output for decreased current consumption
+	P3DIR |= BIT0
 //P3.1/TA1.0
 	///LED_1
 	P3DIR |= BIT1;

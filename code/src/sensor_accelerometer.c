@@ -1,25 +1,39 @@
 //-----------------------------------------------------------
 //-----------------------------------------------------------
-// util_adc.c
+// sensor_accelerometer.c
 //-----------------------------------------------------------
-init_adc(void)
+// accelerometer: each reading, check to see what the acceleration is [-x dir for this geometry]. if the forward acceleration is greater than a preset threshold, then the bike is starting from a stop. When a person stops, the acceleration goes negative, goes to zero, goes positive, then back to zero (assuming no further oscillations). Therefore, the setting of that threshold prevents spurious brake light flickering at a stop.
+sensor_accelerometer_init
+
+sensor_accelerometer_read_x(void)
 {
-	// (GLOBAL ADC SETTING)
-	
-	// ----Set ADC10CTL0----
-	// Set sample-and-hold time to 4,8,[16],64 x ADC10CLK -> ADC10SHT_2
-	// Turn on ADC10 -> ADC10ON
-	// Enable ADC10 interrupt -> ADC10IE
-	ADC10CTL0 = ADC10SHT_2 + ADC10ON + ADC10IE;
-	
-	// Initialize ADC modules
-	init_sensor_light(void)
-	init_sensor_batteryVoltage(void)
+	// Read from the accelerometer x dir
 }
-ISR_adc(void)
+
+sensor_accelerometer_isr
 {
-	// Turn CPU back on when exiting
-	__bic_SR_register_on_exit(CPUOFF);
+	current_accel_x = sensor_accelerometer_read_x(void);
+	
+	if(sensor_accelerometer_is_braking)
+	{
+		output_brake_lights_turn_on(void);
+	}
+	else if(sensor_accelerometer_is_pedaling)
+	{
+		output_brake_lights_turn_off(void);
+	}
+}
+
+
+
+int sensor_accelerometer_is_pedaling(void)
+{
+	// Check to see if reading is greater than accel threshold
+}
+
+int sensor_accelerometer_is_braking(void)
+{
+	// Check to see if reading is lower than 
 }
 //-----------------------------------------------------------
 //-----------------------------------------------------------
