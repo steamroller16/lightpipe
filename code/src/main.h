@@ -53,6 +53,11 @@ void main_sensor_touch_2_isr(void);
 void main_sensor_touch_3_isr(void);
 
 void main_go_to_sleep(void);
+
+void main_debug_vibrator_init(void);
+void main_vibrate_start(void);
+void main_vibrate_stop(void);
+
 // void main_wake_up(void);
 
 

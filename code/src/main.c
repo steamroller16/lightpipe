@@ -204,6 +204,7 @@ int main(void)
 	
 	main_debug_led_init(void);
 	main_debug_touch_init(void);
+	main_debug_vibrator_init(void);
 	
 	main_go_to_sleep(void);
 	
@@ -216,8 +217,9 @@ int main(void)
 		// wait 1sec (or whatever)
 	}
 }
-
+//--------------------------------------------
 // Setup watchdog interval timer
+//--------------------------------------------
 void main_watchdog_init(void)
 {
 	// Stop the watch dog timer
@@ -229,8 +231,9 @@ void main_watchdog_init(void)
 	// Enable watchdog timer interval interrupt
 	IE1 |= WDTIE;
 }
-
+//--------------------------------------------
 // Put the processor to sleep
+//--------------------------------------------
 void main_go_to_sleep(void)
 {
 	// Make LED's white
@@ -240,9 +243,9 @@ void main_go_to_sleep(void)
 	// General purpose interrupts enabled
 	_BIS_SR(LPM3_bits + GIE);
 }
-
-
-// Setup bare bones debug functionality to test circuitry
+//--------------------------------------------
+//--------------------------------------------
+// Setup bare-bones debug functionality to test circuitry
 //--------------------------------------------
 // LED, SIGNAL FLASH DEBUG--------------------
 //--------------------------------------------
@@ -273,11 +276,18 @@ void main_debug_led_init(void)
 #pragma vector=WDT_VECTOR
 __interrupt void watchdog_timer(void)
 {
-	// Toggle output every 500ms (250ms * 2)
+	// Toggle signal lights every 500ms (250ms * 2)
 	if ( main_turnsignal_flash_counter % 2 == 0 )
 	{
+		// Turn on vibrator
+		main_vibrate_start(void);
 		//Toggle LED's 1,2,3
 		P1OUT ^= ( BIT3 + BIT2 + BIT1 );
+	}
+	else
+	{
+		// Turn off vibrator
+		main_vibrate_stop(void);
 	}
 	main_turnsignal_flash_counter++;  
 }
@@ -303,6 +313,8 @@ void main_debug_touch_init(void)
 // (Main touch pad) Turn signal -> on (green LED)
 void main_sensor_touch_1_isr(void)
 {
+	// Turn on vibrator
+	main_vibrate_start(void);
 	// Make LED's green
 	P1OUT |= ( BIT5 );
 	P1OUT &= ~( BIT6 + BIT4 );
@@ -312,11 +324,15 @@ void main_sensor_touch_1_isr(void)
 	main_turnsignal_is_on = 1;
 	// Turn off LED 1
 	P1OUT &= ~( BIT1 );
+	// Turn off vibrator
+	main_vibrate_stop(void);
 	main_go_to_sleep(void);
 }
 // (Auxillary touch pad) Turn signal -> off (red LED)
 void main_sensor_touch_2_isr(void)
 {
+	// Turn on vibrator
+	main_vibrate_start(void);
 	// Make LED's red
 	P1OUT |= ( BIT4 );
 	P1OUT &= ~( BIT6 + BIT5 );
@@ -326,11 +342,15 @@ void main_sensor_touch_2_isr(void)
 	main_turnsignal_is_on = 0;
 	// Turn off LED 1
 	P1OUT &= ~( BIT1 );
+	// Turn off vibrator
+	main_vibrate_stop(void);
 	main_go_to_sleep(void);
 }
 // (Auxillary touch pad) Turn signal -> off (blue LED)
 void main_sensor_touch_3_isr(void)
 {
+	// Turn on vibrator
+	main_vibrate_start(void);
 	// Make LED's blue
 	P1OUT |= ( BIT6 );
 	P1OUT &= ~( BIT5 + BIT4 );
@@ -340,6 +360,8 @@ void main_sensor_touch_3_isr(void)
 	main_turnsignal_is_on = 0;
 	// Turn off LED 1
 	P1OUT &= ~( BIT1 );
+	// Turn off vibrator
+	main_vibrate_stop(void);
 	main_go_to_sleep(void);
 }
 #pragma vector=PORT2_VECTOR
@@ -372,11 +394,25 @@ __interrupt void PORT2_ISR(void)
 		case BIT7: break;	//P2.7 Interrupt
 	}
 }
-
-
-
-
-
+//--------------------------------------------
+//--------------------------------------------
+// VIBRATOR DEBUG-----------------------------
+//--------------------------------------------
+void main_debug_vibrator_init(void)
+{
+//P3.7/TA1CLK
+	///VIBRATOR
+	P3DIR |= BIT7;
+	main_vibrate_stop(void);
+}
+void main_vibrate_start(void)
+{
+	P3OUT |= ( BIT7 );
+}
+void main_vibrate_stop(void)
+{
+	P3OUT &= ~( BIT7 );
+}
 
 
 
