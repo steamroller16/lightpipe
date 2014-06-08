@@ -6,6 +6,18 @@
 
 #include "main.h"
 
+
+// ----------------------------------------------------------
+// Private Global Variables
+// ----------------------------------------------------------
+static int TxByteCounter;
+static int TxByteLength;
+static char *TxBytePointer;
+static int TxSendStopCondition;
+
+// ----------------------------------------------------------
+// Function Implementations
+// ----------------------------------------------------------
 void util_i2c_init(void)
 {
 	// ----Set UCB0CTL1----
@@ -40,16 +52,18 @@ void util_i2c_init(void)
 	IE2 |= UCB0RXIE;
 }
 
-void util_i2c_write(char msg)
+void util_i2c_write(char *msg, int length, int send_stop_condition)
 {
-	// Put msg in tx buffer
-	UCB0TXBUF = msg;
+	TxByteCounter = 0;
+	TxByteLength = length;
+	TxBytePointer = msg;
+	TxSendStopCondition = send_stop_condition;
 
 	// I2C TX, start condition
 	UCB0CTL1 |= UCTR + UCTXSTT;
 
-	// Wait for transmission to complete
-	while (UCB0CTL1 & UCTXSTT);
+	// Go to sleep
+	__bis_SR_register(CPUOFF + GIE);
 }
 
 void util_i2c_read(char *msg)
@@ -63,4 +77,32 @@ void util_i2c_read(char *msg)
 
 	// Get msg from rx buffer
 	*msg = UCB0RXBUF;
+}
+
+#pragma vector = USCIAB0TX_VECTOR
+__interrupt void USCIAB0TX_ISR(void)
+{
+	// Check TX byte counter
+	if (TxByteCounter < TxByteLength)
+	{
+		// Load TX buffer
+		UCB0TXBUF = TxBytePointer[TxByteCounter];
+
+		// Increment TX byte counter
+		TxByteCounter++;
+	}
+	else
+	{
+		if (TxSendStopCondition)
+		{
+			// I2C stop condition
+			UCB0CTL1 |= UCTXSTP;
+		}
+
+		// Clear USCI_B0 TX int flag
+		IFG2 &= ~UCB0TXIFG;
+
+		// Exit LPM0
+		__bic_SR_register_on_exit(CPUOFF);
+	}
 }

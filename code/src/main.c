@@ -151,6 +151,7 @@ Use vertical acceleration to synchronize flashing?
 //------------------------------------------------------------------------------
 #include "main.h"
 #include "util_adc.h"
+#include "util_i2c.h"
 
 
 //------------------------------------------------------------------------------
@@ -205,6 +206,7 @@ int main(void)
 	main_debug_led_init();
 	main_debug_touch_init();
 	main_debug_vibrator_init();
+	util_i2c_init();
 	
 	main_go_to_sleep();
 	
