@@ -6,10 +6,12 @@
 //-----------------------------------------------------------
 // Dependencies
 //-----------------------------------------------------------
-#include <msp430.h>
+
 //-----------------------------------------------------------
 // # Defines
 //-----------------------------------------------------------
+// TODO: these should go in the respective modules (like LED,
+// adc, etc.)
 #define I2C_SLAVE_ADR_LED_FRONT_SIGNAL 	0x41
 #define I2C_SLAVE_ADR_LED_REAR_SIGNAL 	0x42
 #define I2C_SLAVE_ADR_LED_REAR_BRAKE 	0x43
@@ -21,8 +23,8 @@
 // Function prototypes
 //-----------------------------------------------------------
 void util_i2c_init(void);
-void util_i2c_write(int, int);
-void util_i2c_read(int, int);
+void util_i2c_write(char msg);
+void util_i2c_read(char *msg);
 //-----------------------------------------------------------
 //-----------------------------------------------------------
 #endif
