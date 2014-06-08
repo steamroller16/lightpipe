@@ -41,8 +41,19 @@ extern int main_orientation[3];
 //------------------------------------------------------------------------------
 // Public function prototypes
 //------------------------------------------------------------------------------
+void main_watchdog_init(void);
+
+void main_debug_led_init(void);
+void main_debug_touch_init(void);
+
 void main_go_to_sleep(void);
-void main_wake_up(void);
+
+void main_sensor_touch_1_isr(void);
+void main_sensor_touch_2_isr(void);
+void main_sensor_touch_3_isr(void);
+
+void main_go_to_sleep(void);
+// void main_wake_up(void);
 
 
 //------------------------------------------------------------------------------

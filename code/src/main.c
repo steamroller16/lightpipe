@@ -183,10 +183,12 @@ int main_feedback_rear_color[3];
 // Default state is turn signal off
 int main_turnsignal_is_on = 0;
 int main_orientation[3];
+
+
 //------------------------------------------------------------------------------
 // Private global variables
 //------------------------------------------------------------------------------
-
+int main_turnsignal_flash_counter = 0;
 
 //------------------------------------------------------------------------------
 // Private function prototypes
@@ -198,18 +200,14 @@ int main_orientation[3];
 //------------------------------------------------------------------------------
 int main(void)
 {
-	// Stop the watch dog timer
-	WDTCTL = WDTPW + WDTHOLD;
+	main_watchdog_init(void)
 	
-	// Call inits for all modules
-	util_adc_init();
-	
-	
+	main_debug_led_init(void);
+	main_debug_touch_init(void);
 	
 	main_go_to_sleep(void);
 	
 	// Turn signal loop
-	while(1) // use watch dog timer, so you don't have to stupid waiting stuff
 	{
 		// Make sound
 		// Vibrate
@@ -219,15 +217,167 @@ int main(void)
 	}
 }
 
-void main_go_to_sleep(void)
+// Setup watchdog interval timer
+void main_watchdog_init(void)
 {
+	// Stop the watch dog timer
+	// WDTCTL = WDTPW + WDTHOLD;
 	
+	// Set watch dog timer to interval timer @ 250ms
+	// Source ACLK @ 32768 Hz
+	WDTCTL = WDT_ADLY_250
+	// Enable watchdog timer interval interrupt
+	IE1 |= WDTIE;
 }
 
-void main_wake_up(void)
+// Put the processor to sleep
+void main_go_to_sleep(void)
 {
+	// Make LED's white
+	P1OUT |= ( BIT6 + BIT5 + BIT4 );
 	
+	// Enter LPM3 (only ACLK active)
+	// General purpose interrupts enabled
+	_BIS_SR(LPM3_bits + GIE);
 }
+
+
+// Setup bare bones debug functionality to test circuitry
+//--------------------------------------------
+// LED, SIGNAL FLASH DEBUG--------------------
+//--------------------------------------------
+void main_debug_led_init(void)
+{
+//P3.1/TA1.0
+	///LED_1
+	P3DIR |= BIT1;	//Set as output
+//P3.2/TA1.1
+	///LED_2
+	P3DIR |= BIT2;	//Set as output
+//P3.3/TA1.2
+	///LED_3
+	P3DIR |= BIT3;	//Set as output
+//P3.4/TA0.0
+	///R_CTRL
+	P3DIR |= BIT4;	//Set as output
+//P3.5/TA0.1
+	///G_CTRL
+	P3DIR |= BIT5;	//Set as output
+//P3.6/TA0.2
+	///B_CTRL
+	P3DIR |= BIT6;	//Set as output
+// Initialize LED's to off
+	P1OUT &= ~( BIT3 + BIT2 + BIT1 );
+}
+// Watchdog Timer interrupt service routine
+#pragma vector=WDT_VECTOR
+__interrupt void watchdog_timer(void)
+{
+	// Toggle output every 500ms (250ms * 2)
+	if ( main_turnsignal_flash_counter % 2 == 0 )
+	{
+		//Toggle LED's 1,2,3
+		P1OUT ^= ( BIT3 + BIT2 + BIT1 );
+	}
+	main_turnsignal_flash_counter++;  
+}
+//--------------------------------------------
+//--------------------------------------------
+// TOUCH SENSE DEBUG--------------------------
+//--------------------------------------------
+void main_debug_touch_init(void)
+{
+//P2.1/TA1.1
+	///TOUCH_1
+	P2IE |= BIT1;
+	P2IFG &= ~BIT1;
+//P2.2/TA1.1
+	///TOUCH_2
+	P2IE |= BIT2;
+	P2IFG &= ~BIT2;
+//P2.3/TA1.0
+	///TOUCH_3
+	P2IE |= BIT3;
+	P2IFG &= ~BIT3;
+}
+// (Main touch pad) Turn signal -> on (green LED)
+void main_sensor_touch_1_isr(void)
+{
+	// Make LED's green
+	P1OUT |= ( BIT5 );
+	P1OUT &= ~( BIT6 + BIT4 );
+	// Turn on LED 1
+	P1OUT |= ( BIT1 );
+	// Turn signal -> on
+	main_turnsignal_is_on = 1;
+	// Turn off LED 1
+	P1OUT &= ~( BIT1 );
+	main_go_to_sleep(void);
+}
+// (Auxillary touch pad) Turn signal -> off (red LED)
+void main_sensor_touch_2_isr(void)
+{
+	// Make LED's red
+	P1OUT |= ( BIT4 );
+	P1OUT &= ~( BIT6 + BIT5 );
+	// Turn on LED 1
+	P1OUT |= ( BIT1 );
+	// Turn signal -> off
+	main_turnsignal_is_on = 0;
+	// Turn off LED 1
+	P1OUT &= ~( BIT1 );
+	main_go_to_sleep(void);
+}
+// (Auxillary touch pad) Turn signal -> off (blue LED)
+void main_sensor_touch_3_isr(void)
+{
+	// Make LED's blue
+	P1OUT |= ( BIT6 );
+	P1OUT &= ~( BIT5 + BIT4 );
+	// Turn on LED 1
+	P1OUT |= ( BIT1 );
+	// Turn signal -> off
+	main_turnsignal_is_on = 0;
+	// Turn off LED 1
+	P1OUT &= ~( BIT1 );
+	main_go_to_sleep(void);
+}
+#pragma vector=PORT2_VECTOR
+__interrupt void PORT2_ISR(void)
+{
+	switch(P2IFG)
+	{
+		case BIT0: break;	//P2.0 Interrupt
+		case BIT1: 			//P2.1 Interrupt
+		{					//Main touch input
+			main_sensor_touch_1_isr(void)
+			P2IFG &= ~BIT1;
+			break;
+		}
+		case BIT2: 			//P2.2 Interrupt
+		{
+			main_sensor_touch_2_isr(void)
+			P2IFG &= ~BIT2;
+			break;
+		}
+		case BIT3: 			//P2.3 Interrupt
+		{
+			main_sensor_touch_3_isr(void)
+			P2IFG &= ~BIT3;
+			break;
+		}
+		case BIT4: break;	//P2.4 Interrupt
+		case BIT5: break;	//P2.5 Interrupt
+		case BIT6: break;	//P2.6 Interrupt
+		case BIT7: break;	//P2.7 Interrupt
+	}
+}
+
+
+
+
+
+
 
 
 
