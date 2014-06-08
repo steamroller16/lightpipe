@@ -313,6 +313,8 @@ void main_debug_touch_init(void)
 // (Main touch pad) Turn signal -> on (green LED)
 void main_sensor_touch_1_isr(void)
 {
+	// Flick speaker
+	main_speaker_flick(void);
 	// Turn on vibrator
 	main_vibrate_start(void);
 	// Make LED's green
@@ -331,6 +333,8 @@ void main_sensor_touch_1_isr(void)
 // (Auxillary touch pad) Turn signal -> off (red LED)
 void main_sensor_touch_2_isr(void)
 {
+	// Flick speaker
+	main_speaker_flick(void);
 	// Turn on vibrator
 	main_vibrate_start(void);
 	// Make LED's red
@@ -349,6 +353,8 @@ void main_sensor_touch_2_isr(void)
 // (Auxillary touch pad) Turn signal -> off (blue LED)
 void main_sensor_touch_3_isr(void)
 {
+	// Flick speaker
+	main_speaker_flick(void);
 	// Turn on vibrator
 	main_vibrate_start(void);
 	// Make LED's blue
@@ -413,9 +419,20 @@ void main_vibrate_stop(void)
 {
 	P3OUT &= ~( BIT7 );
 }
-
-
-
+//--------------------------------------------
+//--------------------------------------------
+// SPEAKER DEBUG-----------------------------
+//--------------------------------------------
+void main_speaker_init(void)
+{
+//P2.4/TA1.2
+	///SPEAKER
+	P2DIR |= BIT4;
+}
+void main_speaker_flick(void)
+{
+	P2OUT ^= ( BIT4 );
+}
 
 
 

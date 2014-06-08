@@ -58,6 +58,8 @@ void main_debug_vibrator_init(void);
 void main_vibrate_start(void);
 void main_vibrate_stop(void);
 
+void main_speaker_init(void);
+void main_speaker_flick(void);
 // void main_wake_up(void);
 
 
