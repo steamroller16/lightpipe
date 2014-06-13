@@ -150,7 +150,7 @@ Use vertical acceleration to synchronize flashing?
 // Includes
 //------------------------------------------------------------------------------
 #include "main.h"
-// #include "util_adc.h"
+#include "util_adc.h"
 
 
 //------------------------------------------------------------------------------
@@ -227,8 +227,7 @@ void main_watchdog_init(void)
 	
 	// Set watch dog timer to interval timer @ 250ms
 	// Source ACLK @ 32768 Hz
-	// WDTCTL = WDT_ADLY_250;
-	WDTCTL = WDTPW + WDTTMSEL + WDTCNTCL + WDTSSEL + WDTIS0;
+	WDTCTL = WDT_ADLY_250
 	// Enable watchdog timer interval interrupt
 	IE1 |= WDTIE;
 }
@@ -238,7 +237,7 @@ void main_watchdog_init(void)
 void main_go_to_sleep(void)
 {
 	// Make LED's white
-	P3OUT |= ( BIT6 + BIT5 + BIT4 );
+	P1OUT |= ( BIT6 + BIT5 + BIT4 );
 	
 	// Enter LPM3 (only ACLK active)
 	// General purpose interrupts enabled
@@ -254,24 +253,24 @@ void main_debug_led_init(void)
 {
 //P3.1/TA1.0
 	///LED_1
-	P3DIR |= BIT1;
+	P3DIR |= BIT1;	//Set as output
 //P3.2/TA1.1
 	///LED_2
-	P3DIR |= BIT2;
+	P3DIR |= BIT2;	//Set as output
 //P3.3/TA1.2
 	///LED_3
-	P3DIR |= BIT3;
+	P3DIR |= BIT3;	//Set as output
 //P3.4/TA0.0
 	///R_CTRL
-	P3DIR |= BIT4;
+	P3DIR |= BIT4;	//Set as output
 //P3.5/TA0.1
 	///G_CTRL
-	P3DIR |= BIT5;
+	P3DIR |= BIT5;	//Set as output
 //P3.6/TA0.2
 	///B_CTRL
-	P3DIR |= BIT6;
+	P3DIR |= BIT6;	//Set as output
 // Initialize LED's to off
-	P3OUT &= ~( BIT3 + BIT2 + BIT1 );
+	P1OUT &= ~( BIT3 + BIT2 + BIT1 );
 }
 // Watchdog Timer interrupt service routine
 #pragma vector=WDT_VECTOR
@@ -283,7 +282,7 @@ __interrupt void watchdog_timer(void)
 		// Turn on vibrator
 		main_vibrate_start(void);
 		//Toggle LED's 1,2,3
-		P3OUT ^= ( BIT3 + BIT2 + BIT1 );
+		P1OUT ^= ( BIT3 + BIT2 + BIT1 );
 	}
 	else
 	{
@@ -319,14 +318,14 @@ void main_sensor_touch_1_isr(void)
 	// Turn on vibrator
 	main_vibrate_start(void);
 	// Make LED's green
-	P3OUT |= ( BIT5 );
-	P3OUT &= ~( BIT6 + BIT4 );
+	P1OUT |= ( BIT5 );
+	P1OUT &= ~( BIT6 + BIT4 );
 	// Turn on LED 1
-	P3OUT |= ( BIT1 );
+	P1OUT |= ( BIT1 );
 	// Turn signal -> on
 	main_turnsignal_is_on = 1;
 	// Turn off LED 1
-	P3OUT &= ~( BIT1 );
+	P1OUT &= ~( BIT1 );
 	// Turn off vibrator
 	main_vibrate_stop(void);
 	main_go_to_sleep(void);
@@ -339,14 +338,14 @@ void main_sensor_touch_2_isr(void)
 	// Turn on vibrator
 	main_vibrate_start(void);
 	// Make LED's red
-	P3OUT |= ( BIT4 );
-	P3OUT &= ~( BIT6 + BIT5 );
+	P1OUT |= ( BIT4 );
+	P1OUT &= ~( BIT6 + BIT5 );
 	// Turn on LED 1
-	P3OUT |= ( BIT1 );
+	P1OUT |= ( BIT1 );
 	// Turn signal -> off
 	main_turnsignal_is_on = 0;
 	// Turn off LED 1
-	P3OUT &= ~( BIT1 );
+	P1OUT &= ~( BIT1 );
 	// Turn off vibrator
 	main_vibrate_stop(void);
 	main_go_to_sleep(void);
@@ -359,14 +358,14 @@ void main_sensor_touch_3_isr(void)
 	// Turn on vibrator
 	main_vibrate_start(void);
 	// Make LED's blue
-	P3OUT |= ( BIT6 );
-	P3OUT &= ~( BIT5 + BIT4 );
+	P1OUT |= ( BIT6 );
+	P1OUT &= ~( BIT5 + BIT4 );
 	// Turn on LED 1
-	P3OUT |= ( BIT1 );
+	P1OUT |= ( BIT1 );
 	// Turn signal -> off
 	main_turnsignal_is_on = 0;
 	// Turn off LED 1
-	P3OUT &= ~( BIT1 );
+	P1OUT &= ~( BIT1 );
 	// Turn off vibrator
 	main_vibrate_stop(void);
 	main_go_to_sleep(void);
