@@ -3,7 +3,7 @@
   (general
     (links 530)
     (no_connects 18)
-    (area 71.704999 72.085999 225.348001 111.937001)
+    (area 17.221287 32.919999 260.450001 160.120001)
     (thickness 1.6)
     (drawings 119)
     (tracks 1911)
@@ -20,16 +20,16 @@
   )
 
   (layers
-    (15 F.Cu signal)
+    (15 F.Cu signal hide)
     (2 Inner_3.3V_2.5V.Cu power hide)
     (1 Inner_GND.Cu power hide)
-    (0 B.Cu signal)
+    (0 B.Cu signal hide)
     (16 B.Adhes user)
     (17 F.Adhes user)
     (18 B.Paste user)
     (19 F.Paste user)
     (20 B.SilkS user)
-    (21 F.SilkS user)
+    (21 F.SilkS user hide)
     (22 B.Mask user)
     (23 F.Mask user)
     (24 Dwgs.User user hide)
@@ -40,7 +40,7 @@
   )
 
   (setup
-    (last_trace_width 0.1524)
+    (last_trace_width 0.254)
     (user_trace_width 0.1524)
     (user_trace_width 0.508)
     (trace_clearance 0.1524)
@@ -68,9 +68,9 @@
     (pad_to_mask_clearance 0.1778)
     (solder_mask_min_width 0.1778)
     (aux_axis_origin 71.755 120.396)
-    (visible_elements 7FFF7F4F)
+    (visible_elements 7FFF7A61)
     (pcbplotparams
-      (layerselection 15761415)
+      (layerselection 3276800)
       (usegerberextensions true)
       (excludeedgelayer true)
       (linewidth 0.150000)
@@ -84,17 +84,17 @@
       (hpglpenoverlay 2)
       (psnegative false)
       (psa4output false)
-      (plotreference false)
+      (plotreference true)
       (plotvalue false)
       (plotothertext false)
-      (plotinvisibletext false)
+      (plotinvisibletext true)
       (padsonsilk false)
-      (subtractmaskfromsilk true)
+      (subtractmaskfromsilk false)
       (outputformat 1)
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory manufacturing/))
+      (outputdirectory assembly/))
   )
 
   (net 0 "")
@@ -533,12 +533,12 @@
     )
   )
 
-  (module tssop-20 (layer B.Cu) (tedit 50BDFA70) (tstamp 52ECCAFC)
+  (module tssop-20 (layer B.Cu) (tedit 538B8460) (tstamp 52ECCAFC)
     (at 90.932 83.566)
     (descr TSSOP-20)
     (path /52A0B607/52A0D84E)
     (attr smd)
-    (fp_text reference U41 (at 0 -0.508) (layer B.SilkS)
+    (fp_text reference U41 (at -0.127 -0.127) (layer B.SilkS)
       (effects (font (size 0.762 0.762) (thickness 0.1524)) (justify mirror))
     )
     (fp_text value TLC59108IPWR (at 0 0.8001) (layer B.SilkS)
@@ -739,12 +739,12 @@
     )
   )
 
-  (module tssop-20 (layer B.Cu) (tedit 50BDFA70) (tstamp 52ECCAC0)
+  (module tssop-20 (layer B.Cu) (tedit 538A7827) (tstamp 52ECCAC0)
     (at 83.947 83.566)
     (descr TSSOP-20)
     (path /52A0B607/52A0DFB5)
     (attr smd)
-    (fp_text reference U40 (at 0 -0.508) (layer B.SilkS)
+    (fp_text reference U40 (at -0.127 0) (layer B.SilkS)
       (effects (font (size 0.762 0.762) (thickness 0.1524)) (justify mirror))
     )
     (fp_text value TLC59108IPWR (at 0 0.8001) (layer B.SilkS)
@@ -842,10 +842,10 @@
     )
   )
 
-  (module TOUCH_PAD_CONN (layer F.Cu) (tedit 530927C6) (tstamp 52ECCAA2)
+  (module TOUCH_PAD_CONN (layer F.Cu) (tedit 538A772A) (tstamp 52ECCAA2)
     (at 171.45 108.966 180)
     (path /527FE989/527FF019)
-    (fp_text reference U34 (at 1.27 1.016 180) (layer F.SilkS)
+    (fp_text reference U34 (at 1.524 0 180) (layer F.SilkS)
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value TOUCHPAD (at 0 -2.48 180) (layer F.SilkS) hide
@@ -872,10 +872,10 @@
     )
   )
 
-  (module TOUCH_PAD_CONN (layer F.Cu) (tedit 530927C9) (tstamp 52ECCA94)
+  (module TOUCH_PAD_CONN (layer F.Cu) (tedit 538A76B4) (tstamp 52ECCA94)
     (at 189.738 106.426 225)
     (path /527FE989/52800354)
-    (fp_text reference U38 (at 0 -1.796051 315) (layer F.SilkS)
+    (fp_text reference U38 (at 0 -0.35921 225) (layer F.SilkS)
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value TOUCHPAD (at 0 -2.48 225) (layer F.SilkS) hide
@@ -1159,11 +1159,11 @@
     )
   )
 
-  (module SOT23 (layer F.Cu) (tedit 53091A05) (tstamp 52ECC989)
+  (module SOT23 (layer F.Cu) (tedit 538A764A) (tstamp 52ECC989)
     (at 173.736 93.091 90)
     (tags SOT23)
     (path /528029D1/528037C3)
-    (fp_text reference Q9 (at -0.127 0 180) (layer F.SilkS)
+    (fp_text reference Q9 (at 0 0.254 180) (layer F.SilkS)
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value DMN65D8L (at 0.0635 0 90) (layer F.SilkS)
@@ -1193,11 +1193,11 @@
     )
   )
 
-  (module SOT23 (layer F.Cu) (tedit 53091A00) (tstamp 52ECC97C)
+  (module SOT23 (layer F.Cu) (tedit 538A7645) (tstamp 52ECC97C)
     (at 171.069 90.551 90)
     (tags SOT23)
     (path /528029D1/528037C9)
-    (fp_text reference Q8 (at 0.127 0.127 180) (layer F.SilkS)
+    (fp_text reference Q8 (at 0 0.127 180) (layer F.SilkS)
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value DMN65D8L (at 0.0635 0 90) (layer F.SilkS)
@@ -1227,11 +1227,11 @@
     )
   )
 
-  (module SOT23 (layer F.Cu) (tedit 53091998) (tstamp 52ECC96F)
+  (module SOT23 (layer F.Cu) (tedit 538A7618) (tstamp 52ECC96F)
     (at 150.114 83.566 90)
     (tags SOT23)
     (path /528029D1/5280404C)
-    (fp_text reference Q5 (at 0.254 0 180) (layer F.SilkS)
+    (fp_text reference Q5 (at 0 0.127 180) (layer F.SilkS)
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value DMN65D8L (at 0.0635 0 90) (layer F.SilkS)
@@ -2718,11 +2718,11 @@
     )
   )
 
-  (module SOT23 (layer F.Cu) (tedit 530919CF) (tstamp 5301BB76)
+  (module SOT23 (layer F.Cu) (tedit 538A7613) (tstamp 5301BB76)
     (at 150.876 89.662 180)
     (tags SOT23)
     (path /528029D1/5301CDA5)
-    (fp_text reference Q2 (at 0 0.254 180) (layer F.SilkS)
+    (fp_text reference Q2 (at 0 0 180) (layer F.SilkS)
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value DMN65D8L (at 0.0635 0 180) (layer F.SilkS)
@@ -4105,11 +4105,11 @@
     )
   )
 
-  (module r_0603 (layer F.Cu) (tedit 53091994) (tstamp 52ECC892)
+  (module r_0603 (layer F.Cu) (tedit 538A7575) (tstamp 52ECC892)
     (at 144.78 81.915 270)
     (descr "SMT resistor, 0603")
     (path /5224C4FA/529A2E3D)
-    (fp_text reference C26 (at -0.127 0 360) (layer F.SilkS) hide
+    (fp_text reference C26 (at -0.127 0.635 360) (layer F.SilkS) hide
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value 22uF (at 0 0 270) (layer F.SilkS)
@@ -5095,11 +5095,11 @@
     )
   )
 
-  (module r_0603 (layer F.Cu) (tedit 53091996) (tstamp 52ECC937)
+  (module r_0603 (layer F.Cu) (tedit 538A7570) (tstamp 52ECC937)
     (at 146.431 81.915 90)
     (descr "SMT resistor, 0603")
     (path /5224C4FA/5225739D)
-    (fp_text reference R45 (at -1.143 0.127 180) (layer F.SilkS) hide
+    (fp_text reference R45 (at 0.127 0.889 180) (layer F.SilkS) hide
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value 700 (at 0 0 90) (layer F.SilkS)
@@ -5227,11 +5227,11 @@
     )
   )
 
-  (module r_0603 (layer F.Cu) (tedit 530916E7) (tstamp 52ECC8EC)
+  (module r_0603 (layer F.Cu) (tedit 538A75FC) (tstamp 52ECC8EC)
     (at 137.16 92.71 90)
     (descr "SMT resistor, 0603")
     (path /52A0B607/52A6B2AD)
-    (fp_text reference R41 (at 0 0 180) (layer F.SilkS) hide
+    (fp_text reference R41 (at 0 0.635 180) (layer F.SilkS) hide
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value 160k (at 0 0 90) (layer F.SilkS)
@@ -5722,7 +5722,7 @@
     )
   )
 
-  (module r_0603 (layer F.Cu) (tedit 530918AD) (tstamp 52ECC72A)
+  (module r_0603 (layer F.Cu) (tedit 538A75CC) (tstamp 52ECC72A)
     (at 131.191 73.66 270)
     (descr "SMT resistor, 0603")
     (path /52929F4D/5292B87D)
@@ -6250,11 +6250,11 @@
     )
   )
 
-  (module r_0603 (layer F.Cu) (tedit 53091A2F) (tstamp 52ECC568)
+  (module r_0603 (layer F.Cu) (tedit 538A763C) (tstamp 52ECC568)
     (at 172.72 80.772 90)
     (descr "SMT resistor, 0603")
     (path /527B1CA6/527B1EF8)
-    (fp_text reference R18 (at -0.508 0 180) (layer F.SilkS) hide
+    (fp_text reference R18 (at 0.127 0 180) (layer F.SilkS) hide
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value Nominal (at 0 0 90) (layer F.SilkS)
@@ -6316,11 +6316,11 @@
     )
   )
 
-  (module r_0603 (layer F.Cu) (tedit 53091A32) (tstamp 52ECC52C)
+  (module r_0603 (layer F.Cu) (tedit 538A7639) (tstamp 52ECC52C)
     (at 170.942 80.772 90)
     (descr "SMT resistor, 0603")
     (path /527B1CA6/527B20B2)
-    (fp_text reference R19 (at 0.762 0 180) (layer F.SilkS) hide
+    (fp_text reference R19 (at 0.127 -1.016 180) (layer F.SilkS) hide
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value Nominal (at 0 0 90) (layer F.SilkS)
@@ -6415,11 +6415,11 @@
     )
   )
 
-  (module r_0603 (layer F.Cu) (tedit 53091B03) (tstamp 52ECC4E1)
+  (module r_0603 (layer F.Cu) (tedit 538A7727) (tstamp 52ECC4E1)
     (at 172.847 108.966 90)
     (descr "SMT resistor, 0603")
     (path /527FE989/527FEBAE)
-    (fp_text reference R22 (at -2.032 0.127 180) (layer F.SilkS) hide
+    (fp_text reference R22 (at -1.016 -0.508 180) (layer F.SilkS) hide
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value 10K (at 0 0 90) (layer F.SilkS)
@@ -6547,10 +6547,10 @@
     )
   )
 
-  (module TEST_PT (layer F.Cu) (tedit 53092843) (tstamp 52ECCA7D)
+  (module TEST_PT (layer F.Cu) (tedit 538A75EF) (tstamp 52ECCA7D)
     (at 133.604 92.71)
     (path /52B1A44A)
-    (fp_text reference U5 (at -1.016 0.762) (layer F.SilkS) hide
+    (fp_text reference U5 (at -0.762 1.143) (layer F.SilkS) hide
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value TEST_PT (at 0 2.54) (layer F.SilkS) hide
@@ -6595,10 +6595,10 @@
     )
   )
 
-  (module TEST_PT (layer F.Cu) (tedit 53091926) (tstamp 52ECCA68)
+  (module TEST_PT (layer F.Cu) (tedit 538A75AE) (tstamp 52ECCA68)
     (at 132.461 74.422)
     (path /52B1ED19)
-    (fp_text reference U2 (at 2.921 0.254) (layer F.SilkS) hide
+    (fp_text reference U2 (at 1.524 0.635) (layer F.SilkS) hide
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value TEST_PT (at 0 2.54) (layer F.SilkS) hide
@@ -6611,10 +6611,10 @@
     )
   )
 
-  (module TEST_PT (layer F.Cu) (tedit 53091929) (tstamp 52ECCA61)
+  (module TEST_PT (layer F.Cu) (tedit 538A75A8) (tstamp 52ECCA61)
     (at 132.08 73.787)
     (path /52B1ED1F)
-    (fp_text reference U4 (at 1.27 0.889) (layer F.SilkS) hide
+    (fp_text reference U4 (at 1.397 0.381) (layer F.SilkS) hide
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value TEST_PT (at 0 2.54) (layer F.SilkS) hide
@@ -6691,7 +6691,7 @@
     )
   )
 
-  (module TEST_PT (layer F.Cu) (tedit 53091A5A) (tstamp 52ECCA3E)
+  (module TEST_PT (layer F.Cu) (tedit 538A7695) (tstamp 52ECCA3E)
     (at 195.961 88.9 45)
     (path /52B350AA)
     (fp_text reference U17 (at 0.127 0 45) (layer F.SilkS) hide
@@ -6803,10 +6803,10 @@
     )
   )
 
-  (module TEST_PT (layer F.Cu) (tedit 5309166B) (tstamp 52ECCA0D)
+  (module TEST_PT (layer F.Cu) (tedit 538A75BA) (tstamp 52ECCA0D)
     (at 130.302 77.851)
     (path /52B3C205)
-    (fp_text reference U10 (at 1.524 -1.651) (layer F.SilkS) hide
+    (fp_text reference U10 (at 0.381 0.508) (layer F.SilkS) hide
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value TEST_PT (at 0 2.54) (layer F.SilkS) hide
@@ -6819,10 +6819,10 @@
     )
   )
 
-  (module TEST_PT (layer F.Cu) (tedit 530918E1) (tstamp 52ECCA06)
+  (module TEST_PT (layer F.Cu) (tedit 538A75BE) (tstamp 52ECCA06)
     (at 130.302 76.835)
     (path /52B3BE57)
-    (fp_text reference U9 (at 0.762 0.635) (layer F.SilkS) hide
+    (fp_text reference U9 (at 0.254 -0.508) (layer F.SilkS) hide
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value TEST_PT (at 0 2.54) (layer F.SilkS) hide
@@ -6835,10 +6835,10 @@
     )
   )
 
-  (module TEST_PT (layer F.Cu) (tedit 5309192D) (tstamp 52ECC9FF)
+  (module TEST_PT (layer F.Cu) (tedit 538A75B1) (tstamp 52ECC9FF)
     (at 132.969 74.93)
     (path /52B38585)
-    (fp_text reference U8 (at 4.445 -0.254) (layer F.SilkS) hide
+    (fp_text reference U8 (at 1.524 1.143) (layer F.SilkS) hide
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value TEST_PT (at 0 2.54) (layer F.SilkS) hide
@@ -6950,10 +6950,10 @@
     )
   )
 
-  (module WSON_12_thinpads (layer F.Cu) (tedit 530AD942) (tstamp 52ECC22B)
+  (module WSON_12_thinpads (layer F.Cu) (tedit 538A757F) (tstamp 52ECC22B)
     (at 142.367 82.931 180)
     (path /5224C4FA/529A2E0E)
-    (fp_text reference U43 (at 0 3.81 180) (layer F.SilkS) hide
+    (fp_text reference U43 (at 0.127 0 180) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value LM3668 (at 0 -3.175 180) (layer F.SilkS)
@@ -7039,10 +7039,10 @@
     )
   )
 
-  (module QFN_16 (layer F.Cu) (tedit 530AD996) (tstamp 52ECC420)
+  (module QFN_16 (layer F.Cu) (tedit 538A75F5) (tstamp 52ECC420)
     (at 134.112 88.646)
     (path /52A0B607/52A68F9E)
-    (fp_text reference U42 (at 0 3.81) (layer F.SilkS) hide
+    (fp_text reference U42 (at 0 0) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value TPS62090 (at 0 -3.175) (layer F.SilkS)
@@ -7144,10 +7144,10 @@
     )
   )
 
-  (module CONN_2x2_MALE_RA (layer B.Cu) (tedit 530ADBB6) (tstamp 52ECC1D7)
+  (module CONN_2x2_MALE_RA (layer B.Cu) (tedit 538A7833) (tstamp 52ECC1D7)
     (at 95.631 93.726 90)
     (path /52A0B607/52F6FC7F)
-    (fp_text reference P2 (at 2.54 -5.08 90) (layer B.SilkS)
+    (fp_text reference P2 (at 1.27 -1.27 180) (layer B.SilkS)
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
     )
     (fp_text value CONN_2x2_MALE_RA (at 1.27 2.54 90) (layer B.SilkS)
@@ -7177,10 +7177,10 @@
     )
   )
 
-  (module CONN_2x2_MALE_RA (layer B.Cu) (tedit 530ADBB6) (tstamp 52ECC1E9)
+  (module CONN_2x2_MALE_RA (layer B.Cu) (tedit 538A7786) (tstamp 52ECC1E9)
     (at 95.631 75.946 90)
     (path /52A0B607/52F6FEC3)
-    (fp_text reference P3 (at 2.54 -5.08 90) (layer B.SilkS)
+    (fp_text reference P3 (at 1.27 -1.27 180) (layer B.SilkS)
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
     )
     (fp_text value CONN_2x2_MALE_RA (at 1.27 2.54 90) (layer B.SilkS)
@@ -7210,10 +7210,10 @@
     )
   )
 
-  (module CONN_6_MALE_RA (layer B.Cu) (tedit 530ADBEA) (tstamp 52ECC1FB)
+  (module CONN_6_MALE_RA (layer B.Cu) (tedit 538A784B) (tstamp 52ECC1FB)
     (at 212.598 77.216 270)
     (path /52A0B607/52ED1463)
-    (fp_text reference P1 (at 6.35 -2.54 270) (layer B.SilkS)
+    (fp_text reference P1 (at -1.524 0 360) (layer B.SilkS)
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
     )
     (fp_text value CONN_6_RA_MALE (at 6.35 2.54 270) (layer B.SilkS)
@@ -7278,10 +7278,10 @@
     )
   )
 
-  (module SMini2-F5-B (layer F.Cu) (tedit 53124359) (tstamp 53124460)
+  (module SMini2-F5-B (layer F.Cu) (tedit 538A762A) (tstamp 53124460)
     (at 161.9 80.4 90)
     (path /53124CE2/531252DD)
-    (fp_text reference D33 (at 0 1.6 90) (layer F.SilkS)
+    (fp_text reference D33 (at 0.009 2.819 180) (layer F.SilkS)
       (effects (font (size 0.762 0.762) (thickness 0.1524)))
     )
     (fp_text value DIODESCH (at 0 -4 90) (layer F.SilkS)
