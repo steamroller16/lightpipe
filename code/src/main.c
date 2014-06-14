@@ -201,14 +201,13 @@ int main_turnsignal_flash_counter = 0;
 //------------------------------------------------------------------------------
 int main(void)
 {
-	main_watchdog_init();
+	main_watchdog_init(void)
 	
-	main_debug_led_init();
-	main_debug_touch_init();
-	main_debug_vibrator_init();
-	util_i2c_init();
+	main_debug_led_init(void);
+	main_debug_touch_init(void);
+	main_debug_vibrator_init(void);
 	
-	main_go_to_sleep();
+	main_go_to_sleep(void);
 	
 	// Turn signal loop
 	{
@@ -282,14 +281,14 @@ __interrupt void watchdog_timer(void)
 	if ( main_turnsignal_flash_counter % 2 == 0 )
 	{
 		// Turn on vibrator
-		main_vibrate_start();
+		main_vibrate_start(void);
 		//Toggle LED's 1,2,3
 		P1OUT ^= ( BIT3 + BIT2 + BIT1 );
 	}
 	else
 	{
 		// Turn off vibrator
-		main_vibrate_stop();
+		main_vibrate_stop(void);
 	}
 	main_turnsignal_flash_counter++;  
 }
@@ -316,9 +315,9 @@ void main_debug_touch_init(void)
 void main_sensor_touch_1_isr(void)
 {
 	// Flick speaker
-	main_speaker_flick();
+	main_speaker_flick(void);
 	// Turn on vibrator
-	main_vibrate_start();
+	main_vibrate_start(void);
 	// Make LED's green
 	P1OUT |= ( BIT5 );
 	P1OUT &= ~( BIT6 + BIT4 );
@@ -329,16 +328,16 @@ void main_sensor_touch_1_isr(void)
 	// Turn off LED 1
 	P1OUT &= ~( BIT1 );
 	// Turn off vibrator
-	main_vibrate_stop();
-	main_go_to_sleep();
+	main_vibrate_stop(void);
+	main_go_to_sleep(void);
 }
 // (Auxillary touch pad) Turn signal -> off (red LED)
 void main_sensor_touch_2_isr(void)
 {
 	// Flick speaker
-	main_speaker_flick();
+	main_speaker_flick(void);
 	// Turn on vibrator
-	main_vibrate_start();
+	main_vibrate_start(void);
 	// Make LED's red
 	P1OUT |= ( BIT4 );
 	P1OUT &= ~( BIT6 + BIT5 );
@@ -349,16 +348,16 @@ void main_sensor_touch_2_isr(void)
 	// Turn off LED 1
 	P1OUT &= ~( BIT1 );
 	// Turn off vibrator
-	main_vibrate_stop();
-	main_go_to_sleep();
+	main_vibrate_stop(void);
+	main_go_to_sleep(void);
 }
 // (Auxillary touch pad) Turn signal -> off (blue LED)
 void main_sensor_touch_3_isr(void)
 {
 	// Flick speaker
-	main_speaker_flick();
+	main_speaker_flick(void);
 	// Turn on vibrator
-	main_vibrate_start();
+	main_vibrate_start(void);
 	// Make LED's blue
 	P1OUT |= ( BIT6 );
 	P1OUT &= ~( BIT5 + BIT4 );
@@ -369,8 +368,8 @@ void main_sensor_touch_3_isr(void)
 	// Turn off LED 1
 	P1OUT &= ~( BIT1 );
 	// Turn off vibrator
-	main_vibrate_stop();
-	main_go_to_sleep();
+	main_vibrate_stop(void);
+	main_go_to_sleep(void);
 }
 #pragma vector=PORT2_VECTOR
 __interrupt void PORT2_ISR(void)
@@ -380,19 +379,19 @@ __interrupt void PORT2_ISR(void)
 		case BIT0: break;	//P2.0 Interrupt
 		case BIT1: 			//P2.1 Interrupt
 		{					//Main touch input
-			main_sensor_touch_1_isr();
+			main_sensor_touch_1_isr(void)
 			P2IFG &= ~BIT1;
 			break;
 		}
 		case BIT2: 			//P2.2 Interrupt
 		{
-			main_sensor_touch_2_isr();
+			main_sensor_touch_2_isr(void)
 			P2IFG &= ~BIT2;
 			break;
 		}
 		case BIT3: 			//P2.3 Interrupt
 		{
-			main_sensor_touch_3_isr();
+			main_sensor_touch_3_isr(void)
 			P2IFG &= ~BIT3;
 			break;
 		}
@@ -411,7 +410,7 @@ void main_debug_vibrator_init(void)
 //P3.7/TA1CLK
 	///VIBRATOR
 	P3DIR |= BIT7;
-	main_vibrate_stop();
+	main_vibrate_stop(void);
 }
 void main_vibrate_start(void)
 {
