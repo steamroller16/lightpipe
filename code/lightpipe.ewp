@@ -97,7 +97,7 @@
         </option>
         <option>
           <name>OGChipSelectMenu</name>
-          <state>MSP430F149	MSP430F149</state>
+          <state>MSP430G2203	MSP430G2203</state>
         </option>
         <option>
           <name>GStackHeapOverride</name>
@@ -714,7 +714,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>$TOOLKIT_DIR$\CONFIG\lnk430F149.xcl</state>
+          <state>$TOOLKIT_DIR$\CONFIG\lnk430.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
