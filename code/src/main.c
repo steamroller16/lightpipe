@@ -146,8 +146,8 @@ Use vertical acceleration to synchronize flashing?
 // Includes
 //------------------------------------------------------------------------------
 #include "main.h"
-#include "util_adc.h"
-#include "util_i2c.h"
+// #include "util_adc.h"
+// #include "util_i2c.h"
 //------------------------------------------------------------------------------
 // Defines and typedefs
 //------------------------------------------------------------------------------
@@ -192,22 +192,26 @@ int main_turnsignal_flash_counter = 0;
 //------------------------------------------------------------------------------
 int main(void)
 {
-	main_watchdog_init()
+	main_watchdog_init();
 	
 	main_debug_led_init();
-	main_debug_touch_init();
-	main_debug_vibrator_init();
-	
+	// main_debug_touch_init();
+	// main_debug_vibrator_init();
+	main_speaker_init();
+			// Flick speaker
+		main_speaker_flick();
+				// Flick speaker
+		main_speaker_flick();
 	main_go_to_sleep();
 	
 	// Turn signal loop
-	{
+	// {
 		// Make sound
 		// Vibrate
 		// Toggle signal lights
 		// Toggle middle feedback light
 		// wait 1sec (or whatever)
-	}
+	// }
 }
 //--------------------------------------------
 // Setup watchdog interval timer
@@ -228,12 +232,26 @@ void main_watchdog_init(void)
 //--------------------------------------------
 void main_go_to_sleep(void)
 {
-	// Make LED's white
-	P3OUT |= ( BIT6 + BIT5 + BIT4 );
+	// // Make LED's white
+	// P3OUT |= ( BIT6 + BIT5 + BIT4 );
+	// P3OUT |= ( BIT3 + BIT2 + BIT1 );
+	
+		// // Make LED's blue
+	// P3OUT |= ( BIT6 );
+	// P3OUT &= ~( BIT5 + BIT4 );
+	
+		// // Make LED's red
+	// P3OUT |= ( BIT4 );
+	// P3OUT &= ~( BIT6 + BIT5 );
+	
+		// // Make LED's green
+	// P3OUT |= ( BIT5 );
+	// P3OUT &= ~( BIT6 + BIT4 );
 	
 	// Enter LPM3 (only ACLK active)
 	// General purpose interrupts enabled
 	_BIS_SR(LPM3_bits + GIE);
+	// while(1);
 }
 //--------------------------------------------
 //--------------------------------------------
@@ -275,9 +293,8 @@ __interrupt void watchdog_timer(void)
 		main_vibrate_start();
 		// Flick speaker
 		main_speaker_flick();
-		// Change color to green
-		P3OUT |= ( BIT5 );
-		P3OUT &= ~(BIT4 + BIT6);
+		// Change color to white
+		P3OUT |= ( BIT5 + BIT4 + BIT6);
 		//Toggle LED's 1,2,3
 		P3OUT ^= ( BIT3 + BIT2 + BIT1 );
 	}
@@ -376,19 +393,19 @@ __interrupt void PORT2_ISR(void)
 		case BIT0: break;	//P2.0 Interrupt
 		case BIT1: 			//P2.1 Interrupt
 		{					//Main touch input
-			main_sensor_touch_1_isr()
+			main_sensor_touch_1_isr();
 			P2IFG &= ~BIT1;
 			break;
 		}
 		case BIT2: 			//P2.2 Interrupt
 		{
-			main_sensor_touch_2_isr()
+			main_sensor_touch_2_isr();
 			P2IFG &= ~BIT2;
 			break;
 		}
 		case BIT3: 			//P2.3 Interrupt
 		{
-			main_sensor_touch_3_isr()
+			main_sensor_touch_3_isr();
 			P2IFG &= ~BIT3;
 			break;
 		}
