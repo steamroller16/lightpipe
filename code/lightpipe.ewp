@@ -10,11 +10,15 @@
     <debug>1</debug>
     <settings>
       <name>General</name>
-      <archiveVersion>13</archiveVersion>
+      <archiveVersion>9</archiveVersion>
       <data>
-        <version>30</version>
+        <version>28</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
+        <option>
+          <name>OGCore</name>
+          <state>0</state>
+        </option>
         <option>
           <name>ExePath</name>
           <state>Debug\Exe</state>
@@ -62,30 +66,26 @@
         </option>
         <option>
           <name>Input variant</name>
-          <version>2</version>
-          <state>0</state>
+          <version>1</version>
+          <state>2</state>
         </option>
         <option>
           <name>Input description</name>
-          <state>Automatic choice of formatter.</state>
+          <state>No specifier n, no float or long long.</state>
         </option>
         <option>
           <name>Output variant</name>
-          <version>2</version>
-          <state>0</state>
+          <version>1</version>
+          <state>2</state>
         </option>
         <option>
           <name>Output description</name>
-          <state>Automatic choice of formatter.</state>
+          <state>No specifier a or A.</state>
         </option>
         <option>
           <name>GRuntimeLibSelectSlave</name>
           <version>0</version>
           <state>1</state>
-        </option>
-        <option>
-          <name>OGCore</name>
-          <state>0</state>
         </option>
         <option>
           <name>GeneralEnableMisra</name>
@@ -153,21 +153,13 @@
           <name>NoRwDynamicInit</name>
           <state>0</state>
         </option>
-        <option>
-          <name>GRuntimeLibThreads</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>MathLib</name>
-          <state>0</state>
-        </option>
       </data>
     </settings>
     <settings>
       <name>ICC430</name>
       <archiveVersion>4</archiveVersion>
       <data>
-        <version>36</version>
+        <version>33</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -277,7 +269,7 @@
         </option>
         <option>
           <name>CCCompilerRuntimeInfo</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IDoubleSize</name>
@@ -288,16 +280,16 @@
           <state>$FILE_BNAME$.r43</state>
         </option>
         <option>
-          <name>CCLibConfigHeader</name>
-          <state>1</state>
-        </option>
-        <option>
           <name>OCCR4Utilize</name>
           <state>0</state>
         </option>
         <option>
           <name>OCCR5Utilize</name>
           <state>0</state>
+        </option>
+        <option>
+          <name>CCLibConfigHeader</name>
+          <state>1</state>
         </option>
         <option>
           <name>IExtraOptionsCheck</name>
@@ -404,11 +396,11 @@
         </option>
         <option>
           <name>CCData16</name>
-          <state>DATA16</state>
+          <state>DATA</state>
         </option>
         <option>
           <name>CCData20</name>
-          <state>DATA20</state>
+          <state>DATA</state>
         </option>
         <option>
           <name>CCIntvec</name>
@@ -431,6 +423,14 @@
           <state>DIFUNCT</state>
         </option>
         <option>
+          <name>AggressiveInlining</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AggressiveUnrolling</name>
+          <state>0</state>
+        </option>
+        <option>
           <name>IccCppInlineSemantics</name>
           <state>0</state>
         </option>
@@ -450,29 +450,13 @@
           <name>CNoRwDynamicInit</name>
           <state>1</state>
         </option>
-        <option>
-          <name>CCOptimizationNoSizeConstraints</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>ADefines</name>
-          <state></state>
-        </option>
-        <option>
-          <name>CCGuardCalls</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>OCGuardCallsSlave</name>
-          <state>0</state>
-        </option>
       </data>
     </settings>
     <settings>
       <name>A430</name>
-      <archiveVersion>5</archiveVersion>
+      <archiveVersion>4</archiveVersion>
       <data>
-        <version>14</version>
+        <version>13</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -598,7 +582,7 @@
         </option>
         <option>
           <name>OutputFile</name>
-          <state></state>
+          <state>$FILE_BNAME$.r43</state>
         </option>
         <option>
           <name>AMultibyteSupport</name>
@@ -628,10 +612,6 @@
           <name>AUserIncludes</name>
           <state></state>
         </option>
-        <option>
-          <name>ACPUTAG</name>
-          <state>1</state>
-        </option>
       </data>
     </settings>
     <settings>
@@ -659,7 +639,7 @@
       <name>XLINK</name>
       <archiveVersion>4</archiveVersion>
       <data>
-        <version>25</version>
+        <version>22</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -734,7 +714,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>$TOOLKIT_DIR$\CONFIG\lnk430G2203.xcl</state>
+          <state>$TOOLKIT_DIR$\CONFIG\lnk430.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -934,19 +914,6 @@
           <name>XLibraryHeap20</name>
           <state>1</state>
         </option>
-        <option>
-          <name>CrcUnitSize</name>
-          <version>0</version>
-          <state>0</state>
-        </option>
-        <option>
-          <name>LinkMathLib</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>IlinkThreadsSlave</name>
-          <state>1</state>
-        </option>
       </data>
     </settings>
     <settings>
@@ -971,40 +938,6 @@
       </data>
     </settings>
     <settings>
-      <name>ULP430</name>
-      <archiveVersion>1</archiveVersion>
-      <data>
-        <version>1</version>
-        <wantNonLocal>1</wantNonLocal>
-        <debug>1</debug>
-        <option>
-          <name>CUTest</name>
-          <state>-I$TOOLKIT_DIR$\inc</state>
-          <state>-@$TOOLKIT_DIR$\bin\iar.cmd</state>
-          <state>-@$PROJ_DIR$\source.txt</state>
-          <state>-@$PROJ_DIR$\include.txt</state>
-          <state>--preinclude=$PROJ_DIR$\IAR_ULPAdvisor_Defs.h</state>
-        </option>
-        <option>
-          <name>ULPRules</name>
-          <version>0</version>
-          <state>1111111111111111111</state>
-        </option>
-        <option>
-          <name>ULPEnable</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>OutputFile</name>
-          <state>$PROJ_FNAME$.ulp</state>
-        </option>
-        <option>
-          <name>ULPStatus</name>
-          <state>1</state>
-        </option>
-      </data>
-    </settings>
-    <settings>
       <name>BILINK</name>
       <archiveVersion>0</archiveVersion>
       <data/>
@@ -1018,11 +951,15 @@
     <debug>0</debug>
     <settings>
       <name>General</name>
-      <archiveVersion>13</archiveVersion>
+      <archiveVersion>9</archiveVersion>
       <data>
-        <version>30</version>
+        <version>28</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
+        <option>
+          <name>OGCore</name>
+          <state>0</state>
+        </option>
         <option>
           <name>ExePath</name>
           <state>Release\Exe</state>
@@ -1054,46 +991,42 @@
         <option>
           <name>GRuntimeLibSelect</name>
           <version>0</version>
-          <state>1</state>
+          <state>4</state>
         </option>
         <option>
           <name>RTDescription</name>
-          <state></state>
+          <state>Use the legacy C runtime library.</state>
         </option>
         <option>
           <name>RTConfigPath</name>
-          <state>xxx.h</state>
+          <state></state>
         </option>
         <option>
           <name>RTLibraryPath</name>
-          <state>xxx.r43</state>
+          <state>$TOOLKIT_DIR$\LIB\CLIB\cl430f.r43</state>
         </option>
         <option>
           <name>Input variant</name>
-          <version>2</version>
-          <state>0</state>
+          <version>1</version>
+          <state>2</state>
         </option>
         <option>
           <name>Input description</name>
-          <state></state>
+          <state>Full formatting.</state>
         </option>
         <option>
           <name>Output variant</name>
-          <version>2</version>
-          <state>0</state>
+          <version>1</version>
+          <state>2</state>
         </option>
         <option>
           <name>Output description</name>
-          <state></state>
+          <state>Full formatting.</state>
         </option>
         <option>
           <name>GRuntimeLibSelectSlave</name>
           <version>0</version>
-          <state>1</state>
-        </option>
-        <option>
-          <name>OGCore</name>
-          <state>0</state>
+          <state>4</state>
         </option>
         <option>
           <name>GeneralEnableMisra</name>
@@ -1105,7 +1038,7 @@
         </option>
         <option>
           <name>OGChipSelectMenu</name>
-          <state></state>
+          <state>MSP430F149	MSP430F149</state>
         </option>
         <option>
           <name>GStackHeapOverride</name>
@@ -1113,11 +1046,11 @@
         </option>
         <option>
           <name>GStackSize2</name>
-          <state>###Uninitialized###</state>
+          <state>80</state>
         </option>
         <option>
           <name>GHeapSize2</name>
-          <state>###Uninitialized###</state>
+          <state>80</state>
         </option>
         <option>
           <name>RadioDataModelType</name>
@@ -1161,26 +1094,18 @@
           <name>NoRwDynamicInit</name>
           <state>0</state>
         </option>
-        <option>
-          <name>GRuntimeLibThreads</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>MathLib</name>
-          <state>0</state>
-        </option>
       </data>
     </settings>
     <settings>
       <name>ICC430</name>
       <archiveVersion>4</archiveVersion>
       <data>
-        <version>36</version>
+        <version>33</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
           <name>CCDefines</name>
-          <state>NDEBUG</state>
+          <state></state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -1285,7 +1210,7 @@
         </option>
         <option>
           <name>CCCompilerRuntimeInfo</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IDoubleSize</name>
@@ -1293,11 +1218,7 @@
         </option>
         <option>
           <name>OutputFile</name>
-          <state></state>
-        </option>
-        <option>
-          <name>CCLibConfigHeader</name>
-          <state>1</state>
+          <state>$FILE_BNAME$.r43</state>
         </option>
         <option>
           <name>OCCR4Utilize</name>
@@ -1306,6 +1227,10 @@
         <option>
           <name>OCCR5Utilize</name>
           <state>0</state>
+        </option>
+        <option>
+          <name>CCLibConfigHeader</name>
+          <state>1</state>
         </option>
         <option>
           <name>IExtraOptionsCheck</name>
@@ -1366,11 +1291,11 @@
         <option>
           <name>CCOptStrategy</name>
           <version>0</version>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>CCOptLevelSlave</name>
-          <state>1</state>
+          <state>3</state>
         </option>
         <option>
           <name>CInput</name>
@@ -1412,11 +1337,11 @@
         </option>
         <option>
           <name>CCData16</name>
-          <state>DATA16</state>
+          <state>DATA</state>
         </option>
         <option>
           <name>CCData20</name>
-          <state>DATA20</state>
+          <state>DATA</state>
         </option>
         <option>
           <name>CCIntvec</name>
@@ -1439,6 +1364,14 @@
           <state>DIFUNCT</state>
         </option>
         <option>
+          <name>AggressiveInlining</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>AggressiveUnrolling</name>
+          <state>0</state>
+        </option>
+        <option>
           <name>IccCppInlineSemantics</name>
           <state>0</state>
         </option>
@@ -1458,29 +1391,13 @@
           <name>CNoRwDynamicInit</name>
           <state>1</state>
         </option>
-        <option>
-          <name>CCOptimizationNoSizeConstraints</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>ADefines</name>
-          <state>NDEBUG</state>
-        </option>
-        <option>
-          <name>CCGuardCalls</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>OCGuardCallsSlave</name>
-          <state>0</state>
-        </option>
       </data>
     </settings>
     <settings>
       <name>A430</name>
-      <archiveVersion>5</archiveVersion>
+      <archiveVersion>4</archiveVersion>
       <data>
-        <version>14</version>
+        <version>13</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -1636,10 +1553,6 @@
           <name>AUserIncludes</name>
           <state></state>
         </option>
-        <option>
-          <name>ACPUTAG</name>
-          <state>1</state>
-        </option>
       </data>
     </settings>
     <settings>
@@ -1667,7 +1580,7 @@
       <name>XLINK</name>
       <archiveVersion>4</archiveVersion>
       <data>
-        <version>25</version>
+        <version>22</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -1676,7 +1589,7 @@
         </option>
         <option>
           <name>OutputFile</name>
-          <state></state>
+          <state>templproj.txt</state>
         </option>
         <option>
           <name>OutputFormat</name>
@@ -1690,7 +1603,7 @@
         </option>
         <option>
           <name>SecondaryOutputFile</name>
-          <state></state>
+          <state>(None for the selected format)</state>
         </option>
         <option>
           <name>XDefines</name>
@@ -1742,7 +1655,7 @@
         </option>
         <option>
           <name>XclFile</name>
-          <state>lnk0t.xcl</state>
+          <state>$TOOLKIT_DIR$\CONFIG\lnk430F149.xcl</state>
         </option>
         <option>
           <name>XclFileSlave</name>
@@ -1830,7 +1743,7 @@
         </option>
         <option>
           <name>xcProgramEntryLabel</name>
-          <state></state>
+          <state>__program_start</state>
         </option>
         <option>
           <name>DebugInformation</name>
@@ -1870,7 +1783,7 @@
         </option>
         <option>
           <name>ExtraOutputFile</name>
-          <state></state>
+          <state>templproj.a43</state>
         </option>
         <option>
           <name>ExtraOutputFormat</name>
@@ -1942,19 +1855,6 @@
           <name>XLibraryHeap20</name>
           <state>1</state>
         </option>
-        <option>
-          <name>CrcUnitSize</name>
-          <version>0</version>
-          <state>0</state>
-        </option>
-        <option>
-          <name>LinkMathLib</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>IlinkThreadsSlave</name>
-          <state>1</state>
-        </option>
       </data>
     </settings>
     <settings>
@@ -1979,61 +1879,28 @@
       </data>
     </settings>
     <settings>
-      <name>ULP430</name>
-      <archiveVersion>1</archiveVersion>
-      <data>
-        <version>1</version>
-        <wantNonLocal>1</wantNonLocal>
-        <debug>0</debug>
-        <option>
-          <name>CUTest</name>
-          <state>###Uninitialized###</state>
-        </option>
-        <option>
-          <name>ULPRules</name>
-          <version>0</version>
-          <state>1111111111111111111</state>
-        </option>
-        <option>
-          <name>ULPEnable</name>
-          <state>0</state>
-        </option>
-        <option>
-          <name>OutputFile</name>
-          <state></state>
-        </option>
-        <option>
-          <name>ULPStatus</name>
-          <state>1</state>
-        </option>
-      </data>
-    </settings>
-    <settings>
       <name>BILINK</name>
       <archiveVersion>0</archiveVersion>
       <data/>
     </settings>
   </configuration>
-  <group>
-    <name>Headers</name>
-    <file>
-      <name>$PROJ_DIR$\src\isr.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\main.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\src\util_adc.h</name>
-    </file>
-  </group>
-  <file>
-    <name>$PROJ_DIR$\src\isr.c</name>
-  </file>
   <file>
     <name>$PROJ_DIR$\src\main.c</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\src\main.h</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\src\util_adc.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\util_adc.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\util_i2c.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\util_i2c.h</name>
   </file>
 </project>
 
