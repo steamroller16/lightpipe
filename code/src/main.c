@@ -137,28 +137,20 @@ Use vertical acceleration to synchronize flashing?
 
 
 // Beginning of main.c
-
-
-
 //------------------------------------------------------------------------------
 // main.c
 //------------------------------------------------------------------------------
 // Init and main loop functions (if necessary).
 //------------------------------------------------------------------------------
-
 //------------------------------------------------------------------------------
 // Includes
 //------------------------------------------------------------------------------
 #include "main.h"
 #include "util_adc.h"
 #include "util_i2c.h"
-
-
 //------------------------------------------------------------------------------
 // Defines and typedefs
 //------------------------------------------------------------------------------
-
-
 //------------------------------------------------------------------------------
 // Public global variables
 //------------------------------------------------------------------------------
@@ -185,7 +177,6 @@ int main_feedback_rear_color[3];
 int main_turnsignal_is_on = 0;
 int main_orientation[3];
 
-
 //------------------------------------------------------------------------------
 // Private global variables
 //------------------------------------------------------------------------------
@@ -201,13 +192,13 @@ int main_turnsignal_flash_counter = 0;
 //------------------------------------------------------------------------------
 int main(void)
 {
-	main_watchdog_init(void)
+	main_watchdog_init()
 	
-	main_debug_led_init(void);
-	main_debug_touch_init(void);
-	main_debug_vibrator_init(void);
+	main_debug_led_init();
+	main_debug_touch_init();
+	main_debug_vibrator_init();
 	
-	main_go_to_sleep(void);
+	main_go_to_sleep();
 	
 	// Turn signal loop
 	{
@@ -238,7 +229,7 @@ void main_watchdog_init(void)
 void main_go_to_sleep(void)
 {
 	// Make LED's white
-	P1OUT |= ( BIT6 + BIT5 + BIT4 );
+	P3OUT |= ( BIT6 + BIT5 + BIT4 );
 	
 	// Enter LPM3 (only ACLK active)
 	// General purpose interrupts enabled
@@ -271,7 +262,7 @@ void main_debug_led_init(void)
 	///B_CTRL
 	P3DIR |= BIT6;	//Set as output
 // Initialize LED's to off
-	P1OUT &= ~( BIT3 + BIT2 + BIT1 );
+	P3OUT &= ~( BIT3 + BIT2 + BIT1 );
 }
 // Watchdog Timer interrupt service routine
 #pragma vector=WDT_VECTOR
@@ -281,16 +272,22 @@ __interrupt void watchdog_timer(void)
 	if ( main_turnsignal_flash_counter % 2 == 0 )
 	{
 		// Turn on vibrator
-		main_vibrate_start(void);
+		main_vibrate_start();
+		// Flick speaker
+		main_speaker_flick();
+		// Change color to green
+		P3OUT |= ( BIT5 );
+		P3OUT &= ~(BIT4 + BIT6);
 		//Toggle LED's 1,2,3
-		P1OUT ^= ( BIT3 + BIT2 + BIT1 );
+		P3OUT ^= ( BIT3 + BIT2 + BIT1 );
 	}
 	else
 	{
 		// Turn off vibrator
-		main_vibrate_stop(void);
+		main_vibrate_stop();
 	}
-	main_turnsignal_flash_counter++;  
+	main_turnsignal_flash_counter++;
+	main_go_to_sleep();
 }
 //--------------------------------------------
 //--------------------------------------------
@@ -315,61 +312,61 @@ void main_debug_touch_init(void)
 void main_sensor_touch_1_isr(void)
 {
 	// Flick speaker
-	main_speaker_flick(void);
+	main_speaker_flick();
 	// Turn on vibrator
-	main_vibrate_start(void);
+	main_vibrate_start();
 	// Make LED's green
-	P1OUT |= ( BIT5 );
-	P1OUT &= ~( BIT6 + BIT4 );
+	P3OUT |= ( BIT5 );
+	P3OUT &= ~( BIT6 + BIT4 );
 	// Turn on LED 1
-	P1OUT |= ( BIT1 );
+	P3OUT |= ( BIT1 );
 	// Turn signal -> on
 	main_turnsignal_is_on = 1;
 	// Turn off LED 1
-	P1OUT &= ~( BIT1 );
+	P3OUT &= ~( BIT1 );
 	// Turn off vibrator
-	main_vibrate_stop(void);
-	main_go_to_sleep(void);
+	main_vibrate_stop();
+	main_go_to_sleep();
 }
 // (Auxillary touch pad) Turn signal -> off (red LED)
 void main_sensor_touch_2_isr(void)
 {
 	// Flick speaker
-	main_speaker_flick(void);
+	main_speaker_flick();
 	// Turn on vibrator
-	main_vibrate_start(void);
+	main_vibrate_start();
 	// Make LED's red
-	P1OUT |= ( BIT4 );
-	P1OUT &= ~( BIT6 + BIT5 );
+	P3OUT |= ( BIT4 );
+	P3OUT &= ~( BIT6 + BIT5 );
 	// Turn on LED 1
-	P1OUT |= ( BIT1 );
+	P3OUT |= ( BIT1 );
 	// Turn signal -> off
 	main_turnsignal_is_on = 0;
 	// Turn off LED 1
-	P1OUT &= ~( BIT1 );
+	P3OUT &= ~( BIT1 );
 	// Turn off vibrator
-	main_vibrate_stop(void);
-	main_go_to_sleep(void);
+	main_vibrate_stop();
+	main_go_to_sleep();
 }
 // (Auxillary touch pad) Turn signal -> off (blue LED)
 void main_sensor_touch_3_isr(void)
 {
 	// Flick speaker
-	main_speaker_flick(void);
+	main_speaker_flick();
 	// Turn on vibrator
-	main_vibrate_start(void);
+	main_vibrate_start();
 	// Make LED's blue
-	P1OUT |= ( BIT6 );
-	P1OUT &= ~( BIT5 + BIT4 );
+	P3OUT |= ( BIT6 );
+	P3OUT &= ~( BIT5 + BIT4 );
 	// Turn on LED 1
-	P1OUT |= ( BIT1 );
+	P3OUT |= ( BIT1 );
 	// Turn signal -> off
 	main_turnsignal_is_on = 0;
 	// Turn off LED 1
-	P1OUT &= ~( BIT1 );
+	P3OUT &= ~( BIT1 );
 	// Turn off vibrator
-	main_vibrate_stop(void);
-	main_go_to_sleep(void);
+	main_vibrate_stop();
+	main_go_to_sleep();
 }
 #pragma vector=PORT2_VECTOR
 __interrupt void PORT2_ISR(void)
@@ -379,19 +376,19 @@ __interrupt void PORT2_ISR(void)
 		case BIT0: break;	//P2.0 Interrupt
 		case BIT1: 			//P2.1 Interrupt
 		{					//Main touch input
-			main_sensor_touch_1_isr(void)
+			main_sensor_touch_1_isr()
 			P2IFG &= ~BIT1;
 			break;
 		}
 		case BIT2: 			//P2.2 Interrupt
 		{
-			main_sensor_touch_2_isr(void)
+			main_sensor_touch_2_isr()
 			P2IFG &= ~BIT2;
 			break;
 		}
 		case BIT3: 			//P2.3 Interrupt
 		{
-			main_sensor_touch_3_isr(void)
+			main_sensor_touch_3_isr()
 			P2IFG &= ~BIT3;
 			break;
 		}
@@ -410,7 +407,7 @@ void main_debug_vibrator_init(void)
 //P3.7/TA1CLK
 	///VIBRATOR
 	P3DIR |= BIT7;
-	main_vibrate_stop(void);
+	main_vibrate_stop();
 }
 void main_vibrate_start(void)
 {
