@@ -147,7 +147,7 @@ Use vertical acceleration to synchronize flashing?
 //------------------------------------------------------------------------------
 #include "main.h"
 // #include "util_adc.h"
-// #include "util_i2c.h"
+#include "util_i2c.h"
 //------------------------------------------------------------------------------
 // Defines and typedefs
 //------------------------------------------------------------------------------
@@ -177,6 +177,11 @@ int main_feedback_rear_color[3];
 int main_turnsignal_is_on = 0;
 int main_orientation[3];
 
+char *main_led_i2c_tx_ptr;
+char main_led_i2c_tx[];
+int main_led_i2c_tx_legth;
+
+
 //------------------------------------------------------------------------------
 // Private global variables
 //------------------------------------------------------------------------------
@@ -199,6 +204,10 @@ int main(void)
 	// main_debug_vibrator_init();
 	main_speaker_init();
 	main_turnsignal_is_on = 1;
+	
+	util_i2c_init();
+	main_debug_led_i2c();
+	
 	main_go_to_sleep();
 	
 	// Turn signal loop
@@ -209,6 +218,48 @@ int main(void)
 		// Toggle middle feedback light
 		// wait 1sec (or whatever)
 	// }
+}
+//--------------------------------------------
+// LED I2C test
+//--------------------------------------------
+void main_debug_led_i2c(void)
+{
+	// static char *main_led_i2c_tx_ptr;
+	// static char main_led_i2c_tx;
+	// unsigned int main_led_i2c_tx_legth;
+
+	// Set slave address
+	UCB0I2CSA = I2C_SLAVE_ADR_LED_FRONT_SIGNAL;
+
+	main_led_i2c_tx_ptr = main_led_i2c_tx;
+
+	main_led_i2c_tx_legth = 3;
+	*main_led_i2c_tx_ptr = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
+	*main_led_i2c_tx_ptr++ = 0xAA;
+	*main_led_i2c_tx_ptr++ = 0xAA;
+	
+	util_i2c_write(
+		main_led_i2c_tx_ptr,
+		main_led_i2c_tx_legth,
+		I2C_SEND_STOP
+	);
+	
+	*main_led_i2c_tx_legth = 9;
+	*main_led_i2c_tx_ptr = (I2C_TLC59108_CMD_AUTO_INC_PWM + I2C_TLC59108_REG_PWM0);
+	*main_led_i2c_tx_ptr++ = 0xFF;
+	*main_led_i2c_tx_ptr++ = 0xFF;
+	*main_led_i2c_tx_ptr++ = 0xFF;
+	*main_led_i2c_tx_ptr++ = 0xFF;
+	*main_led_i2c_tx_ptr++ = 0xFF;
+	*main_led_i2c_tx_ptr++ = 0xFF;
+	*main_led_i2c_tx_ptr++ = 0xFF;
+	*main_led_i2c_tx_ptr++ = 0xFF;
+	
+	util_i2c_write(
+		main_led_i2c_tx_ptr,
+		main_led_i2c_tx_legth,
+		I2C_SEND_STOP
+	);
 }
 //--------------------------------------------
 // Setup watchdog interval timer

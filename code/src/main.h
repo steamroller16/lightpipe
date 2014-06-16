@@ -47,6 +47,7 @@ void main_watchdog_resume(void);
 
 void main_debug_led_init(void);
 void main_debug_touch_init(void);
+void main_debug_led_i2c(void);
 
 void main_go_to_sleep(void);
 
