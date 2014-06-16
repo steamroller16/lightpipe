@@ -216,15 +216,36 @@ int main(void)
 void main_watchdog_init(void)
 {
 	// Stop the watch dog timer
-	// WDTCTL = WDTPW + WDTHOLD;
+	WDTCTL = WDTPW + WDTHOLD;
 	
-	// Set watch dog timer to interval timer @ 250ms
-	// Source ACLK @ 32768 Hz
-	// WDTCTL = WDT_ADLY_250;
-	WDTCTL = WDT_ADLY_1000;
+	// Set LFXT1 (ACLK) to Low-frequency mode
+	BCSCTL1 &= ~XTS;
+	// ACLK /8
+	BCSCTL1 |= DIVA_3;
+	// Set LFXT1 source to VLO (~12kHz)
+	BCSCTL3 = LFXT1S_2;
+	
+	// Set watch dog timer to interval timer
+	// Source ACLK @ 12 kHz
+	WDTCTL = WDT_ADLY_16; // 512 counts per interval
+	// WDTCTL = WDT_ADLY_250; // 8192 counts per interval
+	// WDTCTL = WDT_ADLY_1000; // 32768 counts per interval
+	
 	// Enable watchdog timer interval interrupt
 	IE1 |= WDTIE;
 }
+void main_watchdog_pause(void)
+{
+	// Stop the watch dog timer
+	WDTCTL = WDTPW + WDTHOLD;
+}
+void main_watchdog_resume(void)
+{
+	// Set watch dog timer to interval timer
+	// Source ACLK @ 12 kHz
+	WDTCTL = WDT_ADLY_16; // 512 counts per interval
+}
+
 //--------------------------------------------
 // Put the processor to sleep
 //--------------------------------------------
@@ -279,6 +300,9 @@ void main_debug_led_init(void)
 	P3DIR |= BIT6;	//Set as output
 // Initialize LED's to off
 	P3OUT &= ~( BIT3 + BIT2 + BIT1 );
+// Make all debug LED's red
+	P3OUT |= ( BIT4);
+	P3OUT &= ~( BIT5 + BIT6 );
 }
 // Watchdog Timer interrupt service routine
 #pragma vector=WDT_VECTOR
@@ -286,24 +310,27 @@ __interrupt void watchdog_timer(void)
 {
 	if( main_turnsignal_is_on )
 	{
-		// Toggle signal lights every 500ms (250ms * 2)
-		if ( (main_turnsignal_flash_counter & 0x01) | (main_turnsignal_flash_counter & 0x80))
+		// Flick speaker
+		main_speaker_flick();
+		
+		// Toggle signal lights
+		if (main_turnsignal_flash_counter == 0)
 		{
 			// Turn on vibrator
 			main_vibrate_start();
-			// Flick speaker
-			main_speaker_flick();
-			// Change color to white
-			P3OUT |= ( BIT5 + BIT4 + BIT6);
-			//Toggle LED's 1,2,3
-			P3OUT ^= ( BIT3 + BIT2 + BIT1 );
+			// Turn on LED 1
+			P3OUT |= ( BIT1 );
+			main_turnsignal_flash_counter++;
 		}
 		else
 		{
 			// Turn off vibrator
 			main_vibrate_stop();
+			
+			// Turn off LED 1
+			P3OUT &= ~( BIT1 );
+			main_turnsignal_flash_counter = 0;
 		}
-		main_turnsignal_flash_counter++;
 	}
 	main_go_to_sleep();
 }
@@ -342,59 +369,101 @@ void main_debug_touch_init(void)
 // (Main touch pad) Turn signal -> on (green LED)
 void main_sensor_touch_1_isr(void)
 {
+	if( main_turnsignal_is_on == 0 )
+	{
+		// Turn signal -> on
+		main_turnsignal_is_on = 1;
+		main_turnsignal_flash_counter = 0;
+
+		// Trigger WDT interrupt
+		IFG1 |= WDTIFG;
+		// Reset WDT counter
+		WDTCTL |= WDTCNTCL;
+		// Start watchdog interval timer
+		main_watchdog_resume();
+	}
+	// Turn on LED 2
+	P3OUT |= ( BIT2 );
 	// Flick speaker
 	main_speaker_flick();
 	// Turn on vibrator
 	main_vibrate_start();
-	// Make LED's green
-	P3OUT |= ( BIT5 );
-	P3OUT &= ~( BIT6 + BIT4 );
-	// Turn on LED 1
-	P3OUT |= ( BIT1 );
-	// Turn signal -> on
-	main_turnsignal_is_on = 1;
-	// Turn off LED 1
-	P3OUT &= ~( BIT1 );
+	
+	// // Make LED's green
+	// P3OUT |= ( BIT5 );
+	// P3OUT &= ~( BIT6 + BIT4 );
+
 	// Turn off vibrator
 	main_vibrate_stop();
+	// Turn off LED 2
+	P3OUT &= ~( BIT2 );
 }
 // (Auxillary touch pad) Turn signal -> off (red LED)
 void main_sensor_touch_2_isr(void)
 {
+	if( main_turnsignal_is_on )
+	{
+		// Stop the watch dog timer
+		main_watchdog_pause();
+		
+		// Turn off LED 1
+		P3OUT &= ~( BIT1 );
+		
+		// Turn signal -> off
+		main_turnsignal_is_on = 0;
+	}
+	// Turn on LED 3
+	P3OUT |= ( BIT3 );
 	// Flick speaker
 	main_speaker_flick();
 	// Turn on vibrator
 	main_vibrate_start();
-	// Make LED's red
-	P3OUT |= ( BIT4 );
-	P3OUT &= ~( BIT6 + BIT5 );
-	// Turn on LED 1
-	P3OUT |= ( BIT1 );
-	// Turn signal -> off
-	main_turnsignal_is_on = 0;
-	// Turn off LED 1
-	P3OUT &= ~( BIT1 );
+	
+	// // Make LED's red
+	// P3OUT |= ( BIT4 );
+	// P3OUT &= ~( BIT6 + BIT5 );
+	
+
 	// Turn off vibrator
 	main_vibrate_stop();
+	// Turn off LED 3
+	P3OUT &= ~( BIT3 );
 }
 // (Auxillary touch pad) Turn signal -> off (blue LED)
 void main_sensor_touch_3_isr(void)
 {
+	if( main_turnsignal_is_on )
+	{
+		// Stop the watch dog timer
+		main_watchdog_pause();
+		
+		// Turn off LED 1
+		P3OUT &= ~( BIT1 );
+		
+		// Turn signal -> off
+		main_turnsignal_is_on = 0;
+	}
+	// Turn on LED 3
+	P3OUT |= ( BIT3 );
+	
+	// Turn on LED 3
+	P3OUT |= ( BIT3 );
+	
 	// Flick speaker
 	main_speaker_flick();
+	
 	// Turn on vibrator
 	main_vibrate_start();
-	// Make LED's blue
-	P3OUT |= ( BIT6 );
-	P3OUT &= ~( BIT5 + BIT4 );
-	// Turn on LED 1
-	P3OUT |= ( BIT1 );
-	// Turn signal -> off
-	main_turnsignal_is_on = 0;
-	// Turn off LED 1
-	P3OUT &= ~( BIT1 );
+	
+	// // Make LED's blue
+	// P3OUT |= ( BIT6 );
+	// P3OUT &= ~( BIT5 + BIT4 );
+
 	// Turn off vibrator
 	main_vibrate_stop();
+	
+	// Turn off LED 3
+	P3OUT &= ~( BIT3 );
 }
 #pragma vector=PORT2_VECTOR
 __interrupt void PORT2_ISR(void)

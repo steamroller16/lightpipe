@@ -42,6 +42,8 @@ extern int main_orientation[3];
 // Public function prototypes
 //------------------------------------------------------------------------------
 void main_watchdog_init(void);
+void main_watchdog_pause(void);
+void main_watchdog_resume(void);
 
 void main_debug_led_init(void);
 void main_debug_touch_init(void);
