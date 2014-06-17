@@ -225,39 +225,37 @@ int main(void)
 void main_debug_led_i2c(void)
 {
 	// static char *main_led_i2c_tx_ptr;
-	// static char main_led_i2c_tx;
-	// unsigned int main_led_i2c_tx_legnth;
+	unsigned char main_led_i2c_tx_buffer[9];
+	int main_led_i2c_tx_length;
 
 	// Set slave address
 	UCB0I2CSA = I2C_SLAVE_ADR_LED_FRONT_SIGNAL;
 
-	// main_led_i2c_tx_ptr = main_led_i2c_tx;
-
-	main_led_i2c_tx_legnth = 3;
-	main_led_i2c_tx[1] = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
-	main_led_i2c_tx[2] = 0xAA;
-	main_led_i2c_tx[3] = 0xAA;
+	main_led_i2c_tx_length = 3;
+	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
+	main_led_i2c_tx_buffer[1] = 0xAA;
+	main_led_i2c_tx_buffer[2] = 0xAA;
 	
 	util_i2c_write(
-		&main_led_i2c_tx,
-		main_led_i2c_tx_legnth,
+		main_led_i2c_tx_buffer,
+		main_led_i2c_tx_length,
 		I2C_SEND_STOP
 	);
 	
-	*main_led_i2c_tx_legnth = 9;
-	*main_led_i2c_tx_ptr = (I2C_TLC59108_CMD_AUTO_INC_PWM + I2C_TLC59108_REG_PWM0);
-	*main_led_i2c_tx_ptr++ = 0xFF;
-	*main_led_i2c_tx_ptr++ = 0xFF;
-	*main_led_i2c_tx_ptr++ = 0xFF;
-	*main_led_i2c_tx_ptr++ = 0xFF;
-	*main_led_i2c_tx_ptr++ = 0xFF;
-	*main_led_i2c_tx_ptr++ = 0xFF;
-	*main_led_i2c_tx_ptr++ = 0xFF;
-	*main_led_i2c_tx_ptr++ = 0xFF;
+	main_led_i2c_tx_length = 9;
+	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_PWM + I2C_TLC59108_REG_PWM0);
+	main_led_i2c_tx_buffer[1] = 0xFF;
+	main_led_i2c_tx_buffer[2] = 0xFF;
+	main_led_i2c_tx_buffer[3] = 0xFF;
+	main_led_i2c_tx_buffer[4] = 0xFF;
+	main_led_i2c_tx_buffer[5] = 0xFF;
+	main_led_i2c_tx_buffer[6] = 0xFF;
+	main_led_i2c_tx_buffer[7] = 0xFF;
+	main_led_i2c_tx_buffer[8] = 0xFF;
 	
 	util_i2c_write(
 		main_led_i2c_tx_ptr,
-		main_led_i2c_tx_legth,
+		main_led_i2c_tx_length,
 		I2C_SEND_STOP
 	);
 }

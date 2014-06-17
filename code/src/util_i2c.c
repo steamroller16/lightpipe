@@ -48,7 +48,7 @@ void util_i2c_init(void)
 	IE2 |= UCB0RXIE;
 }
 
-void util_i2c_write(char *msg, int length, int send_stop_condition)
+void util_i2c_write(unsigned char *msg, int length, int send_stop_condition)
 {
 	TxByteCounter = 0;
 	TxByteLength = length;
@@ -62,7 +62,7 @@ void util_i2c_write(char *msg, int length, int send_stop_condition)
 	__bis_SR_register(CPUOFF + GIE);
 }
 
-void util_i2c_read(char *msg)
+void util_i2c_read(unsigned char *msg)
 {
 	// I2C RX, start condition
 	UCB0CTL1 &= ~UCTR;
