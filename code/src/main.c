@@ -177,9 +177,9 @@ int main_feedback_rear_color[3];
 int main_turnsignal_is_on = 0;
 int main_orientation[3];
 
-char *main_led_i2c_tx_ptr;
+// char *main_led_i2c_tx_ptr;
 char main_led_i2c_tx[];
-int main_led_i2c_tx_legth;
+int main_led_i2c_tx_legnth;
 
 
 //------------------------------------------------------------------------------
@@ -226,25 +226,25 @@ void main_debug_led_i2c(void)
 {
 	// static char *main_led_i2c_tx_ptr;
 	// static char main_led_i2c_tx;
-	// unsigned int main_led_i2c_tx_legth;
+	// unsigned int main_led_i2c_tx_legnth;
 
 	// Set slave address
 	UCB0I2CSA = I2C_SLAVE_ADR_LED_FRONT_SIGNAL;
 
-	main_led_i2c_tx_ptr = main_led_i2c_tx;
+	// main_led_i2c_tx_ptr = main_led_i2c_tx;
 
-	main_led_i2c_tx_legth = 3;
-	*main_led_i2c_tx_ptr = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
-	*main_led_i2c_tx_ptr++ = 0xAA;
-	*main_led_i2c_tx_ptr++ = 0xAA;
+	main_led_i2c_tx_legnth = 3;
+	main_led_i2c_tx[1] = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
+	main_led_i2c_tx[2] = 0xAA;
+	main_led_i2c_tx[3] = 0xAA;
 	
 	util_i2c_write(
-		main_led_i2c_tx_ptr,
-		main_led_i2c_tx_legth,
+		&main_led_i2c_tx,
+		main_led_i2c_tx_legnth,
 		I2C_SEND_STOP
 	);
 	
-	*main_led_i2c_tx_legth = 9;
+	*main_led_i2c_tx_legnth = 9;
 	*main_led_i2c_tx_ptr = (I2C_TLC59108_CMD_AUTO_INC_PWM + I2C_TLC59108_REG_PWM0);
 	*main_led_i2c_tx_ptr++ = 0xFF;
 	*main_led_i2c_tx_ptr++ = 0xFF;
