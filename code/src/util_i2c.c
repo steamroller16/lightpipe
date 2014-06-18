@@ -3,6 +3,7 @@
 //-----------------------------------------------------------
 // Utility: Functions to use I2C communication bus
 //-----------------------------------------------------------
+#include "util_i2c.h"
 // ----------------------------------------------------------
 // Private Global Variables
 // ----------------------------------------------------------
@@ -39,6 +40,9 @@ void util_i2c_init(void)
 
 	// TODO: may need to init smclk somewhere else
 
+	// TEST: SET SLAVE ADR HERE
+	UCB0I2CSA = I2C_SLAVE_ADR_LED_FRONT_SIGNAL;
+	
 	// Clear SW reset, resume operation
 	UCB0CTL1 &= ~UCSWRST;
 
@@ -53,7 +57,7 @@ void util_i2c_set_slave_adr(unsigned int slave_adr)
 	UCB0I2CSA = slave_adr;
 }
 
-void util_i2c_write(unsigned char *msg, int length, int send_stop_condition)
+void util_i2c_write(char *msg, int length, int send_stop_condition)
 {
 	TxByteCounter = 0;
 	TxByteLength = length;
@@ -67,7 +71,7 @@ void util_i2c_write(unsigned char *msg, int length, int send_stop_condition)
 	__bis_SR_register(CPUOFF + GIE);
 }
 
-void util_i2c_read(unsigned char *msg)
+void util_i2c_read(char *msg)
 {
 	// I2C RX, start condition
 	UCB0CTL1 &= ~UCTR;

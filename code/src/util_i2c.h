@@ -52,8 +52,8 @@
 //-----------------------------------------------------------
 void util_i2c_init(void);
 void util_i2c_set_slave_adr(unsigned int slave_adr);
-void util_i2c_write(unsigned char *msg, int length, int send_stop_condition);
-void util_i2c_read(unsigned char *msg);
+void util_i2c_write(char *msg, int length, int send_stop_condition);
+void util_i2c_read(char *msg);
 //-----------------------------------------------------------
 //-----------------------------------------------------------
 #endif

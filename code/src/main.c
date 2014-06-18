@@ -225,11 +225,11 @@ int main(void)
 void main_debug_led_i2c(void)
 {
 	// static char *main_led_i2c_tx_ptr;
-	unsigned char main_led_i2c_tx_buffer[9];
+	char main_led_i2c_tx_buffer[9];
 	int main_led_i2c_tx_length;
 
 	// Set slave address
-	UCB0I2CSA = I2C_SLAVE_ADR_LED_FRONT_SIGNAL;
+	// UCB0I2CSA = I2C_SLAVE_ADR_LED_FRONT_SIGNAL;
 
 	main_led_i2c_tx_length = 3;
 	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
