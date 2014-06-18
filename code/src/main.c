@@ -254,7 +254,7 @@ void main_debug_led_i2c(void)
 	main_led_i2c_tx_buffer[8] = 0xFF;
 	
 	util_i2c_write(
-		main_led_i2c_tx_ptr,
+		main_led_i2c_tx_buffer,
 		main_led_i2c_tx_length,
 		I2C_SEND_STOP
 	);

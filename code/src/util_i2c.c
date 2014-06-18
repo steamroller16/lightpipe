@@ -48,6 +48,11 @@ void util_i2c_init(void)
 	IE2 |= UCB0RXIE;
 }
 
+void util_i2c_set_slave_adr(unsigned int slave_adr)
+{
+	UCB0I2CSA = slave_adr;
+}
+
 void util_i2c_write(unsigned char *msg, int length, int send_stop_condition)
 {
 	TxByteCounter = 0;
