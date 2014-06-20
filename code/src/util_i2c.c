@@ -29,8 +29,9 @@ void util_i2c_init(void)
 
 	// ----Set UCB0CTL1----
 	// Set UCB0 to use SMCLK -> UCSSEL_2
+	// Set UCB0 to transmitter mode -> UCTR
 	// Maintain software reset -> UCSWRST
-	UCB0CTL1 = UCSSEL_2 + UCSWRST;
+	UCB0CTL1 = UCSSEL_2 + UCTR + UCSWRST;
 
 	// ----Set UCB0BRO, UCB0BR1----
 	// Set UCB0 clock divider to 12
@@ -42,14 +43,21 @@ void util_i2c_init(void)
 
 	// TEST: SET SLAVE ADR HERE
 	UCB0I2CSA = I2C_SLAVE_ADR_LED_FRONT_SIGNAL;
-	
+	// UCB0I2CSA = I2C_SLAVE_ADR_LED_REAR_SIGNAL;
+	// UCB0I2CSA = I2C_SLAVE_ADR_LED_REAR_BRAKE;
 	// Clear SW reset, resume operation
 	UCB0CTL1 &= ~UCSWRST;
 
 	// May or may not need this
 	// ----Set IE2----
 	// Enable USCI_B0 receive interrupt
-	IE2 |= UCB0RXIE;
+	// IE2 |= UCB0RXIE;
+	
+	// Enable not-acknowledge interrupt
+	UCB0I2CIE |= UCNACKIE;
+	
+	// Enable USCI_B0 transmit interrupt
+	IE2 |= UCB0TXIE;
 }
 
 void util_i2c_set_slave_adr(unsigned int slave_adr)
