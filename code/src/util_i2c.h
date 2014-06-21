@@ -46,6 +46,65 @@
 #define I2C_TLC59108_REG_IREF			0x12 // R/W IREF configuration
 #define I2C_TLC59108_REG_EFLAG			0x13 // R Error flag
 
+// Minimum Syste 
+// #define I2C_BQ24190_SYS_MIN_0			0x00
+// #define I2C_BQ24190_SYS_MIN_1			0x00
+// #define I2C_BQ24190_SYS_MIN_2			0x00
+
+// Input Source Control Register REG00
+#define I2C_BQ24190_EN_HIZ				0x80 //  0 – Disable, 1 – Enable Default: Disable (0)
+// Input Voltage Limit (Offset 3.88V, Range: 3.88V-5.08V)
+	// Default:
+		// bq24190/bq24192/bq24193: 4.36V (0110)
+		// bq24192i: 4.44V (0111)
+#define I2C_BQ24190_VINDPM_3			0x40 // 640mV
+#define I2C_BQ24190_VINDPM_2			0x20 // 320mV
+#define I2C_BQ24190_VINDPM_1			0x10 // 160mV
+#define I2C_BQ24190_VINDPM_0			0x08 // 80mV
+// Input Current Limit (Actual input current limit is the lower of I2C and ILIM)
+	// 000 – 100mA
+	// 001 – 150mA
+	// 010 – 500mA
+	// 011 – 900mA
+	// 100 – 1.2A
+	// 101 – 1.5A
+	// 110 – 2A
+	// 111 – 3A
+	// Default SDP:
+		// 100mA (000)(OTG pin=0)
+		// 500mA (010)(OTG pin=1)
+	// Default DCP/CDP:
+		// bq24190/bq24192I: 1.5A (101)
+		// bq24192/bq24193: 3A (111)
+#define I2C_BQ24190_IINLIM_2			0x04
+#define I2C_BQ24190_IINLIM_1			0x02
+#define I2C_BQ24190_IINLIM_0			0x01
+
+#define I2C_BQ24190_IINLIM_100mA		0x00
+#define I2C_BQ24190_IINLIM_150mA		0x01
+#define I2C_BQ24190_IINLIM_500mA		0x02
+#define I2C_BQ24190_IINLIM_900mA		0x03
+#define I2C_BQ24190_IINLIM_1200mA		0x04
+#define I2C_BQ24190_IINLIM_1500mA		0x05
+#define I2C_BQ24190_IINLIM_2000mA		0x06
+#define I2C_BQ24190_IINLIM_3000mA		0x07
+
+// 0x80
+// 0x40
+// 0x20
+// 0x10
+// 0x08
+// 0x04
+// 0x02
+// 0x01
+
+
+// #define I2C_BQ24190_SYS_MIN_3V			0x00
+// #define I2C_BQ24190_SYS_MIN_3V			0x00
+// #define I2C_BQ24190_SYS_MIN_3V			0x00
+// #define I2C_BQ24190_SYS_MIN_3V			0x00
+// #define I2C_BQ24190_SYS_MIN_3V			0x00
+
 #define I2C_SEND_STOP					1
 #define I2C_CONTINUOUS					0
 //-----------------------------------------------------------
