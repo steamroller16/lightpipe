@@ -42,7 +42,8 @@ void util_i2c_init(void)
 	// TODO: may need to init smclk somewhere else
 
 	// TEST: SET SLAVE ADR HERE
-	UCB0I2CSA = I2C_SLAVE_ADR_LED_FRONT_SIGNAL;
+	UCB0I2CSA = I2C_SLAVE_ADR_LED_ALL_CALL;
+	// UCB0I2CSA = I2C_SLAVE_ADR_LED_FRONT_SIGNAL;
 	// UCB0I2CSA = I2C_SLAVE_ADR_LED_REAR_SIGNAL;
 	// UCB0I2CSA = I2C_SLAVE_ADR_LED_REAR_BRAKE;
 	// Clear SW reset, resume operation
