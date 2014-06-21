@@ -42,9 +42,9 @@ void util_i2c_init(void)
 	// TODO: may need to init smclk somewhere else
 
 	// TEST: SET SLAVE ADR HERE
-	UCB0I2CSA = I2C_SLAVE_ADR_LED_ALL_CALL;
+	// UCB0I2CSA = I2C_SLAVE_ADR_LED_ALL_CALL;
 	// UCB0I2CSA = I2C_SLAVE_ADR_LED_FRONT_SIGNAL;
-	// UCB0I2CSA = I2C_SLAVE_ADR_LED_REAR_SIGNAL;
+	UCB0I2CSA = I2C_SLAVE_ADR_LED_REAR_SIGNAL;
 	// UCB0I2CSA = I2C_SLAVE_ADR_LED_REAR_BRAKE;
 	// Clear SW reset, resume operation
 	UCB0CTL1 &= ~UCSWRST;
@@ -63,7 +63,12 @@ void util_i2c_init(void)
 
 void util_i2c_set_slave_adr(unsigned int slave_adr)
 {
+	// Perform UCB0 software reset
+	UCB0CTL1 |= UCSWRST;
+	// Change slave address
 	UCB0I2CSA = slave_adr;
+	// Clear SW reset, resume operation
+	UCB0CTL1 &= ~UCSWRST;
 }
 
 void util_i2c_write(char *msg, int length, int send_stop_condition)
