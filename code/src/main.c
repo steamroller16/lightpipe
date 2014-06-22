@@ -181,10 +181,11 @@ int main_orientation[3];
 char main_led_i2c_tx[];
 int main_led_i2c_tx_legnth;
 
-	char main_led_i2c_tx_buffer[9];
-	char main_led_i2c_rx_buffer[1];
-	int main_led_i2c_tx_length;
+char main_led_i2c_tx_buffer[9];
+int main_led_i2c_tx_length;
 
+char main_led_i2c_rx_buffer[1];
+int main_led_i2c_tx_length;
 //------------------------------------------------------------------------------
 // Private global variables
 //------------------------------------------------------------------------------
@@ -201,15 +202,23 @@ unsigned int main_turnsignal_flash_counter = 0;
 int main(void)
 {
 	main_watchdog_init();
-	
+	// main_watchdog_pause();
 	main_debug_led_init();
 	main_debug_touch_init();
-	// main_debug_vibrator_init();
+	main_debug_vibrator_init();
 	main_speaker_init();
 	main_turnsignal_is_on = 1;
 	
-	util_i2c_init();
-	main_debug_led_i2c();
+	// util_i2c_init();
+	// main_debug_led_i2c();
+	
+	// main_debug_i2c_front_signal_on();
+	// main_go_to_sleep();
+	// main_debug_i2c_front_signal_off();
+	// main_debug_i2c_front_signal_on();
+	// main_debug_i2c_front_signal_off();
+	// main_debug_i2c_front_signal_on();
+	// main_debug_i2c_front_signal_off();
 	
 	main_go_to_sleep();
 	
@@ -243,8 +252,10 @@ void main_debug_led_i2c(void)
 	// UCB0I2CSA = I2C_SLAVE_ADR_LED_FRONT_SIGNAL;
 	// UCB0I2CSA = I2C_SLAVE_ADR_LED_REAR_SIGNAL;
 	// UCB0I2CSA = I2C_SLAVE_ADR_LED_REAR_BRAKE;
-
 	
+	// util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_ALL_CALL);
+	
+	// Enable oscillators for all LED drivers
 	main_led_i2c_tx_length = 2;
 	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_NONE + I2C_TLC59108_REG_MODE1);
 	// main_led_i2c_tx_buffer[1] = 0xAA;
@@ -257,19 +268,24 @@ void main_debug_led_i2c(void)
 		I2C_SEND_STOP
 	);
 	
-	main_led_i2c_tx_length = 3;
-	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
-	// main_led_i2c_tx_buffer[1] = 0xAA;
-	// main_led_i2c_tx_buffer[2] = 0xAA;
-	main_led_i2c_tx_buffer[1] = 0x55;
-	main_led_i2c_tx_buffer[2] = 0x55;
+	// util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_FRONT_SIGNAL);
 	
-	util_i2c_write(
-		main_led_i2c_tx_buffer,
-		main_led_i2c_tx_length,
-		I2C_SEND_STOP
-	);
+	// main_led_i2c_tx_length = 3;
+	// main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
+	// // main_led_i2c_tx_buffer[1] = 0xAA;
+	// // main_led_i2c_tx_buffer[2] = 0xAA;
+	// main_led_i2c_tx_buffer[1] = 0x55;
+	// main_led_i2c_tx_buffer[2] = 0x55;
 	
+	// util_i2c_write(
+		// main_led_i2c_tx_buffer,
+		// main_led_i2c_tx_length,
+		// I2C_SEND_STOP
+	// );
+	
+	
+/*
+	// Read LEDOUT0 from current device
 	main_led_i2c_tx_length = 2;
 	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_NONE + I2C_TLC59108_REG_LEDOUT0);
 	util_i2c_write(
@@ -277,12 +293,13 @@ void main_debug_led_i2c(void)
 		main_led_i2c_tx_length,
 		I2C_CONTINUOUS
 	);
-	
+	main_led_i2c_rx_length = 1;
 	util_i2c_read(
-		main_led_i2c_rx_buffer
+		main_led_i2c_rx_buffer,
+		main_led_i2c_rx_length
 	);
-	UCB0CTL1 |= UCTXSTP;
 	
+	// Read LEDOUT1 from current device
 	main_led_i2c_tx_length = 2;
 	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_NONE + I2C_TLC59108_REG_LEDOUT1);
 	util_i2c_write(
@@ -290,24 +307,27 @@ void main_debug_led_i2c(void)
 		main_led_i2c_tx_length,
 		I2C_CONTINUOUS
 	);
-	
+	main_led_i2c_rx_length = 1;
 	util_i2c_read(
-		main_led_i2c_rx_buffer
+		main_led_i2c_rx_buffer,
+		main_led_i2c_rx_length
 	);
-	UCB0CTL1 |= UCTXSTP;
 	
-		main_led_i2c_tx_length = 2;
+	// Read EFLAG from current device
+	main_led_i2c_tx_length = 2;
 	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_NONE + I2C_TLC59108_REG_EFLAG);
 	util_i2c_write(
 		main_led_i2c_tx_buffer,
 		main_led_i2c_tx_length,
 		I2C_CONTINUOUS
 	);
-	
+	main_led_i2c_rx_length = 1;
 	util_i2c_read(
-		main_led_i2c_rx_buffer
+		main_led_i2c_rx_buffer,
+		main_led_i2c_rx_length
 	);
-	UCB0CTL1 |= UCTXSTP;
+*/
+	
 	// UCB0I2CSA = I2C_SLAVE_ADR_LED_REAR_SIGNAL;
 	
 	// main_led_i2c_tx_length = 3;
@@ -496,7 +516,7 @@ __interrupt void watchdog_timer(void)
 			main_vibrate_start();
 			// Turn on LED 1
 			P3OUT |= ( BIT1 );
-			main_debug_i2c_front_signal_on();
+			// main_debug_i2c_front_signal_on();
 			main_turnsignal_flash_counter++;
 		}
 		else
@@ -506,7 +526,7 @@ __interrupt void watchdog_timer(void)
 			
 			// Turn off LED 1
 			P3OUT &= ~( BIT1 );
-			main_debug_i2c_front_signal_off();
+			// main_debug_i2c_front_signal_off();
 			main_turnsignal_flash_counter = 0;
 		}
 	}
@@ -559,6 +579,18 @@ void main_sensor_touch_1_isr(void)
 		WDTCTL |= WDTCNTCL;
 		// Start watchdog interval timer
 		main_watchdog_resume();
+	}
+	else
+	{
+		// Stop the watch dog timer
+		main_watchdog_pause();
+		
+		// Turn off LED 1
+		P3OUT &= ~( BIT1 );
+		// main_debug_i2c_front_signal_off();
+		
+		// Turn signal -> off
+		main_turnsignal_is_on = 0;
 	}
 	// Turn on LED 2
 	P3OUT |= ( BIT2 );
