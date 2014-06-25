@@ -42,7 +42,7 @@ UCB0BR1 = 0;
 // TODO: may need to init smclk somewhere else
 
 // TEST: SET SLAVE ADR HERE
-UCB0I2CSA = I2C_SLAVE_ADR_LED_ALL_CALL;
+// UCB0I2CSA = I2C_SLAVE_ADR_LED_ALL_CALL;
 // UCB0I2CSA = I2C_SLAVE_ADR_LED_FRONT_SIGNAL;
 // UCB0I2CSA = I2C_SLAVE_ADR_LED_REAR_SIGNAL;
 // UCB0I2CSA = I2C_SLAVE_ADR_LED_REAR_BRAKE;
@@ -63,7 +63,15 @@ IE2 |= UCB0TXIE;
 
 void util_i2c_set_slave_adr(unsigned int slave_adr)
 {
+// Make sure any pending commands are finished before resetting I2C
+while(UCB0CTL1 & UCTXSTP);
+
+UCB0CTL1 |= UCSWRST;
 UCB0I2CSA = slave_adr;
+UCB0CTL1 &= ~UCSWRST;
+
+// IFG2 &= ~UCB0TXIFG;
+IE2 |= UCB0TXIE;
 }
 
 void util_i2c_write(char *msg, int length, int send_stop_condition)
@@ -104,7 +112,7 @@ while (UCB0CTL1 & UCTXSTT);
 
 #pragma vector = USCIAB0TX_VECTOR
 __interrupt void USCIAB0TX_ISR(void)
-{
+/*{
 	// Check TX byte counter
 	if (TxByteCounter < TxByteLength)
 	{
@@ -128,33 +136,35 @@ __interrupt void USCIAB0TX_ISR(void)
 		// Exit LPM0
 		__bic_SR_register_on_exit(CPUOFF);
 	}
-}
-/*{
-	if(TxByteLength > 0)
+}*/
+{
+	// Check TX byte counter to see if at end of transmission
+	if (TxByteCounter >= TxByteLength)
+	{
+		// Check to see if stop cond. requested
+		if (TxSendStopCondition)
+		{
+			// Send I2C stop condition
+			UCB0CTL1 |= UCTXSTP;
+		}
+		
+		// Clear TX interrupt (since TXBUF never written to)
+		IFG2 &= ~UCB0TXIFG;
+		
+		// Exit LPM0
+		__bic_SR_register_on_exit(CPUOFF);
+	}
+	else
 	{
 		// Load TX buffer
 		UCB0TXBUF = TxBytePointer[TxByteCounter];
-
+		
+		//UCB0TXIFG automatically reset after writing to TX buffer
+		
 		// Increment TX byte counter
 		TxByteCounter++;
-
-		// Check TX byte counter
-		if (TxByteCounter == TxByteLength)
-		{
-			if (TxSendStopCondition)
-			{
-				// I2C stop condition
-				UCB0CTL1 |= UCTXSTP;
-			}
-			
-			IFG2 &= ~UCB0TXIFG;
-			
-			// Exit LPM0
-			__bic_SR_register_on_exit(CPUOFF);
-		}
 	}
-	//UCB0TXIFG automatically reset after writing to TX buffer
-}*/
+}
 
 
 

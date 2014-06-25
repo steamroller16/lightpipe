@@ -29,7 +29,7 @@ int main(void)
 	util_i2c_init();
 	
 	// Set I2C slave address
-	// util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_ALL_CALL);
+	util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_ALL_CALL);
 	// util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_FRONT_SIGNAL);
 	// util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_REAR_SIGNAL);
 	// util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_REAR_BRAKE);
@@ -83,18 +83,18 @@ int main(void)
 		main_led_i2c_tx_length,
 		I2C_SEND_STOP
 	);
+	
+	util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_REAR_BRAKE);
+	
 	while(1)
 	{
 		// -----------------------------------------------------
 		// -----------------------------------------------------
-		// Generate command array to be sent (turn off LED Driver Oscillators)
-		// main_led_i2c_tx_length = 2;
-		// main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_NONE + I2C_TLC59108_REG_MODE1);
-		// main_led_i2c_tx_buffer[1] = 0x11;
-			main_led_i2c_tx_length = 3;
-	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
-	main_led_i2c_tx_buffer[1] = 0x00;
-	main_led_i2c_tx_buffer[2] = 0x00;
+		// Generate command array to be sent (turn off LED outputs)
+		main_led_i2c_tx_length = 3;
+		main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
+		main_led_i2c_tx_buffer[1] = 0x00;
+		main_led_i2c_tx_buffer[2] = 0x00;
 		
 		// Transmit command array to device
 		util_i2c_write(
@@ -103,16 +103,13 @@ int main(void)
 			I2C_SEND_STOP
 		);
 		__delay_cycles(300000);
-			// -----------------------------------------------------
 		// -----------------------------------------------------
-		// Generate command array to be sent (turn off LED Driver Oscillators)
-		// main_led_i2c_tx_length = 2;
-		// main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_NONE + I2C_TLC59108_REG_MODE1);
-		// main_led_i2c_tx_buffer[1] = 0x01;
-			main_led_i2c_tx_length = 3;
-	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
-	main_led_i2c_tx_buffer[1] = 0xAA;
-	main_led_i2c_tx_buffer[2] = 0xAA;
+		// -----------------------------------------------------
+		// Generate command array to be sent (turn on LED outputs PWM Mode)
+		main_led_i2c_tx_length = 3;
+		main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
+		main_led_i2c_tx_buffer[1] = 0xAA;
+		main_led_i2c_tx_buffer[2] = 0xAA;
 		
 		// Transmit command array to device
 		util_i2c_write(
@@ -125,6 +122,7 @@ int main(void)
 		// -----------------------------------------------------
 	// -----------------------------------------------------
 	// Generate command array to be sent (turn off LED Driver Oscillators)
+	// -> Works but causes glitches if this is toggled
 	main_led_i2c_tx_length = 2;
 	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_NONE + I2C_TLC59108_REG_MODE1);
 	main_led_i2c_tx_buffer[1] = 0x11;
@@ -164,20 +162,3 @@ int main(void)
 		I2C_SEND_STOP
 	);
 }
-
-// main_led_i2c_tx_length = 9;
-// main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_PWM + I2C_TLC59108_REG_PWM0);
-// main_led_i2c_tx_buffer[1] = 0xFF;
-// main_led_i2c_tx_buffer[2] = 0xFF;
-// main_led_i2c_tx_buffer[3] = 0xFF;
-// main_led_i2c_tx_buffer[4] = 0xFF;
-// main_led_i2c_tx_buffer[5] = 0xFF;
-// main_led_i2c_tx_buffer[6] = 0xFF;
-// main_led_i2c_tx_buffer[7] = 0xFF;
-// main_led_i2c_tx_buffer[8] = 0xFF;
-
-// util_i2c_write(
-	// main_led_i2c_tx_buffer,
-	// main_led_i2c_tx_length,
-	// I2C_SEND_STOP
-// );
