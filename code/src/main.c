@@ -86,6 +86,22 @@ int main(void)
 	
 	util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_REAR_BRAKE);
 	
+	main_led_i2c_tx_length = 1;
+	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
+	// Transmit command array to device
+	util_i2c_write(
+		main_led_i2c_tx_buffer,
+		main_led_i2c_tx_length,
+		I2C_CONTINUOUS
+	);
+	main_led_i2c_rx_length = 2;
+	// Transmit command array to device
+	util_i2c_read(
+		main_led_i2c_rx_buffer,
+		main_led_i2c_rx_length
+	);
+	
+	
 	while(1)
 	{
 		// -----------------------------------------------------
