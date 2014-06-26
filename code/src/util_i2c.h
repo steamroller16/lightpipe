@@ -107,6 +107,9 @@
 
 #define I2C_SEND_STOP					1
 #define I2C_CONTINUOUS					0
+
+#define I2C_RECEIVER_MODE				0
+#define I2C_TRANSMITTER_MODE			1
 //-----------------------------------------------------------
 // Function prototypes
 //-----------------------------------------------------------

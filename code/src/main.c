@@ -4,9 +4,10 @@
 char main_led_i2c_tx_buffer[9];
 int main_led_i2c_tx_length;
 
-char main_led_i2c_rx_buffer[2];
+char main_led_i2c_rx_buffer[9];
 int main_led_i2c_rx_length;
 
+char dummy;
 int main(void)
 {
 	// Stop the watch dog timer
@@ -33,7 +34,45 @@ int main(void)
 	// util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_FRONT_SIGNAL);
 	// util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_REAR_SIGNAL);
 	// util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_REAR_BRAKE);
-	
+	// -----------------------------------------------------
+	util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_REAR_BRAKE);
+	// Generate command array to be sent (Read MODE1 of rear brake (should be 0x11))
+	main_led_i2c_tx_length = 1;
+	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_NONE + I2C_TLC59108_REG_MODE1);
+	// Transmit command array to device
+	util_i2c_write(
+		main_led_i2c_tx_buffer,
+		main_led_i2c_tx_length,
+		I2C_CONTINUOUS
+	);
+	main_led_i2c_rx_length = 1;
+	// Transmit command array to device
+	util_i2c_read(
+		main_led_i2c_rx_buffer,
+		main_led_i2c_rx_length
+	);
+	dummy = main_led_i2c_rx_buffer[0];
+	__no_operation();
+	// -----------------------------------------------------
+	// Generate command array to be sent (Read GRPPWM of rear brake (should be 0xFF))
+	main_led_i2c_tx_length = 1;
+	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_NONE + I2C_TLC59108_REG_GRPPWM);
+	// Transmit command array to device
+	util_i2c_write(
+		main_led_i2c_tx_buffer,
+		main_led_i2c_tx_length,
+		I2C_CONTINUOUS
+	);
+	main_led_i2c_rx_length = 1;
+	// Transmit command array to device
+	util_i2c_read(
+		main_led_i2c_rx_buffer,
+		main_led_i2c_rx_length
+	);
+	dummy = main_led_i2c_rx_buffer[0];
+	__no_operation();
+	// -----------------------------------------------------
+	// -----------------------------------------------------
 	// -----------------------------------------------------
 	// Generate command array to be sent (turn on LED Driver Oscillators)
 	main_led_i2c_tx_length = 2;
@@ -85,21 +124,45 @@ int main(void)
 	);
 	
 	util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_REAR_BRAKE);
-	
+	// -----------------------------------------------------
+	// Generate command array to be sent (Read All PWM of rear brake (should be 9 of 0x05))
 	main_led_i2c_tx_length = 1;
-	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
+	main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_PWM0);
 	// Transmit command array to device
 	util_i2c_write(
 		main_led_i2c_tx_buffer,
 		main_led_i2c_tx_length,
 		I2C_CONTINUOUS
 	);
-	main_led_i2c_rx_length = 2;
+	main_led_i2c_rx_length = 8;
 	// Transmit command array to device
 	util_i2c_read(
 		main_led_i2c_rx_buffer,
 		main_led_i2c_rx_length
 	);
+	dummy = main_led_i2c_rx_buffer[0];
+	__no_operation();
+	// -----------------------------------------------------
+	
+	
+	
+	
+	
+	
+	// main_led_i2c_tx_length = 1;
+	// main_led_i2c_tx_buffer[0] = (I2C_TLC59108_CMD_AUTO_INC_ALL + I2C_TLC59108_REG_LEDOUT0);
+	// // Transmit command array to device
+	// util_i2c_write(
+		// main_led_i2c_tx_buffer,
+		// main_led_i2c_tx_length,
+		// I2C_CONTINUOUS
+	// );
+	// main_led_i2c_rx_length = 2;
+	// // Transmit command array to device
+	// util_i2c_read(
+		// main_led_i2c_rx_buffer,
+		// main_led_i2c_rx_length
+	// );
 	
 	
 	while(1)
