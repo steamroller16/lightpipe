@@ -1,5 +1,6 @@
 #include "main.h"
 #include "util_i2c.h"
+#include "chip_BQ24190.h"
 
 char main_led_i2c_tx_buffer[9];
 int main_led_i2c_tx_length;
@@ -29,6 +30,20 @@ int main(void)
 	// Initialize I2C settings
 	util_i2c_init();
 	
+	chip_BQ24190_init();
+	
+	while(1)
+	{
+		dummy = chip_BQ24190_fault_check();
+		__no_operation();
+		
+		dummy = chip_BQ24190_status_check();
+		__no_operation();
+		
+		dummy = chip_BQ24190_part_check();
+		__no_operation();
+	}
+
 	// Set I2C slave address
 	util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_ALL_CALL);
 	// util_i2c_set_slave_adr(I2C_SLAVE_ADR_LED_FRONT_SIGNAL);

@@ -12,17 +12,17 @@
 //-----------------------------------------------------------
 #define I2C_SLAVE_ADR_BATT_CHARGER 				0x6B // This device's I2C Address
 
-#define I2C_BQ24190_REG_INPUT_SRC_CTRL			0x6B // Input Source Control
-#define I2C_BQ24190_REG_PWR_ON_CONFIG			0x6C // Power-On Configuration
-#define I2C_BQ24190_REG_CHG_CUR_CTRL			0x6D // Charge Current Control
-#define I2C_BQ24190_REG_PRECHG_TERM_CUR_CTRL	0x6E // Pre-Charge/Termination Current Control
-#define I2C_BQ24190_REG_CHG_V_CTRL				0x6F // Charge Voltage Control
-#define I2C_BQ24190_REG_CHG_TERM_TIMER_CTRL		0x70 // Charge Termination/Timer Control
-#define I2C_BQ24190_REG_THERM_CTRL				0x71 // IR Compensation / Thermal Regulation Control
-#define I2C_BQ24190_REG_MISC_CTRL				0x72 // Misc Operation Control
-#define I2C_BQ24190_REG_SYS_STATUS				0x73 // System Status
-#define I2C_BQ24190_REG_FAULT					0x74 // System Fault
-#define I2C_BQ24190_REG_VENDOR_PN_REV			0x75 // Vendor / Part / Revision Status
+#define I2C_BQ24190_REG_INPUT_SRC_CTRL			0x00 // Input Source Control
+#define I2C_BQ24190_REG_PWR_ON_CONFIG			0x01 // Power-On Configuration
+#define I2C_BQ24190_REG_CHG_CUR_CTRL			0x02 // Charge Current Control
+#define I2C_BQ24190_REG_PRECHG_TERM_CUR_CTRL	0x03 // Pre-Charge/Termination Current Control
+#define I2C_BQ24190_REG_CHG_V_CTRL				0x04 // Charge Voltage Control
+#define I2C_BQ24190_REG_CHG_TERM_TIMER_CTRL		0x05 // Charge Termination/Timer Control
+#define I2C_BQ24190_REG_THERM_CTRL				0x06 // IR Compensation / Thermal Regulation Control
+#define I2C_BQ24190_REG_MISC_CTRL				0x07 // Misc Operation Control
+#define I2C_BQ24190_REG_SYS_STATUS				0x08 // System Status
+#define I2C_BQ24190_REG_FAULT					0x09 // System Fault
+#define I2C_BQ24190_REG_VENDOR_PN_REV			0x0A // Vendor / Part / Revision Status
 
 // Input Source Control
 #define I2C_BQ24190_EN_HIZ				0x80
@@ -92,7 +92,7 @@
 #define I2C_BQ24190_VCLAMP_1			0x08
 #define I2C_BQ24190_VCLAMP_0			0x04
 #define I2C_BQ24190_TREG_1				0x02
-#define I2C_BQ24190_TREG_1				0x01
+#define I2C_BQ24190_TREG_0				0x01
 
 // Misc Operation Control
 #define I2C_BQ24190_DPDM_EN				0x80
@@ -138,6 +138,9 @@
 // Function prototypes
 //-----------------------------------------------------------
 void chip_BQ24190_init(void);
+char chip_BQ24190_fault_check(void);
+char chip_BQ24190_status_check(void);
+char chip_BQ24190_part_check(void);
 //-----------------------------------------------------------
 //-----------------------------------------------------------
 #endif
