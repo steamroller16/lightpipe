@@ -1891,6 +1891,12 @@
     <name>$PROJ_DIR$\src\chip_BQ24190.h</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\src\chip_TLC59108.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\chip_TLC59108.h</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\src\main.c</name>
   </file>
   <file>

@@ -67,16 +67,19 @@ IE2 |= UCB0TXIE;
 
 void util_i2c_set_slave_adr(unsigned int slave_adr)
 {
-// Make sure any pending commands are finished before resetting I2C
-while(UCB0CTL1 & UCTXSTP);
+	if(UCB0I2CSA != slave_adr)
+	{
+		// Make sure any pending commands are finished before resetting I2C
+		while(UCB0CTL1 & UCTXSTP);
 
-UCB0CTL1 |= UCSWRST;
-UCB0I2CSA = slave_adr;
-UCB0CTL1 &= ~UCSWRST;
+		UCB0CTL1 |= UCSWRST;
+		UCB0I2CSA = slave_adr;
+		UCB0CTL1 &= ~UCSWRST;
 
-// IFG2 &= ~UCB0TXIFG;
-IE2 |= UCB0TXIE;
-IE2 |= UCB0RXIE;
+		// IFG2 &= ~UCB0TXIFG;
+		IE2 |= UCB0TXIE;
+		IE2 |= UCB0RXIE;
+	}
 }
 
 void util_i2c_write(char *msg, int length, int send_stop_condition)
