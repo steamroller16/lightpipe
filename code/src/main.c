@@ -51,16 +51,16 @@ int main(void)
 	// }
 	// ---------------------
 	// ---------------------
-	// DEMO: LED Flash over I2C Demo
+	// DEMO: LED Flash over I2C
 	// ---------------------
 	chip_TLC59108_init();
 	chip_TLC59108_update_pwm( 0x05 , I2C_SLAVE_ADR_LED_FRONT_SIGNAL );
 	while(1)
 	{
-		chip_TLC59108_led_disable(I2C_SLAVE_ADR_LED_FRONT_SIGNAL);
+		chip_TLC59108_led_disable( I2C_SLAVE_ADR_LED_FRONT_SIGNAL );
 		__delay_cycles(300000);
 
-		chip_TLC59108_led_enable_pwm(I2C_SLAVE_ADR_LED_FRONT_SIGNAL);
+		chip_TLC59108_led_enable_pwm( I2C_SLAVE_ADR_LED_FRONT_SIGNAL );
 		__delay_cycles(300000);
 	}
 	// ---------------------
