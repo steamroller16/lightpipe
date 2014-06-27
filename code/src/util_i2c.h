@@ -10,11 +10,6 @@
 //-----------------------------------------------------------
 // # Defines
 //-----------------------------------------------------------
-// TODO: these should go in the respective modules (like LED,
-// adc, etc.)
-
-#define I2C_SLAVE_ADR_ACCEL 			0x4C
-
 #define I2C_SEND_STOP					1
 #define I2C_CONTINUOUS					0
 
