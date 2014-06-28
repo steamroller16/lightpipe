@@ -22,26 +22,41 @@ void chip_MMA7660FC_init(void)
 // Set Address to the Accelerometer
 util_i2c_set_slave_adr(I2C_SLAVE_ADR_ACCEL);
 // -----------------------
+// Successful tap detection causes an interrupt
+// Exiting Auto-sleep causes an interrupt
+// Set automatic interrupt to fire after every accel update of XOUT, YOUT, ZOUT
+// -----------------------
+// Set mode to active
+// Auto-wake: Enabled
+// Auto-sleep: Enabled
+// -----------------------
+chip_MMA7660FC_tx_length = 2;
+chip_MMA7660FC_tx_buffer[0] = (I2C_MMA7660FC_REG_INTSU);
+chip_MMA7660FC_tx_buffer[1] = (
+I2C_MMA7660FC_PDINT +
+I2C_MMA7660FC_ASINT +
+I2C_MMA7660FC_GINT
+);
+chip_MMA7660FC_tx_buffer[2] = (
+I2C_MMA7660FC_MODE +
+I2C_MMA7660FC_AWE + 
+I2C_MMA7660FC_ASE
+);
+// Transmit command array to device
+util_i2c_write(
+	chip_MMA7660FC_tx_buffer,
+	chip_MMA7660FC_tx_length,
+	I2C_SEND_STOP
+);
+
+// -----------------------
 // Set value sleep counter must count to in order to wake up
+// -----------------------
 
 
 
 
 
-
-
-// // -----------------------
-// // Turn on all LED Driver Oscillators
-// // LED All Call: enabled
-// chip_MMA7660FC_tx_length = 2;
-// chip_MMA7660FC_tx_buffer[0] = (I2C_MMA7660FC_CMD_AUTO_INC_NONE + I2C_MMA7660FC_REG_MODE1);
-// chip_MMA7660FC_tx_buffer[1] = 0x01;
-// // Transmit command array to device
-// util_i2c_write(
-	// chip_MMA7660FC_tx_buffer,
-	// chip_MMA7660FC_tx_length,
-	// I2C_SEND_STOP
-// );
 // // -----------------------
 // // Set all LED's control mode to PWM
 // chip_MMA7660FC_tx_length = 3;
@@ -73,10 +88,10 @@ util_i2c_set_slave_adr(I2C_SLAVE_ADR_ACCEL);
 	// I2C_SEND_STOP
 // );
 }
-void chip_MMA7660FC_read( char *result, int length, unsigned int device_adr, unsigned int device_reg )
+void chip_MMA7660FC_read( char *result, int length, unsigned int device_reg )
 {
 // Set Address to the Accelerometer
-util_i2c_set_slave_adr(device_adr);
+util_i2c_set_slave_adr(I2C_SLAVE_ADR_ACCEL);
 // -----------------------
 chip_MMA7660FC_tx_length = 1;
 chip_MMA7660FC_tx_buffer[0] = device_reg;
@@ -86,12 +101,12 @@ util_i2c_write(
 	chip_MMA7660FC_tx_length,
 	I2C_CONTINUOUS
 );
-chip_BQ24190_rx_length = length;
-chip_BQ24190_rx_buffer = result;
+chip_MMA7660FC_rx_length = length;
+chip_MMA7660FC_rx_buffer = result;
 // Transmit command array to device
 util_i2c_read(
-	chip_BQ24190_rx_buffer,
-	chip_BQ24190_rx_length
+	chip_MMA7660FC_rx_buffer,
+	chip_MMA7660FC_rx_length
 );
 }
 //-----------------------------------------------------------
