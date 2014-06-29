@@ -140,6 +140,7 @@
 //-----------------------------------------------------------
 void chip_MMA7660FC_init(void);
 void chip_MMA7660FC_read( char *result, int length, unsigned int device_reg );
+void chip_MMA7660FC_isr(char *xyz_accel);
 //-----------------------------------------------------------
 //-----------------------------------------------------------
 #endif

@@ -87,5 +87,32 @@ util_i2c_read(
 	chip_MMA7660FC_rx_length
 );
 }
+void chip_MMA7660FC_isr(char *xyz_accel)
+{
+char sample_rate_reg;
+// Check to see if the device is sleeping
+chip_MMA7660FC_read(
+	sample_rate_reg,
+	1,
+	I2C_MMA7660FC_REG_SRST
+);
+// If active mode:
+if (sample_rate_reg & I2C_MMA7660FC_AMSRS)
+{
+	chip_MMA7660FC_read(
+		xyz_accel,
+		3,
+		I2C_MMA7660FC_REG_XOUT
+	);
+}
+// Else device just entered sleep mode
+else
+{
+	// !!!SYSTEM HIBERNATE!!! 
+	xyz_accel[0]=0;
+	xyz_accel[1]=0;
+	xyz_accel[2]=0;
+}
+}
 //-----------------------------------------------------------
 //-----------------------------------------------------------
