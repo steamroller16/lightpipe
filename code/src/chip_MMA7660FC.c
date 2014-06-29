@@ -90,7 +90,7 @@ util_i2c_read(
 void chip_MMA7660FC_isr(char *xyz_accel)
 {
 char sample_rate_reg;
-// Check to see if the device is sleeping
+// Check to see if the accelerometer is sleeping
 chip_MMA7660FC_read(
 	sample_rate_reg,
 	1,
@@ -113,6 +113,7 @@ else
 	xyz_accel[1]=0;
 	xyz_accel[2]=0;
 }
+__bic_SR_register_on_exit(LPM3_bits);
 }
 //-----------------------------------------------------------
 //-----------------------------------------------------------
