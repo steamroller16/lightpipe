@@ -8,8 +8,7 @@
 // Includes
 //------------------------------------------------------------------------------
 #include "main.h"
-#include "isr.h"
-
+#include "util_adc.h"
 
 //------------------------------------------------------------------------------
 // Defines and typedefs
@@ -116,7 +115,7 @@ int util_adc_read(int channel)
 	util_adc_start(channel);
 	
 	#ifdef UTIL_ADC_USE_INTERRUPT
-	main_go_to_sleep();
+	__bis_SR_register(LPM3_bits + GIE);
 	#else
 	util_adc_wait();
 	#endif
@@ -126,20 +125,18 @@ int util_adc_read(int channel)
 }
 
 #ifdef UTIL_ADC_USE_INTERRUPT
-static void util_adc_isr(void)
+
+#pragma vector=ADC10_VECTOR
+__interrupt void ADC10_ISR(void)
 {
-	// Turn CPU back on when exiting
-	main_wake_up();
+	__bic_SR_register_on_exit(LPM3_bits);
 }
+
 #else
 static void util_adc_wait(void)
 {
-	// Check to see if ADC is busy
-	if (ADC10CTL1 & ADC10BUSY)
-	{
-		// Wait for conversion to finish
-		while (ADC10CTL1 & ADC10BUSY);
-	}
+	// Wait for conversion to finish
+	while (ADC10CTL1 & ADC10BUSY);
 }
 #endif
 

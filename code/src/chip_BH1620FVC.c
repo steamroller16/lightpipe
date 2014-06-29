@@ -3,24 +3,47 @@
 // chip_BH1620FVC.c
 //-----------------------------------------------------------
 #include "chip_BH1620FVC.h"
-
+// #include "pins.h"
+#include "util_adc.h"
 //-----------------------------------------------------------
 // Make sure GPIO pins have been set to output mode before using
 //-----------------------------------------------------------
 
 void chip_BH1620FVC_init(void)
 {
-// -----------------------
-// I2C_MMA7660FC_REG_SPCNT
-// BIT3 + BIT2 + BIT1
-// CTRL OUTPUTS ON PINS 2.6 and 2.7
-
-// P2OUT &= ~( BIT3 + BIT2 + BIT1 );
+	chip_BH1620FVC_write(CHIP_BH1620FVC_HIGH_GAIN);
 }
-char chip_BH1620FVC_off(void)
+void chip_BH1620FVC_write(char state)
 {
-
-};
-
+	switch (state)
+	{
+		case CHIP_BH1620FVC_SHUTDOWN:
+		{
+			P2OUT &= ~( BIT6 + BIT7 );
+		}
+		case CHIP_BH1620FVC_HIGH_GAIN:
+		{
+			P2OUT |= ( BIT6 );
+			P2OUT &= ~( BIT7 );
+		}
+		case CHIP_BH1620FVC_MED_GAIN:
+		{
+			P2OUT &= ~( BIT6 );
+			P2OUT |= ( BIT7 );
+		}
+		case CHIP_BH1620FVC_LOW_GAIN:
+		{
+			P2OUT |= ( BIT6 + BIT7 );
+		}
+		case default:
+		{
+			break;
+		}
+	}
+}
+int chip_BH1620FVC_read(void)
+{
+	return util_adc_read(CHIP_BH1620FVC_ADC_CHANNEL);
+}
 //-----------------------------------------------------------
 //-----------------------------------------------------------
