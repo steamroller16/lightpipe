@@ -10,18 +10,13 @@
 //-----------------------------------------------------------
 // # Defines
 //-----------------------------------------------------------
-#define CHIP_BH1620FVC_SHUTDOWN 				0x00
-#define CHIP_BH1620FVC_HIGH_GAIN 				0x01
-#define CHIP_BH1620FVC_MED_GAIN 				0x02
-#define CHIP_BH1620FVC_LOW_GAIN 				0x03
 
-#define CHIP_BH1620FVC_ADC_CHANNEL				3
 //-----------------------------------------------------------
 // Function prototypes
 //-----------------------------------------------------------
-void chip_BH1620FVC_init(void);
-void chip_BH1620FVC_write(char state);
-int chip_BH1620FVC_read(void);
+void util_uart_init(void);
+void util_uart_write(char *msg, int length);
+void util_uart_read(char *msg, int length);
 //-----------------------------------------------------------
 //-----------------------------------------------------------
 #endif

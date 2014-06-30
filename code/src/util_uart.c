@@ -7,30 +7,24 @@
 // ---------------------------------------------------------
 // Private Global Variables
 // ---------------------------------------------------------
-// static int TxByteCounter;
-// static int TxByteLength;
-// static char *TxBytePointer;
-// static int TxSendStopCondition;
+static int TxByteCounter;
+static int TxByteLength;
+static char *TxBytePointer;
 
-// static int RxByteCounter;
-// static int RxByteLength;
-// static char *RxBytePointer;
+static int RxByteCounter;
+static int RxByteLength;
+static char *RxBytePointer;
 
 // ----------------------------------------------------------
 // Function Implementations
 // ----------------------------------------------------------
 void util_uart_init(void)
 {
-set ucswrst
-initialize all usci registers with ucswrst
-configure ports
-clear ucswrst
-enable interrupts
-// ----Set UCB0CTL1----
+// ----Set UCA0CTL1----
 // Perform UCA0 software reset
 UCA0CTL1 |= UCSWRST;
 
-// ----Set UCB0CTL0----
+// ----Set UCA0CTL0----
 // UCPEN: No parity (default)
 // UCPAR: N/A (default)
 // UCMSB: LSB first (default)
@@ -39,143 +33,109 @@ UCA0CTL1 |= UCSWRST;
 // UCMODEx: UART mode (default)
 // UCSYNC: Asynchronous mode (default)
 
-// ----Set UCB0CTL1----
+// ----Set DCO Options----
+// Clear RSELx bits if set
+BCSCTL1 &= ~(0x0F);
+// Set RSELx bits to calibrated 1MHz
+BCSCTL1 |= CALBC1_1MHZ;
+// Set DCOx and MODx to calibrated 1MHz
+DCOCTL = CALDCO_1MHZ;
+
+// ----Set UCA0CTL1----
 // ~1.1MHz on SMCLK
 // 12kHz VLOCLK on ACLK
 // UCSSELx: SMCLK (10 or 11)
 // UCRXEIE: Reject bad chars (default)
-// UCBRKIE: Recieved break chars no interrupt (default)
+// UCBRKIE: Received break chars no interrupt (default)
 // UCDORM: Not dormant (default)
 // UCTXADDR: Next frame is data (default)
 // UCSWRST: Maintain software reset
+UCA0CTL1 |= UCSSEL_2;
 
-  UCA0CTL1 |= UCSSEL_1;                     // CLK = ACLK
-  UCA0BR0 = 0x03;                           // 32kHz/9600 = 3.41
-  UCA0BR1 = 0x00;                           //
-  UCA0MCTL = UCBRS1 + UCBRS0;               // Modulation UCBRSx = 3
-  UCA0CTL1 &= ~UCSWRST;                     // **Initialize USCI state machine**
-  IE2 |= UCA0RXIE;                          // Enable USCI_A0 RX interrupt
+// ----Set UCA0 Clock---- 
+// 115200 baud from 1MHz
+// UCA0BR0,1 set prescaler
+// UCA0MCTL sets modulator
+UCA0BR0 = 8;
+UCA0BR1 = 0;
+UCA0MCTL = UCBRS2 + UCBRS0;
+
+// ----Set UCA0CTL1----
+// Release UART comms
+UCA0CTL1 &= ~UCSWRST;
+
+// Disable UART TX and RX interrupts
+IE2 &= ~(UCA0RXIE + UCA0TXIE);
 }
-// ----Set UCB0CTL1----
-// Perform UCB0 software reset
-UCB0CTL1 |= UCSWRST;
 
-// ----Set UCB0CTL0----
-// Set UCB0 to be Master -> UCMST
-// Set UCB0 to use I2C protocol -> UCMODE_3
-// Set UCB0 to use synchronous comm -> UCSYNC
-UCB0CTL0 = UCMST + UCMODE_3 + UCSYNC;
-
-// ----Set UCB0CTL1----
-// Set UCB0 to use SMCLK -> UCSSEL_2
-// Set UCB0 to transmitter mode -> UCTR
-// Maintain software reset -> UCSWRST
-UCB0CTL1 = UCSSEL_2 + UCTR + UCSWRST;
-
-// ----Set UCB0BRO, UCB0BR1----
-// Set UCB0 clock divider to 12
-// fSCL = SMCLK/12 = ~100kHz
-UCB0BR0 = 12;
-UCB0BR1 = 0;
-// void util_i2c_set_slave_adr(unsigned int slave_adr)
-// {
-
-// }
-
-// void util_i2c_write(char *msg, int length, int send_stop_condition)
-// {
-
-// }
-
-// void util_i2c_read(char *msg, int length)
-// {
-
-// }
-
-
-// WARNING----------------------
-// THIS VECTOR SERVICES BOTH TRANSMISSION AND RECEPTION OVER I2C
-// See Sec. 17.3.7.4 of slau144j.pdf
-// WARNING----------------------
-// #pragma vector = USCIAB0TX_VECTOR
-// __interrupt void USCIAB0TX_ISR(void)
-// {
-	
-// }
-/*
-//   Description: This program demonstrates a full-duplex 9600-baud UART using
-//   USCI_A0 and a 32kHz crystal.  The program will wait in LPM3, and receive
-//   a string1 into RAM, and echo back the complete string.
-//   ACLK = BRCLK = LFXT1 = 32768Hz, MCLK = SMCLK = DCO ~1.2MHz
-//   Baud rate divider with 32768Hz XTAL @9600 = 32768Hz/9600 = 3.41
-// An external watch crystal is required on XIN XOUT for ACLK 
-//
-//                MSP430G2xx3
-//             -----------------
-//         /|\|              XIN|-
-//          | |                 | 32kHz
-//          --|RST          XOUT|-
-//            |                 |
-//            |     P1.2/UCA0TXD|------------>
-//            |                 | 9600 - 8N1
-//            |     P1.1/UCA0RXD|<------------
-//
-//
-//   D. Dang
-//   Texas Instruments Inc.
-//   February 2011
-//   Built with CCS Version 4.2.0 and IAR Embedded Workbench Version: 5.10
-//******************************************************************************
-#include <msp430.h>
-
-char string1[8];
-char i;
-char j = 0;
-
-int main(void)
+void util_uart_write(char *msg, int length)
 {
-  WDTCTL = WDTPW + WDTHOLD;                 // Stop WDT
-  P1DIR = 0xFF;                             // All P1.x outputs
-  P1OUT = 0;                                // All P1.x reset
-  P2DIR = 0xFF;                             // All P2.x outputs
-  P2OUT = 0;                                // All P2.x reset
-  P1SEL = BIT1 + BIT2 ;                     // P1.1 = RXD, P1.2=TXD
-  P1SEL2 = BIT1 + BIT2 ;                     // P1.1 = RXD, P1.2=TXD
-  P3DIR = 0xFF;                             // All P3.x outputs
-  P3OUT = 0;                                // All P3.x reset
-  
-  UCA0CTL1 |= UCSSEL_1;                     // CLK = ACLK
-  UCA0BR0 = 0x03;                           // 32kHz/9600 = 3.41
-  UCA0BR1 = 0x00;                           //
-  UCA0MCTL = UCBRS1 + UCBRS0;               // Modulation UCBRSx = 3
-  UCA0CTL1 &= ~UCSWRST;                     // **Initialize USCI state machine**
-  IE2 |= UCA0RXIE;                          // Enable USCI_A0 RX interrupt
+TxByteCounter = 0;
+TxByteLength = length;
+TxBytePointer = msg;
 
-  __bis_SR_register(LPM3_bits + GIE);       // Enter LPM3, interrupts enabled
+// Enable TX interrupt
+IE2 |= UCA0TXIE;
+
+// Go to sleep
+__bis_SR_register(LPM3_bits + GIE);
 }
 
-// USCI A0/B0 Transmit ISR
 #pragma vector=USCIAB0TX_VECTOR
-__interrupt void USCI0TX_ISR(void)
+__interrupt void USCIAB0TX_ISR(void)
 {
-  UCA0TXBUF = string1[i++];                 // TX next character
-
-  if (i == sizeof string1)                  // TX over?
-    IE2 &= ~UCA0TXIE;                       // Disable USCI_A0 TX interrupt
+	// Check TX byte counter to see if at end of transmission
+	if (TxByteCounter >= TxByteLength)
+	{
+		// Disable TX interrupt
+		IE2 &= ~(UCA0TXIE);
+		
+		// Exit sleep
+		__bic_SR_register_on_exit(LPM3_bits);
+	}
+	else
+	{
+		// Load TX buffer
+		UCA0TXBUF = TxBytePointer[TxByteCounter];
+		
+		//UCA0TXIFG automatically reset after writing to TX buffer
+		
+		// Increment TX byte counter
+		TxByteCounter++;
+	}
 }
 
-// USCI A0/B0 Receive ISR
+void util_uart_read(char *msg, int length)
+{
+RxByteCounter = 0;
+RxByteLength = length;
+RxBytePointer = msg;
+
+// Enable RX interrupt
+IE2 |= UCA0RXIE;
+
+// Go to sleep
+__bis_SR_register(LPM3_bits + GIE);
+}
+
 #pragma vector=USCIAB0RX_VECTOR
-__interrupt void USCI0RX_ISR(void)
+__interrupt void USCIAB0RX_ISR(void)
 {
-  string1[j++] = UCA0RXBUF;
-  if (j > sizeof string1 - 1)
-  {
-    i = 0;
-    j = 0;
-    IE2 |= UCA0TXIE;                        // Enable USCI_A0 TX interrupt
-    UCA0TXBUF = string1[i++];
-  }
+	// Store received byte
+	RxBytePointer[RxByteCounter] = UCA0RXBUF;
+	
+	//UCA0RXIFG automatically reset after reading from RX buffer
+	
+	// Increment RX byte counter
+	RxByteCounter++;
+	
+	// Check RX byte counter to see if at end of reception
+	if (RxByteCounter >= RxByteLength)
+	{
+		// Disable RX interrupt
+		IE2 &= ~(UCA0RXIE);
+		
+		// Exit LPM0
+		__bic_SR_register_on_exit(LPM3_bits);
+	}
 }
-
-*/
