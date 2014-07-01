@@ -55,13 +55,25 @@ int main(void)
 	// DEMO: LED Flash over I2C
 	// ---------------------
 	chip_TLC59108_init();
-	chip_TLC59108_update_pwm( 0x05 , I2C_SLAVE_ADR_LED_FRONT_SIGNAL );
+	chip_TLC59108_update_pwm( 0x05 , I2C_SLAVE_ADR_LED_ALL_CALL );
 	while(1)
 	{
 		chip_TLC59108_led_disable( I2C_SLAVE_ADR_LED_FRONT_SIGNAL );
 		__delay_cycles(300000);
 
 		chip_TLC59108_led_enable_pwm( I2C_SLAVE_ADR_LED_FRONT_SIGNAL );
+		__delay_cycles(300000);
+		
+		chip_TLC59108_led_disable( I2C_SLAVE_ADR_LED_REAR_SIGNAL );
+		__delay_cycles(300000);
+
+		chip_TLC59108_led_enable_pwm( I2C_SLAVE_ADR_LED_REAR_SIGNAL );
+		__delay_cycles(300000);
+		
+		chip_TLC59108_led_disable( I2C_SLAVE_ADR_LED_REAR_BRAKE );
+		__delay_cycles(300000);
+
+		chip_TLC59108_led_enable_pwm( I2C_SLAVE_ADR_LED_REAR_BRAKE );
 		__delay_cycles(300000);
 	}
 	// ---------------------
@@ -70,37 +82,47 @@ int main(void)
 	// ---------------------
 	//P2.0/TA1.0
 	///~INT_ACCEL
-	P2IE |= BIT0;
-	P2IES |= BIT0;
-	P2IFG &= ~BIT0;
+	P2DIR	&= ~BIT0;
+	P2REN	|=  BIT0;
+	P2OUT	|=  BIT0;
+	P2IE	|=  BIT0;
+	P2IES	|=  BIT0;
+	P2IFG	&= ~BIT0;
 	
 	chip_MMA7660FC_init();
 	while(1)
 	{
-		__bis_SR_register(LPM3_bits + GIE);
+		chip_MMA7660FC_isr(xyz_accel);
+		// __bis_SR_register(LPM3_bits + GIE);
 		__no_operation(); // Check xyz_accel here
+		
+		chip_TLC59108_led_disable( I2C_SLAVE_ADR_LED_FRONT_SIGNAL );
+		__delay_cycles(300000);
+
+		chip_TLC59108_led_enable_pwm( I2C_SLAVE_ADR_LED_FRONT_SIGNAL );
+		__delay_cycles(300000);
 	}
 	// ---------------------
 	// ---------------------
 	// DEMO: Measure ambient illumination
 	// ---------------------
-	//P1.3/ADC10CLK/A3/VREF-/VEREF-
-	/// ADC_LIGHT
-	/// Set A3 as analog input (disable CMOS buffer)
-	ADC10AE0 |= BIT3;
-	//XIN/P2.6/TA0.1
-	///LIGHT_CTRL_1
-	P2DIR |= BIT6;
-	//XOUT/P2.7
-	///LIGHT_CTRL_2
-	P2DIR |= BIT7;
+	// //P1.3/ADC10CLK/A3/VREF-/VEREF-
+	// /// ADC_LIGHT
+	// /// Set A3 as analog input (disable CMOS buffer)
+	// ADC10AE0 |= BIT3;
+	// //XIN/P2.6/TA0.1
+	// ///LIGHT_CTRL_1
+	// P2DIR |= BIT6;
+	// //XOUT/P2.7
+	// ///LIGHT_CTRL_2
+	// P2DIR |= BIT7;
 	
-	chip_BH1620FVC_init();
-	while(1)
-	{
-		dummy = chip_BH1620FVC_read();
-		__no_operation(); // Check dummy here
-	}
+	// chip_BH1620FVC_init();
+	// while(1)
+	// {
+		// dummy = chip_BH1620FVC_read();
+		// __no_operation(); // Check dummy here
+	// }
 }
 
 #pragma vector=PORT2_VECTOR
@@ -110,8 +132,9 @@ __interrupt void PORT2_ISR(void)
 	{
 		case BIT0: 			//P2.0 Interrupt
 		{					//Accelerometer interrupt
-			chip_MMA7660FC_isr(xyz_accel)
+			chip_MMA7660FC_isr(xyz_accel);
 			P2IFG &= ~BIT0;
+			__bic_SR_register_on_exit(LPM3_bits);
 			break;
 		}
 		case BIT1: 			//P2.1 Interrupt

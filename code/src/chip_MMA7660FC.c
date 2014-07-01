@@ -80,19 +80,20 @@ util_i2c_write(
 	I2C_CONTINUOUS
 );
 chip_MMA7660FC_rx_length = length;
-chip_MMA7660FC_rx_buffer = result;
+// chip_MMA7660FC_rx_buffer = result;
 // Transmit command array to device
 util_i2c_read(
-	chip_MMA7660FC_rx_buffer,
+	result,
 	chip_MMA7660FC_rx_length
 );
 }
 void chip_MMA7660FC_isr(char *xyz_accel)
 {
-char sample_rate_reg;
+char sample_rate_reg = 0;
+char *sample_rate_ptr = &sample_rate_reg;
 // Check to see if the accelerometer is sleeping
 chip_MMA7660FC_read(
-	sample_rate_reg,
+	sample_rate_ptr,
 	1,
 	I2C_MMA7660FC_REG_SRST
 );
@@ -113,7 +114,7 @@ else
 	xyz_accel[1]=0;
 	xyz_accel[2]=0;
 }
-__bic_SR_register_on_exit(LPM3_bits);
+// __bic_SR_register_on_exit(LPM3_bits);
 }
 //-----------------------------------------------------------
 //-----------------------------------------------------------

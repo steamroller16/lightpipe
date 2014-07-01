@@ -1885,10 +1885,22 @@
     </settings>
   </configuration>
   <file>
+    <name>$PROJ_DIR$\src\chip_BH1620FVC.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\chip_BH1620FVC.h</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\src\chip_BQ24190.c</name>
   </file>
   <file>
     <name>$PROJ_DIR$\src\chip_BQ24190.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\chip_MMA7660FC.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\chip_MMA7660FC.h</name>
   </file>
   <file>
     <name>$PROJ_DIR$\src\chip_TLC59108.c</name>

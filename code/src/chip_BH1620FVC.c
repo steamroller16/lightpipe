@@ -35,7 +35,7 @@ void chip_BH1620FVC_write(char state)
 		{
 			P2OUT |= ( BIT6 + BIT7 );
 		}
-		case default:
+		default:
 		{
 			break;
 		}
