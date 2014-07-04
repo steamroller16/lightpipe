@@ -4,7 +4,7 @@
 //-----------------------------------------------------------
 #include "chip_BH1620FVC.h"
 // #include "pins.h"
-#include "util_adc.h"
+// #include "util_adc.h"
 //-----------------------------------------------------------
 // Make sure GPIO pins have been set to output mode before using
 //-----------------------------------------------------------
@@ -20,20 +20,24 @@ void chip_BH1620FVC_write(char state)
 		case CHIP_BH1620FVC_SHUTDOWN:
 		{
 			P2OUT &= ~( BIT6 + BIT7 );
+			break;
 		}
 		case CHIP_BH1620FVC_HIGH_GAIN:
 		{
 			P2OUT |= ( BIT6 );
 			P2OUT &= ~( BIT7 );
+			break;
 		}
 		case CHIP_BH1620FVC_MED_GAIN:
 		{
 			P2OUT &= ~( BIT6 );
 			P2OUT |= ( BIT7 );
+			break;
 		}
 		case CHIP_BH1620FVC_LOW_GAIN:
 		{
 			P2OUT |= ( BIT6 + BIT7 );
+			break;
 		}
 		default:
 		{
@@ -43,7 +47,8 @@ void chip_BH1620FVC_write(char state)
 }
 int chip_BH1620FVC_read(void)
 {
-	return util_adc_read(CHIP_BH1620FVC_ADC_CHANNEL);
+	// return util_adc_read(CHIP_BH1620FVC_ADC_CHANNEL);
+	return (P1IN & BIT3);
 }
 //-----------------------------------------------------------
 //-----------------------------------------------------------

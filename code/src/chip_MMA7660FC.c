@@ -21,7 +21,18 @@ void chip_MMA7660FC_init(void)
 {
 // Set Address to the Accelerometer
 util_i2c_set_slave_adr(I2C_SLAVE_ADR_ACCEL);
-
+// -----------------------
+// Set Device to standby mode before trying to access the registers
+chip_MMA7660FC_tx_length = 2;
+chip_MMA7660FC_tx_buffer[0] = (I2C_MMA7660FC_REG_MODE);
+chip_MMA7660FC_tx_buffer[1] = 0;
+// Transmit command array to device
+util_i2c_write(
+	chip_MMA7660FC_tx_buffer,
+	chip_MMA7660FC_tx_length,
+	I2C_SEND_STOP
+);
+// -----------------------
 chip_MMA7660FC_tx_length = 5;
 chip_MMA7660FC_tx_buffer[0] = (I2C_MMA7660FC_REG_SPCNT);
 // -----------------------
