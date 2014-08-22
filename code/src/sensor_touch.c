@@ -27,7 +27,7 @@ void sensor_touch_adj_brightness(signed int adjustment_val)
 void sensor_touch_1_isr(void)
 {
 	// Set middle color to white to indicate a touch event
-	output_feedback_lights_set_middle_color({255, 255, 255});
+	// output_feedback_lights_set_middle_color({255, 255, 255});
 	// If turn signal is currently on
 	if(main_turnsignal_is_on)
 	{
@@ -74,7 +74,7 @@ void sensor_touch_3_isr(void)
 }
 
 //-----------------------------------------------------------
-#pragma vector=PORT2_VECTOR
+/*#pragma vector=PORT2_VECTOR
 __interrupt void PORT2_ISR(void)
 // void sensor_touch_port2_isr(void)
 {
@@ -110,6 +110,6 @@ __interrupt void PORT2_ISR(void)
 		case BIT6: break;	//P2.6 Interrupt
 		case BIT7: break;	//P2.7 Interrupt
 	}
-}
+}*/
 //-----------------------------------------------------------
 //-----------------------------------------------------------

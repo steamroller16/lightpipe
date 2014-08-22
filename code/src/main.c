@@ -31,9 +31,35 @@ int main(void)
 	P1SEL |= BIT7;
 	P1SEL2|= BIT7;
 	
+	// Setup Touch Input Pins
+	
+	//P2.1/TA1.1
+	///TOUCH_1
+	P2IE |= BIT1;
+	P2IFG &= ~BIT1;
+	//P2.2/TA1.1
+	///TOUCH_2
+	P2IE |= BIT2;
+	P2IFG &= ~BIT2;
+	//P2.3/TA1.0
+	///TOUCH_3
+	P2IE |= BIT3;
+	P2IFG &= ~BIT3;
+	
 	// ---------------------
 	// Initialize I2C settings
 	util_i2c_init();
+	
+	// ---------------------
+	// DEMO: Touch Pads
+	// ---------------------
+	
+	chip_TLC59108_init();
+	chip_TLC59108_update_pwm( 0x00 , I2C_SLAVE_ADR_LED_ALL_CALL );
+	chip_TLC59108_update_pwm( 0xFF , I2C_SLAVE_ADR_LED_ALL_CALL );
+	chip_TLC59108_update_pwm( 0x00 , I2C_SLAVE_ADR_LED_ALL_CALL );
+	
+	
 	
 	// ---------------------
 	// DEMO: Batt charger comms
@@ -54,7 +80,7 @@ int main(void)
 	// ---------------------
 	// DEMO: LED Flash over I2C
 	// ---------------------
-	// chip_MMA7660FC_init();
+	/*// chip_MMA7660FC_init();
 	chip_TLC59108_init();
 	chip_TLC59108_update_pwm( 0x05 , I2C_SLAVE_ADR_LED_ALL_CALL );
 	// while(1)
@@ -76,7 +102,7 @@ int main(void)
 
 		chip_TLC59108_led_enable_pwm( I2C_SLAVE_ADR_LED_REAR_BRAKE );
 		__delay_cycles(30000);
-	// }
+	// }*/
 	// ---------------------
 	// ---------------------
 	// DEMO: Measure accelerations
@@ -107,7 +133,7 @@ int main(void)
 	// ---------------------
 	// DEMO: Measure ambient illumination
 	// ---------------------
-	//P1.3/ADC10CLK/A3/VREF-/VEREF-
+	/*//P1.3/ADC10CLK/A3/VREF-/VEREF-
 	/// ADC_LIGHT
 	/// Set A3 as analog input (disable CMOS buffer)
 	// ADC10AE0 |= BIT3;
@@ -142,7 +168,7 @@ int main(void)
 		}
 		__delay_cycles(30000);
 		__no_operation(); // Check dummy here
-	}
+	}*/
 }
 
 #pragma vector=PORT2_VECTOR
@@ -160,19 +186,19 @@ __interrupt void PORT2_ISR(void)
 		}
 		case BIT1: 			//P2.1 Interrupt
 		{					//Main touch input
-			// sensor_touch_1_isr(void)
+			sensor_touch_1_isr(void)
 			// P2IFG &= ~BIT1;
 			break;
 		}
 		case BIT2: 			//P2.2 Interrupt
 		{
-			// sensor_touch_2_isr(void)
+			sensor_touch_2_isr(void)
 			// P2IFG &= ~BIT2;
 			break;
 		}
 		case BIT3: 			//P2.3 Interrupt
 		{
-			// sensor_touch_3_isr(void)
+			sensor_touch_3_isr(void)
 			// P2IFG &= ~BIT3;
 			break;
 		}
