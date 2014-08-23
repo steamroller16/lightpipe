@@ -7,7 +7,9 @@
 // Dependencies
 //-----------------------------------------------------------
 // #include "util_adc.h"
-#include "main.h"
+// #include "main.h"
+#include <msp430.h>
+// #include <msp430g2203.h>
 //-----------------------------------------------------------
 // # Defines
 //-----------------------------------------------------------
@@ -21,11 +23,21 @@
 //-----------------------------------------------------------
 // Function prototypes
 //-----------------------------------------------------------
+// void output_feedback_lights_init(void);
+// void output_feedback_lights_set_color(int[3]);
+// void output_feedback_lights_set_front_color(int[3]);
+// void output_feedback_lights_set_middle_color(int[3]);
+// void output_feedback_lights_set_rear_color(int[3]);
+
 void output_feedback_lights_init(void);
-void output_feedback_lights_set_color(int[3]);
-void output_feedback_lights_set_front_color(int[3]);
-void output_feedback_lights_set_middle_color(int[3]);
-void output_feedback_lights_set_rear_color(int[3]);
+void output_feedback_lights_front_on(void);
+void output_feedback_lights_front_off(void);
+void output_feedback_lights_middle_on(void);
+void output_feedback_lights_middle_off(void);
+void output_feedback_lights_back_on(void);
+void output_feedback_lights_back_off(void);
+
+
 //-----------------------------------------------------------
 //-----------------------------------------------------------
 #endif

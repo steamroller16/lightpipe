@@ -1,25 +1,24 @@
 //-----------------------------------------------------------
 //-----------------------------------------------------------
-// util_adc.c
+// output_vibrator.c
+#include "output_vibrator.h"
 //-----------------------------------------------------------
-init_adc(void)
+void output_vibrator_init(void)
 {
-	// (GLOBAL ADC SETTING)
-	
-	// ----Set ADC10CTL0----
-	// Set sample-and-hold time to 4,8,[16],64 x ADC10CLK -> ADC10SHT_2
-	// Turn on ADC10 -> ADC10ON
-	// Enable ADC10 interrupt -> ADC10IE
-	ADC10CTL0 = ADC10SHT_2 + ADC10ON + ADC10IE;
-	
-	// Initialize ADC modules
-	init_sensor_light(void)
-	init_sensor_batteryVoltage(void)
+//P3.7/TA1CLK
+	///VIBRATOR
+	P3DIR |= BIT7;
+	output_vibrate_stop();
 }
-ISR_adc(void)
+
+void output_vibrate_start(void)
 {
-	// Turn CPU back on when exiting
-	__bic_SR_register_on_exit(CPUOFF);
+	P3OUT |= ( BIT7 );
+}
+
+void output_vibrate_stop(void)
+{
+	P3OUT &= ~( BIT7 );
 }
 //-----------------------------------------------------------
 //-----------------------------------------------------------

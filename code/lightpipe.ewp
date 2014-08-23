@@ -1915,10 +1915,34 @@
     <name>$PROJ_DIR$\src\main.h</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\src\output_feedback_lights.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\output_feedback_lights.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\output_speaker.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\output_speaker.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\output_vibrator.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\output_vibrator.h</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\src\util_i2c.c</name>
   </file>
   <file>
     <name>$PROJ_DIR$\src\util_i2c.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\util_wdt.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\src\util_wdt.h</name>
   </file>
 </project>
 

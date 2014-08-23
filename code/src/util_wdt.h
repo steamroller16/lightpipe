@@ -1,8 +1,8 @@
 //-----------------------------------------------------------
-// output_vibrator.h
+// util_wdt.h
 //-----------------------------------------------------------
-#ifndef OUTPUT_VIBRATOR_H
-#define OUTPUT_VIBRATOR_H
+#ifndef UTIL_WDT_H
+#define UTIL_WDT_H
 //-----------------------------------------------------------
 // Dependencies
 //-----------------------------------------------------------
@@ -14,9 +14,9 @@
 //-----------------------------------------------------------
 // Function prototypes
 //-----------------------------------------------------------
-void output_vibrator_init(void);
-void output_vibrate_start(void);
-void output_vibrate_stop(void);
+void util_wdt_init(void);
+void util_wdt_pause(void);
+void util_wdt_resume(void);
 //-----------------------------------------------------------
 //-----------------------------------------------------------
 #endif
